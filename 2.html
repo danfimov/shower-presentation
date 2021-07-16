@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Структура HTML-документа</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="stylesheet" href="shower/themes/material/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+            --color-key: #007BFF;
+        }
+
+        /* Фон унивверситета */
+
+        .narfu_official {
+            background-image: url("pictures/general/background.png");
+            background-size: cover;
+        }
+
+        .narfu {
+            background-image: url("pictures/general/background_slides.jpg");
+            background-size: cover;
+        }
+
+        /* Для изображений, которые нужно растянуть на весь слайд и подписать */
+        .full-slide-img img {
+            width: 100%;
+        }
+
+        .full-slide-img figcaption {
+            text-align: center;
+        }
+
+        /*  Горячие клавиши  */
+        .hot-keys {
+            margin-right: 40px;
+        }
+
+        .hot-keys__element {
+            background-color: var(--color-key);
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+
+            border-bottom: 2px solid var(--color-light);
+            border-right: 2px solid var(--color-light);
+        }
+        /*  MacOS Window  */
+        .browser-view {
+            border-color: #d8d7e4;
+            position: relative;
+            padding: 44px 32px 24px;
+            border-width: 2px;
+            border-style: solid;
+            border-radius: 8px;
+
+            background-color: white;
+        }
+
+        .browser-view::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 24px;
+            background-image: url(https://assets.htmlacademy.ru/img/icons/icon-browser-controls.svg);
+            background-repeat: no-repeat;
+            background-position: 10px center;
+            background-color: #d8d7e4;
+        }
+    </style>
+</head>
+<body class="shower list">
+<header class="caption">
+    <h1>Структура HTML-документа</h1>
+    <p>Пархимович Мария Николаевна</p>
+</header>
+
+<section class="slide narfu_official" id="cover">
+    <h2>Структура <br> HTML-документа</h2>
+    <p>Powered by <a href="https://shwr.me/">Shower</a></p>
+    <style>
+        #cover h2 {
+            margin: 30px 0 0;
+            color: var(--color-key);
+            text-align: center;
+            font-size: 70px;
+        }
+
+        #cover p {
+            margin: 10px 0 0;
+            text-align: center;
+            color: var(--color-key);
+            font-style: italic;
+            font-size: 20px;
+        }
+
+        #cover p a {
+            color: var(--color-key);
+        }
+    </style>
+</section>
+
+<section class="slide narfu">
+    <h2>Веб-разработка</h2>
+    <img src="pictures/2/client-server.svg" alt="Клиент-серверная архитектура" class="place center" width="800"
+         height="600">
+</section>
+
+<section class="slide white">
+    <figure class="full-slide-img">
+        <img src="pictures/2/frontend-backend.png" alt="Разделение фронтенда и бекенда">
+        <figcaption class="img">Иллюстрация того, что ускользает от внимания пользователя</figcaption>
+    </figure>
+</section>
+
+<section class="slide narfu">
+    <div class="columns two">
+        <div>
+            <h2>Фронтенд</h2>
+            <p>Делает офрмление страницы сайта, получает макет от дизайнера и превращает его в готовую страницу,
+                расставляя элементы таким образом, чтобы было удобно конечному пользователю.</p>
+        </div>
+        <div>
+            <h2>Бэкенд</h2>
+            <p>Занимается той частью сайта, которую не видно. Он работает с информацией, которую сохраняют пользователи,
+                и делает так, что всё это сохранилось, где нужно, а потом отобразилось, где попросят.</p>
+        </div>
+    </div>
+</section>
+
+<section class="slide">
+    <h2>Разделение на клиентскую и серверную часть</h2>
+    <ul>
+        <li class="next" value="+">Можно независимо заменить фронтенд и бэкэнд логику;</li>
+        <li class="next" value="+">Нужен сервер для хранения и структурирования данных;</li>
+        <li class="next" value="+">Данные на стороне клиента устаревают, а ответы сервера актуальны;</li>
+        <li class="next" value="+">Управлять потоками данных на нескольких серверах проще, чем на миллионе клиентов;
+        </li>
+        <li class="next" value="+">Некоторые задачи не требуют обновления с сервера, их быстрее выполнять локально.</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <figure class="cover">
+        <img id="client-server_communication" src="pictures/2/client-server_communication.svg" alt="Способы коммуникации">
+    </figure>
+    <style>
+        #client-server_communication {
+            width: 400px;
+        }
+    </style>
+</section>
+
+<section class="slide narfu">
+    <h2>HTML</h2>
+    <p><b>HTML</b> — это язык, используемый для создания веб-страниц: он управляет их структурой и содержанием.</p>
+    <p class="next note">HTML — это аббревиатура, обозначающая язык разметки гипертекста (HyperText Markup Language)</p>
+</section>
+
+<section class="slide">
+    <figure class="cover">
+        <img id="web-img" src="pictures/2/web.svg" alt="Взаимосвязанные страницы">
+    </figure>
+    <style>
+        #web-img {
+            width: 400px;
+        }
+    </style>
+</section>
+
+<section class="slide narfu">
+    <h2>Немного из истории</h2>
+    <ul>
+        <li>HTML был разработан Тимом Бернерсом-Ли (он же создатель WWW), членом швейцарской научной лаборатории CERN.
+        </li>
+        <li> Выпуск первой версии HTML приписывается 1989 году.</li>
+        <li>В 1991 году язык был дополнен и стал использоваться для передачи гипертекста в Интернете.</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2 class="shout">
+        <a href="http://info.cern.ch/hypertext/WWW/TheProject.html">Первый <br>HTML-сайт</a></h2>
+</section>
+
+<section class="slide white">
+    <figure class="cover"><img src="pictures/2/greenpeace.png" alt=""></figure>
+</section>
+
+<section class="slide white">
+    <figure>
+        <img class="cover" src="pictures/2/code.png" alt="">
+        <figcaption class="white place right hot-keys"><span class="hot-keys__element">Ctrl</span> + <span
+                class="hot-keys__element">U</span></figcaption>
+    </figure>
+</section>
+
+<section class="slide narfu">
+    <h2>Приемущества HTML</h2>
+    <ul>
+        <li value="+">Язык прост в изучении и использовании;</li>
+        <li value="+">Поддерживается всеми распространенными браузерами;</li>
+        <li value="+">Его можно интегрировать с языками программирования.</li>
+    </ul>
+    <p class="next">В настоящее время подавляющее большинство сайтов и веб-приложений работает на HTML пятой версии,
+        которая поддерживается уже с 2013 года.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>HTML-теги</h2>
+    <p>HTML-документы состоят из слов, которые содержат инструкции о том, как правильно отображать веб-страницу. Эти
+        инструкции называются <b>тегами</b>. </p>
+
+    <pre>
+        <code><mark class="important next">&lt;</mark> <mark class="next">имя_тега</mark> <mark class="important next">&gt;</mark></code>
+    </pre>
+    <p class="next"><code>&lt;p&gt;</code> <code>&lt;ul&gt;</code> <code>&lt;h1&gt;</code> и еще 100+ тегов.</p>
+</section>
+
+<section class="slide narfu">
+    <div class="columns two">
+        <div>
+            <h2>Парные</h2>
+            <p>Состоят из двух инструкций - <b>открывающего тега</b>, который отмечает начало блока, и <b>закрывающего
+                тега</b>, который выглядит так же, но с дополнительной косой чертой <code>&lt;/ &gt;</code>.</p>
+        </div>
+        <div>
+            <h2>Непарные</h2>
+            <p>Имеют только открывающий тег. Это связано с тем, что они <b>не имеют содержимого</b> и лишь образуют
+                графические элементы или символы на странице.</p>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <div class="columns two">
+        <div>
+            <h2>Парные</h2>
+            <p><code>&lt;p&gt;Привет, мир!&lt;/p&gt;</code></p>
+            <p>Здесь <code>&lt;p&gt;</code> – открывающий тег, <code>Привет, мир!</code> – контент, а
+                <code>&lt;/p&gt</code> – закрывающий тег.</p>
+        </div>
+        <div>
+            <h2>Непарные</h2>
+            <p><code>&lt;br&gt;</code> — одиночный разрыв строки.</p>
+            <p>Не злоупотребляйте использованием этого тега. Единственный случай, где он необходим – это верстка
+                стихотворений.</p>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Как не надо делать</h2>
+    <p>Также иногда можно встретить подобную конструкцию – <code>&lt;br /&gt;</code> – где присутствует слеш в конце
+        непарного тега. Этот код будет валиден, браузеры толеранты в этом случае. Но писать лишний символ не имеет
+        никакого смысла, и это является
+        <mark class="important">плохой практикой</mark>
+        . Подобные конструкции необходимы лишь в XHTML-документах.
+    </p>
+</section>
+
+<section class="slide narfu">
+    <h2>Вложенные теги</h2>
+
+    <pre>
+        <code class="next mark">&lt;p&gt;                                             </code>
+        <code>  Ты выучил &lt;b&gt;теги&lt;/b&gt; в HTML            </code>
+        <code>  &lt;br&gt;                                          </code>
+        <code>  Поздравляю!                                         </code>
+        <code class="next mark">&lt;/p&gt;                                            </code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Атрибуты</h2>
+    <pre>
+        <code class="next">&lt;img src="cat_smile.jpg"&gt;                          </code>
+        <code class="next">&lt;img src="cat_smile.jpg" width="200" height="100"&gt; </code>
+    </pre>
+
+    <p class="next">Значения атрибутов можно писать без кавычек, если они состоят из одного слова, но это является
+        <mark class="important">плохой практикой</mark>
+        .
+    </p>
+</section>
+
+<section class="slide narfu page_structure">
+    <h2>Структура HTML-документа</h2>
+    <pre>
+        <code>&lt;!DOCTYPE html&gt;                            </code>
+        <code>&lt;html lang="ru"&gt;                           </code>
+        <code>  &lt;head&gt;                                   </code>
+        <code>    &lt;meta charset="utf-8"&gt;                 </code>
+        <code>    &lt;title&gt;Название страницы&lt;/title&gt; </code>
+        <code>  &lt;/head&gt;                                  </code>
+        <code>  &lt;body&gt;                                   </code>
+        <code>      &lt;h1&gt;Это заголовок&lt;/h1&gt;         </code>
+        <code>      &lt;p&gt;А это параграф&lt;/p&gt;          </code>
+        <code>  &lt;/body&gt;                                  </code>
+        <code>&lt;/html&gt;                                    </code>
+    </pre>
+    <style>
+        .page_structure{
+            font-size: 16px;
+        }
+    </style>
+</section>
+
+<section class="slide narfu page_structure">
+    <h2>Структура HTML-документа</h2>
+    <pre>
+        <code>&lt;!DOCTYPE html&gt;                            </code>
+        <code class="mark">&lt;html lang="ru"&gt;                           </code>
+        <code>  &lt;head&gt;                                   </code>
+        <code>    &lt;meta charset="utf-8"&gt;                 </code>
+        <code>    &lt;title&gt;Название страницы&lt;/title&gt; </code>
+        <code>  &lt;/head&gt;                                  </code>
+        <code>  &lt;body&gt;                                   </code>
+        <code>      &lt;h1&gt;Это заголовок&lt;/h1&gt;         </code>
+        <code>      &lt;p&gt;А это параграф&lt;/p&gt;          </code>
+        <code>  &lt;/body&gt;                                  </code>
+        <code class="mark">&lt;/html&gt;                                    </code>
+    </pre>
+</section>
+
+<section class="slide narfu page_structure">
+    <h2>Структура HTML-документа</h2>
+    <pre>
+        <code>&lt;!DOCTYPE html&gt;                            </code>
+        <code>&lt;html lang="ru"&gt;                           </code>
+        <code class="mark">  &lt;head&gt;                                   </code>
+        <code>    &lt;meta charset="utf-8"&gt;                 </code>
+        <code>    &lt;title&gt;Название страницы&lt;/title&gt; </code>
+        <code class="mark">  &lt;/head&gt;                                  </code>
+        <code>  &lt;body&gt;                                   </code>
+        <code>      &lt;h1&gt;Это заголовок&lt;/h1&gt;         </code>
+        <code>      &lt;p&gt;А это параграф&lt;/p&gt;          </code>
+        <code>  &lt;/body&gt;                                  </code>
+        <code>&lt;/html&gt;                                    </code>
+    </pre>
+</section>
+
+<section class="slide narfu page_structure">
+    <h2>Структура HTML-документа</h2>
+    <pre>
+        <code>&lt;!DOCTYPE html&gt;                            </code>
+        <code>&lt;html lang="ru"&gt;                           </code>
+        <code>  &lt;head&gt;                                   </code>
+        <code>    &lt;meta charset="utf-8"&gt;                 </code>
+        <code>    &lt;title&gt;Название страницы&lt;/title&gt; </code>
+        <code>  &lt;/head&gt;                                  </code>
+        <code class="mark">  &lt;body&gt;                                   </code>
+        <code>      &lt;h1&gt;Это заголовок&lt;/h1&gt;         </code>
+        <code>      &lt;p&gt;А это параграф&lt;/p&gt;          </code>
+        <code class="mark">  &lt;/body&gt;                                  </code>
+        <code>&lt;/html&gt;                                    </code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <figure class="full-slide-img">
+        <img src="pictures/2/simple_page.png" alt="">
+        <figcaption></figcaption>
+    </figure>
+</section>
+
+<section class="slide narfu">
+    <h2>DOCTYPE</h2>
+    <p>Старый:</p>
+    <pre>
+        <code>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"</code>
+        <code>"http://www.w3.org/TR/html4/strict.dtd"&gt;</code>
+    </pre>
+    <p>Новый:</p>
+    <pre>
+        <code>&lt;!DOCTYPE html&gt;</code>
+        <code></code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Тег &lt;html&gt;</h2>
+    <p>Этот указывает, что это документ HTML. Все остальные теги будут лежать внутри него. Также в нем можно указать атрибут <code>lang</code>. С его помощью  можно указать основной язык страницы. Кроме того атрибут <code>lang</code> позволяет браузеру понять, отличается ли язык страницы от языка вашей системы.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Тег &lt;head&gt;</h2>
+    <pre>
+        <code>&lt;head&gt;</code>
+        <code>  &lt;meta charset="utf-8"&gt;</code>
+        <code>  &lt;meta name="viewport"                </code>
+        <code>        content="width=device-width, initial-scale=1"&gt;</code>
+        <code>  &lt;title&gt;Заголовок страницы&lt;/title&gt;</code>
+        <code>&lt;/head&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <p><code>meta charset</code> - определяет кодировку веб-сайта, стандартом является utf-8.</p>
+    <p><code>meta name="viewport"</code> - настройки viewport, связанные с мобильной отзывчивостью</p>
+    <p><code>width=device-width</code> - физическая ширина устройства (отлично подходит для мобильных устройств!)</p>
+    <p><code>initial-scale=1</code> - начальный масштаб, 1 означает отсутствие масштабирования</p>
+</section>
+
+<section class="slide">
+    <h2 class="shout">
+        <a href="https://html-head.ru/">Список</a> того, что вы можете указать в HEAD
+    </h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Тело документа</h2>
+    <p>Тег <code>&lt;body&gt;</code> определяет область содержимого страницы. Его ставят сразу после закрывающего <code>&lt;/head&gt;</code>. Он обертывает содержимое, отображаемое в окне браузера. В нем можно располагать различные элементы: текст и абзацы, кнопки и формы, навигацию по сайту и отдельные блоки контента.</p>
+</section>
+
+<section class="slide white">
+    <figure class="cover w"><img src="pictures/2/page_structure.svg" alt=""></figure>
+</section>
+
+<section class="slide white">
+    <figure class="cover w full-slide-img"><img src="pictures/2/comments.png" alt=""></figure>
+</section>
+
+<section class="slide narfu">
+    <h2>Комментарии</h2>
+    <pre>
+        <code>&lt;div class="comments"&gt;</code>
+        <code><span class="comment"> &lt;!-- Я комментарий, меня не видно на странице --&gt;</span></code>
+        <code>  Я — обычный текст. Меня видно на странице!</code>
+        <code>&lt;/div&gt;</code>
+    </pre>
+
+    <p class="next">При помощи подобной конструкции можно также временно спрятать блок кода.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Подсказки</h2>
+    <ol>
+        <li value="+"> В тексте внутри комментария не используйте два дефиса подряд;</li>
+        <li value="+">Нельзя вкладывать один комментарий в другой;</li>
+        <li value="+">Комментарии не работают внутри тега <code>&lt;title&gt;</code></li>
+        <li value="+">Чтобы в большинстве редакторов быстро закомментировать или раскомментировать строку можно нажать <code>Ctrl + /</code> или <code>Cmd + /</code></li>
+    </ol>
+</section>
+
+<section class="slide narfu">
+    <h2>В работе</h2>
+    <p>Комментарии часто используют, чтобы пометить начало какого-то крупного куска кода, пояснить его назначение. Поскольку комментарии внешне отличаются от остального кода — выделены серым цветом — то иногда гораздо удобнее просканировать комментарии, чем вчитываться в сам код.</p>
+</section>
+
+
+<section class="slide narfu">
+    <h2>В работе</h2>
+    <p>Всегда при копировании чужого кода стоит вставлять его к себе в неизменном виде с комментариями.</p>
+    <pre>
+        <code class="comment">&lt;!-- Yandex.Metrika counter --&gt;</code>
+        <code>&lt;script&gt;</code>
+        <code>  ...</code>
+        <code>&lt;/script&gt;</code>
+        <code class="comment">&lt;!-- /Yandex.Metrika counter --&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>В работе</h2>
+    <ol>
+        <li value="+">Читая чужой код, важно обращать внимание на комментарии.</li>
+        <li value="+">Комментарии делятся на строчные: когда разработчик просто написал небольшое сообщение — и блоковые: когда выделяется целый объект.</li>
+        <li value="+">Комментарии видны в браузере в инструментах разработчика, поэтому в них стоит оставить только документацию, которая поможет работе с кодом.</li>
+    </ol>
+</section>
+
+
+<section class="slide" id="see-more">
+    <h2 class="shout">
+        <a href="https://github.com/LoveSolaristics/shower-presentation.git">Все презентации<br>на GitHub</a>
+    </h2>
+    <style>
+        #see-more h2 {
+            font-size: 100px
+        }
+
+        #see-more svg {
+            width: 0.72em;
+            height: 0.72em;
+        }
+    </style>
+</section>
+
+<footer class="badge">
+    <a href="https://github.com/LoveSolaristics/shower-presentation.git">
+        <svg width="81" height="79" viewBox="0 0 81 79" aria-hidden="true">
+            <path d="M40.5 0a40.5 40.5 0 0 0-12.8 78.93c2 .37 2.76-.88 2.76-2s0-3.51-.05-6.89c-11.27 2.45-13.64-5.43-13.64-5.43-1.84-4.68-4.5-5.92-4.5-5.92-3.68-2.51.28-2.46.28-2.46 4.06.29 6.2 4.17 6.2 4.17 3.61 6.19 9.48 4.4 11.79 3.37a8.65 8.65 0 0 1 2.57-5.41c-9-1-18.45-4.5-18.45-20a15.65 15.65 0 0 1 4.17-10.87 14.57 14.57 0 0 1 .4-10.72s3.4-1.09 11.14 4.15a38.39 38.39 0 0 1 20.28 0c7.73-5.24 11.13-4.15 11.13-4.15a14.55 14.55 0 0 1 .4 10.72 15.63 15.63 0 0 1 4.16 10.87c0 15.56-9.47 19-18.49 20 1.45 1.25 2.75 3.72 2.75 7.5v11.11c0 1.08.73 2.34 2.78 1.95A40.51 40.51 0 0 0 40.5 0z"></path>
+        </svg>
+        Репозиторий<br>на&nbsp;GitHub
+    </a>
+</footer>
+
+
+<div class="progress"></div>
+
+<script src="shower/shower.js"></script>
+</body>
+</html>
