@@ -1,5 +1,6 @@
 node_modules
 docs
+prepared
 
 .DS_Store
 .idea/
