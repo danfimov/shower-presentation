@@ -2,13 +2,13 @@
 
 В данном репозитории хранятся все презентации для освоения дисциплины 
 "Web-технологии". Презентации сделаны на движке [Shower](https://shwr.me/).
-Посмотреть все презентации можно по [ссылке](https://LoveSolaristics.github.io/shower-presentation/prepared/index.html).
+Посмотреть полный список материалов можно по [ссылке](https://lovesolaristics.github.io/shower-presentation/).
 
 
 ## Содержание
 
 1. Основы web-технологий;
-2. [Структура HTML-документа](https://LoveSolaristics.github.io/shower-presentation/prepared/2.html);
+2. [Структура HTML-документа](https://lovesolaristics.github.io/shower-presentation/2.html);
 
 ## Локальный запуск
 
