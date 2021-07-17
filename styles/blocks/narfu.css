@@ -1,0 +1,13 @@
+/* Фон университета */
+
+.narfu_official {
+    background-image: url("../../pictures/general/background.png");
+    background-size: cover;
+}
+
+/* Фон университета без логотипа*/
+
+.narfu {
+    background-image: url("../../pictures/general/background_slides.jpg");
+    background-size: cover;
+}

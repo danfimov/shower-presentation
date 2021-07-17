@@ -1,0 +1,16 @@
+@import "general.css";
+
+/* Blocks */
+
+@import "blocks/narfu.css";
+@import "blocks/cover.css";
+@import "blocks/see_more.css";
+
+@import "blocks/slide__small-text.css";
+@import "blocks/full-slide-img.css";
+
+@import "blocks/hot_keys.css";
+@import "blocks/window_mac.css";
+
+
+

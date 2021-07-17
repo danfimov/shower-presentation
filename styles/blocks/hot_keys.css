@@ -1,0 +1,12 @@
+.hot-keys {
+    margin-right: 40px;
+}
+
+.hot-keys__element {
+    background-color: var(--color-key);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+
+    box-shadow: 0 3px 0 1px var(--color-light);
+}
