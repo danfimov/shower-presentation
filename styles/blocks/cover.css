@@ -1,21 +1,23 @@
-#cover h2 {
-    margin: 30px 0 0;
-    color: var(--color-key);
+#cover{
     text-align: center;
+}
+
+
+#cover h2 {
+    color: var(--color-key);
+
+    margin: 50px 0 0;
     font-size: 70px;
 }
 
 #cover p {
-    margin: 10px 0 0;
-    text-align: center;
     color: var(--color-key);
-    font-style: italic;
+    
+    margin: 40px 0 0;
     font-size: 20px;
 }
 
-#cover p a {
-    color: var(--color-key);
-}
+/* Убираем нумерацию на первом слайде */
 
 #cover::after{
     opacity: 0;
