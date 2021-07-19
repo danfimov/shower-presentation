@@ -1,0 +1,161 @@
+/* Text blocks */
+
+.text-body{
+    border: 2px dashed #c7e4ff;
+    padding: 2px;
+}
+
+.text-blue-border{
+    background-color: #f3faff;
+    border: 2px solid #7fc1ff;
+}
+
+.text-violet-border{
+    background-color: #f9f7ff;
+    border: 2px solid #9779ec;
+}
+
+.text-orange-border{
+    background-color: #ffffff;
+    border: 2px solid #ff994f;
+}
+
+.text-pink-border{
+    background-color: #ffffff;
+    border: 2px solid #f36dff;
+}
+
+/* Blocks */
+
+.block-body {
+    min-width: 430px;
+    border: 2px dashed #c7e4ff;
+}
+
+.block-html::before,
+.block-body::before,
+.block-header::before,
+.block-footer::before,
+.block-main::before {
+    color: #7fc1ff;
+}
+
+.block-main,
+.block-header,
+.block-footer {
+    background-color: #f3faff;
+    border: 2px solid #7fc1ff;
+}
+
+.block-nav,
+.block-section,
+.block-article,
+.block-aside {
+    background-color: #f9f7ff;
+    border: 2px solid #9779ec;
+}
+
+.block-nav::before,
+.block-section::before,
+.block-article::before,
+.block-aside::before {
+    color: #9779ec;
+}
+
+.block-h1 {
+    font-size: 18px;
+    background-color: #ffffff;
+    border: 2px solid #ff994f;
+}
+
+.block-h1::before {
+    content: "h1";
+    color: #ff994f;
+}
+
+.block-p {
+    background-color: #ffffff;
+    border: 2px solid #f36dff;
+}
+
+.block-p::before {
+    content: "p";
+    color: #f36dff;
+}
+
+.block-html,
+.block-body,
+.block-main,
+.block-header,
+.block-footer,
+.block-nav,
+.block-section,
+.block-article,
+.block-aside,
+.block-h1,
+.block-p {
+    position: relative;
+    padding: 25px 25px 20px;
+    margin: 0;
+    border-radius: 4px;
+}
+
+.slide-blocks *:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.block-html::before,
+.block-body::before,
+.block-main::before,
+.block-header::before,
+.block-footer::before,
+.block-nav::before,
+.block-section::before,
+.block-article::before,
+.block-aside::before,
+.block-h1::before,
+.block-p::before {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 10px;
+    letter-spacing: 0.04em;
+}
+
+.block-html::before {
+    content: "html";
+}
+
+.block-body::before {
+    content: "body";
+}
+
+.block-main::before {
+    content: "main";
+}
+
+.block-header::before {
+    content: "header";
+}
+
+.block-footer::before {
+    content: "footer";
+}
+
+.block-section::before {
+    content: "section";
+}
+
+.block-article::before {
+    content: "article";
+}
+
+.block-aside::before {
+    content: "aside";
+}
+
+.block-nav::before {
+    content: "nav";
+}

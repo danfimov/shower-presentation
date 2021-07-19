@@ -18,13 +18,68 @@
   <p>Лекция №3</p>
 </section>
 
+<section class="slide slide__small-text narfu">
+    <h2>Базовый шаблон страницы</h2>
+    <pre>
+        <code>&lt;!DOCTYPE html&gt;</code>
+        <code>&lt;html lang="ru"&gt;</code>
+        <code>&lt;head&gt;</code>
+        <code>    &lt;meta charset="utf-8"&gt;</code>
+        <code>    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code>
+        <code>    &lt;title&gt;Сайт начинающего фронтендера&lt;/title&gt;</code>
+        <code>&lt;/head&gt;</code>
+        <code>&lt;body&gt;</code>
+        <code class="comment">&lt;!-- Здесь будет содержимое страницы--&gt;</code>
+        <code>&lt;/body&gt;</code>
+        <code>&lt;/html&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+  <h2>Тег &lt;main&gt;</h2>
+  <pre>
+      <code><mark>&lt;main&gt;</mark>
+     Привет, я основной контент!
+     Нахожусь только на этой странице.
+<mark>&lt;/main&gt;</mark></code></pre>
+<p>Спецификация не допускает использование на одной странице более одного тега <code>&lt;main&gt;</code>, если у них нет специального атрибута <code>hidden</code></p>
+</section>
+
+<section class="slide narfu">
+  <h2>Цветовое оформление прототипа</h2>
+  <div class="block-html">
+      <div class="block-body">
+        <div class="block-main">
+            Всем привет! Добро пожаловать на мой первый сайт. Ещё недавно я понятия не имел, кто такой верстальщик,
+            а теперь я прочел лекции по HTML и CSS и поставил перед собой цель — стать им.
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Без цветового оформления</h2>
+    Всем привет! Добро пожаловать на мой первый сайт. Ещё недавно я понятия не имел, кто такой верстальщик,
+    а теперь я прочел лекции по HTML и CSS и поставил перед собой цель — стать им.
+</section>
+
+<section class="slide narfu">
+    <h2>Расшифровка цветовой схемы</h2>
+    <ul>
+        <li><span class="text-body">Пунктиром</span> выделен особый тег <code>&lt;body&gt;</code>;</li>
+        <li><span class="text-blue-border">Синей</span> рамкой выделяются поточные теги;</li>
+        <li><span class="text-violet-border">Фиолетовой</span> рамкой выделяются теги для создания смысловых разделов;</li>
+        <li><span class="text-orange-border">Оранжевой</span> рамкой выделяются заголовочные теги;</li>
+        <li><span class="text-pink-border">Розовой</span> рамкой выделяются поточные теги c текстом.</li>
+    </ul>
+</section>
+
 
 <section class="slide" id="see-more">
   <h2 class="shout">
     <a href="index.html">Все презентации<br>на GitHub Pages</a>
   </h2>
 </section>
-
 <footer class="badge">
   <a href="https://github.com/LoveSolaristics/shower-presentation.git">
     <svg width="81" height="79" viewBox="0 0 81 79" aria-hidden="true">
@@ -33,10 +88,7 @@
     Репозиторий<br>на&nbsp;GitHub
   </a>
 </footer>
-
-
 <div class="progress"></div>
-
 <script src="node_modules/@shower/core/dist/shower.js"></script>
 </body>
 </html>
