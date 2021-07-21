@@ -4,6 +4,7 @@
     <title>Структура HTML-документа</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#007BFF">
     <link rel="stylesheet" href="node_modules/@shower/material/styles/styles.css">
     <link rel="stylesheet" href="styles/all_styles.css">
     <link rel="shortcut icon" type="image/png" href="pictures/general/narfu_icon.png">
@@ -61,7 +62,8 @@
 
 <section class="slide">
     <figure class="cover">
-        <img id="client-server_communication" src="pictures/2/client-server_communication.svg" alt="Способы коммуникации">
+        <img id="client-server_communication" src="pictures/2/client-server_communication.svg"
+             alt="Способы коммуникации">
     </figure>
     <style>
         #client-server_communication {
@@ -301,8 +303,9 @@
 <section class="slide narfu">
     <h2>Тег &lt;html&gt;</h2>
     <p>Это тег указывает, что этот документ в формате HTML. Все остальные теги будут лежать внутри него. </p>
-    <p>    Также в нем можно указать атрибут <code>lang</code>. С его помощью  можно указать основной язык страницы. </p>
-    <p>    Кроме того атрибут <code>lang</code> позволяет браузеру понять, отличается ли язык страницы от языка вашей системы.</p>
+    <p> Также в нем можно указать атрибут <code>lang</code>. С его помощью можно указать основной язык страницы. </p>
+    <p> Кроме того атрибут <code>lang</code> позволяет браузеру понять, отличается ли язык страницы от языка вашей
+        системы.</p>
 </section>
 
 <section class="slide narfu">
@@ -326,10 +329,10 @@
 
 <section class="slide">
     <h2 class="shout">
-        <span id="link-head-github"><a href="https://html-head.ru/" >Список</a> того, что вы можете указать в &lt;head&gt;</span>
+        <span id="link-head-github"><a href="https://html-head.ru/">Список</a> того, что вы можете указать в &lt;head&gt;</span>
     </h2>
     <style>
-        #link-head-github{
+        #link-head-github {
             font-size: smaller;
         }
     </style>
@@ -337,8 +340,10 @@
 
 <section class="slide narfu">
     <h2>Тело документа</h2>
-    <p>Тег <code>&lt;body&gt;</code> определяет область содержимого страницы. Его ставят сразу после закрывающего <code>&lt;/head&gt;</code>. </p>
-    <p>Он обертывает содержимое, отображаемое в окне браузера. В нем можно располагать различные элементы: текст и абзацы, кнопки и формы, навигацию по сайту и отдельные блоки контента.</p>
+    <p>Тег <code>&lt;body&gt;</code> определяет область содержимого страницы. Его ставят сразу после закрывающего <code>&lt;/head&gt;</code>.
+    </p>
+    <p>Он обертывает содержимое, отображаемое в окне браузера. В нем можно располагать различные элементы: текст и
+        абзацы, кнопки и формы, навигацию по сайту и отдельные блоки контента.</p>
 </section>
 
 <section class="slide narfu">
@@ -359,13 +364,17 @@
         <li value="+"> В тексте внутри комментария не используйте два дефиса подряд;</li>
         <li value="+">Нельзя вкладывать один комментарий в другой;</li>
         <li value="+">Комментарии не работают внутри тега <code>&lt;title&gt;</code></li>
-        <li value="+">Чтобы в большинстве редакторов быстро закомментировать или раскомментировать строку можно нажать <span class="hot-keys__element">Ctrl</span> + <span class="hot-keys__element">/</span> или <span class="hot-keys__element">Cmd</span> + <span class="hot-keys__element">/</span></li>
+        <li value="+">Чтобы в большинстве редакторов быстро закомментировать или раскомментировать строку можно нажать
+            <span class="hot-keys__element">Ctrl</span> + <span class="hot-keys__element">/</span> или <span
+                    class="hot-keys__element">Cmd</span> + <span class="hot-keys__element">/</span></li>
     </ol>
 </section>
 
 <section class="slide narfu">
     <h2>В работе</h2>
-    <p>Комментарии часто используют, чтобы пометить начало какого-то крупного куска кода, пояснить его назначение. Поскольку комментарии внешне отличаются от остального кода — выделены серым цветом — то иногда гораздо удобнее просканировать комментарии, чем вчитываться в сам код.</p>
+    <p>Комментарии часто используют, чтобы пометить начало какого-то крупного куска кода, пояснить его назначение.
+        Поскольку комментарии внешне отличаются от остального кода — выделены серым цветом — то иногда гораздо удобнее
+        просканировать комментарии, чем вчитываться в сам код.</p>
 </section>
 
 
@@ -385,8 +394,12 @@
     <h2>В работе</h2>
     <ol>
         <li value="+">Читая чужой код, важно обращать внимание на комментарии.</li>
-        <li value="+">Комментарии делятся на <b>строчные</b>: когда разработчик просто написал небольшое сообщение — и <b>блоковые</b>: когда выделяется целый объект.</li>
-        <li value="+">Комментарии видны в браузере в инструментах разработчика, поэтому в них стоит оставить только документацию, которая поможет работе с кодом.</li>
+        <li value="+">Комментарии делятся на <b>строчные</b>: когда разработчик просто написал небольшое сообщение — и
+            <b>блоковые</b>: когда выделяется целый объект.
+        </li>
+        <li value="+">Комментарии видны в браузере в инструментах разработчика, поэтому в них стоит оставить только
+            документацию, которая поможет работе с кодом.
+        </li>
     </ol>
 </section>
 
