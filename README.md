@@ -6,7 +6,7 @@
 
 ## Содержание
 
-1. Основы web-технологий;
+1. [Основы web-технологий](https://lovesolaristics.github.io/shower-presentation/1.html);
 2. [Структура HTML-документа](https://lovesolaristics.github.io/shower-presentation/2.html);
 
 ## Локальный запуск

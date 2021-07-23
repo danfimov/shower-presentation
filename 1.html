@@ -22,6 +22,24 @@
 
             margin: 20px auto;
         }
+
+        #client-server{
+            padding: 0 0 40px;
+        }
+
+        #https-image{
+            height: 80%;
+        }
+
+        #https-image img{
+            height: 100%;
+        }
+
+        .icon_browser{
+            margin: 50px calc((100% - 200px) / 2);
+            width: 200px;
+            height: 200px;
+        }
     </style>
 </head>
 <body class="shower list">
@@ -188,9 +206,9 @@
 
 <section class="slide narfu">
     <h2>Всегда абсолютный</h2>
-    <p>Каждый раз, когда пользователь следует по ссылке с относительным URL-адресом, он (адрес) будет расширен до
-        абсолютного, где все детали, начиная от протокола и порта, будут сопоставлены с ресурсом, который используется в
-        каждом конкретном случае.</p>
+    <p>Каждый раз, когда пользователь следует по ссылке с <i>относительным</i> URL-адресом, он (адрес) будет расширен до
+        <i>абсолютного</i>, где все детали, начиная от протокола и порта, будут сопоставлены с ресурсом, который
+        используется в каждом конкретном случае.</p>
 </section>
 
 <section class="slide narfu">
@@ -201,6 +219,153 @@
         <li>Они извлекаются браузером чуть быстрее.</li>
     </ul>
 </section>
+
+<section class="slide narfu">
+    <h2>Клиент-серверная архитектура</h2>
+    <p><b>Клиент</b> – пользователь сервиса, а <b>сервер</b> – компьютер, который обслуживает пользователей и/или другие компьютеры.</p>
+    <p>Подобная технология, когда сетевая нагрузка распределена между серверами и клиентами называется <b>клиент-серверной архитектурой</b>.</p>
+</section>
+
+<section class="slide">
+    <img src="pictures/1/client-server.svg" alt="Клиент-серверная архитектура" class="cover h" id="client-server">
+</section>
+
+<section class="slide narfu">
+    <h2>HTTP</h2>
+    <p><b>HTTP</b> (HyperText Transfer Protocol) дословно переводится как протокол передачи гипертекста.</p>
+    <p>Протокол устанавливает набор правил, которые определяют <i>единый способ обмена данными</i> между различными программами и способы обработки ошибок.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>HTTPS</h2>
+    <p><b>HTTPS</b> (HyperText Transfer Protocol Secure) – дополнение к HTTP, которое помогает избежать перехвата данных, с помощью шифрования.</p>
+    <p>HTTPS обеспечивает безопасное соединение между браузером пользователя и веб-сервером.</p>
+</section>
+
+<section class="slide">
+    <figure id="https-image">
+        <img src="pictures/1/https.png" alt="">
+        <figcaption>Google использует HTTPS</figcaption>
+    </figure>
+</section>
+
+<section class="slide narfu">
+    <h2>Браузеры</h2>
+    <div class="browser-view">
+        <p><b>Браузер</b> – это программное обеспечение для доступа к WWW. </p>
+        <p>Он нужен для того, чтобы посылать запросы, отображать данные, отправленные веб-серверами, а также взаимодействовать с содержимым веб-страниц.</p>
+    </div>
+</section>
+
+<section class="slide white">
+    <img src="pictures/1/stat.png" alt="" class="cover">
+</section>
+
+<section class="slide narfu">
+    <h2>Google Chrome</h2>
+    <div class="columns two">
+        <div>
+            <img src="pictures/1/chrome.png" alt="" class="icon_browser">
+        </div>
+        <div>
+            <p>Разработан на движке <b>Blink</b>. </p>
+            <p>Подавляющее большинство пользователей сидят в интернете именно через него, причем, это касается любых устройств.</p>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Safari</h2>
+    <div class="columns two">
+        <div>
+            <img src="pictures/1/safari.png" alt="" class="icon_browser">
+        </div>
+        <div>
+            <p>Разработан на движке <b>WebKit</b>. </p>
+            <p>Он является браузером по-умолчанию на устройствах компании Apple.</p>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Mozilla Firefox</h2>
+    <div class="columns two">
+        <div>
+            <img src="pictures/1/firefox.png" alt="" class="icon_browser">
+        </div>
+        <div>
+            <p>Разработан на движке <b>Gecko</b>. </p>
+            <p>По заверениям некоторых программистов имеет самые удобные инструменты для разработчиков.</p>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>IE и Edge</h2>
+    <div class="columns two">
+        <div>
+            <img src="pictures/1/ie.png" alt="" class="icon_browser">
+        </div>
+        <div>
+            <img src="pictures/1/edge.png" alt="" class="icon_browser">
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Samsung Internet и Opera</h2>
+    <div class="columns two">
+        <div>
+            <img src="pictures/1/samsung.png" alt="" class="icon_browser">
+        </div>
+        <div>
+            <img src="pictures/1/opera.png" alt="" class="icon_browser">
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>US Browser и WeChat</h2>
+    <div class="columns two">
+        <div>
+            <img src="pictures/1/UC_Browser_logo.png" alt="" class="icon_browser">
+        </div>
+        <div>
+            <img src="pictures/1/wechat.jpeg" alt="" class="icon_browser">
+        </div>
+    </div>
+</section>
+
+<section class="slide">
+    <img src="pictures/1/map.jpg" alt="" class="cover h">
+</section>
+
+<section class="slide">
+    <img src="pictures/1/nlp.jpeg" alt="" class="cover w">
+</section>
+
+<section class="slide">
+    <img src="pictures/1/robot-human.png" alt="" class="cover h">
+</section>
+
+<section class="slide">
+    <img src="pictures/1/nutella.jpeg" alt="" class="cover h">
+</section>
+
+<section class="slide">
+    <img src="pictures/1/ironov.jpeg" alt="" class="cover h">
+</section>
+
+<section class="slide">
+    <img src="pictures/1/wix-addi.jpeg" alt="" class="cover w">
+</section>
+
+<section class="slide">
+    <img src="pictures/1/copilot.png" alt="" class="cover w">
+</section>
+
+
+<!-- Footer for presentation -->
 
 <section class="slide" id="see-more">
     <h2 class="shout">
