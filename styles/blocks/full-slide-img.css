@@ -1,0 +1,9 @@
+/* Для изображений, которые нужно растянуть на весь слайд и подписать */
+
+.full-slide-img img {
+    width: 100%;
+}
+
+.full-slide-img figcaption {
+    text-align: center;
+}

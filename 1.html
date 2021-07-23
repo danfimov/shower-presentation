@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Основы web-технологий</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#007BFF">
+    <link rel="stylesheet" href="shower/themes/material/styles/styles.css">
+    <link rel="stylesheet" href="styles/all_styles.css">
+    <link rel="shortcut icon" type="image/png" href="pictures/general/narfu_icon.png">
+    <style>
+        .shadow-text {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .none-text {
+            opacity: 0;
+        }
+
+        #site_picture {
+            width: 100%;
+
+            margin: 20px auto;
+        }
+
+        #client-server{
+            padding: 0 0 40px;
+        }
+
+        #https-image{
+            height: 80%;
+        }
+
+        #https-image img{
+            height: 100%;
+        }
+
+        .icon_browser{
+            margin: 50px calc((100% - 200px) / 2);
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body class="shower list">
+<header class="caption">
+    <h1>Основы web-технологий</h1>
+    <p><a href="index.html">Web-технологии</a></p>
+</header>
+<section class="slide narfu_official" id="cover">
+    <h2>Основы <br>web-технологий</h2>
+    <p>Лекция №1</p>
+</section>
+
+<section class="slide">
+    <h2 class="shadow-text">World Wide Web</h2>
+    <div class="browser-view next">
+        <p><strong>World Wide Web</strong> (Всемирная паутина) – это коллекция информационных ресурсов, разбросанных по
+            всему миру, которые связаны друг с другом с помощью ссылок.</p>
+    </div>
+    <img src="pictures/1/WWW.svg" alt="Всемирная паутина" class="cover h">
+</section>
+
+<section class="slide">
+    <div class="browser-view next">
+        <p>Ссылки превращают обычный текст в новую сущность – <strong>гипертекст</strong>. </p>
+        <p>Единица гипертекстовый данных в WWW называется <br><strong>веб-страницей</strong>. </p>
+    </div>
+    <img src="pictures/1/web-pages.svg" alt="Связь веб-страниц" class="cover">
+</section>
+
+<section class="slide narfu">
+    <h2>Сайты</h2>
+    <div class="browser-view">
+        <p><b>Сайт</b> – группа страниц, которые связаны общим содержанием, дизайном, перекрестными ссылками (ссылками
+            друг на друга).</p>
+    </div>
+    <img src="pictures/1/site.png" alt="Адресная строка" id="site_picture" class="next">
+</section>
+
+<section class="slide narfu">
+    <h2>Internet vs WWW</h2>
+    <img src="pictures/1/internet.svg" alt="Internet" class="full-slide-img">
+</section>
+
+<section class="slide narfu">
+    <h2>Немного истории</h2>
+    <div class="columns two">
+        <div>
+            <img src="pictures/1/Tim.jpeg" alt="Тим Бернс-Ли" class="full-slide-img">
+        </div>
+        <div>
+            <p>В <b>1989</b> году, работая в CERN над внутренней сетью организации, Тим Бернерс-Ли предложил глобальный
+                гипертекстовый проект, теперь известный как WWW. </p>
+        </div>
+    </div>
+</section>
+
+<section class="slide">
+    <video src="pictures/1/code.mp4" autoplay loop muted class="place right"></video>
+</section>
+
+<section class="slide narfu">
+    <h2>Немного истории</h2>
+    <div class="columns two">
+        <div>
+            <img src="pictures/1/NCSAMosaic.jpeg" alt="Mosaic" class="full-slide-img">
+        </div>
+        <div>
+            <p>Первые несколько лет веб-страниц были чисто текстовыми, до тех пор, пока в <b>1993</b> году был
+                представлен первый графический браузер NCSA Mosaic.</p>
+        </div>
+    </div>
+</section>
+
+<section class="slide">
+    <h2 class="shadow-text">Web 1.0</h2>
+    <div class="browser-view">
+        <p>Первоначально Интернет позволял пользователям лишь осуществлять поиск и читать информацию. Этот период
+            времени условно называется <b>Web 1.0 (1990-2000)</b>.</p>
+    </div>
+    <img src="pictures/1/WWW.svg" alt="Всемирная паутина" class="cover h">
+</section>
+
+<section class="slide">
+    <h2 class="shadow-text">Web 2.0</h2>
+    <div class="browser-view">
+        <p>Вскоре люди смогли взаимодействовать друг с другом и поделиться своим контентом. Этот период неофициально
+            называется <b>Web 2.0 (2000-2010)</b>.</p>
+    </div>
+    <img src="pictures/1/WWW.svg" alt="Всемирная паутина" class="cover h">
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/1/web3.jpeg" alt="" class="cover">
+</section>
+
+<section class="slide narfu">
+    <h2>URL</h2>
+    <p><b>URL</b> (Uniform Resource Locator) – стандарт, который определяет, как должны выглядеть адреса всех
+        веб-страниц.</p>
+    <p>Все документы в Интернете имеют личный адрес. Например, URL сайта университета выглядит так: <code>https://narfu.ru</code>
+    </p>
+</section>
+
+<section class="slide narfu">
+    <h2>Список разрешенных символов</h2>
+    <ul>
+        <li>Символы английского алфавита;</li>
+        <li>Кириллические символы;</li>
+        <li>Цифры;</li>
+        <li>Зарезервированные символы со специальными значениями <code>!#$&'()*+,/:;=?@[]</code>;</li>
+        <li>Незарезервированные символы: <code>_.~</code>.</li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <h2>Базовая структура URL</h2>
+    <img src="pictures/1/url.png" alt="" class="cover w">
+</section>
+
+
+<section class="slide narfu">
+    <h2>Базовая структура URL</h2>
+    <img src="pictures/1/url_protocol.png" alt="" class="cover w">
+</section>
+
+<section class="slide narfu">
+    <h2>Базовая структура URL</h2>
+    <img src="pictures/1/url_domain.png" alt="" class="cover w">
+</section>
+
+<section class="slide narfu">
+    <h2>Базовая структура URL</h2>
+    <img src="pictures/1/url_port.png" alt="" class="cover w">
+</section>
+
+<section class="slide narfu">
+    <h2>Базовая структура URL</h2>
+    <img src="pictures/1/url_path.png" alt="" class="cover w">
+</section>
+
+<section class="slide narfu">
+    <h2>Базовая структура URL</h2>
+    <img src="pictures/1/url_parameters.png" alt="" class="cover w">
+</section>
+
+<section class="slide narfu">
+    <h2>Базовая структура URL</h2>
+    <img src="pictures/1/url_anchor.png" alt="" class="cover w">
+</section>
+
+<section class="slide narfu">
+    <h2>Простейший URL</h2>
+    <p>Когда нужно просто увидеть определенную страницу в Интернете через браузер, шаблон URL выглядит намного проще:
+        <code>&lt;protocol&gt;://&lt;host&gt;</code></p>
+    <p>Например: <code>https://www.google.com</code></p>
+</section>
+
+<section class="slide narfu">
+    <h2>Абсолютные и относительные URL-адреса</h2>
+    <p><code>https://en.wikipedia.org/wiki/Main_Page</code> – ссылка на главную страницу;</p>
+    <p><code>https://en.wikipedia.org/wiki/Portal:History</code> – ссылка на раздел "История";</p>
+    <p><code>https://en.wikipedia.org/wiki/Portal:Mathematics</code>– ссылка на раздел "Математика";</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Всегда абсолютный</h2>
+    <p>Каждый раз, когда пользователь следует по ссылке с <i>относительным</i> URL-адресом, он (адрес) будет расширен до
+        <i>абсолютного</i>, где все детали, начиная от протокола и порта, будут сопоставлены с ресурсом, который
+        используется в каждом конкретном случае.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Преимущества использования относительных путей</h2>
+    <ul>
+        <li>Они короткие;</li>
+        <li>Можно легко переместить сайт на другой хост, не ломая ссылки на внутренние страницы;</li>
+        <li>Они извлекаются браузером чуть быстрее.</li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <h2>Клиент-серверная архитектура</h2>
+    <p><b>Клиент</b> – пользователь сервиса, а <b>сервер</b> – компьютер, который обслуживает пользователей и/или другие компьютеры.</p>
+    <p>Подобная технология, когда сетевая нагрузка распределена между серверами и клиентами называется <b>клиент-серверной архитектурой</b>.</p>
+</section>
+
+<section class="slide">
+    <img src="pictures/1/client-server.svg" alt="Клиент-серверная архитектура" class="cover h" id="client-server">
+</section>
+
+<section class="slide narfu">
+    <h2>HTTP</h2>
+    <p><b>HTTP</b> (HyperText Transfer Protocol) дословно переводится как протокол передачи гипертекста.</p>
+    <p>Протокол устанавливает набор правил, которые определяют <i>единый способ обмена данными</i> между различными программами и способы обработки ошибок.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>HTTPS</h2>
+    <p><b>HTTPS</b> (HyperText Transfer Protocol Secure) – дополнение к HTTP, которое помогает избежать перехвата данных, с помощью шифрования.</p>
+    <p>HTTPS обеспечивает безопасное соединение между браузером пользователя и веб-сервером.</p>
+</section>
+
+<section class="slide">
+    <figure id="https-image">
+        <img src="pictures/1/https.png" alt="">
+        <figcaption>Google использует HTTPS</figcaption>
+    </figure>
+</section>
+
+<section class="slide narfu">
+    <h2>Браузеры</h2>
+    <div class="browser-view">
+        <p><b>Браузер</b> – это программное обеспечение для доступа к WWW. </p>
+        <p>Он нужен для того, чтобы посылать запросы, отображать данные, отправленные веб-серверами, а также взаимодействовать с содержимым веб-страниц.</p>
+    </div>
+</section>
+
+<section class="slide white">
+    <img src="pictures/1/stat.png" alt="" class="cover">
+</section>
+
+<section class="slide narfu">
+    <h2>Google Chrome</h2>
+    <div class="columns two">
+        <div>
+            <img src="pictures/1/chrome.png" alt="" class="icon_browser">
+        </div>
+        <div>
+            <p>Разработан на движке <b>Blink</b>. </p>
+            <p>Подавляющее большинство пользователей сидят в интернете именно через него, причем, это касается любых устройств.</p>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Safari</h2>
+    <div class="columns two">
+        <div>
+            <img src="pictures/1/safari.png" alt="" class="icon_browser">
+        </div>
+        <div>
+            <p>Разработан на движке <b>WebKit</b>. </p>
+            <p>Он является браузером по-умолчанию на устройствах компании Apple.</p>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Mozilla Firefox</h2>
+    <div class="columns two">
+        <div>
+            <img src="pictures/1/firefox.png" alt="" class="icon_browser">
+        </div>
+        <div>
+            <p>Разработан на движке <b>Gecko</b>. </p>
+            <p>По заверениям некоторых программистов имеет самые удобные инструменты для разработчиков.</p>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>IE и Edge</h2>
+    <div class="columns two">
+        <div>
+            <img src="pictures/1/ie.png" alt="" class="icon_browser">
+        </div>
+        <div>
+            <img src="pictures/1/edge.png" alt="" class="icon_browser">
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Samsung Internet и Opera</h2>
+    <div class="columns two">
+        <div>
+            <img src="pictures/1/samsung.png" alt="" class="icon_browser">
+        </div>
+        <div>
+            <img src="pictures/1/opera.png" alt="" class="icon_browser">
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>US Browser и WeChat</h2>
+    <div class="columns two">
+        <div>
+            <img src="pictures/1/UC_Browser_logo.png" alt="" class="icon_browser">
+        </div>
+        <div>
+            <img src="pictures/1/wechat.jpeg" alt="" class="icon_browser">
+        </div>
+    </div>
+</section>
+
+<section class="slide">
+    <img src="pictures/1/map.jpg" alt="" class="cover h">
+</section>
+
+<section class="slide">
+    <img src="pictures/1/nlp.jpeg" alt="" class="cover w">
+</section>
+
+<section class="slide">
+    <img src="pictures/1/robot-human.png" alt="" class="cover h">
+</section>
+
+<section class="slide">
+    <img src="pictures/1/nutella.jpeg" alt="" class="cover h">
+</section>
+
+<section class="slide">
+    <img src="pictures/1/ironov.jpeg" alt="" class="cover h">
+</section>
+
+<section class="slide">
+    <img src="pictures/1/wix-addi.jpeg" alt="" class="cover w">
+</section>
+
+<section class="slide">
+    <img src="pictures/1/copilot.png" alt="" class="cover w">
+</section>
+
+
+<!-- Footer for presentation -->
+
+<section class="slide" id="see-more">
+    <h2 class="shout">
+        <a href="index.html">Все презентации<br>на GitHub Pages</a>
+    </h2>
+</section>
+<footer class="badge">
+    <a href="https://github.com/LoveSolaristics/shower-presentation.git">
+        <svg width="81" height="79" viewBox="0 0 81 79" aria-hidden="true">
+            <path d="M40.5 0a40.5 40.5 0 0 0-12.8 78.93c2 .37 2.76-.88 2.76-2s0-3.51-.05-6.89c-11.27 2.45-13.64-5.43-13.64-5.43-1.84-4.68-4.5-5.92-4.5-5.92-3.68-2.51.28-2.46.28-2.46 4.06.29 6.2 4.17 6.2 4.17 3.61 6.19 9.48 4.4 11.79 3.37a8.65 8.65 0 0 1 2.57-5.41c-9-1-18.45-4.5-18.45-20a15.65 15.65 0 0 1 4.17-10.87 14.57 14.57 0 0 1 .4-10.72s3.4-1.09 11.14 4.15a38.39 38.39 0 0 1 20.28 0c7.73-5.24 11.13-4.15 11.13-4.15a14.55 14.55 0 0 1 .4 10.72 15.63 15.63 0 0 1 4.16 10.87c0 15.56-9.47 19-18.49 20 1.45 1.25 2.75 3.72 2.75 7.5v11.11c0 1.08.73 2.34 2.78 1.95A40.51 40.51 0 0 0 40.5 0z"></path>
+        </svg>
+        Репозиторий<br>на&nbsp;GitHub
+    </a>
+</footer>
+<div class="progress"></div>
+<script src="shower/shower.js"></script>
+</body>
+</html>

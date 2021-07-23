@@ -1,0 +1,31 @@
+/* Цвета */
+
+:root{
+    --blue: #007BFF;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #0e73ee;
+    --secondary: grey;
+    --success: #4dbb5f;
+    --info: #17a2b8;
+    --warning: #ffcd73;
+    --danger: #ff4b00;
+    --light: #f8f9fa;
+    --dark: #000;
+}
+
+
+.shower {
+    --slide-ratio: calc(16 / 9);
+    --color-key: var(--blue);
+}

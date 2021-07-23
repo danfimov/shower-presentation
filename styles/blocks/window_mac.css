@@ -1,0 +1,25 @@
+/*  MacOS Window  */
+
+.browser-view {
+    border-color: #d8d7e4;
+    position: relative;
+    padding: 44px 32px 24px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 8px;
+
+    background-color: white;
+}
+
+.browser-view::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    background-image: url(https://assets.htmlacademy.ru/img/icons/icon-browser-controls.svg);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-color: #d8d7e4;
+}

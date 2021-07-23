@@ -4,107 +4,20 @@
     <title>Структура HTML-документа</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#007BFF">
     <link rel="stylesheet" href="shower/themes/material/styles/styles.css">
-    <link rel="shortcut icon" type="image/png" href="pictures/general/narfu_icon.png" />
-    <style>
-        .shower {
-            --slide-ratio: calc(16 / 9);
-            --color-key: #007BFF;
-        }
-
-        /* Фон университета */
-
-        .narfu_official {
-            background-image: url("pictures/general/background.png");
-            background-size: cover;
-        }
-
-        .narfu {
-            background-image: url("pictures/general/background_slides.jpg");
-            background-size: cover;
-        }
-
-        /* Для изображений, которые нужно растянуть на весь слайд и подписать */
-        .full-slide-img img {
-            width: 100%;
-        }
-
-        .full-slide-img figcaption {
-            text-align: center;
-        }
-
-        /*  Горячие клавиши  */
-        .hot-keys {
-            margin-right: 40px;
-        }
-
-        .hot-keys__element {
-            background-color: var(--color-key);
-            padding: 5px 10px;
-            border-radius: 5px;
-            color: white;
-
-            box-shadow: 0 3px 0 1px var(--color-light);
-        }
-        /*  MacOS Window  */
-        .browser-view {
-            border-color: #d8d7e4;
-            position: relative;
-            padding: 44px 32px 24px;
-            border-width: 2px;
-            border-style: solid;
-            border-radius: 8px;
-
-            background-color: white;
-        }
-
-        .browser-view::before{
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 24px;
-            background-image: url(https://assets.htmlacademy.ru/img/icons/icon-browser-controls.svg);
-            background-repeat: no-repeat;
-            background-position: 10px center;
-            background-color: #d8d7e4;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/all_styles.css">
+    <link rel="shortcut icon" type="image/png" href="pictures/general/narfu_icon.png">
 </head>
 <body class="shower list">
 <header class="caption">
     <h1>Структура HTML-документа</h1>
-    <p>Web-технологии</p>
+    <p><a href="index.html">Web-технологии</a></p>
 </header>
 
 <section class="slide narfu_official" id="cover">
     <h2>Структура <br> HTML-документа</h2>
     <p>Лекция №2</p>
-    <style>
-        #cover h2 {
-            margin: 30px 0 0;
-            color: var(--color-key);
-            text-align: center;
-            font-size: 70px;
-        }
-
-        #cover p {
-            margin: 10px 0 0;
-            text-align: center;
-            color: var(--color-key);
-            font-style: italic;
-            font-size: 20px;
-        }
-
-        #cover p a {
-            color: var(--color-key);
-        }
-
-        #cover::after{
-            opacity: 0;
-        }
-    </style>
 </section>
 
 <section class="slide narfu">
@@ -149,7 +62,8 @@
 
 <section class="slide">
     <figure class="cover">
-        <img id="client-server_communication" src="pictures/2/client-server_communication.svg" alt="Способы коммуникации">
+        <img id="client-server_communication" src="pictures/2/client-server_communication.svg"
+             alt="Способы коммуникации">
     </figure>
     <style>
         #client-server_communication {
@@ -291,7 +205,7 @@
     </p>
 </section>
 
-<section class="slide narfu page_structure">
+<section class="slide narfu slide__small-text">
     <h2>Структура HTML-документа</h2>
     <pre>
         <code>&lt;!DOCTYPE html&gt;                            </code>
@@ -306,11 +220,6 @@
         <code>  &lt;/body&gt;                                  </code>
         <code>&lt;/html&gt;                                    </code>
     </pre>
-    <style>
-        .page_structure{
-            font-size: 16px;
-        }
-    </style>
 </section>
 
 <section class="slide white">
@@ -319,7 +228,7 @@
     </figure>
 </section>
 
-<section class="slide narfu page_structure">
+<section class="slide narfu slide__small-text">
     <h2>Структура HTML-документа</h2>
     <pre>
         <code>&lt;!DOCTYPE html&gt;                            </code>
@@ -336,7 +245,7 @@
     </pre>
 </section>
 
-<section class="slide narfu page_structure">
+<section class="slide narfu slide__small-text">
     <h2>Структура HTML-документа</h2>
     <pre>
         <code>&lt;!DOCTYPE html&gt;                            </code>
@@ -353,7 +262,7 @@
     </pre>
 </section>
 
-<section class="slide narfu page_structure">
+<section class="slide narfu slide__small-text">
     <h2>Структура HTML-документа</h2>
     <pre>
         <code>&lt;!DOCTYPE html&gt;                            </code>
@@ -394,8 +303,9 @@
 <section class="slide narfu">
     <h2>Тег &lt;html&gt;</h2>
     <p>Это тег указывает, что этот документ в формате HTML. Все остальные теги будут лежать внутри него. </p>
-    <p>    Также в нем можно указать атрибут <code>lang</code>. С его помощью  можно указать основной язык страницы. </p>
-    <p>    Кроме того атрибут <code>lang</code> позволяет браузеру понять, отличается ли язык страницы от языка вашей системы.</p>
+    <p> Также в нем можно указать атрибут <code>lang</code>. С его помощью можно указать основной язык страницы. </p>
+    <p> Кроме того атрибут <code>lang</code> позволяет браузеру понять, отличается ли язык страницы от языка вашей
+        системы.</p>
 </section>
 
 <section class="slide narfu">
@@ -419,10 +329,10 @@
 
 <section class="slide">
     <h2 class="shout">
-        <span id="link-head-github"><a href="https://html-head.ru/" >Список</a> того, что вы можете указать в &lt;head&gt;</span>
+        <span id="link-head-github"><a href="https://html-head.ru/">Список</a> того, что вы можете указать в &lt;head&gt;</span>
     </h2>
     <style>
-        #link-head-github{
+        #link-head-github {
             font-size: smaller;
         }
     </style>
@@ -430,8 +340,10 @@
 
 <section class="slide narfu">
     <h2>Тело документа</h2>
-    <p>Тег <code>&lt;body&gt;</code> определяет область содержимого страницы. Его ставят сразу после закрывающего <code>&lt;/head&gt;</code>. </p>
-    <p>Он обертывает содержимое, отображаемое в окне браузера. В нем можно располагать различные элементы: текст и абзацы, кнопки и формы, навигацию по сайту и отдельные блоки контента.</p>
+    <p>Тег <code>&lt;body&gt;</code> определяет область содержимого страницы. Его ставят сразу после закрывающего <code>&lt;/head&gt;</code>.
+    </p>
+    <p>Он обертывает содержимое, отображаемое в окне браузера. В нем можно располагать различные элементы: текст и
+        абзацы, кнопки и формы, навигацию по сайту и отдельные блоки контента.</p>
 </section>
 
 <section class="slide narfu">
@@ -452,13 +364,17 @@
         <li value="+"> В тексте внутри комментария не используйте два дефиса подряд;</li>
         <li value="+">Нельзя вкладывать один комментарий в другой;</li>
         <li value="+">Комментарии не работают внутри тега <code>&lt;title&gt;</code></li>
-        <li value="+">Чтобы в большинстве редакторов быстро закомментировать или раскомментировать строку можно нажать <span class="hot-keys__element">Ctrl</span> + <span class="hot-keys__element">/</span> или <span class="hot-keys__element">Cmd</span> + <span class="hot-keys__element">/</span></li>
+        <li value="+">Чтобы в большинстве редакторов быстро закомментировать или раскомментировать строку можно нажать
+            <span class="hot-keys__element">Ctrl</span> + <span class="hot-keys__element">/</span> или <span
+                    class="hot-keys__element">Cmd</span> + <span class="hot-keys__element">/</span></li>
     </ol>
 </section>
 
 <section class="slide narfu">
     <h2>В работе</h2>
-    <p>Комментарии часто используют, чтобы пометить начало какого-то крупного куска кода, пояснить его назначение. Поскольку комментарии внешне отличаются от остального кода — выделены серым цветом — то иногда гораздо удобнее просканировать комментарии, чем вчитываться в сам код.</p>
+    <p>Комментарии часто используют, чтобы пометить начало какого-то крупного куска кода, пояснить его назначение.
+        Поскольку комментарии внешне отличаются от остального кода — выделены серым цветом — то иногда гораздо удобнее
+        просканировать комментарии, чем вчитываться в сам код.</p>
 </section>
 
 
@@ -478,8 +394,12 @@
     <h2>В работе</h2>
     <ol>
         <li value="+">Читая чужой код, важно обращать внимание на комментарии.</li>
-        <li value="+">Комментарии делятся на <b>строчные</b>: когда разработчик просто написал небольшое сообщение — и <b>блоковые</b>: когда выделяется целый объект.</li>
-        <li value="+">Комментарии видны в браузере в инструментах разработчика, поэтому в них стоит оставить только документацию, которая поможет работе с кодом.</li>
+        <li value="+">Комментарии делятся на <b>строчные</b>: когда разработчик просто написал небольшое сообщение — и
+            <b>блоковые</b>: когда выделяется целый объект.
+        </li>
+        <li value="+">Комментарии видны в браузере в инструментах разработчика, поэтому в них стоит оставить только
+            документацию, которая поможет работе с кодом.
+        </li>
     </ol>
 </section>
 
@@ -489,18 +409,8 @@
 
 <section class="slide" id="see-more">
     <h2 class="shout">
-        <a href="https://github.com/LoveSolaristics/shower-presentation.git">Все презентации<br>на GitHub</a>
+        <a href="index.html">Все презентации<br>на GitHub Pages</a>
     </h2>
-    <style>
-        #see-more h2 {
-            font-size: 100px
-        }
-
-        #see-more svg {
-            width: 0.72em;
-            height: 0.72em;
-        }
-    </style>
 </section>
 
 <footer class="badge">
