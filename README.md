@@ -6,8 +6,12 @@
 
 ## Содержание
 
-1. [Основы web-технологий](https://lovesolaristics.github.io/shower-presentation/1.html);
-2. [Структура HTML-документа](https://lovesolaristics.github.io/shower-presentation/2.html);
+- [Основы web-технологий](https://lovesolaristics.github.io/shower-presentation/1.html);
+- [Структура HTML-документа](https://lovesolaristics.github.io/shower-presentation/2.html);
+- [Базовые теги для разметки документа](https://lovesolaristics.github.io/shower-presentation/3.html);
+- [Разметка текста](https://lovesolaristics.github.io/shower-presentation/4.html);
+- [Ссылки и медиа-элементы](https://lovesolaristics.github.io/shower-presentation/5.html);
+- [Таблицы и устаревшие теги](https://lovesolaristics.github.io/shower-presentation/6.html);
 
 ## Локальный запуск
 
