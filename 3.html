@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="shower/themes/material/styles/styles.css">
     <link rel="stylesheet" href="styles/all_styles.css">
     <link rel="shortcut icon" type="image/png" href="pictures/general/narfu_icon.png">
+    <style>
+        #footer_example{
+            width: 70%;
+            margin: 0 15%;
+        }
+
+        .slide__small-padding{
+            padding: 10px 100px;
+        }
+    </style>
 </head>
 <body class="shower list">
 <header class="caption">
@@ -77,6 +87,228 @@
     </ul>
 </section>
 
+
+<section class="slide narfu slide__small-text">
+    <h2>Шапка и подвал сайта</h2>
+    <pre>
+        <code><mark>&lt;header&gt;</mark></code>
+        <code>    Шапка сайта</code>
+        <code><mark>&lt;/header&gt;</mark></code>
+        <code>&lt;main&gt;</code>
+        <code>    Я основной контент! Нахожусь только на этой странице.</code>
+        <code>&lt;/main&gt;</code>
+        <code><mark>&lt;footer&gt;</mark></code>
+        <code>    Подвал сайта</code>
+        <code><mark>&lt;/footer&gt;</mark></code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Шапка сайта. Тег &lt;header&gt;</h2>
+    <img src="pictures/3/header.png" alt="" class="cover w">
+</section>
+
+<section class="slide narfu">
+    <h2>Подвал сайта. Тег &lt;footer&gt;</h2>
+    <img src="pictures/3/footer.png" alt="" id="footer_example">
+</section>
+
+<section class="slide slide__small-text">
+    <div class="block-html">
+        <div class="block-body">
+            <div class="block-header">
+                Я шапка сайта
+            </div>
+            <div class="block-main">
+                Всем привет! Добро пожаловать на мой первый сайт. Ещё недавно я понятия не имел, кто такой верстальщик,
+                а теперь я прочел лекции по HTML и CSS и поставил перед собой цель — стать им.
+            </div>
+            <div class="block-footer">
+                Я подвал сайта
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Смысловой раздел. Тег &lt;section&gt;</h2>
+    <pre class="next">
+        <code>&lt;section&gt;</code>
+        <code>    Раздел «Приветствие». Вероятно, здесь будет вводный текст</code>
+        <code>&lt;/section&gt;</code>
+    </pre>
+    <pre class="next">
+        <code>&lt;section&gt;</code>
+        <code>    Раздел «Навыки». Что-то про навыки.</code>
+        <code>&lt;/section&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Как различить разделы?</h2>
+    <p><b>Логический раздел</b> можно осмысленно назвать одним словом или словосочетанием: «опыт работы», «дипломы», «мои навыки». </p>
+    <p>Если же в голову приходят названия, которые указывают на его <i>положение на странице</i> («шапка», «подвал», «левая колонка»), либо <i>перечисления</i> («новости и галерея», «фильтры и товары»), в таком случае  <b>раздел структурный</b> и тег <code>&lt;section&gt;</code> для него не подходит.</p>
+</section>
+
+
+<section class="slide slide__small-text slide__small-padding">
+    <div class="block-html">
+        <div class="block-body">
+            <div class="block-header">
+                Я шапка сайта
+            </div>
+            <div class="block-main">
+                <div class="block-section">
+                    Раздел с приветствием
+                </div>
+                <div class="block-section">
+                    Раздел про навыки
+                </div>
+            </div>
+            <div class="block-footer">
+                Я подвал сайта
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Основная навигация. Тег &lt;nav&gt;</h2>
+    <p>Для создания логического раздела с основной навигацией предназначен тег <code>&lt;nav&gt;</code> (сокращение от английского «navigation»). Обычно в <code>&lt;nav&gt;</code> включают ссылки на другие страницы или навигацию по текущей странице. </p>
+    <pre class="next">
+        <code>&lt;nav&gt;</code>
+        <code>  Первый пост, второй пост, архив постов</code>
+        <code>&lt;/nav&gt;</code>
+    </pre>
+</section>
+
+<section class="slide slide__small-text slide__small-padding clear">
+    <div class="block-html">
+        <div class="block-body">
+            <div class="block-header">
+                Шапка сайта.
+            </div>
+            <div class="block-main">
+                <div class="block-nav">
+                    Навигация
+                </div>
+                <div class="block-section">
+                    Раздел с приветствием
+                </div>
+                <div class="block-section">
+                    Раздел про навыки
+                </div>
+            </div>
+            <div class="block-footer">
+                Я подвал сайта
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="slide narfu">
+    <h2>Дополнительное содержимое. Тег &lt;aside&gt;</h2>
+    <p>Тег <code>&lt;aside&gt;</code> включает в себя дополнительное содержание, не связанное напрямую с основным. Такие блоки ещё часто называют «сайдбарами» или боковыми панелями</p>
+    <pre>
+        <code>&lt;aside&gt;</code>
+        <code>  Я скромный блок с курсами валют на сайте про котиков</code>
+        <code>&lt;/aside&gt;</code>
+    </pre>
+</section>
+
+<section class="slide slide__small-text slide__small-padding clear">
+    <div class="block-html">
+        <div class="block-body">
+            <div class="block-header">
+                <div class="block-nav">
+                    На главную
+                </div>
+            </div>
+            <div class="block-main">
+                <div class="block-section">
+                    Основной контент страницы
+                </div>
+                <div class="block-aside">
+                    Здесь могла быть ваша реклама
+                </div>
+            </div>
+            <div class="block-footer">
+                Я подвал сайта
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Заголовки</h2>
+    <p>Для создания основной структуры текста используют заголовки. В HTML существует целое семейство заголовочных тегов: от <code>&lt;h1&gt;</code> до <code>&lt;h6&gt;</code>. </p>
+    <pre>
+        <code>&lt;h1&gt;Дмитрий Качмар "Сборник стихотворений"&lt;/h1&gt;</code>
+        <code>&lt;h2&gt;2013-2014&lt;/h2&gt;</code>
+        <code>&lt;h3&gt;"Осколки"&lt;/h3&gt;</code>
+    </pre>
+</section>
+
+<section class="slide slide__small-text slide__small-padding clear">
+    <div class="block-html">
+        <div class="block-body">
+            <div class="block-header">
+                <h1 class="block-h1">Сайт начинающего верстальщика</h1>
+            </div>
+            <div class="block-main">
+                <div class="block-nav">
+                    Навигация
+                </div>
+                <div class="block-section">
+                    Раздел с приветствием, а может быть и про навыки
+                </div>
+            </div>
+            <div class="block-footer">
+                Я подвал сайта
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Параграф. Тег &lt;p&gt;</h2>
+    <p>Для разметки параграфов предназначен тег <code>&lt;p&gt;</code> (от английского «paragraph»). По умолчанию абзацы начинаются с новой строки и отделяются от остального контента отступами сверху и снизу. </p>
+    <pre>
+        <code>&lt;p&gt;Абзац про себя&lt;/p&gt;</code>
+        <code>&lt;p&gt;Абзац про моего кота&lt;/p&gt;</code>
+        <code>&lt;p&gt;Абзац про мой персональный сайт&lt;/p&gt;</code>
+    </pre>
+</section>
+
+<section class="slide slide__small-text slide__small-padding clear">
+    <div class="block-html">
+        <div class="block-body">
+            <div class="block-main">
+                <div class="block-nav">
+                    Навигация
+                </div>
+                <div class="block-section">
+                    <p class="block-p">
+                        Всем привет! Добро пожаловать на мой первый сайт. Ещё недавно я понятия не имел, кто такой верстальщик, а теперь я прочел лекции по HTML и CSS и поставил перед собой цель — стать им.
+                    </p>
+                    <p class="block-p">
+                        Здесь я буду публиковать различные интересные вещи, которые узнал в процессе обучения.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout">
+        <a href="https://codepen.io/lovesolaristics/pen/jOmVJxg">Codepen с прототипом</a>
+    </h2>
+</section>
+
+
+<!-- Footer of presentation -->
 
 <section class="slide" id="see-more">
     <h2 class="shout">
