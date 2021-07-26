@@ -8,6 +8,48 @@
     <link rel="stylesheet" href="node_modules/@shower/material/styles/styles.css">
     <link rel="stylesheet" href="styles/all_styles.css">
     <link rel="shortcut icon" type="image/png" href="pictures/general/narfu_icon.png">
+    <style>
+        ul .block-p{
+            padding: 15px 15px 15px 30px;
+            margin-bottom: 10px;
+        }
+
+        .browser-view li{
+            padding-left: 30px;
+            min-width: 250px;
+        }
+
+        .browser-view .non-list li{
+            padding-left: 10px;
+            margin-left: 30px;
+        }
+
+        .browser-view ol,
+        .browser-view ul{
+            margin-bottom: 0;
+        }
+
+        .slide .non-list > li::before{
+            content: "";
+        }
+
+        .two-columns{
+            display: grid;
+            grid-template-columns: 1fr auto;
+        }
+
+        dt{
+            color: #6a2cce;
+        }
+
+        #meta{
+            line-height: 1.8em;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-row-gap: 20px;
+        }
+    </style>
 </head>
 <body class="shower list">
 <header class="caption">
@@ -18,6 +60,346 @@
     <h2>Разметка <br>текста</h2>
     <p>Лекция №2.2</p>
 </section>
+
+<!-- Конец титульного слайда  -->
+<!-- Основные слайды -->
+
+<section class="slide narfu">
+    <h2>Виды списков</h2>
+    <div class="columns three">
+        <div>
+            <p><ins>Неупорядоченный</ins></p>
+<!--            <p>Перечень однотипных элементов, порядок которых важен.</p>-->
+            <ul>
+                <li>Элемент</li>
+                <li>Элемент</li>
+                <li>Элемент</li>
+            </ul>
+        </div>
+        <div>
+            <p><ins>Упорядоченный</ins></p>
+<!--            <p>Список элементов, где важен порядок и необходима нумерация.</p>-->
+            <ol>
+                <li>Первый элемент</li>
+                <li>Второй элемент</li>
+                <li>Третий элемент</li>
+            </ol>
+        </div>
+        <div>
+            <p><ins>Список определений</ins></p>
+<!--            <p>Перечень терминов, где в пару каждому из них ставится расшифровка.</p>-->
+            <dl>
+                <dt>Термин</dt>
+                <dd>Определение</dd>
+                <dt>Термин</dt>
+                <dd>Определение</dd>
+            </dl>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Неупорядоченный список</h2>
+    <p>Для его вставки на страницу используется тег <code>&lt;ul&gt;</code> (unordered list). Этот тег является своеобразной обёрткой, указывающей браузеру на начало и конец списка. </p>
+    <p>Сами пункты списка должны верстаться при помощи тега <code>&lt;li&gt;</code>(list item). Таким образом, полностью список верстается с использованием обоих тегов.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Неупорядоченный список</h2>
+    <div class="columns two">
+        <pre>
+            <code>&lt;ul&gt;</code>
+            <code>  &lt;li&gt;Покормить кота&lt;/li&gt;</code>
+            <code>  &lt;li&gt;Продолжать работать&lt;/li&gt;</code>
+            <code>&lt;/ul&gt;</code>
+        </pre>
+
+        <ul class="browser-view" style="padding-left: 40px">
+            <li>Покормить кота</li>
+            <li>Продолжать работать</li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Теги внутри списка</h2>
+    <pre>
+        <code>&lt;ul&gt;</code>
+        <code>&lt;li&gt;Покормить кота&lt;/li&gt;</code>
+        <code>  &lt;li&gt; <span class="comment">&lt;!-- открывающий тег элемента списка --&gt;</span></code>
+        <code>		&lt;p&gt;Продолжать работать&lt;/p&gt;</code>
+        <code>		&lt;p&gt;Или&lt;/p&gt;</code>
+        <code>		&lt;p&gt;Пойти погулять&lt;/p&gt;</code>
+        <code>	&lt;/li&gt; <span class="comment">&lt;!-- закрывающий тег элемента списка --&gt;</span></code>
+        <code>&lt;/ul&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <div class="browser-view">
+        <ul>
+            <li>Покормить кота</li>
+            <li>
+                <p class="block-p">Продолжать работать</p>
+                <p class="block-p">Или</p>
+                <p class="block-p">Пойти погулять</p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+<section class="slide narfu">
+    <h2>Виды маркеров</h2>
+    <p>Атрибут <code>type</code> является устаревшим!</p>
+    <div class="columns two">
+        <pre>
+            <code>&lt;ul type="<mark>   </mark>"&gt;</code>
+            <code>     &lt;li&gt;&lt;/li&gt;</code>
+            <code>     &lt;li&gt;&lt;/li&gt;</code>
+            <code>     &lt;li&gt;&lt;/li&gt;</code>
+            <code>     &lt;li&gt;&lt;/li&gt;</code>
+            <code>&lt;/ul&gt;</code>
+        </pre>
+        <div class="browser-view">
+            <ul class="non-list">
+                <li type="disc">Круги</li>
+                <li type="circle">Окружности</li>
+                <li type="square">Квадраты</li>
+                <li type="none">Без маркера</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Упорядоченный список</h2>
+    <p>В том случае, если порядок элементов в списке важен, стоит использовать тег <code>&lt;ol&gt;</code>(ordered list).</p>
+    <div class="columns two">
+        <pre>
+            <code>&lt;ol&gt;</code>
+            <code>  &lt;li&gt;Avatar&lt;/li&gt;</code>
+            <code>  &lt;li&gt;Avengers: Endgame&lt;/li&gt;</code>
+            <code>  &lt;li&gt;Avengers: Infinity War&lt;/li&gt;</code>
+            <code>&lt;/ol&gt;</code>
+        </pre>
+        <div class="browser-view">
+            <ol>
+                <li>Avatar</li>
+                <li>Avengers: Endgame</li>
+                <li>Avengers: Infinity War</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Тип нумерации</h2>
+    <div class="columns two">
+        <ul>
+            <li><code>a</code> для строчных букв;</li>
+            <li><code>A</code> для заглавных букв;</li>
+            <li><code>i</code> для строчной Римской нумерации;</li>
+            <li><code>I</code> для заглавной Римской нумерации;</li>
+            <li><code>1</code> для цифр (по умолчанию).</li>
+        </ul>
+        <div class="browser-view">
+            <ol class="non-list">
+                <li type="a">Строчные буквы</li>
+                <li type="A">Заглавные буквы</li>
+                <li type="i">Строчные Римские</li>
+                <li type="I">Заглавные Римские</li>
+                <li type="1">Цифры</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Управление порядком элементов</h2>
+    <div class="columns two">
+        <pre style="margin-top: 50px">
+            <code>&lt;ol <mark>start="8"</mark> type="i"&gt;</code>
+            <code>    &lt;li&gt;Восьмой элемент&lt;/li&gt;</code>
+            <code>    &lt;li&gt;Девятый элемент&lt;/li&gt;</code>
+            <code>    &lt;li&gt;Десятый элемент&lt;/li&gt;</code>
+            <code>&lt;/ol&gt;</code>
+        </pre>
+        <div class="browser-view" style="margin-top: 50px">
+            <ol start="8" class="non-list">
+                <li type="i">Восьмой элемент</li>
+                <li type="i">Девятый элемент</li>
+                <li type="i">Десятый элемент</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Обратный порядок элементов</h2>
+    <div class="columns two">
+        <pre style="margin-top: 50px">
+            <code>&lt;ol <mark>reversed</mark> &gt;</code>
+            <code>    &lt;li&gt;Третий элемент&lt;/li&gt;</code>
+            <code>    &lt;li&gt;Второй элемент&lt;/li&gt;</code>
+            <code>    &lt;li&gt;Первый элемент&lt;/li&gt;</code>
+            <code>&lt;/ol&gt;</code>
+        </pre>
+        <div class="browser-view" style="margin-top: 50px">
+            <ol reversed class="non-list">
+                <li type="1">Третий элемент</li>
+                <li type="1">Второй элемент</li>
+                <li type="1">Первый элемент</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Вложенные списки</h2>
+    <div class="columns two">
+        <pre style="margin-top: 30px; font-size: 18px">
+            <code>&lt;ol&gt;</code>
+            <code>&lt;li&gt;Первая часть</code>
+            <code>    <mark>&lt;ul&gt;</mark></code>
+            <code>      &lt;li&gt;Глава первая&lt;/li&gt;</code>
+            <code>      &lt;li&gt;Глава вторая&lt;/li&gt;</code>
+            <code>    <mark>&lt;/ul&gt;</mark></code>
+            <code>  &lt;/li&gt;</code>
+            <code>  &lt;li&gt;Вторая часть&lt;/li&gt;</code>
+            <code>&lt;/ol&gt;</code>
+        </pre>
+        <div class="browser-view"  style="margin-top: 30px; font-size: 18px">
+            <ol>
+                <li>Первая часть
+                    <ul>
+                        <li>Глава первая</li>
+                        <li>Глава вторая</li>
+                    </ul>
+                </li>
+                <li>Вторая часть</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Список описаний</h2>
+    <p>Создаётся с помощью трёх тегов:</p>
+    <ul>
+        <li><code>&lt;dl&gt;</code> (сокращение от «description list») обозначает сам список описаний;</li>
+        <li><code>&lt;dt&gt;</code> (сокращение от «description term») обозначает термин;</li>
+        <li><code>&lt;dd&gt;</code> (сокращение от «description definition») обозначает описание или определение.</li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <h2>Один термин — одно определение</h2>
+    <pre>
+        <code>&lt;dl&gt;</code>
+        <code>  &lt;dt&gt;Blink&lt;/dt&gt;</code>
+        <code>  &lt;dd&gt;движок в браузерах Chrome, Edge, Opera&lt;/dd&gt;</code>
+        <code>  &lt;dt&gt;Gecko&lt;/dt&gt;</code>
+        <code>  &lt;dd&gt;движок в браузере Firefox&lt;/dd&gt;</code>
+        <code>  &lt;dt&gt;WebKit&lt;/dt&gt;</code>
+        <code>  &lt;dd&gt;движок в браузере Apple Safari&lt;/dd&gt;</code>
+        <code>&lt;/dl&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <div class="browser-view">
+        <dl>
+            <dt>Blink</dt>
+            <dd>движок в браузерах Chrome, Edge, Opera</dd>
+            <dt>Gecko</dt>
+            <dd>движок в браузере Firefox</dd>
+            <dt>WebKit</dt>
+            <dd>движок в браузере Apple Safari</dd>
+        </dl>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Несколько терминов с общим определением</h2>
+    <pre style="font-size: 18px">
+        <code>&lt;dl&gt;</code>
+        <code>  &lt;dt&gt;Firefox&lt;/dt&gt;</code>
+        <code>  &lt;dt&gt;Mozilla Firefox&lt;/dt&gt;</code>
+        <code>  &lt;dt&gt;FF&lt;/dt&gt;</code>
+        <code>  &lt;dd&gt;</code>
+        <code>    свободный браузер на движке Gecko, разработкой и  </code>
+        <code>    распространением которого занимается Mozilla Corporation </code>
+        <code>  &lt;/dd&gt;</code>
+        <code>&lt;/dl&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <div class="browser-view">
+        <dl>
+            <dt>Firefox</dt>
+            <dt>Mozilla Firefox</dt>
+            <dt>FF</dt>
+            <dd>
+                свободный браузер на движке Gecko,
+                разработкой и распространением которого
+                занимается Mozilla Corporation
+            </dd>
+        </dl>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Термин с несколькими определениями</h2>
+    <pre>
+        <code>&lt;dl&gt;</code>
+        <code>&lt;dt&gt;Chrome&lt;/dt&gt;</code>
+        <code>  &lt;dd&gt;Браузер, разрабатываемый компанией Google.&lt;/dd&gt;</code>
+        <code>  &lt;dd&gt;Элемент 6-й группы периода периодической системы.&lt;/dd&gt;</code>
+        <code>&lt;/dl&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <div class="browser-view">
+        <dl>
+            <dt>Chrome</dt>
+            <dd>Браузер, разрабатываемый компанией Google.</dd>
+            <dd>Элемент 6-й группы 4-го периода периодической системы.</dd>
+        </dl>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Отображение метаданных (пар «ключ-значение»)</h2>
+    <pre style="font-size: 18px">
+        <code>&lt;dl&gt;</code>
+        <code>  &lt;dt&gt;Имя&lt;/dt&gt;</code>
+        <code>&lt;dd&gt;Гарри Джеймс Поттер&lt;/dd&gt;</code>
+        <code>  &lt;dt&gt;День рождения&lt;/dt&gt;</code>
+        <code>  &lt;dd&gt;31 июля 1980 года&lt;/dd&gt;</code>
+        <code>  &lt;dt&gt;Особые приметы&lt;/dt&gt;</code>
+        <code>  &lt;dd&gt;носит круглые очки; шрам в виде молнии на лбу.&lt;/dd&gt;</code>
+        <code>&lt;/dl&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <div class="browser-view">
+        <dl>
+            <dt>Имя</dt>
+            <dd>Гарри Джеймс Поттер</dd>
+            <dt>День рождения</dt>
+            <dd>31 июля 1980 года</dd>
+            <dt>Особые приметы</dt>
+            <dd>носит круглые очки; шрам в виде молнии на лбу.</dd>
+        </dl>
+    </div>
+</section>
+
+<!-- Конец основных слайдов -->
+<!-- Подвал презентации -->
 
 <section class="slide" id="see-more">
     <h2 class="shout">
