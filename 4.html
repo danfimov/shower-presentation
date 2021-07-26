@@ -49,6 +49,61 @@
             grid-template-columns: 1fr 1fr;
             grid-row-gap: 20px;
         }
+
+        /* Блок */
+
+        .info--frame-heading {
+            position: relative;
+            padding: 24px 24px 20px;
+        }
+
+        /* Информационный блок с рамкой */
+
+        .info {
+            border-width: 1px;
+            border-style: solid;
+        }
+
+        /* Зеленый блок */
+        .info--green {
+            border-color: #4eb543;
+        }
+
+        /* Красный блок */
+        .info--red {
+            border-color: #dc3545;
+        }
+
+        .info--theme-color{
+            border-color: var(--color-key);
+        }
+
+        /* Блок со словом <Код на Python> */
+
+        .info--frame-heading--python-code::before {
+            color: var(--color-key);
+            content: "<Код на Python>";
+        }
+
+        /* Блок со словом <Код на JS> */
+
+        .info--frame-heading--js-code::before {
+            color: var(--color-key);
+            content: "<Код на JS>";
+        }
+
+        /* Слово на рамке */
+
+        .info--frame-heading::before {
+            position: absolute;
+            top: -13px;
+            left: 20px;
+            padding: 0 8px;
+            font-size: 16px;
+            line-height: 25px;
+            font-family: "Ubuntu Mono", "Menlo", "Monaco", "Consolas", "Courier New", monospace;
+            background: #ffffff;
+        }
     </style>
 </head>
 <body class="shower list">
@@ -397,6 +452,105 @@
         </dl>
     </div>
 </section>
+
+<section class="slide narfu">
+    <h2>Важен каждый символ</h2>
+    <div class="columns three">
+        <img src="pictures/4/bird-1.jpeg" alt="">
+        <img src="pictures/4/bird-3.png" alt="" width="250">
+        <img src="pictures/4/bird-2.png" alt="" width="250">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Преформатированный текст</h2>
+    <p>С помощью тега <code>&lt;pre&gt;</code> (сокращение от «preformatted text») можно заставить браузер отображать текст из HTML-документа без изменений. </p>
+    <div class="browser-view">
+        <img src="pictures/4/ascii-art.png" alt="" style="margin: 0 20%">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Преформатированный текст</h2>
+    <pre>
+        <code>&lt;pre&gt;</code>
+        <code>  user_input = input('Как дела?')</code>
+        <code>  if user_input == 'Хорошо':</code>
+        <code>    print('И у меня')</code>
+        <code>  else:</code>
+        <code>    print('А у меня хорошо')</code>
+        <code>&lt;/pre&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Преформатированный текст</h2>
+    <div class="info info--frame-heading info--frame-heading--python-code info--theme-color">
+        <pre>
+            <code>          user_input = input('Как дела?')
+          if user_input == 'Хорошо':
+            print('И у меня')
+          else:
+            print('А у меня хорошо')</code>
+        </pre>
+    </div>
+</section>
+
+
+<section class="slide narfu">
+    <h2>Символы-мнемоники</h2>
+    <p>Мнемоники — это особые строки, которые начинаются с амперсанда (<code>&</code>) и заканчиваются точкой с запятой (<code>;</code>).</p>
+    <p>Например, знак меньше на страницу можно вставить мнемоникой <code>&l<span>t;</span></code> (less than), а знак больше мнемоникой <code>&g<span>t;</span></code> (greater than).</p>
+</section>
+
+
+<section class="slide narfu">
+    <h2>Символы-мнемоники</h2>
+    <div class="browser-view">
+        <a href="https://dev.w3.org/html5/html-author/charref" style="background: none">
+            <img src="pictures/4/mnemonic-list.png" alt="" style="width: 650px; margin: 0 calc((100% - 650px) / 2)">
+        </a>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Вставка кода</h2>
+    <p>Для обозначения фрагментов кода есть специальный тег  – <code>&lt;code&gt;</code>.</p>
+    <pre>
+        <code>&lt;code&gt;Если идет дождь –&g<span>t;</span> возьми зонт&lt;/code&gt;</code>
+    </pre>
+    <hr>
+    <div class="next">
+        <p>Обычно браузеры отображают текст внутри <code>&lt;code&gt;</code> моноширинным шрифтом.</p>
+        <code>Если идет дождь –&gt; возьми зонт</code>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Комбинирование &lt;pre&gt; и &lt;code&gt;</h2>
+    <pre>
+        <code>&lt;pre&gt;&lt;code&gt;</code>
+        <code>if (a &gt; b) {              <span class="comment">// Пример кода</span>      </code>
+        <code>  console.log('Hello!');  <span class="comment">// на языке JavaScript</span> </code>
+        <code>}</code>
+        <code>&lt;/code&gt;&lt;/pre&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Комбинирование &lt;pre&gt; и &lt;code&gt;</h2>
+    <div class="info info--frame-heading info--frame-heading--js-code info--theme-color">
+        <pre>
+<code>
+if (a > b) {                <span class="comment">// Пример кода</span>
+    console.log('Hello!');  <span class="comment">// на языке JavaScript</span>
+}
+</code>
+        </pre>
+    </div>
+</section>
+
+
 
 <!-- Конец основных слайдов -->
 <!-- Подвал презентации -->
