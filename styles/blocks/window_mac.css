@@ -9,6 +9,8 @@
     border-radius: 8px;
 
     background-color: white;
+
+    height: fit-content;
 }
 
 .browser-view::before{
