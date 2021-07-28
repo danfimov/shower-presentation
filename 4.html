@@ -9,100 +9,37 @@
     <link rel="stylesheet" href="styles/all_styles.css">
     <link rel="shortcut icon" type="image/png" href="pictures/general/narfu_icon.png">
     <style>
-        ul .block-p{
+        ul .block-p {
             padding: 15px 15px 15px 30px;
             margin-bottom: 10px;
         }
 
-        .browser-view li{
+        .browser-view li {
             padding-left: 30px;
             min-width: 250px;
         }
 
-        .browser-view .non-list li{
+        .browser-view .non-list li {
             padding-left: 10px;
             margin-left: 30px;
         }
 
         .browser-view ol,
-        .browser-view ul{
+        .browser-view ul {
             margin-bottom: 0;
         }
 
-        .slide .non-list > li::before{
+        .slide .non-list > li::before {
             content: "";
         }
 
-        .two-columns{
-            display: grid;
-            grid-template-columns: 1fr auto;
-        }
-
-        dt{
+        dt {
             color: #6a2cce;
         }
 
-        #meta{
-            line-height: 1.8em;
-
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-row-gap: 20px;
-        }
-
-        /* Блок */
-
-        .info--frame-heading {
-            position: relative;
-            padding: 24px 24px 20px;
-        }
-
-        /* Информационный блок с рамкой */
-
-        .info {
-            border-width: 1px;
-            border-style: solid;
-        }
-
-        /* Зеленый блок */
-        .info--green {
-            border-color: #4eb543;
-        }
-
-        /* Красный блок */
-        .info--red {
-            border-color: #dc3545;
-        }
-
-        .info--theme-color{
-            border-color: var(--color-key);
-        }
-
-        /* Блок со словом <Код на Python> */
-
-        .info--frame-heading--python-code::before {
-            color: var(--color-key);
-            content: "<Код на Python>";
-        }
-
-        /* Блок со словом <Код на JS> */
-
-        .info--frame-heading--js-code::before {
-            color: var(--color-key);
-            content: "<Код на JS>";
-        }
-
-        /* Слово на рамке */
-
-        .info--frame-heading::before {
-            position: absolute;
-            top: -13px;
-            left: 20px;
-            padding: 0 8px;
-            font-size: 16px;
-            line-height: 25px;
-            font-family: "Ubuntu Mono", "Menlo", "Monaco", "Consolas", "Courier New", monospace;
-            background: #ffffff;
+        #first-quote:before,
+        #first-quote:after {
+            content: '"';
         }
     </style>
 </head>
@@ -123,8 +60,10 @@
     <h2>Виды списков</h2>
     <div class="columns three">
         <div>
-            <p><ins>Неупорядоченный</ins></p>
-<!--            <p>Перечень однотипных элементов, порядок которых важен.</p>-->
+            <p>
+                <ins>Неупорядоченный</ins>
+            </p>
+            <!--            <p>Перечень однотипных элементов, порядок которых важен.</p>-->
             <ul>
                 <li>Элемент</li>
                 <li>Элемент</li>
@@ -132,8 +71,10 @@
             </ul>
         </div>
         <div>
-            <p><ins>Упорядоченный</ins></p>
-<!--            <p>Список элементов, где важен порядок и необходима нумерация.</p>-->
+            <p>
+                <ins>Упорядоченный</ins>
+            </p>
+            <!--            <p>Список элементов, где важен порядок и необходима нумерация.</p>-->
             <ol>
                 <li>Первый элемент</li>
                 <li>Второй элемент</li>
@@ -141,12 +82,14 @@
             </ol>
         </div>
         <div>
-            <p><ins>Список определений</ins></p>
-<!--            <p>Перечень терминов, где в пару каждому из них ставится расшифровка.</p>-->
+            <p>
+                <ins>Список определений</ins>
+            </p>
+            <!--            <p>Перечень терминов, где в пару каждому из них ставится расшифровка.</p>-->
             <dl>
-                <dt>Термин</dt>
+                <dt style="color: black">Термин</dt>
                 <dd>Определение</dd>
-                <dt>Термин</dt>
+                <dt style="color: black">Термин</dt>
                 <dd>Определение</dd>
             </dl>
         </div>
@@ -154,9 +97,15 @@
 </section>
 
 <section class="slide narfu">
+    <img src="pictures/4/ul.webp" alt="" class="cover w">
+</section>
+
+<section class="slide narfu">
     <h2>Неупорядоченный список</h2>
-    <p>Для его вставки на страницу используется тег <code>&lt;ul&gt;</code> (unordered list). Этот тег является своеобразной обёрткой, указывающей браузеру на начало и конец списка. </p>
-    <p>Сами пункты списка должны верстаться при помощи тега <code>&lt;li&gt;</code>(list item). Таким образом, полностью список верстается с использованием обоих тегов.</p>
+    <p>Для его вставки на страницу используется тег <code>&lt;ul&gt;</code> (unordered list). Этот тег является
+        своеобразной обёрткой, указывающей браузеру на начало и конец списка. </p>
+    <p>Сами пункты списка должны верстаться при помощи тега <code>&lt;li&gt;</code>(list item). Таким образом, полностью
+        список верстается с использованием обоих тегов.</p>
 </section>
 
 <section class="slide narfu">
@@ -229,7 +178,8 @@
 
 <section class="slide narfu">
     <h2>Упорядоченный список</h2>
-    <p>В том случае, если порядок элементов в списке важен, стоит использовать тег <code>&lt;ol&gt;</code>(ordered list).</p>
+    <p>В том случае, если порядок элементов в списке важен, стоит использовать тег <code>&lt;ol&gt;</code>(ordered
+        list).</p>
     <div class="columns two">
         <pre>
             <code>&lt;ol&gt;</code>
@@ -324,7 +274,7 @@
             <code>  &lt;li&gt;Вторая часть&lt;/li&gt;</code>
             <code>&lt;/ol&gt;</code>
         </pre>
-        <div class="browser-view"  style="margin-top: 30px; font-size: 18px">
+        <div class="browser-view" style="margin-top: 30px; font-size: 18px">
             <ol>
                 <li>Первая часть
                     <ul>
@@ -464,7 +414,8 @@
 
 <section class="slide narfu">
     <h2>Преформатированный текст</h2>
-    <p>С помощью тега <code>&lt;pre&gt;</code> (сокращение от «preformatted text») можно заставить браузер отображать текст из HTML-документа без изменений. </p>
+    <p>С помощью тега <code>&lt;pre&gt;</code> (сокращение от «preformatted text») можно заставить браузер отображать
+        текст из HTML-документа без изменений. </p>
     <div class="browser-view">
         <img src="pictures/4/ascii-art.png" alt="" style="margin: 0 20%">
     </div>
@@ -499,8 +450,10 @@
 
 <section class="slide narfu">
     <h2>Символы-мнемоники</h2>
-    <p>Мнемоники — это особые строки, которые начинаются с амперсанда (<code>&</code>) и заканчиваются точкой с запятой (<code>;</code>).</p>
-    <p>Например, знак меньше на страницу можно вставить мнемоникой <code>&l<span>t;</span></code> (less than), а знак больше мнемоникой <code>&g<span>t;</span></code> (greater than).</p>
+    <p>Мнемоники — это особые строки, которые начинаются с амперсанда (<code>&</code>) и заканчиваются точкой с запятой
+        (<code>;</code>).</p>
+    <p>Например, знак меньше на страницу можно вставить мнемоникой <code>&l<span>t;</span></code> (less than), а знак
+        больше мнемоникой <code>&g<span>t;</span></code> (greater than).</p>
 </section>
 
 
@@ -515,7 +468,7 @@
 
 <section class="slide narfu">
     <h2>Вставка кода</h2>
-    <p>Для обозначения фрагментов кода есть специальный тег  – <code>&lt;code&gt;</code>.</p>
+    <p>Для обозначения фрагментов кода есть специальный тег – <code>&lt;code&gt;</code>.</p>
     <pre>
         <code>&lt;code&gt;Если идет дождь –&g<span>t;</span> возьми зонт&lt;/code&gt;</code>
     </pre>
@@ -550,7 +503,372 @@ if (a > b) {                <span class="comment">// Пример кода</span
     </div>
 </section>
 
+<section class="slide narfu">
+    <h2>Встроенная цитата</h2>
+    <pre>
+        <code>&lt;p&gt;</code>
+        <code>	Я сейчас очень зол, и как говорил Шелдон Купер:</code>
+        <code>	<mark>&lt;q&gt;</mark></code>
+        <code>		В мире не хватит ромашкового чая, </code>
+        <code>		чтобы успокоить ярость в моей груди!</code>
+        <code>	<mark>&lt;/q&gt;</mark></code>
+        <code>&lt;/p&gt;</code>
+    </pre>
+</section>
 
+<section class="slide narfu">
+    <h2>Встроенная цитата</h2>
+    <div class="browser-view">
+        <p>
+            Я сейчас очень зол, и как говорил Шелдон Купер:
+            <q id="first-quote">
+                В мире не хватит ромашкового чая,
+                чтобы успокоить ярость в моей груди!
+            </q>
+        </p>
+    </div>
+    <p></p>
+    <p class="next">В браузере цитата внутри предложения будет выделяться: <br>тег добавляет кавычки вокруг цитируемой
+        части предложения.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Атрибут cite</h2>
+    <pre>
+        <code>&lt;p&gt;</code>
+        <code>	Я сейчас очень зол, и как говорил Шелдон Купер:</code>
+        <code>	&lt;q  <mark>cite="https://www.netflix.com/ru-en/title/70143830"</mark>&gt;</code>
+        <code>		В мире не хватит ромашкового чая, </code>
+        <code>		чтобы успокоить ярость в моей груди!</code>
+        <code>	&lt;/q&gt;</code>
+        <code>&lt;/p&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Самостоятельный тег &lt;cite&gt;</h2>
+    Тег <code>&lt;cite&gt;</code> делает написание текста внутри курсивным. Этот тег может быть в том числе и
+    самостоятельным, не привязанным к цитате:
+    <pre>
+        <code>&lt;p&gt;Какой доктор ваш любимый доктор</code>
+        <code>   (в сериале <mark>&lt;cite&gt;</mark>Доктор Кто<mark>&lt;/cite&gt;</mark>)?&lt;/p&gt;</code>
+    </pre>
+
+    <p>Какой доктор ваш любимый (в сериале <cite>Доктор Кто</cite>)?</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Цитата на другом языке</h2>
+    <p>Можно у тега <code>&lt;q&gt;</code> указать атрибут <code>lang</code> со значением языка цитаты:</p>
+    <pre>
+        <code>&lt;p&gt;</code>
+        <code>  В Японии принято обозначать звук, произносимый кошкой как</code>
+        <code>  &lt;q <mark>lang="ja-latn"</mark>&gt;nyan&lt;/q&gt;</code>
+        <code>&lt;/p&gt;</code>
+    </pre>
+
+</section>
+
+<section class="slide narfu">
+    <h2>Цитата на другом языке</h2>
+    <div class="browser-view" style="text-align: center">
+        <p>
+            В Японии принято обозначать звук, произносимый кошкой как
+            <q lang="ja-latn">nyan</q>
+        </p>
+    </div>
+    <p>Кавычки в этом примере отличаются от стандартных, они соответствуют тем кавычкам, которые ставятся в <br>латинизированном
+        японском тексте.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Отдельная цитата</h2>
+    <pre>
+        <code><mark>&lt;blockquote&gt;</mark></code>
+        <code>	Ножницы режут бумагу, бумага заворачивает камень, </code>
+        <code>	камень давит ящерицу, ящерица травит Спока, </code>
+        <code>	Спок ломает ножницы, ножницы отрезают голову ящерице, </code>
+        <code>	ящерица ест бумагу, бумага подставляет Спока, </code>
+        <code>	Спок испаряет камень, и, как обычно,</code>
+        <code>	камень разбивает ножницы.</code>
+        <code><mark>&lt;/blockquote&gt;</mark></code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Отдельная цитата</h2>
+    <blockquote>
+        Ножницы режут бумагу, бумага заворачивает камень,<br>
+        камень давит ящерицу, ящерица травит Спока,<br>
+        Спок ломает ножницы, ножницы отрезают голову ящерице,<br>
+        ящерица ест бумагу, бумага подставляет Спока,<br>
+        Спок испаряет камень, и, как обычно,<br>
+        камень разбивает ножницы.
+    </blockquote>
+</section>
+
+<section class="slide narfu">
+    <h2>Отдельная цитата</h2>
+    <pre style="font-size: 19px">
+        <code>&lt;blockquote&gt;</code>
+        <code>  &lt;p&gt;</code>
+        <code>    Я никогда не понимал эту необходимость делить свою жизнь </code>
+        <code>		с кем-то еще...</code>
+        <code>  &lt;/p&gt;</code>
+        <code>  <mark class="important">&lt;footer&gt;</mark></code>
+        <code>		— Шелдон Купер, </code>
+        <code class="mark">		&lt;cite&gt;Речь на свадьбе Говарда и Бернадетт&lt;/cite&gt;</code>
+        <code>  <mark class="important">&lt;/footer&gt;</mark></code>
+        <code>&lt;/blockquote&gt;</code>
+    </pre>
+</section>
+
+
+<section class="slide narfu">
+    <h2>Отдельная цитата</h2>
+    <blockquote>
+        <p>
+            Я никогда не понимал эту необходимость делить свою жизнь
+            с кем-то еще. Возможно, потому что я сам по себе совершенен.
+            Я хочу пожелать вам, чтобы вы находили столько же счастья
+            друг в друге, сколько я нахожу в самом себе.
+        </p>
+        <footer>
+            — Шелдон Купер,
+            <cite>Речь на свадьбе Говарда и Бернадетт</cite>
+        </footer>
+    </blockquote>
+</section>
+
+<section class="slide narfu">
+    <h2>Продвинутая верстка кода</h2>
+    <p>Существует еще несколько элементов для маркировки компьютерного кода с использованием HTML:</p>
+    <ul>
+        <li><code>&lt;var&gt;</code> - для маркировки имён переменных;</li>
+        <li><code>&lt;kbd&gt;</code> - для маркировки вывода компьютерной программы, а также ввода клавиатуры (и других
+            типов), введённого в компьютер;
+        </li>
+        <li><code>&lt;samp&gt;</code> - для маркировки вывода компьютерной программы.</li>
+    </ul>
+</section>
+
+<section class="slide narfu clear">
+    <div class="browser-view"  style="font-size: 16px">
+        <pre>
+        <code>var para = document.querySelector('p');
+para.onclick = function() {
+  alert('Owww, stop poking me!');
+}</code>
+    </pre>
+        <p>Не стоит использовать такие теги, как <code>&lt;font&gt;</code> и <code>&lt;center&gt;</code>.</p>
+        <p>В приведенном выше примере кода на JavaScript, <var>para</var> представляет абзац.</p>
+        <p>Выделите весь текст с помощью сочетания клавиш <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd>.</p>
+        <pre>
+        $ <kbd style="background-color: white">ping mozilla.org</kbd><br>
+        <samp style="background-color: white">PING mozilla.org (63.245.215.20): 56 data bytes
+        64 bytes from 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms</samp>
+    </pre>
+    </div>
+</section>
+
+<section class="slide">
+    <img src="pictures/4/lyrics.png" alt="lyrics" class="cover w">
+</section>
+
+<section class="slide narfu">
+    <h2>Верстка стихов</h2>
+    <p>Варианты:</p>
+    <ol>
+        <li><code>&lt;p&gt;</code> – идеально подходит для выделения строфы, а нужно добавить переносы <i>внутрь</i> строф;</li>
+        <li><code>&lt;pre&gt;</code> – подходит, но нужно сохранить <i>только</i> переносы строк;</li>
+        <li><code>&lt;br&gt;</code> (сокращение от «line break») – <strong>идеальный вариант</strong>.</li>
+    </ol>
+</section>
+
+<section class="slide narfu">
+    <pre>
+        <code>&lt;p&gt;                           </code>
+        <code>    Муха села на варенье &lt;br&gt; </code>
+        <code>    Вот и всё стихотворенье...</code>
+        <code>&lt;/p&gt; </code>
+    </pre>
+    <div class="browser-view next" style="padding-left: 270px">
+        <p>
+            Муха села на варенье <br>
+            Вот и всё стихотворенье...
+        </p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Верстка текста с формулами</h2>
+    <ul>
+        <li><code>&lt;sup&gt;</code> - для маленького текста сверху</li>
+        <li><code>&lt;sub&gt;</code> - для маленького текста снизу</li>
+    </ul>
+    <pre>
+        <code>&lt;p&gt;Я просыпаюсь в 6&lt;sup&gt;35&lt;/sup&gt; утра.&lt;/p&gt;</code>
+        <code>&lt;p&gt;Химическая формула кофеина: </code>
+        <code>     C&lt;sub&gt;8&lt;/sub&gt;H&lt;sub&gt;10&lt;/sub&gt;N&lt;sub&gt;4&lt;/sub&gt;O&lt;sub&gt;2&lt;/sub&gt;.&lt;/p&gt;</code>
+        <code>&lt;p&gt;Если x&lt;sup&gt;2&lt;/sup&gt; равно 9, x должен равняться 3 или -3.&lt;/p&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Верстка текста с формулами</h2>
+    <div class="browser-view">
+        <p>Я просыпаюсь в 6<sup>35</sup> утра.</p>
+        <p>Химическая формула кофеина: C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>.</p>
+        <p>Если x<sup>2</sup> равно 9, x должен равняться 3 или -3.</p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Аббревиатуры и сокращения</h2>
+    <p>Используется тег <code>&lt;abbr&gt;</code> и обеспечивает расшифровку с помощью атрибута <code>title</code>.</p>
+    <pre>
+        <code>&lt;p&gt;Мы используем </code>
+        <code>   &lt;abbr title="Hypertext Markup Language"&gt;HTML&lt;/abbr&gt;</code>
+        <code>   для структурирования наших веб-документов.&lt;/p&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Аббревиатуры и сокращения</h2>
+    <div class="browser-view">
+        <p>Мы используем <abbr title="Hypertext Markup Language">HTML</abbr> для структурирования наших веб-документов.</p>
+
+        <p>Я думаю, <abbr title="Почтенный">Почт.</abbr> Грин сделал это на кухне с бензопилой.</p>
+    </div>
+</section>
+
+<section class="slide">
+    <img src="pictures/4/time.png" alt="" class="cover w">
+</section>
+
+<section class="slide narfu">
+    <h2>Дата и время</h2>
+    <p>Для людей:</p>
+    <div class="columns three">
+        <ul>
+            <li>20/01/20</li>
+            <li>01/20/20</li>
+        </ul>
+        <ul>
+            <li>20 Января 2020</li>
+            <li>20-ое Января 2020</li>
+        </ul>
+        <ul>
+            <li>20 янв. 2к20</li>
+            <li>2020年1月20日</li>
+        </ul>
+    </div>
+    <hr>
+    <p>Для компьютера:</p>
+    <code>&lt;time datetime="2020-01-20"&gt;20 Января 2020&lt;/time&gt;</code>
+</section>
+
+<section class="slide narfu">
+    <h2>Выделение изменений</h2>
+    <p>Тег <code>&lt;del&gt;</code> выделяет текст, который был удалён в новой версии документа. В браузере этот текст перечёркивается.</p>
+    <p>Тег <code>&lt;ins&gt;</code> выделяет текст, который был добавлен в новой версии документа. В браузере этот текст подчёркивается.</p>
+    <p>Оба тега имеют атрибут <code>datetime</code>. C его помощью можно указать, когда была внесена та или иная правка.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Выделение изменений</h2>
+    <pre>
+        <code>&lt;ul&gt;</code>
+        <code>  &lt;li&gt;Покормить кота&lt;/li&gt;</code>
+        <code>  &lt;li&gt;&lt;del datetime="2009-10-11T01:25-07:00"&gt;Погулять&lt;/del&gt;&lt;/li&gt;</code>
+        <code>  &lt;li&gt;&lt;del datetime="2009-10-10T23:38-07:00"&gt;Поспать&lt;/del&gt;&lt;/li&gt;</code>
+        <code>  &lt;li&gt;&lt;ins&gt;Купить продукты на следующую неделю.&lt;/ins&gt;&lt;/li&gt;</code>
+        <code>&lt;/ul&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Выделение изменений</h2>
+    <div class="browser-view">
+        <ul>
+            <li>Покормить кота</li>
+            <li><del datetime="2009-10-11T01:25-07:00">Погулять</del></li>
+            <li><del datetime="2009-10-10T23:38-07:00">Поспать</del></li>
+            <li><ins>Купить продукты на следующую неделю.</ins></li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Акцентирование внимания</h2>
+    <p>Тег <code>&lt;em&gt;</code> (сокращение от «emphasis») определяет текст, на который сделан особый акцент, меняющий смысл предложения.</p>
+    <pre style="font-size: smaller">
+        <code>Казнить нельзя, &lt;em&gt;помиловать&lt;/em&gt;!</code>
+    </pre>
+    <div class="browser-view">
+        Казнить нельзя, <em>помиловать</em>!
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Акцентирование внимания</h2>
+    <p>Тег <code>&lt;i&gt;</code> (сокращение от «italic») применяется для обозначения текста, который отличается от окружающего текста, но не является более важным.</p>
+    <pre style="font-size: smaller">
+        <code>Он взглянул в окно и подумал — &lt;i&gt;такого просто не может быть&lt;/i&gt;!</code>
+    </pre>
+    <div class="browser-view">
+        Он взглянул в окно и подумал — <i>такого просто не может быть</i>!
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Важность и выделение</h2>
+    <p>Тег <code>&lt;strong&gt;</code> указывает на важность отмеченного текста. Он может использоваться для выделения предупреждений или части документа, которую пользователь должен увидеть раньше остального.</p>
+    <pre>
+        <code>&lt;strong&gt;Внимание!&lt;/strong&gt; Это место опасно. </code>
+        <code>&lt;strong&gt;Вы можете упасть в пропасть&lt;/strong&gt;,</code>
+        <code>        если подойдёте близко к краю.</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Важность и выделение</h2>
+    <p>Тег <code>&lt;b&gt;</code> предназначен для выделения текста с целью привлечения к нему внимания, но без придания ему особой важности. Используется только в случае, когда остальные теги выделения не подходят. </p>
+    <pre>
+        <code>Вы входите в небольшую комнату. </code>
+        <code>Ваш &lt;b&gt;меч&lt;/b&gt; загорается ярче. </code>
+        <code>&lt;b&gt;Крыса&lt;/b&gt; стремительно пробегает вдоль стены.</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Скринридеры и выделение</h2>
+    <p>Скринридер (программа для спелых людей, озвучивающая текста на экране) при чтении сайта будет выделять слова с тегом <code>&lt;strong&gt;</code> интонационно, в отличие от простого выделения с помощью <code>&lt;b&gt;</code>.
+    <p>То же самое касается тегов <code>&lt;em&gt;</code> и <code>&lt;i&gt;</code>. Тег <code>&lt;em&gt;</code> «читалка» будет выделять интонацией.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Контейнеры и стилизация</h2>
+    <p>Теги <code>&lt;div&gt;</code> (сокращение от «division») и <code>&lt;span&gt;</code> отлично подходят для визуальной группировки других элементов.</p>
+    <p>Теги <code>&lt;div&gt;</code> и <code>&lt;span&gt;</code> не имеют никакого оформления по умолчанию и их почти всегда используют вместе с атрибутом <code>class</code>, чтобы легко добавлять им собственные стили.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Контейнеры и стилизация</h2>
+    <pre>
+        <code>&lt;article&gt;</code>
+        <code class="mark">  &lt;div class="highlight"&gt;</code>
+        <code class="mark">    &lt;p&gt;Мы два красивых выделенных абзаца.&lt;/p&gt;</code>
+        <code class="mark">    &lt;p&gt;С жёлтеньким фоном!&lt;/p&gt;</code>
+        <code class="mark">  &lt;/div&gt;</code>
+        <code>  &lt;p&gt;Текст, в котором <mark class="important">&lt;span&gt;синяя фраза&lt;/span&gt;</mark>.&lt;/p&gt;</code>
+        <code>&lt;/article&gt;</code>
+    </pre>
+</section>
+
+<section class="slide">
+    <img src="pictures/4/div.png" alt="" class="cover w">
+</section>
 
 <!-- Конец основных слайдов -->
 <!-- Подвал презентации -->
