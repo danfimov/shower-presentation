@@ -33,21 +33,13 @@
             content: "";
         }
 
-        .two-columns{
-            display: grid;
-            grid-template-columns: 1fr auto;
-        }
-
         dt{
             color: #6a2cce;
         }
 
-        #meta{
-            line-height: 1.8em;
-
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-row-gap: 20px;
+        #first-quote:before,
+        #first-quote:after{
+            content: '"';
         }
     </style>
 </head>
@@ -89,9 +81,9 @@
             <p><ins>Список определений</ins></p>
 <!--            <p>Перечень терминов, где в пару каждому из них ставится расшифровка.</p>-->
             <dl>
-                <dt>Термин</dt>
+                <dt style="color: black">Термин</dt>
                 <dd>Определение</dd>
-                <dt>Термин</dt>
+                <dt style="color: black">Термин</dt>
                 <dd>Определение</dd>
             </dl>
         </div>
@@ -495,6 +487,139 @@ if (a > b) {                <span class="comment">// Пример кода</span
     </div>
 </section>
 
+<section class="slide narfu">
+    <h2>Встроенная цитата</h2>
+    <pre>
+        <code>&lt;p&gt;</code>
+        <code>	Я сейчас очень зол, и как говорил Шелдон Купер:</code>
+        <code>	<mark>&lt;q&gt;</mark></code>
+        <code>		В мире не хватит ромашкового чая, </code>
+        <code>		чтобы успокоить ярость в моей груди!</code>
+        <code>	<mark>&lt;/q&gt;</mark></code>
+        <code>&lt;/p&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Встроенная цитата</h2>
+    <div class="browser-view">
+        <p>
+            Я сейчас очень зол, и как говорил Шелдон Купер:
+            <q id="first-quote">
+                В мире не хватит ромашкового чая,
+                чтобы успокоить ярость в моей груди!
+            </q>
+        </p>
+    </div>
+    <p></p>
+    <p class="next">В браузере цитата внутри предложения будет выделяться: <br>тег добавляет кавычки вокруг цитируемой части предложения.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Атрибут cite</h2>
+    <pre>
+        <code>&lt;p&gt;</code>
+        <code>	Я сейчас очень зол, и как говорил Шелдон Купер:</code>
+        <code>	&lt;q  <mark>cite="https://www.netflix.com/ru-en/title/70143830"</mark>&gt;</code>
+        <code>		В мире не хватит ромашкового чая, </code>
+        <code>		чтобы успокоить ярость в моей груди!</code>
+        <code>	&lt;/q&gt;</code>
+        <code>&lt;/p&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Самостоятельный тег &lt;cite&gt;</h2>
+    Тег <code>&lt;cite&gt;</code> делает написание текста внутри курсивным. Этот тег может быть в том числе и самостоятельным, не привязанным к цитате:
+    <pre>
+        <code>&lt;p&gt;Какой доктор ваш любимый доктор</code>
+        <code>   (в сериале <mark>&lt;cite&gt;</mark>Доктор Кто<mark>&lt;/cite&gt;</mark>)?&lt;/p&gt;</code>
+    </pre>
+
+    <p>Какой доктор ваш любимый (в сериале <cite>Доктор Кто</cite>)?</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Цитата на другом языке</h2>
+    <p>Можно у тега <code>&lt;q&gt;</code> указать атрибут <code>lang</code> со значением языка цитаты:</p>
+    <pre>
+        <code>&lt;p&gt;</code>
+        <code>  В Японии принято обозначать звук, произносимый кошкой как</code>
+        <code>  &lt;q <mark>lang="ja-latn"</mark>&gt;nyan&lt;/q&gt;</code>
+        <code>&lt;/p&gt;</code>
+    </pre>
+
+</section>
+
+<section class="slide narfu">
+    <h2>Цитата на другом языке</h2>
+    <div class="browser-view" style="text-align: center">
+        <p>
+            В Японии принято обозначать звук, произносимый кошкой как
+            <q lang="ja-latn">nyan</q>
+        </p>
+    </div>
+    <p>Кавычки в этом примере отличаются от стандартных, они соответствуют тем кавычкам, которые ставятся в <br>латинизированном японском тексте.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Отдельная цитата</h2>
+    <pre>
+        <code><mark>&lt;blockquote&gt;</mark></code>
+        <code>	Ножницы режут бумагу, бумага заворачивает камень, </code>
+        <code>	камень давит ящерицу, ящерица травит Спока, </code>
+        <code>	Спок ломает ножницы, ножницы отрезают голову ящерице, </code>
+        <code>	ящерица ест бумагу, бумага подставляет Спока, </code>
+        <code>	Спок испаряет камень, и, как обычно,</code>
+        <code>	камень разбивает ножницы.</code>
+        <code><mark>&lt;/blockquote&gt;</mark></code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Отдельная цитата</h2>
+        <blockquote>
+            Ножницы режут бумагу, бумага заворачивает камень,<br>
+            камень давит ящерицу, ящерица травит Спока,<br>
+            Спок ломает ножницы, ножницы отрезают голову ящерице,<br>
+            ящерица ест бумагу, бумага подставляет Спока,<br>
+            Спок испаряет камень, и, как обычно,<br>
+            камень разбивает ножницы.
+        </blockquote>
+</section>
+
+<section class="slide narfu">
+    <h2>Отдельная цитата</h2> 
+    <pre style="font-size: 19px">
+        <code>&lt;blockquote&gt;</code>
+        <code>  &lt;p&gt;</code>
+        <code>    Я никогда не понимал эту необходимость делить свою жизнь </code>
+        <code>		с кем-то еще...</code>
+        <code>  &lt;/p&gt;</code>
+        <code>  <mark class="important">&lt;footer&gt;</mark></code>
+        <code>		— Шелдон Купер, </code>
+        <code class="mark">		&lt;cite&gt;Речь на свадьбе Говарда и Бернадетт&lt;/cite&gt;</code>
+        <code>  <mark class="important">&lt;/footer&gt;</mark></code>
+        <code>&lt;/blockquote&gt;</code>
+    </pre>
+</section>
+
+
+<section class="slide narfu">
+    <h2>Отдельная цитата</h2>
+    <blockquote>
+        <p>
+            Я никогда не понимал эту необходимость делить свою жизнь
+            с кем-то еще. Возможно, потому что я сам по себе совершенен.
+            Я хочу пожелать вам, чтобы вы находили столько же счастья
+            друг в друге, сколько я нахожу в самом себе.
+        </p>
+        <footer>
+            — Шелдон Купер,
+            <cite>Речь на свадьбе Говарда и Бернадетт</cite>
+        </footer>
+    </blockquote>
+</section>
 
 
 <!-- Конец основных слайдов -->
