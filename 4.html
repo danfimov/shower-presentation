@@ -799,6 +799,77 @@ para.onclick = function() {
     </div>
 </section>
 
+<section class="slide narfu">
+    <h2>Акцентирование внимания</h2>
+    <p>Тег <code>&lt;em&gt;</code> (сокращение от «emphasis») определяет текст, на который сделан особый акцент, меняющий смысл предложения.</p>
+    <pre style="font-size: smaller">
+        <code>Казнить нельзя, &lt;em&gt;помиловать&lt;/em&gt;!</code>
+    </pre>
+    <div class="browser-view">
+        Казнить нельзя, <em>помиловать</em>!
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Акцентирование внимания</h2>
+    <p>Тег <code>&lt;i&gt;</code> (сокращение от «italic») применяется для обозначения текста, который отличается от окружающего текста, но не является более важным.</p>
+    <pre style="font-size: smaller">
+        <code>Он взглянул в окно и подумал — &lt;i&gt;такого просто не может быть&lt;/i&gt;!</code>
+    </pre>
+    <div class="browser-view">
+        Он взглянул в окно и подумал — <i>такого просто не может быть</i>!
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Важность и выделение</h2>
+    <p>Тег <code>&lt;strong&gt;</code> указывает на важность отмеченного текста. Он может использоваться для выделения предупреждений или части документа, которую пользователь должен увидеть раньше остального.</p>
+    <pre>
+        <code>&lt;strong&gt;Внимание!&lt;/strong&gt; Это место опасно. </code>
+        <code>&lt;strong&gt;Вы можете упасть в пропасть&lt;/strong&gt;,</code>
+        <code>        если подойдёте близко к краю.</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Важность и выделение</h2>
+    <p>Тег <code>&lt;b&gt;</code> предназначен для выделения текста с целью привлечения к нему внимания, но без придания ему особой важности. Используется только в случае, когда остальные теги выделения не подходят. </p>
+    <pre>
+        <code>Вы входите в небольшую комнату. </code>
+        <code>Ваш &lt;b&gt;меч&lt;/b&gt; загорается ярче. </code>
+        <code>&lt;b&gt;Крыса&lt;/b&gt; стремительно пробегает вдоль стены.</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Скринридеры и выделение</h2>
+    <p>Скринридер (программа для спелых людей, озвучивающая текста на экране) при чтении сайта будет выделять слова с тегом <code>&lt;strong&gt;</code> интонационно, в отличие от простого выделения с помощью <code>&lt;b&gt;</code>.
+    <p>То же самое касается тегов <code>&lt;em&gt;</code> и <code>&lt;i&gt;</code>. Тег <code>&lt;em&gt;</code> «читалка» будет выделять интонацией.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Контейнеры и стилизация</h2>
+    <p>Теги <code>&lt;div&gt;</code> (сокращение от «division») и <code>&lt;span&gt;</code> отлично подходят для визуальной группировки других элементов.</p>
+    <p>Теги <code>&lt;div&gt;</code> и <code>&lt;span&gt;</code> не имеют никакого оформления по умолчанию и их почти всегда используют вместе с атрибутом <code>class</code>, чтобы легко добавлять им собственные стили.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Контейнеры и стилизация</h2>
+    <pre>
+        <code>&lt;article&gt;</code>
+        <code class="mark">  &lt;div class="highlight"&gt;</code>
+        <code class="mark">    &lt;p&gt;Мы два красивых выделенных абзаца.&lt;/p&gt;</code>
+        <code class="mark">    &lt;p&gt;С жёлтеньким фоном!&lt;/p&gt;</code>
+        <code class="mark">  &lt;/div&gt;</code>
+        <code>  &lt;p&gt;Текст, в котором <mark class="important">&lt;span&gt;синяя фраза&lt;/span&gt;</mark>.&lt;/p&gt;</code>
+        <code>&lt;/article&gt;</code>
+    </pre>
+</section>
+
+<section class="slide">
+    <img src="pictures/4/div.png" alt="" class="cover w">
+</section>
+
 <!-- Конец основных слайдов -->
 <!-- Подвал презентации -->
 
