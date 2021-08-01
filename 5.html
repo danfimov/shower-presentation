@@ -242,6 +242,57 @@
 </section>
 
 <section class="slide narfu">
+    <h2>Размеры изображений</h2>
+    <code>&lt;img src="logo.png" width="200" height="100"&gt;</code>
+    <p>Если задать только один из размеров, ширину или высоту, то вторую размерность браузер вычислит самостоятельно исходя из пропорций изображения.</p>
+    <p class="next"><mark>Как браузер это делает?</mark></p>
+</section>
+
+<section class="slide clear">
+    <h2>PNG</h2>
+    <div class="browser-view place top" style="width: 800px; font-size: 0.7em;">
+        <kbd>od -t u1 picture.png | less</kbd>
+        <pre>
+<code>0000000   137  80  78  71  13  10  26  10   0   0   0  13  73  72  68  82
+0000020     <mark>0   0   7 128</mark>   <mark>0   0   4  56</mark>   8   6   0   0   0 232 211 193
+0000040    67   0   0  32   0  73  68  65  84 120  94 236 157   7 152  93
+0000060    87 117 239 255 167 221  50 125  70 163 222 172  46 217 146 229
+0000100   110 185  96  27  66  47 110  88 174 184   0  14 193   1  66 224
+0000120    81 220   0  83  19  32  47   1  30  37 148 132  22  30 132  16
+0000140   120   4 135  98 192 198 113 145 109 220 173  94  71 178 186  52
+0000160   189 220 118 206 217 239  91 187 220 123 230 206 157 185 119 154</code></pre>
+    </div>
+</section>
+
+<section class="slide clear">
+    <h2>GIF</h2>
+    <div class="browser-view place top" style="width: 800px; font-size: 0.7em;">
+        <kbd>od -t u2 picture.gif | less</kbd>
+        <pre>
+<code>0000000     18759   14406   24889     <mark>500</mark>     <mark>275</mark>     247   60672   44217
+0000020     16992   28728   27499   54514   18639   18754   38345   43654
+0000040     26485   29547    9371    5653   42714   36246   46224   25751
+0000060     51543   30857    6178   21282   21574   12611   60471   39341
+0000100     33962   55926   34454   35472   13456    8994   39309   42698
+0000120     54955   29592   39528   25193   34169   47286   27000   42394
+0000140     35030   21592   45223   42984   22889    2065   22032   26190
+0000160     31400   47730   34708   13928   47153   34188   17492   65351</code></pre>
+    </div>
+</section>
+
+<section class="slide clear">
+    <img src="pictures/5/polina-boxes.jpeg" alt="" class="cover">
+    <a class="copyright" href="https://habr.com/ru/company/yandex/blog/493616/">Картинки как коробки — что внутри?
+        Полина Гуртовая</a>
+</section>
+
+<section class="slide narfu">
+    <h2>Размеры изображений</h2>
+    <p><ins>Важна аккуратность</ins>: если задать картинке одновременно и высоту, и ширину, то браузер может нарушить пропорции исходного изображения.</p>
+    <img src="pictures/5/sad_cat.jpeg" alt="" width="800" height="170" class="next">
+</section>
+
+<section class="slide narfu">
     <h2 class="shout">Форматы изображений</h2>
 </section>
 
