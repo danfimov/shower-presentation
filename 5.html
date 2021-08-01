@@ -52,17 +52,151 @@
 </section>
 
 <section class="slide narfu">
-    <h2>&lt;a href="..."&gt;</h2>
-    <p>предназначен для создания гиперссылки на веб-страницу, файл, email-адрес, элемент на текущей странице или другой ресурс,
-        <br><mark>достижимый при помощи URL</mark>.</p>
-</section>
-
-<section class="slide narfu">
     <div class="browser-view" style="text-align: center; font-size: 30px; margin: 100px">
         <p><a href="">Ссылка</a></p>
         <p><a href="" style="color: var(--purple)">Посещенная ссылка</a></p>
     </div>
 </section>
+
+<section class="slide narfu">
+    <h2 class="shout">Что может быть внутри href?</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;a href="..."&gt;</h2>
+    <p>предназначен для создания <i>гиперссылки</i> на веб-страницу, файл, email-адрес, элемент на текущей странице или другой ресурс,
+        <br><mark>достижимый при помощи URL</mark>.</p>
+</section>
+
+<section class="slide narfu">
+    <dl>
+        <dt style="font-weight: bolder">Гиперссылка –</dt>
+        <dd>ссылка на другой ресурс, который обычно предоставляется пользователю юзер-агентом (браузером) так, чтобы пользователь мог заставить юзер-агент перейти к этому ресурсу, например, открыть его в браузере или скачать его.</dd>
+    </dl>
+</section>
+
+<section class="slide narfu">
+    <h2 class="place"><span style="color: var(--gray)">https://</span>yandex.ru</h2>
+</section>
+
+<section class="slide narfu">
+    <h2 class="cover w" style="text-align: center; line-height: 1.5em"><span style="color: var(--gray)">https://</span>яндекс.рф<br>
+        ⬇️<br>
+        <span style="color: var(--gray)">https://</span>xn--d1acpjx3f.xn--p1ai
+        <a class="copyright" href="https://tools.ietf.org/rfc/rfc3987.txt">Internationalized Resource Identifiers (IRIs)</a>
+    </h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Ссылка-якорь</h2>
+    <p><code>&lt;a <mark>href="#chapter5"</mark>&gt;Глава 5. Не скрывайте outline.&lt;/a&gt;</code></p>
+    <div class="browser-view">
+        <h3>Содержание</h3>
+<!--   Здесь важно не менять порядок слайдов, так как ссылка вв примере стоит ровно на слайд #11 -->
+        <a href="#11">Глава 5. Не скрывайте outline.</a>
+    </div>
+</section>
+
+<section class="slide narfu" id="11">
+    <h2>Ссылка-якорь</h2>
+    <p><code>&lt;h3 <mark>id="chapter5"</mark>&gt;Глава 5. Не скрывайте outline.&lt;/h3&gt;</code></p>
+    <div class="browser-view">
+        <h3>Глава 5. Не скрывайте outline.</h3>
+        <p>Текст этой главы недоступен в ознакомительной версии.</p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Ссылка на файл</h2>
+    <pre>
+        <code>&lt;a href="images/kitten.jpg" <mark>download</mark>&gt;</code>
+        <code>    &lt;img src="images/kitten-preview.jpg" alt="Котёнок"&gt;</code>
+        <code>&lt;/a&gt;</code>
+    </pre>
+    <pre>
+        <code>&lt;a href="images/kitten.jpg" <mark>download="Котёнок"</mark>&gt;</code>
+        <code>    &lt;img src="images/kitten-preview.jpg" alt="Котёнок"&gt;</code>
+        <code>&lt;/a&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <div class="browser-view" style="text-align: center; font-size: 30px; margin: 100px">
+        <p><a href="#">Ссылка</a></p>
+        <p><a href="pictures/5/pdf_icon.svg" title="Скачается pdf-файл" download="Иконка pdf">
+            <img src="pictures/5/pdf_icon.svg" alt="pdf" style="height: 0.9em;">
+            Ссылка для скачивания файла
+        </a></p>
+    </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout">Из браузера можно звонить</h2>
+</section>
+
+<section class="slide narfu">
+    <h2 class="cover"><mark>tel:</mark>+375291234567</h2>
+    <a href="https://www.ietf.org/rfc/rfc3966.txt" class="copyright">The tel URI for Telephone Numbers</a>
+</section>
+
+<section class="slide narfu">
+    <h2 class="cover">tel:+375291234567 <mark>p1</mark></h2>
+    <a href="https://www.ietf.org/rfc/rfc3966.txt" class="copyright">The tel URI for Telephone Numbers</a>
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/5/ios_tel.jpeg" alt="" class="cover">
+</section>
+
+<section class="slide">
+    <h2 class="shout">Можно отправлять письма</h2>
+</section>
+
+<section class="slide narfu">
+    <h2 class="cover"><mark>mailto:</mark>example@gmail.com</h2>
+    <a href="https://datatracker.ietf.org/doc/html/rfc6068.html" class="copyright">The 'mailto' URI Scheme</a>
+</section>
+
+<section class="slide narfu">
+    <pre class="cover"><code>mailto:example@gmail.com
+          ?<mark>cc</mark>=second.example@gmail.com
+          &amp;<mark>bcc</mark>=third.example@gmail.com
+          &amp;<mark>subject</mark>=Конференция
+          &amp;<mark>body</mark>=Хочу%20выступить</code>
+    </pre>
+    <a href="https://datatracker.ietf.org/doc/html/rfc6068.html" class="copyright">The 'mailto' URI Scheme</a>
+</section>
+
+
+<section class="slide narfu">
+    <h2>&lt;a title="..."&gt;</h2>
+    <img src="pictures/5/a_title.png" alt="" width="370" style="margin: 0 220px">
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;a target="..."&gt;</h2>
+    <p>Атрибут <code>target</code> — определяет, где откроется ссылка.</p>
+    <p>Наиболее распространенные варианты:</p>
+    <ul>
+        <li><code>_self</code> – в той же вкладке (значение по умолчанию).</li>
+        <li><code>_blank</code> – в новой вкладке или в новом окне браузера (зависит от настроек браузера)</li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <div class="browser-view" style="text-align: center; font-size: 30px; margin: 100px">
+        <p><a href="#">Ссылка</a></p>
+        <p><a href="https://yandex.ru" title="Ссылка откроется в другой вкладке" target="_blank">
+            <img src="pictures/5/icon-new-tab.svg" alt="Новая вкладка" style="height: 0.9em;">
+            Ссылка на сторонний сайт
+        </a></p>
+    </div>
+</section>
+
+
+
+
+
 
 
 <!-- Конец основных слайдов -->

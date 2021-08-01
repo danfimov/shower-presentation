@@ -1,0 +1,28 @@
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><defs/><path d="M292 13c-21 6-41 22-50 42-3 8-4 19-5 95l-1 86-86 1c-82 1-87 2-96 6-16 8-28 19-36 36l-7 15-1 314c0 315 0 315 4 330 4 13 7 17 19 29s16 15 29 19c15 4 16 4 330 4l314-1 15-7c17-8 29-20 36-36 4-9 5-14 6-96l1-86 86-1c82-1 87-1 96-6 16-7 28-19 36-36l7-14 1-315c0-314 0-315-4-330-4-13-7-17-19-29a58 58 0 00-28-19c-15-4-17-4-326-4-239 0-313 1-321 3zm623 373v302H312V85h603zM237 509v198l7 13c7 15 19 28 34 36l11 6h199l200 1v152H85V312h152z"/><path d="M563 163c-30 11-33 52-6 69 8 4 12 4 80 5h71L589 357c-83 83-121 123-123 128-5 12-4 22 2 33 9 17 29 24 47 16 6-2 45-40 128-123l120-119v71c1 68 1 72 6 80 5 9 16 17 26 19 18 3 38-10 43-28 1-6 2-45 2-128l-1-118-5-9-13-13-9-5H692c-100-1-122 0-129 2z"/><script type="text/javascript">//<![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function() {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					head.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					head.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function(msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			console.log('Live reload enabled.');
+		})();
+	}
+	// ]]></script></svg>
