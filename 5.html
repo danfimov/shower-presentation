@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="node_modules/@shower/material/styles/styles.css">
     <link rel="stylesheet" href="styles/all_styles.css">
     <link rel="shortcut icon" type="image/png" href="pictures/general/narfu_icon.png">
+    <style>
+        .large_list{
+            font-size: 35px;
+            margin: 40px;
+        }
+    </style>
 </head>
 <body class="shower list">
 <header class="caption">
@@ -193,11 +199,273 @@
     </div>
 </section>
 
+<section class="slide narfu">
+    <h2 class="shout">Изображения и их форматы</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Подготовка изображения</h2>
+    <br>
+    <ol>
+        <li class="next">Скачивание или импорт из редактора</li>
+        <li class="next">Оптимизация</li>
+        <li class="next">Помещение файла в проект</li>
+        <li class="next"><mark>Вставка в код</mark></li>
+    </ol>
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;img src="..."&gt;</h2>
+    <p>Без атрибута <code>src</code>, в котором прописывается относительный путь к картинке, тег бесполезен.</p>
+    <code>&lt;img src="assets/kitten.jpg"&gt;</code>
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;img alt="..."&gt;</h2>
+    <img src="pictures/5/alt.png" alt="" class="place">
+</section>
+
+<section class="slide">
+    <img src="pictures/5/alt_1.png" alt="" class="cover">
+</section>
+
+<section class="slide">
+    <img src="pictures/5/alt_2.png" alt="" class="cover">
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout">Форматы изображений</h2>
+</section>
+
+<section class="slide gray">
+    <img src="pictures/5/squoosh.png" alt="" class="cover w">
+</section>
+
+<section class="slide narfu">
+    <h2>Растровые изображения</h2>
+    <img src="pictures/5/rastr.png" alt="" class="place">
+</section>
+
+<section class="slide">
+    <h2>Форматы</h2>
+    <table>
+        <colgroup><col width="25%">
+            <col width="21%">
+            <col width="27%">
+            <col width="27%">
+        </colgroup><tbody><tr>
+        <th></th>
+        <th>Цвета</th>
+        <th>Прозрачность</th>
+        <th>Анимация</th>
+    </tr>
+    <tr class="next">
+        <th>GIF</th>
+        <td>256</td>
+        <td>Да</td>
+        <td>Да</td>
+    </tr>
+    <tr class="next">
+        <th>PNG</th>
+        <td>256 и больше</td>
+        <td>Да, альфа</td>
+        <td>Да *</td>
+    </tr>
+    <tr class="next">
+        <th>JPEG</th>
+        <td>Много</td>
+        <td>Нет</td>
+        <td>Нет</td>
+    </tr>
+    <tr class="next">
+        <th>WebP</th>
+        <td>256 и больше</td>
+        <td>Да, альфа</td>
+        <td>Да</td>
+    </tr>
+    <tr class="next">
+        <th>AVIF</th>
+        <td>Много</td>
+        <td>Да, альфа</td>
+        <td>Да</td>
+    </tr>
+    </tbody></table>
+    <svg class="place next" width="1024" height="576" viewBox="0 0 16 9" style="pointer-events: none">
+        <line x1="0" y1="3.60" x2="16" y2="3.60" stroke="var(--blue)" stroke-width="0.1"></line>
+    </svg>
+</section>
+
+<section class="slide narfu">
+    <h2>Векторные изображения</h2>
+    <img src="pictures/5/vector.png" alt="" class="place">
+</section>
+
+<section class="slide">
+    <h2>Форматы</h2>
+    <table>
+        <colgroup><col width="25%">
+            <col width="21%">
+            <col width="27%">
+            <col width="27%">
+        </colgroup><tbody><tr>
+        <th></th>
+        <th>Цвета</th>
+        <th>Прозрачность</th>
+        <th>Анимация</th>
+    </tr>
+    <tr class="next">
+        <th>SVG</th>
+        <td>Много</td>
+        <td>Да</td>
+        <td>Да</td>
+    </tr>
+    </tbody></table>
+    <br>
+    <br>
+    <br>
+    <svg class="place next" width="1024" height="576" viewBox="0 0 16 9" style="pointer-events: none">
+        <line x1="4.2" y1="2.1" x2="4.8" y2="1.4" stroke="var(--blue)" stroke-width="0.1"></line>
+    </svg>
+    <p class="next">SVG — это программируемая графика.</p>
+</section>
 
 
+<section class="slide narfu">
+    <h2><b>SVG</b> (Scalable Vector Graphics)</h2>
+    <span>1. Масштабирование без потерь</span>
+    <div class="columns two">
+        <div>
+            <img src="pictures/5/svg_circles.svg" alt="" width="300" style="margin: 0 40px">
+            <p style="text-align: center">Формат SVG</p>
+        </div>
+        <div>
+            <img src="pictures/5/png_circles.png" alt="" width="300" style="margin: 0 40px">
+            <p style="text-align: center">Формат PNG</p>
+        </div>
+    </div>
+</section>
 
+<section class="slide narfu">
+    <h2><b>SVG</b> (Scalable Vector Graphics)</h2>
+    <span>2. Ручное редактирование</span>
+    <pre>            <code>&lt;svg width="120" viewBox="<mark>0 0 12 10</mark>" fill="#4b86c2"&gt;</code>
+            <code>    &lt;rect width="12" height="2" x="0" y="<mark>0</mark>"/&gt;</code>
+            <code>    &lt;rect width="12" height="2" x="0" y="<mark>4</mark>"/&gt;</code>
+            <code>    &lt;rect width="12" height="2" x="0" y="<mark>8</mark>"/&gt;</code>
+            <code>&lt;/svg&gt;</code>
+        </pre>
+    <svg viewBox="0 0 12 10" fill="#4b86c2" class="place bottom right" style="margin-bottom: 70px; margin-right: 70px;" width="120">
+        <rect width="12" height="2" x="0" y="0"></rect>
+        <rect width="12" height="2" x="0" y="4"></rect>
+        <rect width="12" height="2" x="0" y="8"></rect>
+    </svg>
+</section>
 
+<section class="slide narfu">
+    <h2><b>SVG</b> (Scalable Vector Graphics)</h2>
+    <ol>
+        <li value="3">SVG-файл — это всегда исходник;</li>
+        <li value="4">Внутри SVG-файла можно описывать тени и градиенты;</li>
+        <li value="5">Внутри файла могут находиться CSS (каскадные таблицы стилей для редактирования визуального оформления) и JavaScript (код на языке программирования).</li>
+    </ol>
+</section>
 
+<section class="slide clear">
+    <span class="hot-keys hot-keys__element place right">SVGOMG</span>
+    <img src="pictures/5/svgomg.png" alt="" class="cover h">
+</section>
+
+<section class="slide narfu">
+    <h2><b>JPEG</b> (Joint Photographic Experts Group)</h2>
+    <p>Подходит для:</p>
+    <ul>
+        <li>полноцветных изображений, фотографий;</li>
+        <li>изображений с плавным переходом яркости и контраста;</li>
+        <li>рисунков с большим количеством разноцветных деталей.</li>
+    </ul>
+</section>
+
+<section class="slide clear">
+    <span class="hot-keys hot-keys__element place right">TinyPNG</span>
+    <img src="pictures/5/tiny_png.png" alt="" class="cover">
+</section>
+
+<section class="slide narfu">
+    <h2><b>PNG</b> (Portable Network Graphics)</h2>
+    <p>Подходит для:</p>
+    <ul>
+        <li>изображений с прозрачностью и полупрозрачностью;</li>
+        <li>полноцветных изображений, когда необходима повышенная точность;</li>
+        <li>изображений с резкими переходами цветов.</li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/5/png_meme.png" alt="" class="cover h">
+</section>
+
+<section class="slide narfu">
+    <h2><b>GIF</b> (Graphics Interchange Format)</h2>
+    <img class="place left" src="pictures/5/wait.gif" alt="Анимированные песочные часы" style="
+                image-rendering: -moz-crisp-edges;
+                image-rendering: pixelated;
+                margin-left: 40px;
+                height: 300px">
+    <img class="place right" src="pictures/5/wait_.png" alt="Кадры анимации песочных часов" style="
+                image-rendering: -moz-crisp-edges;
+                image-rendering: pixelated;
+                margin-top: 20px;
+                margin-right: 110px;
+                height: 250px">
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout">Гифка — <br>это жанр,
+        а не формат графики.</h2>
+</section>
+
+<section class="slide narfu">
+    <h2><b>ICO</b> (Windows icon)</h2>
+    <p>Используется в ситуациях, когда нужны маленькие картинки фиксированного размера, например, ярлыки на рабочем столе. </p>
+    <p>В вебе картинки этого формата отображается рядом с адресом сайта (фавиконка) или закладкой в браузере.</p>
+</section>
+
+<section class="slide clear">
+    <img src="pictures/5/icons.webp" alt="" class="cover w">
+</section>
+
+<section class="slide narfu">
+    <h2><b>WebP</b></h2>
+    <p>Его особенностью является продвинутый алгоритм сжатия, позволяющий сократить размер картинки без видимых потерь в качестве.</p>
+    <p>В среднем вес картинок сокращается на 25–35% (без потери качества детализации и цветопередачи), что <i>иногда</i> позволяет заменить на веб-страницах все JPEG и PNG файлы.</p>
+</section>
+
+<section class="slide narfu">
+    <h2><b>AVIF</b> (AV1 Still Image File Format)</h2>
+    <p>Стал использоваться зимой 2019 года одновременно с открытым видеокодеком AOMedia Video 1 (AV1).</p>
+    <img src="pictures/5/av1.svg" alt="" height="200" style="margin: 0 250px">
+</section>
+
+<section class="slide narfu">
+    <h2><b>AVIF</b> (AV1 Still Image File Format)</h2>
+    <p>AVIF предлагает значительное уменьшение размера изображения. Экономия достигает ~50% с JPEG и ~20% с WebP.</p>
+    <p>Вероятно за этим форматом будущее веба, но на данный момент поддержка в браузерах оставляет желать лучшего.</p>
+</section>
+
+<section class="slide">
+    <img src="pictures/5/avif.png" alt="" class="cover w">
+    <span class="hot-keys__element place right top" style="margin: 20px">AVIF - 18kB</span>
+    <span class="hot-keys__element place left top" style="margin: 20px">JPEG - 18kB</span>
+</section>
+
+<section class="slide narfu">
+    <h2>Важность оптимизации</h2>
+    <ul class="large_list">
+        <li value="—" class="next">27 картинок на <b>3,4Mb</b></li>
+        <li value="—" class="next">Заняло 5 минут сделать <b>612kB</b></li>
+    </ul>
+    <p class="next">После оптимизации картинки стали весить <ins>в 5 раз меньше</ins>.</p>
+</section>
 
 <!-- Конец основных слайдов -->
 <!-- Подвал презентации -->
