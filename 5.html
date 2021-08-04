@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="shower/themes/material/styles/styles.css">
     <link rel="stylesheet" href="styles/all_styles.css">
     <link rel="shortcut icon" type="image/png" href="pictures/general/narfu_icon.png">
+    <style>
+        .large_list{
+            font-size: 35px;
+            margin: 40px;
+        }
+    </style>
 </head>
 <body class="shower list">
 <header class="caption">
@@ -18,6 +24,638 @@
     <h2>Ссылки и <br>медиа-элементы</h2>
     <p>Лекция №3</p>
 </section>
+
+<!-- Конец титульного слайда  -->
+<!-- Основные слайды -->
+
+<section class="slide narfu">
+    <pre class="place">
+        <code>
+&lt;<mark>a</mark> href="doc.pdf"
+   download
+   type="application/pdf"
+   hreflang="en"
+   ping="./trackpings"
+   rel="noopener"
+   target="_self"&gt;
+   ...
+&lt;/<mark>a</mark>&gt;
+        </code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Простейшая ссылка</h2>
+    <pre>
+        <code>&lt;a href="https://www.yandex.ru/"&gt;Яндекс&lt;/a&gt;</code>
+    </pre>
+
+    <div class="browser-view next">
+        <a href="https://www.yandex.ru/">Яндекс</a>
+    </div>
+    <p></p>
+    <p class="next">Можно разместить текст, картинку или любой другой элемент внутрь <code>&lt;a&gt;</code>, чтобы сделать его ссылкой. </p>
+</section>
+
+<section class="slide narfu">
+    <div class="browser-view" style="text-align: center; font-size: 30px; margin: 100px">
+        <p><a href="">Ссылка</a></p>
+        <p><a href="" style="color: var(--purple)">Посещенная ссылка</a></p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout">Что может быть внутри href?</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;a href="..."&gt;</h2>
+    <p>предназначен для создания <i>гиперссылки</i> на веб-страницу, файл, email-адрес, элемент на текущей странице или другой ресурс,
+        <br><mark>достижимый при помощи URL</mark>.</p>
+</section>
+
+<section class="slide narfu">
+    <dl>
+        <dt style="font-weight: bolder">Гиперссылка –</dt>
+        <dd>ссылка на другой ресурс, который обычно предоставляется пользователю юзер-агентом (браузером) так, чтобы пользователь мог заставить юзер-агент перейти к этому ресурсу, например, открыть его в браузере или скачать его.</dd>
+    </dl>
+</section>
+
+<section class="slide narfu">
+    <h2 class="place"><span style="color: var(--gray)">https://</span>yandex.ru</h2>
+</section>
+
+<section class="slide narfu">
+    <h2 class="cover w" style="text-align: center; line-height: 1.5em"><span style="color: var(--gray)">https://</span>яндекс.рф<br>
+        ⬇️<br>
+        <span style="color: var(--gray)">https://</span>xn--d1acpjx3f.xn--p1ai
+        <a class="copyright" href="https://tools.ietf.org/rfc/rfc3987.txt">Internationalized Resource Identifiers (IRIs)</a>
+    </h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Ссылка-якорь</h2>
+    <p><code>&lt;a <mark>href="#chapter5"</mark>&gt;Глава 5. Не скрывайте outline.&lt;/a&gt;</code></p>
+    <div class="browser-view">
+        <h3>Содержание</h3>
+<!--   Здесь важно не менять порядок слайдов, так как ссылка вв примере стоит ровно на слайд #11 -->
+        <a href="#11">Глава 5. Не скрывайте outline.</a>
+    </div>
+</section>
+
+<section class="slide narfu" id="11">
+    <h2>Ссылка-якорь</h2>
+    <p><code>&lt;h3 <mark>id="chapter5"</mark>&gt;Глава 5. Не скрывайте outline.&lt;/h3&gt;</code></p>
+    <div class="browser-view">
+        <h3>Глава 5. Не скрывайте outline.</h3>
+        <p>Текст этой главы недоступен в ознакомительной версии.</p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Ссылка на файл</h2>
+    <pre>
+        <code>&lt;a href="images/kitten.jpg" <mark>download</mark>&gt;</code>
+        <code>    &lt;img src="images/kitten-preview.jpg" alt="Котёнок"&gt;</code>
+        <code>&lt;/a&gt;</code>
+    </pre>
+    <pre>
+        <code>&lt;a href="images/kitten.jpg" <mark>download="Котёнок"</mark>&gt;</code>
+        <code>    &lt;img src="images/kitten-preview.jpg" alt="Котёнок"&gt;</code>
+        <code>&lt;/a&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <div class="browser-view" style="text-align: center; font-size: 30px; margin: 100px">
+        <p><a href="#">Ссылка</a></p>
+        <p><a href="pictures/5/pdf_icon.svg" title="Скачается pdf-файл" download="Иконка pdf">
+            <img src="pictures/5/pdf_icon.svg" alt="pdf" style="height: 0.9em;">
+            Ссылка для скачивания файла
+        </a></p>
+    </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout">Из браузера можно звонить</h2>
+</section>
+
+<section class="slide narfu">
+    <h2 class="cover"><mark>tel:</mark>+375291234567</h2>
+    <a href="https://www.ietf.org/rfc/rfc3966.txt" class="copyright">The tel URI for Telephone Numbers</a>
+</section>
+
+<section class="slide narfu">
+    <h2 class="cover">tel:+375291234567 <mark>p1</mark></h2>
+    <a href="https://www.ietf.org/rfc/rfc3966.txt" class="copyright">The tel URI for Telephone Numbers</a>
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/5/ios_tel.jpeg" alt="" class="cover">
+</section>
+
+<section class="slide">
+    <h2 class="shout">Можно отправлять письма</h2>
+</section>
+
+<section class="slide narfu">
+    <h2 class="cover"><mark>mailto:</mark>example@gmail.com</h2>
+    <a href="https://datatracker.ietf.org/doc/html/rfc6068.html" class="copyright">The 'mailto' URI Scheme</a>
+</section>
+
+<section class="slide narfu">
+    <pre class="cover"><code>mailto:example@gmail.com
+          ?<mark>cc</mark>=second.example@gmail.com
+          &amp;<mark>bcc</mark>=third.example@gmail.com
+          &amp;<mark>subject</mark>=Конференция
+          &amp;<mark>body</mark>=Хочу%20выступить</code>
+    </pre>
+    <a href="https://datatracker.ietf.org/doc/html/rfc6068.html" class="copyright">The 'mailto' URI Scheme</a>
+</section>
+
+
+<section class="slide narfu">
+    <h2>&lt;a title="..."&gt;</h2>
+    <img src="pictures/5/a_title.png" alt="" width="370" style="margin: 0 220px">
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;a target="..."&gt;</h2>
+    <p>Атрибут <code>target</code> — определяет, где откроется ссылка.</p>
+    <p>Наиболее распространенные варианты:</p>
+    <ul>
+        <li><code>_self</code> – в той же вкладке (значение по умолчанию).</li>
+        <li><code>_blank</code> – в новой вкладке или в новом окне браузера (зависит от настроек браузера)</li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <div class="browser-view" style="text-align: center; font-size: 30px; margin: 100px">
+        <p><a href="#">Ссылка</a></p>
+        <p><a href="https://yandex.ru" title="Ссылка откроется в другой вкладке" target="_blank">
+            <img src="pictures/5/icon-new-tab.svg" alt="Новая вкладка" style="height: 0.9em;">
+            Ссылка на сторонний сайт
+        </a></p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout">Изображения и их форматы</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Подготовка изображения</h2>
+    <br>
+    <ol>
+        <li class="next">Скачивание или импорт из редактора</li>
+        <li class="next">Оптимизация</li>
+        <li class="next">Помещение файла в проект</li>
+        <li class="next"><mark>Вставка в код</mark></li>
+    </ol>
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;img src="..."&gt;</h2>
+    <p>Без атрибута <code>src</code>, в котором прописывается относительный путь к картинке, тег бесполезен.</p>
+    <code>&lt;img src="assets/kitten.jpg"&gt;</code>
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;img alt="..."&gt;</h2>
+    <img src="pictures/5/alt.png" alt="" class="place">
+</section>
+
+<section class="slide narfu">
+    <h2 style="text-align: center; margin-top: 100px">
+        Изображения<br>
+        <span style="color: var(--color-key)">⬋&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬊</span><br>
+        <span style="font-size: 0.6em;">ℹ️ информативные&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🖼 декоративные</span>
+    </h2>
+</section>
+
+<section class="slide">
+    <img src="pictures/5/alt_1.png" alt="" class="cover">
+</section>
+
+<section class="slide">
+    <img src="pictures/5/alt_2.png" alt="" class="cover">
+</section>
+
+<section class="slide narfu">
+    <h2>Размеры изображений</h2>
+    <code>&lt;img src="logo.png" width="200" height="100"&gt;</code>
+    <p>Если задать только один из размеров, ширину или высоту, то вторую размерность браузер вычислит самостоятельно исходя из пропорций изображения.</p>
+    <p class="next"><mark>Как браузер это делает?</mark></p>
+</section>
+
+<section class="slide clear">
+    <h2>PNG</h2>
+    <div class="browser-view place top" style="width: 800px; font-size: 0.7em;">
+        <kbd>od -t u1 picture.png | less</kbd>
+        <pre>
+<code>0000000   137  80  78  71  13  10  26  10   0   0   0  13  73  72  68  82
+0000020     <mark>0   0   7 128</mark>   <mark>0   0   4  56</mark>   8   6   0   0   0 232 211 193
+0000040    67   0   0  32   0  73  68  65  84 120  94 236 157   7 152  93
+0000060    87 117 239 255 167 221  50 125  70 163 222 172  46 217 146 229
+0000100   110 185  96  27  66  47 110  88 174 184   0  14 193   1  66 224
+0000120    81 220   0  83  19  32  47   1  30  37 148 132  22  30 132  16
+0000140   120   4 135  98 192 198 113 145 109 220 173  94  71 178 186  52
+0000160   189 220 118 206 217 239  91 187 220 123 230 206 157 185 119 154</code></pre>
+    </div>
+</section>
+
+<section class="slide clear">
+    <h2>GIF</h2>
+    <div class="browser-view place top" style="width: 800px; font-size: 0.7em;">
+        <kbd>od -t u2 picture.gif | less</kbd>
+        <pre>
+<code>0000000     18759   14406   24889     <mark>500</mark>     <mark>275</mark>     247   60672   44217
+0000020     16992   28728   27499   54514   18639   18754   38345   43654
+0000040     26485   29547    9371    5653   42714   36246   46224   25751
+0000060     51543   30857    6178   21282   21574   12611   60471   39341
+0000100     33962   55926   34454   35472   13456    8994   39309   42698
+0000120     54955   29592   39528   25193   34169   47286   27000   42394
+0000140     35030   21592   45223   42984   22889    2065   22032   26190
+0000160     31400   47730   34708   13928   47153   34188   17492   65351</code></pre>
+    </div>
+</section>
+
+<section class="slide clear">
+    <img src="pictures/5/polina-boxes.jpeg" alt="" class="cover">
+    <a class="copyright" href="https://habr.com/ru/company/yandex/blog/493616/">Картинки как коробки — что внутри?
+        Полина Гуртовая</a>
+</section>
+
+<section class="slide narfu">
+    <h2>Размеры изображений</h2>
+    <p><ins>Важна аккуратность</ins>: если задать картинке одновременно и высоту, и ширину, то браузер может нарушить пропорции исходного изображения.</p>
+    <img src="pictures/5/sad_cat.jpeg" alt="" width="800" height="170" class="next">
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout">Форматы изображений</h2>
+</section>
+
+<section class="slide gray">
+    <img src="pictures/5/squoosh.png" alt="" class="cover w">
+</section>
+
+<section class="slide narfu">
+    <h2>Растровые изображения</h2>
+    <img src="pictures/5/rastr.png" alt="" class="place">
+</section>
+
+<section class="slide">
+    <h2>Форматы</h2>
+    <table>
+        <colgroup><col width="25%">
+            <col width="21%">
+            <col width="27%">
+            <col width="27%">
+        </colgroup><tbody><tr>
+        <th></th>
+        <th>Цвета</th>
+        <th>Прозрачность</th>
+        <th>Анимация</th>
+    </tr>
+    <tr class="next">
+        <th>GIF</th>
+        <td>256</td>
+        <td>Да</td>
+        <td>Да</td>
+    </tr>
+    <tr class="next">
+        <th>PNG</th>
+        <td>256 и больше</td>
+        <td>Да, альфа</td>
+        <td>Да *</td>
+    </tr>
+    <tr class="next">
+        <th>JPEG</th>
+        <td>Много</td>
+        <td>Нет</td>
+        <td>Нет</td>
+    </tr>
+    <tr class="next">
+        <th>WebP</th>
+        <td>256 и больше</td>
+        <td>Да, альфа</td>
+        <td>Да</td>
+    </tr>
+    <tr class="next">
+        <th>AVIF</th>
+        <td>Много</td>
+        <td>Да, альфа</td>
+        <td>Да</td>
+    </tr>
+    </tbody></table>
+    <svg class="place next" width="1024" height="576" viewBox="0 0 16 9" style="pointer-events: none">
+        <line x1="0" y1="3.60" x2="16" y2="3.60" stroke="var(--blue)" stroke-width="0.1"></line>
+    </svg>
+</section>
+
+<section class="slide narfu">
+    <h2>Векторные изображения</h2>
+    <img src="pictures/5/vector.png" alt="" class="place">
+</section>
+
+<section class="slide">
+    <h2>Форматы</h2>
+    <table>
+        <colgroup><col width="25%">
+            <col width="21%">
+            <col width="27%">
+            <col width="27%">
+        </colgroup><tbody><tr>
+        <th></th>
+        <th>Цвета</th>
+        <th>Прозрачность</th>
+        <th>Анимация</th>
+    </tr>
+    <tr class="next">
+        <th>SVG</th>
+        <td>Много</td>
+        <td>Да</td>
+        <td>Да</td>
+    </tr>
+    </tbody></table>
+    <br>
+    <br>
+    <br>
+    <svg class="place next" width="1024" height="576" viewBox="0 0 16 9" style="pointer-events: none">
+        <line x1="4.2" y1="2.1" x2="4.8" y2="1.4" stroke="var(--blue)" stroke-width="0.1"></line>
+    </svg>
+    <p class="next">SVG — это программируемая графика.</p>
+</section>
+
+
+<section class="slide narfu">
+    <h2><b>SVG</b> (Scalable Vector Graphics)</h2>
+    <span>1. Масштабирование без потерь</span>
+    <div class="columns two">
+        <div>
+            <img src="pictures/5/svg_circles.svg" alt="" width="300" style="margin: 0 40px">
+            <p style="text-align: center">Формат SVG</p>
+        </div>
+        <div>
+            <img src="pictures/5/png_circles.png" alt="" width="300" style="margin: 0 40px">
+            <p style="text-align: center">Формат PNG</p>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2><b>SVG</b> (Scalable Vector Graphics)</h2>
+    <span>2. Ручное редактирование</span>
+    <pre>            <code>&lt;svg width="120" viewBox="<mark>0 0 12 10</mark>" fill="#4b86c2"&gt;</code>
+            <code>    &lt;rect width="12" height="2" x="0" y="<mark>0</mark>"/&gt;</code>
+            <code>    &lt;rect width="12" height="2" x="0" y="<mark>4</mark>"/&gt;</code>
+            <code>    &lt;rect width="12" height="2" x="0" y="<mark>8</mark>"/&gt;</code>
+            <code>&lt;/svg&gt;</code>
+        </pre>
+    <svg viewBox="0 0 12 10" fill="#4b86c2" class="place bottom right" style="margin-bottom: 70px; margin-right: 70px;" width="120">
+        <rect width="12" height="2" x="0" y="0"></rect>
+        <rect width="12" height="2" x="0" y="4"></rect>
+        <rect width="12" height="2" x="0" y="8"></rect>
+    </svg>
+</section>
+
+<section class="slide narfu">
+    <h2><b>SVG</b> (Scalable Vector Graphics)</h2>
+    <ol>
+        <li value="3">SVG-файл — это всегда исходник;</li>
+        <li value="4">Внутри SVG-файла можно описывать тени и градиенты;</li>
+        <li value="5">Внутри файла могут находиться CSS (каскадные таблицы стилей для редактирования визуального оформления) и JavaScript (код на языке программирования).</li>
+    </ol>
+</section>
+
+<section class="slide clear">
+    <span class="hot-keys hot-keys__element place right">SVGOMG</span>
+    <img src="pictures/5/svgomg.png" alt="" class="cover h">
+</section>
+
+<section class="slide narfu">
+    <h2><b>JPEG</b> (Joint Photographic Experts Group)</h2>
+    <p>Подходит для:</p>
+    <ul>
+        <li>полноцветных изображений, фотографий;</li>
+        <li>изображений с плавным переходом яркости и контраста;</li>
+        <li>рисунков с большим количеством разноцветных деталей.</li>
+    </ul>
+</section>
+
+<section class="slide clear">
+    <span class="hot-keys hot-keys__element place right">TinyPNG</span>
+    <img src="pictures/5/tiny_png.png" alt="" class="cover">
+</section>
+
+<section class="slide narfu">
+    <h2><b>PNG</b> (Portable Network Graphics)</h2>
+    <p>Подходит для:</p>
+    <ul>
+        <li>изображений с прозрачностью и полупрозрачностью;</li>
+        <li>полноцветных изображений, когда необходима повышенная точность;</li>
+        <li>изображений с резкими переходами цветов.</li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/5/png_meme.png" alt="" class="cover h">
+</section>
+
+<section class="slide narfu">
+    <h2><b>GIF</b> (Graphics Interchange Format)</h2>
+    <img class="place left" src="pictures/5/wait.gif" alt="Анимированные песочные часы" style="
+                image-rendering: -moz-crisp-edges;
+                image-rendering: pixelated;
+                margin-left: 40px;
+                height: 300px">
+    <img class="place right" src="pictures/5/wait_.png" alt="Кадры анимации песочных часов" style="
+                image-rendering: -moz-crisp-edges;
+                image-rendering: pixelated;
+                margin-top: 20px;
+                margin-right: 110px;
+                height: 250px">
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout">Гифка — <br>это жанр,
+        а не формат графики.</h2>
+</section>
+
+<section class="slide narfu">
+    <h2><b>ICO</b> (Windows icon)</h2>
+    <p>Используется в ситуациях, когда нужны маленькие картинки фиксированного размера, например, ярлыки на рабочем столе. </p>
+    <p>В вебе картинки этого формата отображается рядом с адресом сайта (фавиконка) или закладкой в браузере.</p>
+</section>
+
+<section class="slide clear">
+    <img src="pictures/5/icons.webp" alt="" class="cover w">
+</section>
+
+<section class="slide narfu">
+    <h2><b>WebP</b></h2>
+    <p>Его особенностью является продвинутый алгоритм сжатия, позволяющий сократить размер картинки без видимых потерь в качестве.</p>
+    <p>В среднем вес картинок сокращается на 25–35% (без потери качества детализации и цветопередачи), что <i>иногда</i> позволяет заменить на веб-страницах все JPEG и PNG файлы.</p>
+</section>
+
+<section class="slide narfu">
+    <h2><b>AVIF</b> (AV1 Still Image File Format)</h2>
+    <p>Стал использоваться зимой 2019 года одновременно с открытым видеокодеком AOMedia Video 1 (AV1).</p>
+    <img src="pictures/5/av1.svg" alt="" height="200" style="margin: 0 250px">
+</section>
+
+<section class="slide narfu">
+    <h2><b>AVIF</b> (AV1 Still Image File Format)</h2>
+    <p>AVIF предлагает значительное уменьшение размера изображения. Экономия достигает ~50% с JPEG и ~20% с WebP.</p>
+    <p>Вероятно за этим форматом будущее веба, но на данный момент поддержка в браузерах оставляет желать лучшего.</p>
+</section>
+
+<section class="slide">
+    <img src="pictures/5/avif.png" alt="" class="cover w">
+    <span class="hot-keys__element place right top" style="margin: 20px">AVIF - 18kB</span>
+    <span class="hot-keys__element place left top" style="margin: 20px">JPEG - 18kB</span>
+</section>
+
+<section class="slide">
+    <img src="pictures/5/narfu-main_page.jpg" alt="" class="cover">
+</section>
+
+<section class="slide narfu">
+    <h2>На главной</h2>
+    <ul class="large_list">
+        <li value="—" class="next">27 картинок на <b>3,4Mb</b></li>
+        <li value="—" class="next">Заняло 5 минут сделать <b>612kB</b></li>
+    </ul>
+    <p class="next">После оптимизации картинки стали весить <ins>в 5 раз меньше</ins>.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;img srcset="..."&gt;</h2>
+    <pre>
+        <code>&lt;img width="500" height="500"</code>
+        <code>	src="images/cat_1x.jpeg"</code>
+        <code>	<mark>srcset</mark>="images/cat_2x.jpeg 2x"</code>
+        <code>	alt="Рыжий код грызет штанину"&gt;</code>
+    </pre>
+    <p>В обычный <code>src</code> вставляется картинка с обычным разрешением, а если нужна картинка с двойным – <code>2x</code>, загружается картинка с увеличенным разрешением из <code>srcset</code>.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;picture&gt;</h2>
+    <pre>
+        <code>&lt;picture&gt;</code>
+        <code class="next">	&lt;source type="image/webp" srcset="images/cat_2x.webp 2x"&gt;</code>
+        <code class="next">	&lt;source type="image/jpeg" srcset="images/cat_2x.jpeg 2x"&gt;</code>
+        <div class="next">
+            <code>	&lt;img width="500" height="500"</code>
+            <code>		src="images/cat_1x.jpeg"</code>
+            <code>		alt="Рыжий код грызет штанину"&gt;</code>
+        </div>
+        <code>&lt;/picture&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;figure&gt; и &lt;figcaption&gt;</h2>
+    <br>
+    <pre>
+        <code>&lt;figure&gt;</code>
+        <code>	Схема, график, диаграмма или код</code>
+        <code>    &lt;figcaption&gt; Подпись к содержимому &lt;/figcaption&gt;</code>
+        <code>&lt;/figure&gt;</code>
+    </pre>
+</section>
+
+<section class="slide white">
+    <h2>Пример графика</h2>
+    <figure style="display: flex; flex-direction: column">
+        <img src="pictures/5/plot.png" alt="" style="width: 500px; margin: 10px auto">
+        <figcaption style="text-align: center">Подпись к графику</figcaption>
+    </figure>
+    <a class="copyright" href="https://plotly.com/python/cone-plot/">3D Cone Plots in Python (Plotly library)</a>
+</section>
+
+<section class="slide narfu">
+    <h2>Вставвка аудио</h2>
+    <pre>
+        <code>&lt;figure&gt;</code>
+        <code>  &lt;figcaption&gt;Привет, я Алиса&lt;/figcaption&gt;</code>
+        <code class="mark">  &lt;audio controls src="hi-alice.mp3"&gt;</code>
+        <code>    Ваш браузер не поддерживает встроенное аудио. Скачайте файл.</code>
+        <code>    &lt;a href="hi-alice.mp3" download&gt;по ссылке&lt;/a&gt;.</code>
+        <code>  &lt;/audio&gt;</code>
+        <code>&lt;/figure&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Плееры в браузерах</h2>
+    <div class="browser-view">
+        <img src="pictures/5/audio_players.png" alt="" style="width: 600px; margin-left: 70px">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Атрибуты тега &lt;audio&gt;</h2>
+    <ul>
+        <li><code>src</code> — URL-адрес аудиофайла;</li>
+        <li><code>autoplay</code> — аудио начнёт играть сразу с загрузкой страницы;</li>
+        <li><code>controls</code> — добавляет стандартные элементы управления аудиоплеером;</li>
+        <li><code>loop</code> — зацикливает воспроизведение аудио;</li>
+        <li><code>muted</code> — звук будет на нуле, пока пользователь его не увеличит.</li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <h2>Атрибут preload</h2>
+    <code>preload</code> — подсказывает браузеру, нужно ли загружать аудио или информацию о нём сразу со страницей:
+    <ul style="margin-left: 40px">
+        <li><code>none</code> — аудиофайл не загружается предварительно;</li>
+        <li><code>metadata</code> — загружается только информация о файле, например, размер и продолжительность;</li>
+        <li><code>auto</code> — аудиофайл загружается со страницей, чтобы пользователь мог сразу начать его слушать.</li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <h2>Аудио кодеки</h2>
+    <ul>
+        <li><b>MP3</b> — самый популярный аудио формат, использующий сжатие с потерями и позволяющий уменьшить размер файла в несколько раз;</li>
+        <li><b>AAC</b> — закрытый кодек, аналог MP3, но по сравнению с последним, поддерживает более высокое качество звука при сходном размере файла;</li>
+        <li><b>Ogg Vorbis</b> — бесплатный формат с открытым кодом, поддерживается в Firefox, Opera и Chrome.</li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <h2>Поддержка кодеков</h2>
+    <img src="pictures/5/mp3-example.png" alt="" class="cover w" style="margin-top: 40px;">
+    <a href="https://caniuse.com/?search=audio" class="copyright">Can I Use</a>
+</section>
+
+<section class="slide narfu">
+    <h2>Вставка видео</h2>
+    <pre>
+        <code>&lt;video controls&gt;</code>
+        <code>  &lt;source src="myVideo.mp4" type="video/mp4" /&gt;</code>
+        <code>  &lt;source src="myVideo.webm" type="video/webm" /&gt;</code>
+        <code>  &lt;p&gt;Ваш браузер не поддерживает встроенные видео&lt;/p&gt;</code>
+        <code>&lt;/video&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Видеопрлееры в браузерах</h2>
+    <img src="pictures/5/video_playes.png" alt="">
+</section>
+
+<section class="slide narfu">
+    <video src="pictures/1/code.mp4" autoplay loop muted class="place right"></video>
+    <p class="place hot-keys__element">Фоновое видео</p>
+    <p class="place hot-keys__element" style="background-color: var(--red); margin-top: 70px;">Обязательно используйте mute</p>
+</section>
+
+<!-- Конец основных слайдов -->
+<!-- Подвал презентации -->
 
 <section class="slide" id="see-more">
     <h2 class="shout">
