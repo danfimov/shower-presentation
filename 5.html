@@ -576,6 +576,64 @@
     <a class="copyright" href="https://plotly.com/python/cone-plot/">3D Cone Plots in Python (Plotly library)</a>
 </section>
 
+<section class="slide narfu">
+    <h2>Аудиофайлы</h2>
+    <pre>
+        <code>&lt;figure&gt;</code>
+        <code>  &lt;figcaption&gt;Привет, я Алиса&lt;/figcaption&gt;</code>
+        <code class="mark">  &lt;audio controls src="hi-alice.mp3"&gt;</code>
+        <code>    Ваш браузер не поддерживает встроенное аудио. Скачайте файл.</code>
+        <code>    &lt;a href="hi-alice.mp3" download&gt;по ссылке&lt;/a&gt;.</code>
+        <code>  &lt;/audio&gt;</code>
+        <code>&lt;/figure&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Плееры в браузерах</h2>
+    <div class="browser-view">
+        <img src="pictures/5/audio_players.png" alt="" style="width: 600px; margin-left: 70px">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Атрибуты тега &lt;audio&gt;</h2>
+    <ul>
+        <li><code>src</code> — URL-адрес аудиофайла;</li>
+        <li><code>autoplay</code> — аудио начнёт играть сразу с загрузкой страницы;</li>
+        <li><code>controls</code> — добавляет стандартные элементы управления аудиоплеером;</li>
+        <li><code>loop</code> — зацикливает воспроизведение аудио;</li>
+        <li><code>muted</code> — звук будет на нуле, пока пользователь его не увеличит.</li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <h2>Атрибут preload</h2>
+    <code>preload</code> — подсказывает браузеру, нужно ли загружать аудио или информацию о нём сразу со страницей:
+    <ul style="margin-left: 40px">
+        <li><code>none</code> — аудиофайл не загружается предварительно;</li>
+        <li><code>metadata</code> — загружается только информация о файле, например, размер и продолжительность;</li>
+        <li><code>auto</code> — аудиофайл загружается со страницей, чтобы пользователь мог сразу начать его слушать.</li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <h2>Аудио кодеки</h2>
+    <ul>
+        <li><b>MP3</b> — самый популярный аудио формат, использующий сжатие с потерями и позволяющий уменьшить размер файла в несколько раз;</li>
+        <li><b>AAC</b> — закрытый кодек, аналог MP3, но по сравнению с последним, поддерживает более высокое качество звука при сходном размере файла;</li>
+        <li><b>Ogg Vorbis</b> — бесплатный формат с открытым кодом, поддерживается в Firefox, Opera и Chrome.</li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <h2>Поддержка кодеков</h2>
+    <img src="pictures/5/mp3-example.png" alt="" class="cover w" style="margin-top: 40px;">
+    <a href="https://caniuse.com/?search=audio" class="copyright">Can I Use</a>
+</section>
+
+
+
 <!-- Конец основных слайдов -->
 <!-- Подвал презентации -->
 
