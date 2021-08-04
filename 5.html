@@ -517,13 +517,63 @@
     <span class="hot-keys__element place left top" style="margin: 20px">JPEG - 18kB</span>
 </section>
 
+<section class="slide">
+    <img src="pictures/5/narfu-main_page.jpg" alt="" class="cover">
+</section>
+
 <section class="slide narfu">
-    <h2>Важность оптимизации</h2>
+    <h2>На главной</h2>
     <ul class="large_list">
         <li value="—" class="next">27 картинок на <b>3,4Mb</b></li>
         <li value="—" class="next">Заняло 5 минут сделать <b>612kB</b></li>
     </ul>
     <p class="next">После оптимизации картинки стали весить <ins>в 5 раз меньше</ins>.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;img srcset="..."&gt;</h2>
+    <pre>
+        <code>&lt;img width="500" height="500"</code>
+        <code>	src="images/cat_1x.jpeg"</code>
+        <code>	<mark>srcset</mark>="images/cat_2x.jpeg 2x"</code>
+        <code>	alt="Рыжий код грызет штанину"&gt;</code>
+    </pre>
+    <p>В обычный <code>src</code> вставляется картинка с обычным разрешением, а если нужна картинка с двойным – <code>2x</code>, загружается картинка с увеличенным разрешением из <code>srcset</code>.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;picture&gt;</h2>
+    <pre>
+        <code>&lt;picture&gt;</code>
+        <code class="next">	&lt;source type="image/webp" srcset="images/cat_2x.webp 2x"&gt;</code>
+        <code class="next">	&lt;source type="image/jpeg" srcset="images/cat_2x.jpeg 2x"&gt;</code>
+        <div class="next">
+            <code>	&lt;img width="500" height="500"</code>
+            <code>		src="images/cat_1x.jpeg"</code>
+            <code>		alt="Рыжий код грызет штанину"&gt;</code>
+        </div>
+        <code>&lt;/picture&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;figure&gt; и &lt;figcaption&gt;</h2>
+    <br>
+    <pre>
+        <code>&lt;figure&gt;</code>
+        <code>	Схема, график, диаграмма или код</code>
+        <code>    &lt;figcaption&gt; Подпись к содержимому &lt;/figcaption&gt;</code>
+        <code>&lt;/figure&gt;</code>
+    </pre>
+</section>
+
+<section class="slide white">
+    <h2>Пример графика</h2>
+    <figure style="display: flex; flex-direction: column">
+        <img src="pictures/5/plot.png" alt="" style="width: 500px; margin: 10px auto">
+        <figcaption style="text-align: center">Подпись к графику</figcaption>
+    </figure>
+    <a class="copyright" href="https://plotly.com/python/cone-plot/">3D Cone Plots in Python (Plotly library)</a>
 </section>
 
 <!-- Конец основных слайдов -->
