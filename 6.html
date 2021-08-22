@@ -19,6 +19,173 @@
     <p>Лекция №4</p>
 </section>
 
+<!-- Main -->
+
+<section class="slide narfu">
+    <h2>Пример табличных данных</h2>
+    <table>
+        <tr>
+            <th>Страна</th>
+            <th>Сентябрь</th>
+            <th>Октябрь</th>
+            <th>Ноябрь</th>
+            <th>Декабрь</th>
+        </tr>
+        <tr>
+            <td>Страна 1</td>
+            <td>107</td>
+            <td>109</td>
+            <td>135</td>
+            <td>147</td>
+        </tr>
+        <tr>
+            <td>Страна 2</td>
+            <td>199</td>
+            <td>103</td>
+            <td>35</td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td>Итог</td>
+            <td>306</td>
+            <td>212</td>
+            <td>170</td>
+            <td>161</td>
+        </tr>
+    </table>
+</section>
+
+<section class="slide narfu">
+    <h2>Структурные теги</h2>
+    <p><code>&lt;table&gt;</code> – это парный тег, внутри которого можно будет дальше размещать строки и ячейки.</p>
+    <pre>
+        <code>&lt;table&gt;</code>
+        <code>	&lt;!-- Здесь будет содержимое таблицы --&gt;</code>
+        <code>&lt;/table&gt;</code>
+    </pre>
+
+</section>
+
+<section class="slide narfu">
+    <h2>Структурные теги</h2>
+    <p>Чтобы в таблице появились строки нужно использовать парный тег <code>&lt;tr&gt;</code> (table row).</p>
+    <pre>
+        <code>&lt;table&gt;</code>
+        <code>  &lt;tr&gt;&lt;/tr&gt;</code>
+        <code>  &lt;tr&gt;&lt;/tr&gt;</code>
+        <code>  &lt;tr&gt;&lt;/tr&gt;</code>
+        <code>&lt;/table&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Структурные теги</h2>
+    <p>Чтобы создать ячейку под данные нужен парный тег <code>&lt;td&gt;</code> (table data).</p>
+    <pre>
+        <code>&lt;table&gt;</code>
+        <code>  &lt;tr&gt;</code>
+        <code>    &lt;td&gt;iPhone 12 Pro&lt;/td&gt;</code>
+        <code>    &lt;td&gt;$999&lt;/td&gt;</code>
+        <code>  &lt;/tr&gt;</code>
+        <code>&lt;/table&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Структурные теги</h2>
+    <p>Теперь в таблице 3 строки. В каждой строке по две ячейки. Из этих ячеек складывается два столбца.</p>
+    <table>
+        <tr>
+            <td>iPhone 12 Pro</td>
+            <td>$999</td>
+        </tr>
+        <tr>
+            <td>iPhone 12</td>
+            <td>$799</td>
+        </tr>
+        <tr>
+            <td>iPhone 12 mini</td>
+            <td>$699</td>
+        </tr>
+    </table>
+</section>
+
+<section class="slide narfu">
+    <h2>Подписи к столбцам</h2>
+    <pre>
+        <code>&lt;table&gt;</code>
+        <code>  &lt;tr&gt;</code>
+        <code>    <mark>&lt;td&gt; Модель &lt;/td&gt;</mark></code>
+        <code>    <mark>&lt;td&gt; Цена &lt;/td&gt;</mark></code>
+        <code>  &lt;/tr&gt;</code>
+        <code>  ...</code>
+        <code>&lt;/table&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Подписи к столбцам</h2>
+    <p>Заголовки ячеек ничем не будут отличаться от обычных ячеек ни внешне, ни по смыслу.</p>
+    <table>
+        <tr>
+            <td>Модель</td>
+            <td>Цена</td>
+        </tr>
+        <tr>
+            <td>iPhone 12 Pro</td>
+            <td>$999</td>
+        </tr>
+        <tr>
+            <td>iPhone 12</td>
+            <td>$799</td>
+        </tr>
+        <tr>
+            <td>iPhone 12 mini</td>
+            <td>$699</td>
+        </tr>
+    </table>
+</section>
+
+<section class="slide narfu">
+    <h2>Подписи к столбцам</h2>
+    <p>Специально для заголовков ячеек или строк есть тег&nbsp;<code>&lt;th&gt;</code>&nbsp;(table&nbsp;header). </p>
+    <pre>
+        <code>  &lt;tr&gt;</code>
+        <code>    <mark>&lt;th&gt; Модель &lt;/th&gt;</mark></code>
+        <code>    <mark>&lt;th&gt; Цена &lt;/th&gt;</mark></code>
+        <code>  &lt;/tr&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Подписи к столбцам</h2>
+    <p>К ячейкам, обёрнутым тегом <code>&lt;th&gt;</code>, применяются дефолтные стили: текст становится жирным и выравнивается по центру ячейки.</p>
+    <table>
+        <tr>
+            <th>Модель</th>
+            <th>Цена</th>
+        </tr>
+        <tr>
+            <td>iPhone 12 Pro</td>
+            <td>$999</td>
+        </tr>
+        <tr>
+            <td>iPhone 12</td>
+            <td>$799</td>
+        </tr>
+        <tr>
+            <td>iPhone 12 mini</td>
+            <td>$699</td>
+        </tr>
+    </table>
+</section>
+
+<section class="slide narfu">
+</section>
+
+
+<!-- Footer -->
+
 <section class="slide" id="see-more">
     <h2 class="shout">
         <a href="index.html">Все презентации<br>на GitHub Pages</a>
