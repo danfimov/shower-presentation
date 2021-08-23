@@ -44,6 +44,51 @@
             padding: 10px;
         }
     </style>
+    <style>
+        /* styles for marquee */
+        .marquee {
+            position: relative;
+            overflow: hidden;
+            --offset: 20vw;
+            --move-initial: calc(-25% + var(--offset));
+            --move-final: calc(-50% + var(--offset));
+        }
+
+        .marquee__inner {
+            width: fit-content;
+            display: flex;
+            position: relative;
+            transform: translate3d(var(--move-initial), 0, 0);
+            animation: marquee 5s linear infinite;
+            animation-play-state: paused;
+        }
+
+        .marquee__content {
+            font-size: 8vw;
+            padding: 0 2vw;
+        }
+
+        .marquee:hover .marquee__inner {
+            animation-play-state: running;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translate3d(var(--move-initial), 0, 0);
+            }
+
+            100% {
+                transform: translate3d(var(--move-final), 0, 0);
+            }
+        }
+
+        .article__code {
+            padding: 5% 0;
+            background-color: var(--primary);
+            color: #FFFFFF;
+            font-family: "Roboto Slab", sans-serif;
+        }
+    </style>
 </head>
 <body class="shower list">
 <header class="caption">
@@ -270,7 +315,8 @@
             <code>&lt;/table&gt;</code>
         </pre>
         <div style="display: flex; flex-direction: column; justify-content: center">
-            <p>Браузер всегда отрисовывает <code>&lt;tfoot&gt;</code> внизу таблицы, даже если этот блок идёт в разметке не последним в таблице.</p>
+            <p>Браузер всегда отрисовывает <code>&lt;tfoot&gt;</code> внизу таблицы, даже если этот блок идёт в разметке
+                не последним в таблице.</p>
         </div>
     </div>
 </section>
@@ -293,7 +339,8 @@
             <code>&lt;/table&gt;</code>
         </pre>
         <div style="display: flex; flex-direction: column; justify-content: center">
-            <p>Тег <code>&lt;caption&gt;</code> должен идти сразу после открывающего тега <code>&lt;table&gt;</code>.</p>
+            <p>Тег <code>&lt;caption&gt;</code> должен идти сразу после открывающего тега <code>&lt;table&gt;</code>.
+            </p>
         </div>
     </div>
 </section>
@@ -374,7 +421,9 @@
     <ul>
         <li class="next">Стилизуйте границы таблицы и ячеек отдельно.</li>
         <li class="next">Внимательно считайте количество ячеек в строках таблицы. Их количество должно совпадать.</li>
-        <li class="next">Не забывайте про стилизацию таблицы под маленькие экраны. Таблица не сжимается автоматически, у неё появляется горизонтальный скролл</li>
+        <li class="next">Не забывайте про стилизацию таблицы под маленькие экраны. Таблица не сжимается автоматически, у
+            неё появляется горизонтальный скролл
+        </li>
     </ul>
 </section>
 
@@ -453,7 +502,10 @@
         <code>  &lt;del&gt;1200 ₽&lt;/del&gt;</code>
         <code>  &lt;ins&gt;990 ₽&lt;/ins&gt;</code>
     </pre>
-    <p class="next">Распродажа: <del>1200 ₽</del> <ins>990 ₽</ins></p>
+    <p class="next">Распродажа:
+        <del>1200 ₽</del>
+        <ins>990 ₽</ins>
+    </p>
 </section>
 
 <section class="slide narfu">
@@ -480,11 +532,81 @@
     </div>
 </section>
 
-<!-- Simple slide -->
-
 <section class="slide narfu">
+    <h2><code>&lt;applet&gt;</code> — Java-апплет</h2>
+    <pre>
+        <code>&lt;applet code="game.class" archive="game.zip" height="250"&gt;</code>
+        <code>  &lt;param name="difficulty" value="easy"&gt;</code>
+        <code>  &lt;p&gt;</code>
+        <code>    Извините, у вас не установлена Java</code>
+        <code>    или ваш браузер не поддерживает</code>
+        <code>    встраиваемые Java-апплеты.&lt;/p&gt;</code>
+        <code>&lt;/applet&gt;</code>
+    </pre>
 </section>
 
+<section class="slide narfu">
+    <h2><code>&lt;applet&gt;</code> — Java-апплет</h2>
+    <p><b>Современная альтернатива: </b> тег <code>&lt;object&gt;</code></p>
+    <pre>
+        <code>&lt;object type="application/pdf"</code>
+        <code>  data="/media/examples/In-CC0.pdf"</code>
+        <code>  width="250"</code>
+        <code>  height="200"&gt;</code>
+        <code>&lt;/object&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2><code>&lt;bgsound&gt;</code> — фоновая музыка</h2>
+    <pre>
+        <code>&lt;bgsound src="sound2.mid" loop="infinite"&gt;</code>
+        <code> </code>
+    </pre>
+    <p><b>Современная альтернатива:</b> теги <code>embed</code> и <code>audio</code></p>
+    <p>Современные браузеры запрещают использовать неконтролируемую фоновую музыку, отключая её на странице
+        самостоятельно.</p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>&lt;center&gt;</code> — центрирование</h2>
+    <pre>
+        <code>&lt;center&gt;Мама, смотри — я в центре!&lt;/center&gt;</code>
+    </pre>
+    <p><b>Современная альтернатива:</b> различные CSS-свойства</p>
+    <pre class="next">
+        <code>&lt;p style="text-align: center"&gt;</code>
+        <code>   Мама, смотри — я в центре!&lt;/p&gt;</code>
+    </pre>
+    <p class="next" style="text-align: center">Мама, смотри — я в центре!</p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>&lt;marquee&gt;</code> — бегущая строка</h2>
+    <div class="article__code">
+        <div class="marquee">
+            <div class="marquee__inner" aria-hidden="true">
+                <span class="marquee__content">marquee</span>
+                <span class="marquee__content">marquee</span>
+                <span class="marquee__content">marquee</span>
+                <span class="marquee__content">marquee</span>
+                <span class="marquee__content">marquee</span>
+            </div>
+        </div>
+    </div>
+    <p></p>
+    <p><b>Современная альтернатива:</b> CSS-анимации</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Итог</h2>
+    <p>Авторы спецификаций постоянно ведут работу над улучшением пользовательского и разработческого опыта (UX и DX),
+        потенциально вредные теги (<code>&lt;blink&gt;</code>, <code>&lt;marquee&gt;</code>,
+        <code>&lt;bgsound&gt;</code>) удаляются из спецификации, заменяются на более семантичные
+        (<code>&lt;del&gt;</code> вместо <code>&lt;strike&gt;</code>) или переносят управление на уровень CSS
+        (<code>&lt;nobr&gt;</code>,&nbsp;<code>&lt;center&gt;</code>).
+    </p>
+</section>
 
 <!-- Footer -->
 
