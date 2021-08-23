@@ -8,6 +8,87 @@
     <link rel="stylesheet" href="shower/themes/material/styles/styles.css">
     <link rel="stylesheet" href="styles/all_styles.css">
     <link rel="shortcut icon" type="image/png" href="pictures/general/narfu_icon.png">
+    <style>
+        /*  styles for example table */
+
+        #example_table {
+            border-collapse: collapse;
+            border: 2px solid #5d72e9;
+            letter-spacing: 1px;
+            font-size: 1.3rem;
+        }
+
+        #example_table td,
+        #example_table th {
+            border: 1px solid #5d72e9;
+            padding: 10px 20px;
+        }
+
+        #example_table th {
+            background-color: #cdd4ff;
+        }
+
+        #example_table td {
+            text-align: center;
+        }
+
+        #example_table tr:nth-child(even) td {
+            background-color: #e4e8ff;
+        }
+
+        #example_table tr:nth-child(odd) td {
+            background-color: #f1f3ff;
+        }
+
+        #example_table caption {
+            padding: 10px;
+        }
+    </style>
+    <style>
+        /* styles for marquee */
+        .marquee {
+            position: relative;
+            overflow: hidden;
+            --offset: 20vw;
+            --move-initial: calc(-25% + var(--offset));
+            --move-final: calc(-50% + var(--offset));
+        }
+
+        .marquee__inner {
+            width: fit-content;
+            display: flex;
+            position: relative;
+            transform: translate3d(var(--move-initial), 0, 0);
+            animation: marquee 5s linear infinite;
+            animation-play-state: paused;
+        }
+
+        .marquee__content {
+            font-size: 8vw;
+            padding: 0 2vw;
+        }
+
+        .marquee:hover .marquee__inner {
+            animation-play-state: running;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translate3d(var(--move-initial), 0, 0);
+            }
+
+            100% {
+                transform: translate3d(var(--move-final), 0, 0);
+            }
+        }
+
+        .article__code {
+            padding: 5% 0;
+            background-color: var(--primary);
+            color: #FFFFFF;
+            font-family: "Roboto Slab", sans-serif;
+        }
+    </style>
 </head>
 <body class="shower list">
 <header class="caption">
@@ -18,6 +99,516 @@
     <h2>Таблицы и <br>устаревшие теги</h2>
     <p>Лекция №4</p>
 </section>
+
+<!-- Main -->
+
+<section class="slide">
+    <figure class="">
+        <video src="pictures/6/table.mp4" width="750" class="place" muted autoplay></video>
+        <figcaption class="copyright">Пошаговый пример переработки таблицы <a
+                href="https://www.darkhorseanalytics.com/blog?author=5671e8bf816924fc22651413">Joey Cherdarchuk</a>
+        </figcaption>
+    </figure>
+</section>
+
+<section class="slide narfu">
+    <h2>Структурные теги</h2>
+    <p><code>&lt;table&gt;</code> – это парный тег, внутри которого можно будет дальше размещать строки и ячейки.</p>
+    <pre>
+        <code>&lt;table&gt;</code>
+        <code>	&lt;!-- Здесь будет содержимое таблицы --&gt;</code>
+        <code>&lt;/table&gt;</code>
+    </pre>
+
+</section>
+
+<section class="slide narfu">
+    <h2>Структурные теги</h2>
+    <p>Чтобы в таблице появились строки нужно использовать парный тег <code>&lt;tr&gt;</code> (table row).</p>
+    <pre>
+        <code>&lt;table&gt;</code>
+        <code>  &lt;tr&gt;&lt;/tr&gt;</code>
+        <code>  &lt;tr&gt;&lt;/tr&gt;</code>
+        <code>  &lt;tr&gt;&lt;/tr&gt;</code>
+        <code>&lt;/table&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Структурные теги</h2>
+    <p>Чтобы создать ячейку под данные нужен парный тег <code>&lt;td&gt;</code> (table data).</p>
+    <pre>
+        <code>&lt;table&gt;</code>
+        <code>  &lt;tr&gt;</code>
+        <code>    &lt;td&gt;iPhone 12 Pro&lt;/td&gt;</code>
+        <code>    &lt;td&gt;$999&lt;/td&gt;</code>
+        <code>  &lt;/tr&gt;</code>
+        <code>&lt;/table&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Структурные теги</h2>
+    <p>Теперь в таблице 3 строки. В каждой строке по две ячейки. Из этих ячеек складывается два столбца.</p>
+    <table>
+        <tr>
+            <td>iPhone 12 Pro</td>
+            <td>$999</td>
+        </tr>
+        <tr>
+            <td>iPhone 12</td>
+            <td>$799</td>
+        </tr>
+        <tr>
+            <td>iPhone 12 mini</td>
+            <td>$699</td>
+        </tr>
+    </table>
+</section>
+
+<section class="slide narfu">
+    <h2>Подписи к столбцам</h2>
+    <pre>
+        <code>&lt;table&gt;</code>
+        <code>  &lt;tr&gt;</code>
+        <code>    <mark>&lt;td&gt; Модель &lt;/td&gt;</mark></code>
+        <code>    <mark>&lt;td&gt; Цена &lt;/td&gt;</mark></code>
+        <code>  &lt;/tr&gt;</code>
+        <code>  ...</code>
+        <code>&lt;/table&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Подписи к столбцам</h2>
+    <p>Заголовки ячеек ничем не будут отличаться от обычных ячеек ни внешне, ни по смыслу.</p>
+    <table>
+        <tr>
+            <td>Модель</td>
+            <td>Цена</td>
+        </tr>
+        <tr>
+            <td>iPhone 12 Pro</td>
+            <td>$999</td>
+        </tr>
+        <tr>
+            <td>iPhone 12</td>
+            <td>$799</td>
+        </tr>
+        <tr>
+            <td>iPhone 12 mini</td>
+            <td>$699</td>
+        </tr>
+    </table>
+</section>
+
+<section class="slide narfu">
+    <h2>Подписи к столбцам</h2>
+    <p>Специально для заголовков ячеек или строк есть тег&nbsp;<code>&lt;th&gt;</code>&nbsp;(table&nbsp;header). </p>
+    <pre>
+        <code>  &lt;tr&gt;</code>
+        <code>    <mark>&lt;th&gt; Модель &lt;/th&gt;</mark></code>
+        <code>    <mark>&lt;th&gt; Цена &lt;/th&gt;</mark></code>
+        <code>  &lt;/tr&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Подписи к столбцам</h2>
+    <p>К ячейкам, обёрнутым тегом <code>&lt;th&gt;</code>, применяются дефолтные стили: текст становится жирным и
+        выравнивается по центру ячейки.</p>
+    <table>
+        <tr>
+            <th>Модель</th>
+            <th>Цена</th>
+        </tr>
+        <tr>
+            <td>iPhone 12 Pro</td>
+            <td>$999</td>
+        </tr>
+        <tr>
+            <td>iPhone 12</td>
+            <td>$799</td>
+        </tr>
+        <tr>
+            <td>iPhone 12 mini</td>
+            <td>$699</td>
+        </tr>
+    </table>
+</section>
+
+<section class="slide narfu">
+    <h2>Теги логической группировки</h2>
+    <img src="pictures/6/logic_tags.svg" alt="" width="950" class="place">
+</section>
+
+<section class="slide clear">
+    <img src="pictures/6/sapsan.jpg" alt="" class="place">
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;thead&gt;</h2>
+    <img src="pictures/6/thead.svg" alt="" width="950" class="place">
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;thead&gt;</h2>
+    <div class="columns two">
+        <pre>
+            <code>&lt;table&gt;</code>
+            <code>  <mark>&lt;thead&gt;</mark></code>
+            <code>    &lt;tr&gt;</code>
+            <code>      &lt;th&gt;Модель&lt;/th&gt;</code>
+            <code>      &lt;th&gt;Цена&lt;/th&gt;</code>
+            <code>    &lt;/tr&gt;</code>
+            <code>  <mark>&lt;/thead&gt;</mark></code>
+            <code>&lt;/table&gt;</code>
+        </pre>
+        <div style="display: flex; flex-direction: column; justify-content: center">
+            <p><code>&lt;thead&gt;</code> по своей семантике похож на тег <code>&lt;header&gt;</code>, только его
+                «влияние» распространяется в пределах таблицы.</p>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;tbody&gt;</h2>
+    <img src="pictures/6/tbody.svg" alt="" width="950" class="place">
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;tbody&gt;</h2>
+    <div class="columns two">
+        <pre>
+            <code>&lt;table&gt;</code>
+            <code>  <mark>&lt;tbody&gt;</mark></code>
+            <code>    &lt;tr&gt;</code>
+            <code>      &lt;td&gt;Xiaomi Mi 10&lt;/td&gt;</code>
+            <code>      &lt;td&gt;$768&lt;/td&gt;</code>
+            <code>    &lt;/tr&gt;</code>
+            <code>  <mark>&lt;/tbody&gt;</mark></code>
+            <code>&lt;/table&gt;</code>
+        </pre>
+        <div style="display: flex; flex-direction: column; justify-content: center">
+            <p>Можно использовать несколько <code>&lt;tbody&gt;</code> внутри таблицы, разделяя тем самым данные на
+                отдельные блоки.</p>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;tfoot&gt;</h2>
+    <img src="pictures/6/tfoot.svg" alt="" width="950" class="place">
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;tfoot&gt;</h2>
+    <div class="columns two">
+        <pre>
+            <code>&lt;table&gt;</code>
+            <code>  <mark>&lt;tfoot&gt;</mark></code>
+            <code>    &lt;tr&gt;</code>
+            <code>      &lt;td&gt;Средняя цена:&lt;/td&gt;</code>
+            <code>      &lt;td&gt;$758.8&lt;/td&gt;</code>
+            <code>    &lt;/tr&gt;</code>
+            <code>  <mark>&lt;/tfoot&gt;</mark></code>
+            <code>&lt;/table&gt;</code>
+        </pre>
+        <div style="display: flex; flex-direction: column; justify-content: center">
+            <p>Браузер всегда отрисовывает <code>&lt;tfoot&gt;</code> внизу таблицы, даже если этот блок идёт в разметке
+                не последним в таблице.</p>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;caption&gt;</h2>
+    <img src="pictures/6/caption.svg" alt="" width="950" class="place">
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;caption&gt;</h2>
+    <div class="columns two">
+        <pre>
+            <code>&lt;table&gt;</code>
+            <code>  <mark>&lt;caption&gt;</mark></code>
+            <code>    Цены на флагманские</code>
+            <code>    модели iPhone и Xiaomi</code>
+            <code>  <mark>&lt;/caption&gt;</mark></code>
+            <code>  ...</code>
+            <code>&lt;/table&gt;</code>
+        </pre>
+        <div style="display: flex; flex-direction: column; justify-content: center">
+            <p>Тег <code>&lt;caption&gt;</code> должен идти сразу после открывающего тега <code>&lt;table&gt;</code>.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="slide clear narfu">
+    <h2>Атрибуты для объединения ячеек</h2>
+    <div class="columns two">
+        <div>
+            <b>rowspan</b>
+            <p>нужен для объединения ячеек из двух или более <i>столбцов</i></p>
+            <p>Как применяется:</p>
+            <pre>
+                <code>&lt;td rowspan="3"&gt;</code>
+                <code>  iPhone</code>
+                <code>&lt;/td&gt;</code>
+            </pre>
+        </div>
+        <div>
+            <b>colspan</b>
+            <p>нужен для объединения ячеек из двух или более <i>рядов</i></p>
+            <p>Как применяется:</p>
+            <pre>
+                <code>&lt;td colspan="2"&gt;</code>
+                <code>  Средняя цена:</code>
+                <code>&lt;/td&gt;</code>
+            </pre>
+        </div>
+    </div>
+</section>
+
+<section class="slide clear">
+    <table id="example_table">
+        <caption>Цены на флагманские модели iPhone и Xiaomi</caption>
+        <thead>
+        <tr>
+            <th>Производитель</th>
+            <th>Модель</th>
+            <th>Цена</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td rowspan="3">iPhone</td>
+            <td>12 Pro</td>
+            <td>$999</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>$799</td>
+        </tr>
+        <tr>
+            <td>12 mini</td>
+            <td>$699</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+            <td rowspan="2">Xiaomi</td>
+            <td>Mi 10</td>
+            <td>$768</td>
+        </tr>
+        <tr>
+            <td>Black Shark 3 128Gb</td>
+            <td>$529</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="2">Средняя цена:</td>
+            <td>$758.8</td>
+        </tr>
+        </tfoot>
+    </table>
+</section>
+
+<section class="slide narfu">
+    <h2>Советы по использованию таблиц</h2>
+    <ul>
+        <li class="next">Стилизуйте границы таблицы и ячеек отдельно.</li>
+        <li class="next">Внимательно считайте количество ячеек в строках таблицы. Их количество должно совпадать.</li>
+        <li class="next">Не забывайте про стилизацию таблицы под маленькие экраны. Таблица не сжимается автоматически, у
+            неё появляется горизонтальный скролл
+        </li>
+    </ul>
+</section>
+
+<section class="slide">
+    <img src="pictures/6/old_tags.webp" alt="" class="cover">
+</section>
+
+<section class="slide narfu">
+    <h2><code>&lt;acronym&gt;</code> — акронимы</h2>
+    <pre>
+        <code>&lt;acronym title="Graphics Interchange Format"&gt;</code>
+        <code>  GIF</code>
+        <code>&lt;/acronym&gt; — устаревший формат графики</code>
+    </pre>
+    <p><b>Современная альтернатива:</b> тег <code>&lt;abbr&gt;</code></p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>&lt;blink&gt;</code> — мигающий текст</h2>
+    <pre>
+        <code>&lt;blink&gt;</code>
+        <code>  Зачем кому-либо так делать? Выглядит антигуманно.</code>
+        <code>&lt;/blink&gt;</code>
+    </pre>
+    <p><b>Современная альтернатива:</b> анимации на CSS</p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>&lt;font&gt;</code> — стилизация текста</h2>
+    <pre>
+        <code>Летели два </code>
+        <code><mark>&lt;font size="+1"&gt;</mark> крокодила <mark>&lt;/font&gt;</mark>.</code>
+        <code>Один — <mark>&lt;font color="green"&gt;</mark> зелёный <mark>&lt;/font&gt;</mark>,</code>
+        <code>а другой — в Африку.</code>
+    </pre>
+    <p><b>Современная альтернатива:</b> стилизация при помощи CSS</p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>&lt;nobr&gt;</code> — неразрывный текст</h2>
+    <pre>
+        <code>&lt;nobr&gt;</code>
+        <code>  В&nbsp;вашей корзине товаров на&nbsp;1&thinsp;200&nbsp;₽</code>
+        <code>&lt;/nobr&gt;</code>
+    </pre>
+    <div>
+        <b>Современная альтернатива:</b>
+        <ul>
+            <li>символ неразрывного пробела</li>
+            <li>соответствующее CSS-свойство</li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2><code>&lt;strike&gt;</code> — зачёркнутый текст</h2>
+    <pre>
+        <code>&lt;strike&gt;</code>
+        <code>  Старая цена: 12 600</code>
+        <code>&lt;/strike&gt;</code>
+    </pre>
+    <div>
+        <b>Современная альтернатива:</b>
+        <ul>
+            <li>соответствующее CSS-свойство</li>
+            <li>тег <code>&lt;del&gt;</code></li>
+            <li>тег <code>&lt;s&gt;</code></li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2><code>&lt;strike&gt;</code> — зачёркнутый текст</h2>
+    <pre>
+        <code>Распродажа:  </code>
+        <code>  &lt;del&gt;1200 ₽&lt;/del&gt;</code>
+        <code>  &lt;ins&gt;990 ₽&lt;/ins&gt;</code>
+    </pre>
+    <p class="next">Распродажа:
+        <del>1200 ₽</del>
+        <ins>990 ₽</ins>
+    </p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>&lt;strike&gt;</code> — зачёркнутый текст</h2>
+    <div class="columns two">
+        <pre>
+            <code>Список покупок:</code>
+            <code>&lt;ol&gt;</code>
+            <code>  &lt;li&gt;&lt;s&gt;Молоко&lt;/s&gt;&lt;/li&gt;</code>
+            <code>  &lt;li&gt;&lt;s&gt;Хлеб&lt;/s&gt;&lt;/li&gt;</code>
+            <code>  &lt;li&gt;&lt;s&gt;Яйца&lt;/s&gt;&lt;/li&gt;</code>
+            <code>  &lt;li&gt;Сыр&lt;/li&gt;</code>
+            <code>&lt;/ol&gt;</code>
+        </pre>
+        <div class="next">
+            Список покупок:
+            <ol>
+                <li><s>Молоко</s></li>
+                <li><s>Хлеб</s></li>
+                <li><s>Яйца</s></li>
+                <li>Сыр</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2><code>&lt;applet&gt;</code> — Java-апплет</h2>
+    <pre>
+        <code>&lt;applet code="game.class" archive="game.zip" height="250"&gt;</code>
+        <code>  &lt;param name="difficulty" value="easy"&gt;</code>
+        <code>  &lt;p&gt;</code>
+        <code>    Извините, у вас не установлена Java</code>
+        <code>    или ваш браузер не поддерживает</code>
+        <code>    встраиваемые Java-апплеты.&lt;/p&gt;</code>
+        <code>&lt;/applet&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2><code>&lt;applet&gt;</code> — Java-апплет</h2>
+    <p><b>Современная альтернатива: </b> тег <code>&lt;object&gt;</code></p>
+    <pre>
+        <code>&lt;object type="application/pdf"</code>
+        <code>  data="/media/examples/In-CC0.pdf"</code>
+        <code>  width="250"</code>
+        <code>  height="200"&gt;</code>
+        <code>&lt;/object&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2><code>&lt;bgsound&gt;</code> — фоновая музыка</h2>
+    <pre>
+        <code>&lt;bgsound src="sound2.mid" loop="infinite"&gt;</code>
+        <code> </code>
+    </pre>
+    <p><b>Современная альтернатива:</b> теги <code>embed</code> и <code>audio</code></p>
+    <p>Современные браузеры запрещают использовать неконтролируемую фоновую музыку, отключая её на странице
+        самостоятельно.</p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>&lt;center&gt;</code> — центрирование</h2>
+    <pre>
+        <code>&lt;center&gt;Мама, смотри — я в центре!&lt;/center&gt;</code>
+    </pre>
+    <p><b>Современная альтернатива:</b> различные CSS-свойства</p>
+    <pre class="next">
+        <code>&lt;p style="text-align: center"&gt;</code>
+        <code>   Мама, смотри — я в центре!&lt;/p&gt;</code>
+    </pre>
+    <p class="next" style="text-align: center">Мама, смотри — я в центре!</p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>&lt;marquee&gt;</code> — бегущая строка</h2>
+    <div class="article__code">
+        <div class="marquee">
+            <div class="marquee__inner" aria-hidden="true">
+                <span class="marquee__content">marquee</span>
+                <span class="marquee__content">marquee</span>
+                <span class="marquee__content">marquee</span>
+                <span class="marquee__content">marquee</span>
+                <span class="marquee__content">marquee</span>
+            </div>
+        </div>
+    </div>
+    <p></p>
+    <p><b>Современная альтернатива:</b> CSS-анимации</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Итог</h2>
+    <p>Авторы спецификаций постоянно ведут работу над улучшением пользовательского и разработческого опыта (UX и DX),
+        потенциально вредные теги (<code>&lt;blink&gt;</code>, <code>&lt;marquee&gt;</code>,
+        <code>&lt;bgsound&gt;</code>) удаляются из спецификации, заменяются на более семантичные
+        (<code>&lt;del&gt;</code> вместо <code>&lt;strike&gt;</code>) или переносят управление на уровень CSS
+        (<code>&lt;nobr&gt;</code>,&nbsp;<code>&lt;center&gt;</code>).
+    </p>
+</section>
+
+<!-- Footer -->
 
 <section class="slide" id="see-more">
     <h2 class="shout">
