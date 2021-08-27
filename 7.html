@@ -33,6 +33,193 @@
     </figure>
 </section>
 
+<section class="slide narfu">
+    <h2>Каскадные таблицы стилей</h2>
+    <div class="columns two">
+        <div>
+            <p><b>CSS</b> — это язык, отвечающий за визуальное представление документов, написанных на HTML. </p>
+            <p> Файлы CSS сохраняются в специальном формате <code>.css</code></p>
+        </div>
+        <img src="pictures/7/css_icon.svg" alt="" width="250" style="margin-left: 100px;">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/7/without_css.png" alt="" class="cover">
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/7/with_css.png" alt="" class="cover">
+</section>
+
+<section class="slide narfu">
+    <h2>Зачем использовать CSS?</h2>
+    <ul>
+        <li class="next">Делает HTML-страницы красивее;</li>
+        <li class="next">Экономит время разработчиков;</li>
+        <li class="next">Страницы загружаются быстрее;</li>
+        <li class="next">Совместим с несколькими устройствами;</li>
+        <li class="next">Поддерживается всеми последними браузерами.</li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <h2>История CSS</h2>
+    <div class="columns two">
+        <img src="pictures/7/Lie.jpeg" style="width: 300px;" alt="">
+        <p>Концепция каскадных таблиц стилей была предложена в 1994 году Хоконом Виум Ли, норвежским ученым и <br> ИТ-специалистом.</p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>История CSS</h2>
+    <img src="pictures/7/css123.png" alt="" style="margin: 0 25%">
+    <div class="columns three">
+        <p>CSS1 был опубликован в 1996 году.</p>
+        <p>CSS2 был выпущен в 1998 году.</p>
+        <p>CSS3 появился в июне 1999 года.</p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Базовый синтаксис</h2>
+    <pre>
+        <code><span style="color: var(--green)">селектор</span> {</code>
+        <code>  <span style="color: var(--pink)">свойство</span>: значение;</code>
+        <code>  <span style="color: var(--pink)">свойство</span>: значение;</code>
+        <code>}</code>
+    </pre>
+    <p>CSS-правило состоит из селектора, перечня свойств и их значений.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Селектор</h2>
+    <p>Селектор указывает, к каким HTML-элементам будут применяться стили.</p>
+    <pre>
+        <code><span style="color: var(--green)">h1</span> { <span style="color: var(--pink)">color</span>: red; }</code>
+    </pre>
+    <div class="browser-view">
+        <p style="color: red; text-align: center">Заголовок первого уровня</p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Свойство + значение</h2>
+    <p><b>Свойство</b> определяет, что именно будет изменено: фон, цвет текста, положение на странице или что-то еще.</p>
+    <p><b>Значение свойства</b> — это своего рода уточнение того, на что оно будет изменено.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Свойство + значение</h2>
+    <div class="columns two">
+        <div>
+            <p style="color: var(--green)">Хорошо</p>
+            <pre>
+                <code><span style="color: var(--green)">h3</span> {</code>
+                <code>  <span style="color: var(--pink)">font-weight</span>:<mark> </mark>bold;</code>
+                <code>}</code>
+            </pre>
+        </div>
+        <div>
+            <p style="color: var(--red)">Плохо</p>
+            <pre>
+                <code><span style="color: var(--green)">h3</span> {</code>
+                <code>  <span style="color: var(--pink)">font-weight</span>:bold;</code>
+                <code>}</code>
+            </pre>
+        </div>
+    </div>
+    <p>Стоит ставить пробел перед значением свойства.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Разделение правил</h2>
+    <pre>
+        <code><span style="color: var(--green)">селектор №1</span> {</code>
+        <code>  <span style="color: var(--pink)">свойство</span>: значение;</code>
+        <code>}</code>
+        <code><mark>          </mark></code>
+        <code><span style="color: var(--green)">селектор №2</span> {</code>
+        <code>  <span style="color: var(--pink)">свойство</span>: значение;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Комментарии</h2>
+    <p><b>Комментарий в CSS</b> — это произвольный текст, который носит чисто информативный характер и не влияет на визуальное отображение сайта. </p>
+    <pre>
+        <code class="comment">/* Любой текст */</code>
+    </pre>
+    <p>Любой текст, помещенный между <code>/*</code> и <code>*/</code>, будет считаться комментарием.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Многострочный комментарий</h2>
+    <pre>
+        <code class="comment">/* Стили</code>
+        <code class="comment">   для абзаца</code>
+        <code class="comment">   текста из статьи */</code>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">color</span>: blue;</code>
+        <code>  <span style="color: var(--pink)">background-color</span>: black;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Отключение фрагментов кода</h2>
+    <pre>
+        <code class="comment">/*</code>
+        <code class="comment">h1 {</code>
+        <code class="comment">  color: #33A1D9; </code>
+        <code class="comment">  border-top: 2px solid;</code>
+        <code class="comment">  font-size: 3em;</code>
+        <code class="comment">}</code>
+        <code class="comment">*/</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Внешние таблицы стилей</h2>
+    <pre>
+        <code>&lt;head&gt;</code>
+        <code>  &lt;meta charset="utf-8"&gt;</code>
+        <code>  &lt;title&gt;Подключение отдельного файла CSS к HTML&lt;/title&gt;</code>
+        <code>  <mark>&lt;link rel="stylesheet" href="style.css"&gt;</mark></code>
+        <code>&lt;/head&gt;</code>
+    </pre>
+    <p>Атрибут <code>href</code> указывает адрес файла, а атрибут <code>rel</code> со значением <code>stylesheet</code> сообщает браузеру, что мы подключаем именно стили.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Внутренние таблицы стилей</h2>
+    <pre>
+        <code>&lt;head&gt;</code>
+        <code>    &lt;meta charset="utf-8"&gt;</code>
+        <code>    &lt;title&gt;Подключение внутреннего CSS к HTML&lt;/title&gt;</code>
+        <code>    <mark>&lt;style&gt;</mark></code>
+        <code>      <mark>Здесь должен быть CSS-код</mark></code>
+        <code>    <mark>&lt;/style&gt;</mark></code>
+        <code>&lt;/head&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Inline-стили</h2>
+    <pre>
+        <code>&lt;body&gt;                                                       </code>
+        <code>  &lt;p <mark>style="css property; css property;"</mark>&gt;Inline CSS&lt;/p&gt;</code>
+        <code>&lt;/body&gt;                                                      </code>
+    </pre>
+    <p>Такой способ подключения считается плохой практикой, поскольку усложняет поддержку проекта: код становится труднее читать.</p>
+</section>
+
+<!-- Slide -->
+<section class="slide narfu">
+
+</section>
+
 <!-- Footer -->
 
 <section class="slide" id="see-more">
