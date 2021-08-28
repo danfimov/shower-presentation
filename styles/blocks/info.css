@@ -22,6 +22,11 @@
     border-color: #dc3545;
 }
 
+/* Синий блок */
+.info--blue {
+    border-color: var(--color-key);
+}
+
 .info--theme-color{
     border-color: var(--color-key);
 }
@@ -38,6 +43,13 @@
 .info--frame-heading--js-code::before {
     color: var(--color-key);
     content: "<Код на JS>";
+}
+
+/* Важно */
+
+.info--frame-heading--important::before {
+    color: var(--color-key);
+    content: "Важно!";
 }
 
 /* Слово на рамке */

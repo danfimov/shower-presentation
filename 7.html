@@ -499,10 +499,321 @@
     <p>Класс <code>alert</code> с общими стилями есть у всех сообщений. <br>Класс <code>alert-error</code> с частными стилями есть только у ошибок.</p>
 </section>
 
-
-<!-- Slide -->
 <section class="slide narfu">
+    <h2 class="shout">Типы единиц измерения</h2>
+</section>
 
+<section class="slide narfu">
+    <h2>Абсолютные</h2>
+    <p>Абсолютные единицы измерения привязаны к настоящим физическим размерам и связаны между собой жёсткими пропорциями.</p>
+    <p><code>px</code> (pixel) определяет размер в пикселях.</p>
+    <pre>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">height</span>: 25px; <span class="comment">/* определяет высоту элемента */</span></code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Абсолютные</h2>
+    <p>Единицы измерения могут быть указаны как целое число или в десятичной форме:</p>
+    <pre>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">font-size</span>: 12.5px; </code>
+        <code>  <span style="color: var(--pink)">height</span>: 150.5px;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Абсолютные</h2>
+    <p>Помимо пикселей, существуют и другие абсолютные единицы измерения.</p>
+    <p><code>cm</code> определяет размер в <b>сантиметрах</b>:</p>
+    <pre>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">font-size</span>: 10cm; </code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Абсолютные</h2>
+    <p><code>mm</code> определяет размер в <b>миллиметрах</b> (10mm = 1cm):</p>
+    <pre>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">font-size</span>: 100mm; <span class="comment">/* или 10cm */</span></code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Абсолютные</h2>
+    <p><code>in</code> (inches) определяет размер в <b>дюймах</b> (1in = 2.54cm):</p>
+    <pre>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">font-size</span>: 4in; <span class="comment">/* или 10.16cm */</span></code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Абсолютные</h2>
+    <p><code>pt</code> (points) определяет размер в <b>пунктах</b> (1pt = 1/72 of 1in).</p>
+    <pre>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">font-size</span>: 288pt; <span class="comment">/* или 10.16cm */</span></code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Абсолютные</h2>
+    <p><code>pc</code> (pica) определяет размер в <b>пайках</b> (1pc = 12pt).</p>
+    <pre>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">font-size</span>: 24pc; <span class="comment">/* или 10.16cm */</span></code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Абсолютные</h2>
+    <p class="info info--blue info--frame-heading info--frame-heading--important">Хотя сантиметры, миллиметры, дюймы, точки и пайки предназначены для отображения элементов на веб-странице, браузеры не всегда могут точно рассчитать физический размер экрана.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Относительные</h2>
+    <p><code>%</code> устанавливает измерение в процентах от родительского элемента.</p>
+    <pre>
+        <code>&lt;div&gt;</code>
+        <code>  &lt;p&gt;Единицы измерения&lt;/p&gt;</code>
+        <code>&lt;/div&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Относительные</h2>
+    <pre>
+        <code><span style="color: var(--green)">div</span> {</code>
+        <code>  <span style="color: var(--pink)">height</span>: 400px;</code>
+        <code>}</code>
+        <code> </code>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">height</span>: 50%; <span class="comment">/* 200px */</span></code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Относительные</h2>
+    <p><code>em</code> используется для обозначения размера шрифта относительно текущего шрифта родительского элемента.</p>
+    <div class="browser-view">
+        <p>Это текст c обычной высотой. <span style="font-size: 2em;">А этот 1.5em</span></p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Относительные</h2>
+    <p><code>rem</code> используется, если нужно изменить размер шрифта элемента по отношению к размеру шрифта корневого элемента <code>&lt;html&gt;</code></p>
+    <pre>
+        <code><span style="color: var(--green)">html</span> { font-size: 10px; }</code>
+        <code> </code>
+        <code><span style="color: var(--green)">p</span> { font-size: 15px; }</code>
+        <code> </code>
+        <code><span style="color: var(--green)">b</span> { font-size: 2rem; <span class="comment">/* 20px */</span> }</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Единицы, зависящие от размера области просмотра</h2>
+    <p>Словосочетание <b>область просмотра</b> (viewport) относится к области веб-страницы, которую пользователь может видеть без прокрутки.</p>
+    <p>Единицы измерения, которые зависят от области просмотра, используются для обеспечения правильного отображения веб-страницы на устройствах с разными размерами экрана.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>vw и vh</h2>
+    <div class="columns two">
+        <div style="display: flex; flex-direction: row; justify-content: center">
+            <img src="pictures/7/vw_vh.svg" alt="" width="500">
+        </div>
+        <ul>
+            <li><code>vw</code> — 1% ширины области просмотра.</li>
+            <li><code>vh</code> — 1% высоты области просмотра.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>vmin</h2>
+    <div class="columns two">
+        <img src="pictures/7/vmin.svg" alt="" width="350">
+        <div>
+            <p><code>vmin</code> - 1% меньшего размера области просмотра.</p>
+            <p>Если ширина браузера меньше его высоты, <code>1vmin</code> равно <code>1vw</code>.</p>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>vmax</h2>
+    <div class="columns two">
+        <img src="pictures/7/vmax.svg" alt="" width="350">
+        <div>
+            <p><code>vmax</code> - 1% большего размера области просмотра.</p>
+            <p>Если высота браузера больше его ширины, <code>1vmax</code> равно <code>1vh</code>.</p>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Относительные</h2>
+    <p>Единицы измерения, зависящие от области просмотра, такие как <code>%</code>, подходят для определения размеров блочных элементов:</p>
+    <div class="columns two">
+        <pre>
+            <code><span style="color: var(--green)">pre</span> {</code>
+            <code>  <span style="color: var(--pink)">width</span>: 10vw;</code>
+            <code>  <span style="color: var(--pink)">height</span>: 24vh;</code>
+            <code>}</code>
+        </pre>
+            <pre>
+            <code><span style="color: var(--green)">div</span> {</code>
+            <code>  <span style="color: var(--pink)">width</span>: 20vmin;</code>
+            <code>  <span style="color: var(--pink)">height</span>: 40vmax;</code>
+            <code>}</code>
+        </pre>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Правильная запись</h2>
+    <div class="columns two">
+        <div>
+            <p style="color: var(--green)">Хорошо</p>
+            <pre>
+                <code><span style="color: var(--green)">.some_text</span> {</code>
+                <code>  <span style="color: var(--pink)">font-size</span>: 0;</code>
+                <code>  <span style="color: var(--pink)">line-height</span>: .9em;</code>
+                <code>}</code>
+            </pre>
+        </div>
+        <div>
+            <p style="color: var(--red)">Плохо</p>
+            <pre>
+                <code><span style="color: var(--green)">.some_text</span> {</code>
+                <code>  <span style="color: var(--pink)">font-size</span>: 0%;</code>
+                <code>  <span style="color: var(--pink)">line-height</span>: 0.9em;</code>
+                <code>}</code>
+            </pre>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout">Цвета в вебе</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Ключевые слова</h2>
+    <div class="columns two">
+        <ul>
+            <li>Чёрный <code>black</code></li>
+            <li>Белый <code>white</code></li>
+            <li>Красный <code>red</code></li>
+            <li>Зелёный <code>green</code></li>
+            <li>Синий <code>blue</code></li>
+        </ul>
+        <p>Самый простой способ указания цвета в вебе — ключевые слова. При этом используются английские названия цветов.</p>
+    </div>
+</section>
+
+<section class="slide clear">
+    <img src="pictures/7/colors.png" alt="" class="cover width">
+</section>
+
+<section class="slide narfu">
+    <h2>Ключевые слова</h2>
+    <pre>
+        <code><span style="color: var(--green)">.selector</span> {</code>
+        <code>  <span style="color: var(--pink)">color</span>: black;</code>
+        <code>  <span style="color: var(--pink)">background-color</span>: AntiqueWhite;</code>
+        <code>}</code>
+    </pre>
+    <p>Ключевые слова регистронезависимые — можно писать их как угодно и браузер всё поймёт.</p>
+</section>
+
+<section class="slide black">
+    <h2 style="color: white">RGB</h2>
+    <img src="pictures/7/rgb.png" alt="" class="cover h">
+</section>
+
+<section class="slide narfu">
+    <h2>RGB</h2>
+    <pre>
+        <code><span style="color: var(--green)">.selector</span> {</code>
+        <code class="comment">  /* синий */</code>
+        <code>  <span style="color: var(--pink)">color</span>: rgb(0 63 255);</code>
+        <code class="comment">  /* полупрозрачный синий */</code>
+        <code>  <span style="color: var(--pink)">background-color</span>: rgb(0 63 255 / 0.5);</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide white">
+    <h2>HEX</h2>
+    <img src="pictures/7/hex.png" alt="" class="cover">
+</section>
+
+<section class="slide narfu">
+    <h2>HEX</h2>
+    <pre>
+        <code><span style="color: var(--green)">.selector</span> {</code>
+        <code class="comment">  /* #RRGGBB */</code>
+        <code>  <span style="color: var(--pink)">color</span>: #ff0000;</code>
+        <code class="comment">  /* #RGB */</code>
+        <code>  <span style="color: var(--pink)">background-color</span>: #090; <span class="comment">/* #009900 */</span></code>
+        <code class="comment">  /* #RRGGBBAA - с прозрачностью */</code>
+        <code>  <span style="color: var(--pink)">background-color</span>: #00990055; <span class="comment">/* или просто #0905 */</span></code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide white">
+    <h2>HSL</h2>
+    <img src="pictures/7/hsl.png" alt="" class="place center" width="600">
+</section>
+
+<section class="slide narfu">
+    <h2>HSL</h2>
+    <pre>
+        <code><span style="color: var(--green)">.selector</span> {</code>
+        <code>  <span style="color: var(--pink)">color</span>: hsl(120 100deg 50%);</code>
+        <code class="comment">  /* с прозрачностью */</code>
+        <code>  <span style="color: var(--pink)">background-color</span>: hsl(120 100% 50% / 0.5);</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Ключевые слова</h2>
+    <p><b>transparent</b></p>
+    <p>Ключевое слово <code>transparent</code> задаёт прозрачный цвет текста. Технически это равносильно записи любого цвета с нулевой прозрачностью <code>rgb(0 0 0 / 0)</code>, но бывают случаи, когда просто прозрачность и прозрачность цвета могут работать иначе, например, в градиентах.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Ключевые слова</h2>
+    <p><b>currentColor</b></p>
+    <p>За ключевым словом <code>currentColor</code> скрывается цвет, указанный в свойстве <code>color</code> элемента. Очень удобно указывать это слово в качестве значения других свойств, чтобы многократно не указывать один и тот же цвет.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Ключевые слова</h2>
+    <p><b>currentColor</b></p>
+    <pre>
+        <code><span style="color: var(--green)">.element</span> {</code>
+        <code>  <span style="color: var(--pink)">color</span>: #6e4aff;</code>
+        <code>  <span style="color: var(--pink)">border</span>: 1px solid currentColor;</code>
+        <code>}</code>
+    </pre>
 </section>
 
 <!-- Footer -->
