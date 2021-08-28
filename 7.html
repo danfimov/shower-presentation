@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Основы CSS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#007BFF">
+    <link rel="stylesheet" href="shower/themes/material/styles/styles.css">
+    <link rel="stylesheet" href="styles/all_styles.css">
+    <link rel="shortcut icon" type="image/png" href="pictures/general/narfu_icon.png">
+    <style>
+        #red_alert{
+            background-color: var(--red);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+        }
+
+        #grey_alert{
+            background-color: var(--gray-dark);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="shower list">
+<header class="caption">
+    <h1>Основы CSS</h1>
+    <p><a href="index.html">Web-технологии</a></p>
+</header>
+<section class="slide narfu_official" id="cover">
+    <h2>Основы CSS</h2>
+    <p>Лекция №5</p>
+</section>
+
+<!-- Main -->
+
+<section class="slide clear">
+    <figure>
+        <video class="cover width" loop="" muted="" autoplay="">
+            <source type="video/webm" src="pictures/7/awesome.webm">
+            <source type="video/mp4" src="pictures/7/awesome.mp4">
+        </video>
+        <figcaption class="copyright black">
+            <a href="https://codepen.io/mandymichael/pen/vYYLByj">Mandy Michael</a>
+        </figcaption>
+    </figure>
+</section>
+
+<section class="slide narfu">
+    <h2>Каскадные таблицы стилей</h2>
+    <div class="columns two">
+        <div>
+            <p><b>CSS</b> — это язык, отвечающий за визуальное представление документов, написанных на HTML. </p>
+            <p> Файлы CSS сохраняются в специальном формате <code>.css</code></p>
+        </div>
+        <img src="pictures/7/css_icon.svg" alt="" width="250" style="margin-left: 100px;">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/7/without_css.png" alt="" class="cover">
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/7/with_css.png" alt="" class="cover">
+</section>
+
+<section class="slide narfu">
+    <h2>Зачем использовать CSS?</h2>
+    <ul>
+        <li class="next">Делает HTML-страницы красивее;</li>
+        <li class="next">Экономит время разработчиков;</li>
+        <li class="next">Страницы загружаются быстрее;</li>
+        <li class="next">Совместим с несколькими устройствами;</li>
+        <li class="next">Поддерживается всеми последними браузерами.</li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <h2>История CSS</h2>
+    <div class="columns two">
+        <img src="pictures/7/Lie.jpeg" style="width: 300px;" alt="">
+        <p>Концепция каскадных таблиц стилей была предложена в 1994 году Хоконом Виум Ли, норвежским ученым и <br> ИТ-специалистом.</p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>История CSS</h2>
+    <img src="pictures/7/css123.png" alt="" style="margin: 0 25%">
+    <div class="columns three">
+        <p>CSS1 был опубликован в 1996 году.</p>
+        <p>CSS2 был выпущен в 1998 году.</p>
+        <p>CSS3 появился в июне 1999 года.</p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Базовый синтаксис</h2>
+    <pre>
+        <code><span style="color: var(--green)">селектор</span> {</code>
+        <code>  <span style="color: var(--pink)">свойство</span>: значение;</code>
+        <code>  <span style="color: var(--pink)">свойство</span>: значение;</code>
+        <code>}</code>
+    </pre>
+    <p>CSS-правило состоит из селектора, перечня свойств и их значений.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Селектор</h2>
+    <p>Селектор указывает, к каким HTML-элементам будут применяться стили.</p>
+    <pre>
+        <code><span style="color: var(--green)">h1</span> { <span style="color: var(--pink)">color</span>: red; }</code>
+    </pre>
+    <div class="browser-view">
+        <p style="color: red; text-align: center">Заголовок первого уровня</p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Свойство + значение</h2>
+    <p><b>Свойство</b> определяет, что именно будет изменено: фон, цвет текста, положение на странице или что-то еще.</p>
+    <p><b>Значение свойства</b> — это своего рода уточнение того, на что оно будет изменено.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Свойство + значение</h2>
+    <div class="columns two">
+        <div>
+            <p style="color: var(--green)">Хорошо</p>
+            <pre>
+                <code><span style="color: var(--green)">h3</span> {</code>
+                <code>  <span style="color: var(--pink)">font-weight</span>:<mark> </mark>bold;</code>
+                <code>}</code>
+            </pre>
+        </div>
+        <div>
+            <p style="color: var(--red)">Плохо</p>
+            <pre>
+                <code><span style="color: var(--green)">h3</span> {</code>
+                <code>  <span style="color: var(--pink)">font-weight</span>:bold;</code>
+                <code>}</code>
+            </pre>
+        </div>
+    </div>
+    <p>Стоит ставить пробел перед значением свойства.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Разделение правил</h2>
+    <pre>
+        <code><span style="color: var(--green)">селектор №1</span> {</code>
+        <code>  <span style="color: var(--pink)">свойство</span>: значение;</code>
+        <code>}</code>
+        <code><mark>          </mark></code>
+        <code><span style="color: var(--green)">селектор №2</span> {</code>
+        <code>  <span style="color: var(--pink)">свойство</span>: значение;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Комментарии</h2>
+    <p><b>Комментарий в CSS</b> — это произвольный текст, который носит чисто информативный характер и не влияет на визуальное отображение сайта. </p>
+    <pre>
+        <code class="comment">/* Любой текст */</code>
+    </pre>
+    <p>Любой текст, помещенный между <code>/*</code> и <code>*/</code>, будет считаться комментарием.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Многострочный комментарий</h2>
+    <pre>
+        <code class="comment">/* Стили</code>
+        <code class="comment">   для абзаца</code>
+        <code class="comment">   текста из статьи */</code>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">color</span>: blue;</code>
+        <code>  <span style="color: var(--pink)">background-color</span>: black;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Отключение фрагментов кода</h2>
+    <pre>
+        <code class="comment">/*</code>
+        <code class="comment">h1 {</code>
+        <code class="comment">  color: #33A1D9; </code>
+        <code class="comment">  border-top: 2px solid;</code>
+        <code class="comment">  font-size: 3em;</code>
+        <code class="comment">}</code>
+        <code class="comment">*/</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Внешние таблицы стилей</h2>
+    <pre>
+        <code>&lt;head&gt;</code>
+        <code>  &lt;meta charset="utf-8"&gt;</code>
+        <code>  &lt;title&gt;Подключение отдельного файла CSS к HTML&lt;/title&gt;</code>
+        <code>  <mark>&lt;link rel="stylesheet" href="style.css"&gt;</mark></code>
+        <code>&lt;/head&gt;</code>
+    </pre>
+    <p>Атрибут <code>href</code> указывает адрес файла, а атрибут <code>rel</code> со значением <code>stylesheet</code> сообщает браузеру, что мы подключаем именно стили.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Внутренние таблицы стилей</h2>
+    <pre>
+        <code>&lt;head&gt;</code>
+        <code>    &lt;meta charset="utf-8"&gt;</code>
+        <code>    &lt;title&gt;Подключение внутреннего CSS к HTML&lt;/title&gt;</code>
+        <code>    <mark>&lt;style&gt;</mark></code>
+        <code>      <mark>Здесь должен быть CSS-код</mark></code>
+        <code>    <mark>&lt;/style&gt;</mark></code>
+        <code>&lt;/head&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Inline-стили</h2>
+    <pre>
+        <code>&lt;body&gt;                                                       </code>
+        <code>  &lt;p <mark>style="css property; css property;"</mark>&gt;Inline CSS&lt;/p&gt;</code>
+        <code>&lt;/body&gt;                                                      </code>
+    </pre>
+    <p>Такой способ подключения считается плохой практикой, поскольку усложняет поддержку проекта: код становится труднее читать.</p>
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout">Механизмы свойств</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Наследование</h2>
+    <p><b>Наследование в CSS</b> — это механизм, с помощью которого значения свойств элемента-родителя передаются его элементам-потомкам.</p>
+    <p>Стили, присвоенные одному элементу, наследуются всеми потомками (вложенными элементами), но только в том случае, если они где-то явно не переопределены.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Наследование</h2>
+    <div class="columns two">
+        <pre>
+            <code><span style="color: var(--green)">body</span> {</code>
+            <code>  <span style="color: var(--pink)">font-size</span>: 14px;</code>
+            <code>}</code>
+            <code></code>
+            <code><span style="color: var(--green)">main</span> {</code>
+            <code>  <span style="color: var(--pink)">font-size</span>: 18px;</code>
+            <code>}</code>
+        </pre>
+        <div class="browser-view next">
+            <p>Текст на странице</p>
+            <p style="font-size: larger">Текст внутри main</p>
+            <p>Текст на странице</p>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Наследуемые свойства</h2>
+    <p>Свойства текста:</p>
+    <code>font-size, font-family, font-style, font-weight, color, text-align, text-transform, text-indent, line-height, letter-spacing, word-spacing, white-space, direction</code><br> и другие.
+</section>
+
+<section class="slide narfu">
+    <h2>Наследуемые свойства</h2>
+    <p>Другие свойства:</p>
+    <code>list-style, cursor, visibility, border-collapse</code>
+    <p>Наследуемые свойства можно и нужно задавать через предков, следуя структуре документа.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Ненаследуемые свойства</h2>
+    <p>Параметры позиционирования, размеров, отступов, фона, рамок:</p>
+    <code>background, border, padding, margin, width, height, position</code> и другие.
+    <p>Не наследуются они из соображений здравого смысла.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Составные свойства</h2>
+    <p>В CSS есть обычные свойства, управляющие одним параметром отображения, и есть <b>составные свойства</b>, управляющие одновременно несколькими параметрами.</p>
+    <pre>
+        <code><span style="color: var(--pink)">font</span>: 16px/26px "Arial", sans-serif;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Составные свойства</h2>
+    <pre>
+        <code><span style="color: var(--pink)">font-size</span>: 16px;                  <span class="comment">/* было задано в font */</span></code>
+        <code><span style="color: var(--pink)">line-height</span>: 26px;                <span class="comment">/* было задано в font */</span></code>
+        <code><span style="color: var(--pink)">font-family</span>: "Arial", sans-serif; <span class="comment">/* было задано в font */</span></code>
+        <code><span style="color: var(--pink)">font-weight</span>: normal;              <span class="comment">/* не было задано в font */</span></code>
+        <code><span style="color: var(--pink)">font-style</span>: normal;               <span class="comment">/* не было задано в font */</span></code>
+        <code><span style="color: var(--pink)">font-variant</span>: normal;             <span class="comment">/* не было задано в font */</span></code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Составные свойства</h2>
+    <pre>
+        <code><span style="color: var(--pink)">font</span>: 16px "Arial", sans-serif;</code>
+        <code class="comment">/* line-height: 1.2; (normal) */</code>
+    </pre>
+    <div class="browser-view">
+        <p style='font: 25px "Arial", sans-serif;'>Ваша работа заполнит большую часть жизни и единственный способ быть полностью довольным — делать то, что по-вашему является великим делом. И единственный способ делать великие дела — любить то, что вы делаете.</p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout">Селекторы</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Селекторы</h2>
+    <pre>
+        <code><span style="color: var(--green)">.feature-kitten</span> {</code>
+        <code>  <span style="color: var(--pink)">padding-top</span>: 60px;                      <span class="comment">/* отступ сверху */</span></code>
+        <code>  <span style="color: var(--pink)">background-image</span>: url("img/bottle.svg");<span class="comment">/* фоновая картинка */</span></code>
+        <code>}</code>
+    </pre>
+    <p>Строка <code>.feature-kitten</code> — это селектор. Она говорит браузеру применить список свойств (отступ и фон) ко всем элементам, у которых атрибут <code>class</code> имеет значение <code>feature-kitten</code>.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Селекторы по тегам и классам</h2>
+    <pre>
+        <code class="comment">/* выберет все заголовки 1 уровня */</code>
+        <code><span style="color: var(--green)">h1</span> { <span style="color: var(--pink)">color</span>: red; }</code>
+        <code class="comment">/* выберет только элементы с классом info */</code>
+        <code><span style="color: var(--green)">.info</span> { <span style="color: var(--pink)">color</span>: blue; } </code>
+    </pre>
+    <p>Селекторы по тегам содержат имя тега без символов <code><</code> и <code>></code>.</p>
+    <p>Селекторы по классам начинаются с точки, за которой идёт имя класса.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Группировка селекторов</h2>
+    <pre>
+        <code><span style="color: var(--green)">h1</span>, <span style="color: var(--green)">.danger</span> { <span style="color: var(--pink)">color</span>: red; }</code>
+        <code> </code>
+        <code class="comment">/* То же самое, что и */</code>
+        <code> </code>
+        <code><span style="color: var(--green)">h1</span> { <span style="color: var(--pink)">color</span>: red; }</code>
+        <code><span style="color: var(--green)">.danger</span> { <span style="color: var(--pink)">color</span>: red; }</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Селектор по id</h2>
+    CSS:
+    <pre>
+        <code><span style="color: var(--green)">#big</span> {</code>
+        <code>  <span style="color: var(--pink)">font-size</span>: 30px;</code>
+        <code>}</code>
+    </pre>
+    HTML:
+    <pre>
+        <code>&lt;p <mark>id="big"</mark>&gt;Текст этого параграфа будет увеличен.&lt;/p&gt;</code>
+        <code>&lt;p&gt;А этого нет.&lt;/p&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Стилизация списка внутри навигации</h2>
+    <div class="browser-view">
+        <ul style="list-style: none; display: flex; flex-direction: row; justify-content: space-around">
+            <li>Первый пункт</li>
+            <li>Второй пункт</li>
+            <li>Третий пункт</li>
+        </ul>
+    </div>
+    <pre>
+        <code>&lt;nav class="blog-navigation"&gt;</code>
+        <code>  &lt;ul&gt;…&lt;/ul&gt;</code>
+        <code>&lt;/nav&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Стилизация списка внутри навигации</h2>
+    <p>Способ 1:</p>
+    <p>Добавить класс и использовать селектор по этому классу;</p>
+    <p>Способ 2:</p>
+    <p>Использовать специальный селектор, чтобы стили применялись к спискам внутри блока с классом <code>blog-navigation</code>.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Вложенные селекторы</h2>
+    <pre>
+        <code class="comment">/* выберет теги a внутри тегов nav */</code>
+        <code><span style="color: var(--green)">nav a</span> {…}</code>
+        <code class="comment">/* теги ul внутри тегов с классом menu */</code>
+        <code><span style="color: var(--green)">.menu ul</span> {…}</code>
+        <code class="comment">/* теги с классом title внутри тегов с классом post */</code>
+        <code><span style="color: var(--green)">.post .title</span> {…}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout">Взаимодействие различных стилей</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Стили по умолчанию</h2>
+    <div class="browser-view">
+        <ul>
+            <li>Первый пункт списка</li>
+            <li>Второй пункт списка</li>
+            <li>Третий пункт списка</li>
+        </ul>
+    </div>
+    <p>Базовые стили хранятся внутри браузера, это браузерные стили по умолчанию.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Каскадность</h2>
+    HTML:
+    <pre>
+        <code>&lt;p class="beloved-color"&gt;Зелёный - мой любимый цвет&lt;/p&gt;</code>
+        <code> </code>
+    </pre>
+    <p>На этот элемент могут одновременно влиять CSS-правила по тегу <code>p</code> и по классу <code>beloved-color</code> из прописанных разработчиком стилей, да ещё и CSS-правило по тегу <code>p</code> из браузерных стилей.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Каскадность</h2>
+    Стили разработчика:
+    <pre>
+        <code><span style="color: var(--green)">p</span> { <span style="color: var(--pink)">font-size</span>: 14px; }</code>
+        <code><span style="color: var(--green)">.beloved-color</span> { <span style="color: var(--pink)">color</span>: green; }</code>
+    </pre>
+    <p>После того, как все правила для элемента собраны, браузер комбинирует все свойства из этих правил и применяет их к элементу.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Каскадность</h2>
+    Итоговые стили:
+    <pre>
+        <code class="comment">/* из правила для p в написанных стилях */</code>
+        <code><span style="color: var(--pink)">font-size</span>: 14px;</code>
+        <code class="comment">/* из правила для .beloved-color в написанных стилях */</code>
+        <code><span style="color: var(--pink)">color</span>: green;</code>
+        <code class="comment">/* из правила для p в браузерных стилях */</code>
+        <code><span style="color: var(--pink)">margin</span>: 1em 0;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Конфликт свойств</h2>
+    <pre>
+        <code class="comment">/* браузерные стили */</code>
+        <code><span style="color: var(--green)">ul</span> { <span style="color: var(--pink)">list-style</span>: disc; }</code>
+        <code class="comment">/* стили написанные разработчиком */</code>
+        <code><span style="color: var(--green)">.blog-navigation ul</span> { <span style="color: var(--pink)">list-style</span>: none; }</code>
+    </pre>
+    <p>На один и тот же список на странице действуют стили с разными значениями свойства <code>list-style</code>. Это и есть конфликт.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Конфликт свойств</h2>
+    <ol>
+        <li>Сравниваются приоритеты стилевых файлов, в которых находятся конфликтующие свойства. </li>
+        <li>Сравнивается специфичность селекторов у CSS-правил с конфликтующими свойствами.</li>
+        <li>Побеждает то свойство, которое находится ниже в коде.</li>
+    </ol>
+</section>
+
+<section class="slide narfu">
+    <h2>Множественные классы</h2>
+    <p>Допустим, на сайте есть разные типы уведомлений:</p>
+    <pre>
+        <code>&lt;div class="alert"&gt;Просто сообщение.&lt;/div&gt;</code>
+        <code>&lt;div class="alert alert-error"&gt;Ошибка! Всё пропа-а-а-ло!&lt;/div&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Множественные классы</h2>
+    <p>Фон обычных сообщений серый, фон ошибок красный:</p>
+    <pre>
+        <code><span style="color: var(--green)">.alert</span> {</code>
+        <code class="comment">  /* свойства для рамок, отступов и так далее */</code>
+        <code>  <span style="color: var(--pink)">background-color</span>: lightgrey;</code>
+        <code>}</code>
+        <code> </code>
+        <code><span style="color: var(--green)">.alert-error</span> { <span style="color: var(--pink)">background-color</span>: red; }</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Множественные классы</h2>
+    <p id="grey_alert">Просто сообщение.</p>
+    <p id="red_alert">Ошибка! Всё пропа-а-а-ло!</p>
+    <p>Класс <code>alert</code> с общими стилями есть у всех сообщений. <br>Класс <code>alert-error</code> с частными стилями есть только у ошибок.</p>
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout">Типы единиц измерения</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Абсолютные</h2>
+    <p>Абсолютные единицы измерения привязаны к настоящим физическим размерам и связаны между собой жёсткими пропорциями.</p>
+    <p><code>px</code> (pixel) определяет размер в пикселях.</p>
+    <pre>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">height</span>: 25px; <span class="comment">/* определяет высоту элемента */</span></code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Абсолютные</h2>
+    <p>Единицы измерения могут быть указаны как целое число или в десятичной форме:</p>
+    <pre>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">font-size</span>: 12.5px; </code>
+        <code>  <span style="color: var(--pink)">height</span>: 150.5px;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Абсолютные</h2>
+    <p>Помимо пикселей, существуют и другие абсолютные единицы измерения.</p>
+    <p><code>cm</code> определяет размер в <b>сантиметрах</b>:</p>
+    <pre>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">font-size</span>: 10cm; </code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Абсолютные</h2>
+    <p><code>mm</code> определяет размер в <b>миллиметрах</b> (10mm = 1cm):</p>
+    <pre>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">font-size</span>: 100mm; <span class="comment">/* или 10cm */</span></code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Абсолютные</h2>
+    <p><code>in</code> (inches) определяет размер в <b>дюймах</b> (1in = 2.54cm):</p>
+    <pre>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">font-size</span>: 4in; <span class="comment">/* или 10.16cm */</span></code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Абсолютные</h2>
+    <p><code>pt</code> (points) определяет размер в <b>пунктах</b> (1pt = 1/72 of 1in).</p>
+    <pre>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">font-size</span>: 288pt; <span class="comment">/* или 10.16cm */</span></code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Абсолютные</h2>
+    <p><code>pc</code> (pica) определяет размер в <b>пайках</b> (1pc = 12pt).</p>
+    <pre>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">font-size</span>: 24pc; <span class="comment">/* или 10.16cm */</span></code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Абсолютные</h2>
+    <p class="info info--blue info--frame-heading info--frame-heading--important">Хотя сантиметры, миллиметры, дюймы, точки и пайки предназначены для отображения элементов на веб-странице, браузеры не всегда могут точно рассчитать физический размер экрана.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Относительные</h2>
+    <p><code>%</code> устанавливает измерение в процентах от родительского элемента.</p>
+    <pre>
+        <code>&lt;div&gt;</code>
+        <code>  &lt;p&gt;Единицы измерения&lt;/p&gt;</code>
+        <code>&lt;/div&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Относительные</h2>
+    <pre>
+        <code><span style="color: var(--green)">div</span> {</code>
+        <code>  <span style="color: var(--pink)">height</span>: 400px;</code>
+        <code>}</code>
+        <code> </code>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">height</span>: 50%; <span class="comment">/* 200px */</span></code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Относительные</h2>
+    <p><code>em</code> используется для обозначения размера шрифта относительно текущего шрифта родительского элемента.</p>
+    <div class="browser-view">
+        <p>Это текст c обычной высотой. <span style="font-size: 2em;">А этот 1.5em</span></p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Относительные</h2>
+    <p><code>rem</code> используется, если нужно изменить размер шрифта элемента по отношению к размеру шрифта корневого элемента <code>&lt;html&gt;</code></p>
+    <pre>
+        <code><span style="color: var(--green)">html</span> { font-size: 10px; }</code>
+        <code> </code>
+        <code><span style="color: var(--green)">p</span> { font-size: 15px; }</code>
+        <code> </code>
+        <code><span style="color: var(--green)">b</span> { font-size: 2rem; <span class="comment">/* 20px */</span> }</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Единицы, зависящие от размера области просмотра</h2>
+    <p>Словосочетание <b>область просмотра</b> (viewport) относится к области веб-страницы, которую пользователь может видеть без прокрутки.</p>
+    <p>Единицы измерения, которые зависят от области просмотра, используются для обеспечения правильного отображения веб-страницы на устройствах с разными размерами экрана.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>vw и vh</h2>
+    <div class="columns two">
+        <div style="display: flex; flex-direction: row; justify-content: center">
+            <img src="pictures/7/vw_vh.svg" alt="" width="500">
+        </div>
+        <ul>
+            <li><code>vw</code> — 1% ширины области просмотра.</li>
+            <li><code>vh</code> — 1% высоты области просмотра.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>vmin</h2>
+    <div class="columns two">
+        <img src="pictures/7/vmin.svg" alt="" width="350">
+        <div>
+            <p><code>vmin</code> - 1% меньшего размера области просмотра.</p>
+            <p>Если ширина браузера меньше его высоты, <code>1vmin</code> равно <code>1vw</code>.</p>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>vmax</h2>
+    <div class="columns two">
+        <img src="pictures/7/vmax.svg" alt="" width="350">
+        <div>
+            <p><code>vmax</code> - 1% большего размера области просмотра.</p>
+            <p>Если высота браузера больше его ширины, <code>1vmax</code> равно <code>1vh</code>.</p>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Относительные</h2>
+    <p>Единицы измерения, зависящие от области просмотра, такие как <code>%</code>, подходят для определения размеров блочных элементов:</p>
+    <div class="columns two">
+        <pre>
+            <code><span style="color: var(--green)">pre</span> {</code>
+            <code>  <span style="color: var(--pink)">width</span>: 10vw;</code>
+            <code>  <span style="color: var(--pink)">height</span>: 24vh;</code>
+            <code>}</code>
+        </pre>
+            <pre>
+            <code><span style="color: var(--green)">div</span> {</code>
+            <code>  <span style="color: var(--pink)">width</span>: 20vmin;</code>
+            <code>  <span style="color: var(--pink)">height</span>: 40vmax;</code>
+            <code>}</code>
+        </pre>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Правильная запись</h2>
+    <div class="columns two">
+        <div>
+            <p style="color: var(--green)">Хорошо</p>
+            <pre>
+                <code><span style="color: var(--green)">.some_text</span> {</code>
+                <code>  <span style="color: var(--pink)">font-size</span>: 0;</code>
+                <code>  <span style="color: var(--pink)">line-height</span>: .9em;</code>
+                <code>}</code>
+            </pre>
+        </div>
+        <div>
+            <p style="color: var(--red)">Плохо</p>
+            <pre>
+                <code><span style="color: var(--green)">.some_text</span> {</code>
+                <code>  <span style="color: var(--pink)">font-size</span>: 0%;</code>
+                <code>  <span style="color: var(--pink)">line-height</span>: 0.9em;</code>
+                <code>}</code>
+            </pre>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout">Цвета в вебе</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Ключевые слова</h2>
+    <div class="columns two">
+        <ul>
+            <li>Чёрный <code>black</code></li>
+            <li>Белый <code>white</code></li>
+            <li>Красный <code>red</code></li>
+            <li>Зелёный <code>green</code></li>
+            <li>Синий <code>blue</code></li>
+        </ul>
+        <p>Самый простой способ указания цвета в вебе — ключевые слова. При этом используются английские названия цветов.</p>
+    </div>
+</section>
+
+<section class="slide clear">
+    <img src="pictures/7/colors.png" alt="" class="cover width">
+</section>
+
+<section class="slide narfu">
+    <h2>Ключевые слова</h2>
+    <pre>
+        <code><span style="color: var(--green)">.selector</span> {</code>
+        <code>  <span style="color: var(--pink)">color</span>: black;</code>
+        <code>  <span style="color: var(--pink)">background-color</span>: AntiqueWhite;</code>
+        <code>}</code>
+    </pre>
+    <p>Ключевые слова регистронезависимые — можно писать их как угодно и браузер всё поймёт.</p>
+</section>
+
+<section class="slide black">
+    <h2 style="color: white">RGB</h2>
+    <img src="pictures/7/rgb.png" alt="" class="cover h">
+</section>
+
+<section class="slide narfu">
+    <h2>RGB</h2>
+    <pre>
+        <code><span style="color: var(--green)">.selector</span> {</code>
+        <code class="comment">  /* синий */</code>
+        <code>  <span style="color: var(--pink)">color</span>: rgb(0 63 255);</code>
+        <code class="comment">  /* полупрозрачный синий */</code>
+        <code>  <span style="color: var(--pink)">background-color</span>: rgb(0 63 255 / 0.5);</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide white">
+    <h2>HEX</h2>
+    <img src="pictures/7/hex.png" alt="" class="cover">
+</section>
+
+<section class="slide narfu">
+    <h2>HEX</h2>
+    <pre>
+        <code><span style="color: var(--green)">.selector</span> {</code>
+        <code class="comment">  /* #RRGGBB */</code>
+        <code>  <span style="color: var(--pink)">color</span>: #ff0000;</code>
+        <code class="comment">  /* #RGB */</code>
+        <code>  <span style="color: var(--pink)">background-color</span>: #090; <span class="comment">/* #009900 */</span></code>
+        <code class="comment">  /* #RRGGBBAA - с прозрачностью */</code>
+        <code>  <span style="color: var(--pink)">background-color</span>: #00990055; <span class="comment">/* или просто #0905 */</span></code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide white">
+    <h2>HSL</h2>
+    <img src="pictures/7/hsl.png" alt="" class="place center" width="600">
+</section>
+
+<section class="slide narfu">
+    <h2>HSL</h2>
+    <pre>
+        <code><span style="color: var(--green)">.selector</span> {</code>
+        <code>  <span style="color: var(--pink)">color</span>: hsl(120 100deg 50%);</code>
+        <code class="comment">  /* с прозрачностью */</code>
+        <code>  <span style="color: var(--pink)">background-color</span>: hsl(120 100% 50% / 0.5);</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Ключевые слова</h2>
+    <p><b>transparent</b></p>
+    <p>Ключевое слово <code>transparent</code> задаёт прозрачный цвет текста. Технически это равносильно записи любого цвета с нулевой прозрачностью <code>rgb(0 0 0 / 0)</code>, но бывают случаи, когда просто прозрачность и прозрачность цвета могут работать иначе, например, в градиентах.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Ключевые слова</h2>
+    <p><b>currentColor</b></p>
+    <p>За ключевым словом <code>currentColor</code> скрывается цвет, указанный в свойстве <code>color</code> элемента. Очень удобно указывать это слово в качестве значения других свойств, чтобы многократно не указывать один и тот же цвет.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Ключевые слова</h2>
+    <p><b>currentColor</b></p>
+    <pre>
+        <code><span style="color: var(--green)">.element</span> {</code>
+        <code>  <span style="color: var(--pink)">color</span>: #6e4aff;</code>
+        <code>  <span style="color: var(--pink)">border</span>: 1px solid currentColor;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<!-- Footer -->
+
+<section class="slide" id="see-more">
+    <h2 class="shout">
+        <a href="index.html">Все презентации<br>на GitHub Pages</a>
+    </h2>
+</section>
+<footer class="badge">
+    <a href="https://github.com/LoveSolaristics/shower-presentation.git">
+        <svg width="81" height="79" viewBox="0 0 81 79" aria-hidden="true">
+            <path d="M40.5 0a40.5 40.5 0 0 0-12.8 78.93c2 .37 2.76-.88 2.76-2s0-3.51-.05-6.89c-11.27 2.45-13.64-5.43-13.64-5.43-1.84-4.68-4.5-5.92-4.5-5.92-3.68-2.51.28-2.46.28-2.46 4.06.29 6.2 4.17 6.2 4.17 3.61 6.19 9.48 4.4 11.79 3.37a8.65 8.65 0 0 1 2.57-5.41c-9-1-18.45-4.5-18.45-20a15.65 15.65 0 0 1 4.17-10.87 14.57 14.57 0 0 1 .4-10.72s3.4-1.09 11.14 4.15a38.39 38.39 0 0 1 20.28 0c7.73-5.24 11.13-4.15 11.13-4.15a14.55 14.55 0 0 1 .4 10.72 15.63 15.63 0 0 1 4.16 10.87c0 15.56-9.47 19-18.49 20 1.45 1.25 2.75 3.72 2.75 7.5v11.11c0 1.08.73 2.34 2.78 1.95A40.51 40.51 0 0 0 40.5 0z"></path>
+        </svg>
+        Репозиторий<br>на&nbsp;GitHub
+    </a>
+</footer>
+<div class="progress"></div>
+<script src="shower/shower.js"></script>
+</body>
+</html>
