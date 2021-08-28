@@ -8,6 +8,21 @@
     <link rel="stylesheet" href="node_modules/@shower/material/styles/styles.css">
     <link rel="stylesheet" href="styles/all_styles.css">
     <link rel="shortcut icon" type="image/png" href="pictures/general/narfu_icon.png">
+    <style>
+        #red_alert{
+            background-color: var(--red);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+        }
+
+        #grey_alert{
+            background-color: var(--gray-dark);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body class="shower list">
 <header class="caption">
@@ -214,6 +229,276 @@
     </pre>
     <p>Такой способ подключения считается плохой практикой, поскольку усложняет поддержку проекта: код становится труднее читать.</p>
 </section>
+
+<section class="slide narfu">
+    <h2 class="shout">Механизмы свойств</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Наследование</h2>
+    <p><b>Наследование в CSS</b> — это механизм, с помощью которого значения свойств элемента-родителя передаются его элементам-потомкам.</p>
+    <p>Стили, присвоенные одному элементу, наследуются всеми потомками (вложенными элементами), но только в том случае, если они где-то явно не переопределены.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Наследование</h2>
+    <div class="columns two">
+        <pre>
+            <code><span style="color: var(--green)">body</span> {</code>
+            <code>  <span style="color: var(--pink)">font-size</span>: 14px;</code>
+            <code>}</code>
+            <code></code>
+            <code><span style="color: var(--green)">main</span> {</code>
+            <code>  <span style="color: var(--pink)">font-size</span>: 18px;</code>
+            <code>}</code>
+        </pre>
+        <div class="browser-view next">
+            <p>Текст на странице</p>
+            <p style="font-size: larger">Текст внутри main</p>
+            <p>Текст на странице</p>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Наследуемые свойства</h2>
+    <p>Свойства текста:</p>
+    <code>font-size, font-family, font-style, font-weight, color, text-align, text-transform, text-indent, line-height, letter-spacing, word-spacing, white-space, direction</code><br> и другие.
+</section>
+
+<section class="slide narfu">
+    <h2>Наследуемые свойства</h2>
+    <p>Другие свойства:</p>
+    <code>list-style, cursor, visibility, border-collapse</code>
+    <p>Наследуемые свойства можно и нужно задавать через предков, следуя структуре документа.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Ненаследуемые свойства</h2>
+    <p>Параметры позиционирования, размеров, отступов, фона, рамок:</p>
+    <code>background, border, padding, margin, width, height, position</code> и другие.
+    <p>Не наследуются они из соображений здравого смысла.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Составные свойства</h2>
+    <p>В CSS есть обычные свойства, управляющие одним параметром отображения, и есть <b>составные свойства</b>, управляющие одновременно несколькими параметрами.</p>
+    <pre>
+        <code><span style="color: var(--pink)">font</span>: 16px/26px "Arial", sans-serif;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Составные свойства</h2>
+    <pre>
+        <code><span style="color: var(--pink)">font-size</span>: 16px;                  <span class="comment">/* было задано в font */</span></code>
+        <code><span style="color: var(--pink)">line-height</span>: 26px;                <span class="comment">/* было задано в font */</span></code>
+        <code><span style="color: var(--pink)">font-family</span>: "Arial", sans-serif; <span class="comment">/* было задано в font */</span></code>
+        <code><span style="color: var(--pink)">font-weight</span>: normal;              <span class="comment">/* не было задано в font */</span></code>
+        <code><span style="color: var(--pink)">font-style</span>: normal;               <span class="comment">/* не было задано в font */</span></code>
+        <code><span style="color: var(--pink)">font-variant</span>: normal;             <span class="comment">/* не было задано в font */</span></code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Составные свойства</h2>
+    <pre>
+        <code><span style="color: var(--pink)">font</span>: 16px "Arial", sans-serif;</code>
+        <code class="comment">/* line-height: 1.2; (normal) */</code>
+    </pre>
+    <div class="browser-view">
+        <p style='font: 25px "Arial", sans-serif;'>Ваша работа заполнит большую часть жизни и единственный способ быть полностью довольным — делать то, что по-вашему является великим делом. И единственный способ делать великие дела — любить то, что вы делаете.</p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout">Селекторы</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Селекторы</h2>
+    <pre>
+        <code><span style="color: var(--green)">.feature-kitten</span> {</code>
+        <code>  <span style="color: var(--pink)">padding-top</span>: 60px;                      <span class="comment">/* отступ сверху */</span></code>
+        <code>  <span style="color: var(--pink)">background-image</span>: url("img/bottle.svg");<span class="comment">/* фоновая картинка */</span></code>
+        <code>}</code>
+    </pre>
+    <p>Строка <code>.feature-kitten</code> — это селектор. Она говорит браузеру применить список свойств (отступ и фон) ко всем элементам, у которых атрибут <code>class</code> имеет значение <code>feature-kitten</code>.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Селекторы по тегам и классам</h2>
+    <pre>
+        <code class="comment">/* выберет все заголовки 1 уровня */</code>
+        <code><span style="color: var(--green)">h1</span> { <span style="color: var(--pink)">color</span>: red; }</code>
+        <code class="comment">/* выберет только элементы с классом info */</code>
+        <code><span style="color: var(--green)">.info</span> { <span style="color: var(--pink)">color</span>: blue; } </code>
+    </pre>
+    <p>Селекторы по тегам содержат имя тега без символов <code><</code> и <code>></code>.</p>
+    <p>Селекторы по классам начинаются с точки, за которой идёт имя класса.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Группировка селекторов</h2>
+    <pre>
+        <code><span style="color: var(--green)">h1</span>, <span style="color: var(--green)">.danger</span> { <span style="color: var(--pink)">color</span>: red; }</code>
+        <code> </code>
+        <code class="comment">/* То же самое, что и */</code>
+        <code> </code>
+        <code><span style="color: var(--green)">h1</span> { <span style="color: var(--pink)">color</span>: red; }</code>
+        <code><span style="color: var(--green)">.danger</span> { <span style="color: var(--pink)">color</span>: red; }</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Селектор по id</h2>
+    CSS:
+    <pre>
+        <code><span style="color: var(--green)">#big</span> {</code>
+        <code>  <span style="color: var(--pink)">font-size</span>: 30px;</code>
+        <code>}</code>
+    </pre>
+    HTML:
+    <pre>
+        <code>&lt;p <mark>id="big"</mark>&gt;Текст этого параграфа будет увеличен.&lt;/p&gt;</code>
+        <code>&lt;p&gt;А этого нет.&lt;/p&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Стилизация списка внутри навигации</h2>
+    <div class="browser-view">
+        <ul style="list-style: none; display: flex; flex-direction: row; justify-content: space-around">
+            <li>Первый пункт</li>
+            <li>Второй пункт</li>
+            <li>Третий пункт</li>
+        </ul>
+    </div>
+    <pre>
+        <code>&lt;nav class="blog-navigation"&gt;</code>
+        <code>  &lt;ul&gt;…&lt;/ul&gt;</code>
+        <code>&lt;/nav&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Стилизация списка внутри навигации</h2>
+    <p>Способ 1:</p>
+    <p>Добавить класс и использовать селектор по этому классу;</p>
+    <p>Способ 2:</p>
+    <p>Использовать специальный селектор, чтобы стили применялись к спискам внутри блока с классом <code>blog-navigation</code>.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Вложенные селекторы</h2>
+    <pre>
+        <code class="comment">/* выберет теги a внутри тегов nav */</code>
+        <code><span style="color: var(--green)">nav a</span> {…}</code>
+        <code class="comment">/* теги ul внутри тегов с классом menu */</code>
+        <code><span style="color: var(--green)">.menu ul</span> {…}</code>
+        <code class="comment">/* теги с классом title внутри тегов с классом post */</code>
+        <code><span style="color: var(--green)">.post .title</span> {…}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout">Взаимодействие различных стилей</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Стили по умолчанию</h2>
+    <div class="browser-view">
+        <ul>
+            <li>Первый пункт списка</li>
+            <li>Второй пункт списка</li>
+            <li>Третий пункт списка</li>
+        </ul>
+    </div>
+    <p>Базовые стили хранятся внутри браузера, это браузерные стили по умолчанию.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Каскадность</h2>
+    HTML:
+    <pre>
+        <code>&lt;p class="beloved-color"&gt;Зелёный - мой любимый цвет&lt;/p&gt;</code>
+        <code> </code>
+    </pre>
+    <p>На этот элемент могут одновременно влиять CSS-правила по тегу <code>p</code> и по классу <code>beloved-color</code> из прописанных разработчиком стилей, да ещё и CSS-правило по тегу <code>p</code> из браузерных стилей.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Каскадность</h2>
+    Стили разработчика:
+    <pre>
+        <code><span style="color: var(--green)">p</span> { <span style="color: var(--pink)">font-size</span>: 14px; }</code>
+        <code><span style="color: var(--green)">.beloved-color</span> { <span style="color: var(--pink)">color</span>: green; }</code>
+    </pre>
+    <p>После того, как все правила для элемента собраны, браузер комбинирует все свойства из этих правил и применяет их к элементу.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Каскадность</h2>
+    Итоговые стили:
+    <pre>
+        <code class="comment">/* из правила для p в написанных стилях */</code>
+        <code><span style="color: var(--pink)">font-size</span>: 14px;</code>
+        <code class="comment">/* из правила для .beloved-color в написанных стилях */</code>
+        <code><span style="color: var(--pink)">color</span>: green;</code>
+        <code class="comment">/* из правила для p в браузерных стилях */</code>
+        <code><span style="color: var(--pink)">margin</span>: 1em 0;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Конфликт свойств</h2>
+    <pre>
+        <code class="comment">/* браузерные стили */</code>
+        <code><span style="color: var(--green)">ul</span> { <span style="color: var(--pink)">list-style</span>: disc; }</code>
+        <code class="comment">/* стили написанные разработчиком */</code>
+        <code><span style="color: var(--green)">.blog-navigation ul</span> { <span style="color: var(--pink)">list-style</span>: none; }</code>
+    </pre>
+    <p>На один и тот же список на странице действуют стили с разными значениями свойства <code>list-style</code>. Это и есть конфликт.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Конфликт свойств</h2>
+    <ol>
+        <li>Сравниваются приоритеты стилевых файлов, в которых находятся конфликтующие свойства. </li>
+        <li>Сравнивается специфичность селекторов у CSS-правил с конфликтующими свойствами.</li>
+        <li>Побеждает то свойство, которое находится ниже в коде.</li>
+    </ol>
+</section>
+
+<section class="slide narfu">
+    <h2>Множественные классы</h2>
+    <p>Допустим, на сайте есть разные типы уведомлений:</p>
+    <pre>
+        <code>&lt;div class="alert"&gt;Просто сообщение.&lt;/div&gt;</code>
+        <code>&lt;div class="alert alert-error"&gt;Ошибка! Всё пропа-а-а-ло!&lt;/div&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Множественные классы</h2>
+    <p>Фон обычных сообщений серый, фон ошибок красный:</p>
+    <pre>
+        <code><span style="color: var(--green)">.alert</span> {</code>
+        <code class="comment">  /* свойства для рамок, отступов и так далее */</code>
+        <code>  <span style="color: var(--pink)">background-color</span>: lightgrey;</code>
+        <code>}</code>
+        <code> </code>
+        <code><span style="color: var(--green)">.alert-error</span> { <span style="color: var(--pink)">background-color</span>: red; }</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Множественные классы</h2>
+    <p id="grey_alert">Просто сообщение.</p>
+    <p id="red_alert">Ошибка! Всё пропа-а-а-ло!</p>
+    <p>Класс <code>alert</code> с общими стилями есть у всех сообщений. <br>Класс <code>alert-error</code> с частными стилями есть только у ошибок.</p>
+</section>
+
 
 <!-- Slide -->
 <section class="slide narfu">
