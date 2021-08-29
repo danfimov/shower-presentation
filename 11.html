@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Flexbox</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#007BFF">
+    <link rel="stylesheet" href="shower/themes/material/styles/styles.css">
+    <link rel="stylesheet" href="styles/all_styles.css">
+    <link rel="shortcut icon" type="image/png" href="pictures/general/narfu_icon.png">
+    <style>
+        /* Poem */
+
+        .poem {
+            position: absolute;
+            top: 0;
+            left: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 15px;
+            width: 1020px;
+            height: 550px;
+            background: #FFF;
+            overflow: hidden;
+        }
+        .poem div {
+            float: left;
+            margin: 15px;
+            padding: 0 15px;
+            background: #007BFF;
+            border-radius: 10px;
+            color: #FFF;
+        }
+        .poem div:first-child {
+            background: #1FBC86;
+        }
+        .poem div:last-child {
+            background: #FF4B00;
+        }
+
+        /* Constructor */
+
+        .poem.flex {
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        /* Axis */
+
+        .axis-up {
+            background: #FFF url(pictures/11/arrow-up.svg) 50% 30px no-repeat;
+        }
+        .axis-right {
+            background: #FFF url(pictures/11/arrow-right.svg) 767px 50% no-repeat;
+        }
+        .axis-down {
+            background: #FFF url(pictures/11/arrow-down.svg) 50% 383px no-repeat;
+        }
+        .axis-left {
+            background: #FFF url(pictures/11/arrow-left.svg) 30px 50% no-repeat;
+        }
+
+        /* Main */
+
+        .poem.row-reverse {
+            -webkit-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+        }
+        .poem.column {
+            -webkit-flex-direction: column;
+            flex-direction: column;
+        }
+        .poem.column-reverse {
+            -webkit-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+        }
+        .poem.justify-end {
+            -webkit-justify-content: flex-end;
+            justify-content: flex-end;
+        }
+        .poem.justify-center {
+            -webkit-justify-content: center;
+            justify-content: center;
+        }
+        .poem.justify-between {
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+        }
+        .poem.justify-around {
+            -webkit-justify-content: space-around;
+            justify-content: space-around;
+        }
+
+        /* Order */
+
+        .poem.order div {
+            background-image: url(pictures/11/order-0.svg);
+            background-position: 50%;
+            background-repeat: no-repeat;
+        }
+        .poem.order-2nd-1 div:nth-child(2) {
+            -webkit-order: 1;
+            order: 1;
+            background-image: url(pictures/11/order-1.svg);
+        }
+        .poem.order-all-4 div {
+            -webkit-order: 4;
+            order: 4;
+            background-image: url(pictures/11/order-4.svg);
+        }
+        .poem.order-arranged div:nth-child(1) {
+            -webkit-order: 2;
+            order: 2;
+            background-image: url(pictures/11/order-2.svg);
+        }
+        .poem.order-arranged div:nth-child(2) {
+            -webkit-order: 1;
+            order: 1;
+            background-image: url(pictures/11/order-1.svg);
+        }
+        .poem.order-arranged div:nth-child(3) {
+            -webkit-order: 4;
+            order: 4;
+            background-image: url(pictures/11/order-4.svg);
+        }
+        .poem.order-arranged div:nth-child(4) {
+            -webkit-order: 3;
+            order: 3;
+            background-image: url(pictures/11/order-3.svg);
+        }
+
+        /* Margin */
+
+        .poem.margin div {
+            margin: auto;
+            width: 200px;
+            height: 200px;
+        }
+
+        /* Flex */
+
+        .poem.grow div {
+            -webkit-flex-grow: 1;
+            flex-grow: 1;
+        }
+        .poem.grow-1st-4 div:nth-child(1) {
+            -webkit-flex-grow: 4;
+            flex-grow: 4;
+        }
+        .poem.shrink div {
+            width: 25%;
+        }
+        .poem.shrink div:nth-child(1) {
+            -webkit-flex-shrink: 4;
+            flex-shrink: 4;
+        }
+        .poem.basis div:nth-child(1) {
+            -webkit-flex-basis: 250px;
+            flex-basis: 250px;
+        }
+
+        /* Cross */
+
+        .poem.align-items-height div {
+            height: 300px;
+        }
+        .poem.align-items-end {
+            -webkit-align-items: flex-end;
+            align-items: flex-end;
+        }
+        .poem.align-items-center {
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        .poem.align-items-start-end div:nth-child(1) {
+            -webkit-align-self: flex-start;
+            align-self: flex-start;
+        }
+        .poem.align-items-start-end div:nth-child(4) {
+            -webkit-align-self: flex-end;
+            align-self: flex-end;
+        }
+
+        /* Multi */
+
+        .poem.wrap {
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+        .poem.wrap-reverse {
+            -webkit-flex-wrap: wrap-reverse;
+            flex-wrap: wrap-reverse;
+        }
+        .poem.align-content-center {
+            -webkit-align-content: center;
+            align-content: center;
+        }
+        .poem.align-content-between {
+            -webkit-align-content: space-between;
+            align-content: space-between;
+        }
+        .poem.align-content-start {
+            -webkit-align-content: flex-start;
+            align-content: flex-start;
+        }
+        .poem.align-content-end {
+            -webkit-align-content: flex-end;
+            align-content: flex-end;
+        }
+
+        /* Width */
+
+        section:target .width-play {
+            -webkit-animation: width 4s linear 4s infinite alternate;
+            -moz-animation: width 4s linear 4s infinite alternate;
+            -o-animation: width 4s linear 4s infinite alternate;
+            animation: width 4s linear 4s infinite alternate;
+        }
+
+        @-webkit-keyframes width {
+            from { width: 1024px }
+            to { width: 580px }
+        }
+        @-moz-keyframes width {
+            from { width: 1024px }
+            to { width: 580px }
+        }
+        @-o-keyframes width {
+            from { width: 1024px }
+            to { width: 580px }
+        }
+        @keyframes width {
+            from { width: 1024px }
+            to { width: 580px }
+        }
+
+    </style>
+</head>
+<body class="shower list">
+<header class="caption">
+    <h1>Flexbox</h1>
+    <p><a href="index.html">Web-технологии</a></p>
+</header>
+<section class="slide narfu_official" id="cover">
+    <h2>Flexbox</h2>
+    <p>Лекция №8.2</p>
+</section>
+
+<!-- Main -->
+
+<section class="slide narfu">
+    <img src="pictures/11/flex-conteiner.svg" alt="" class="cover">
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/11/flex-elements.svg" alt="" class="cover">
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/11/asixs.svg" alt="" class="cover">
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/11/main.svg" alt="" class="cover">
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/11/cross.svg" alt="" class="cover">
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/11/flex-direction.svg" alt="" class="cover">
+</section>
+
+<section class="slide">
+    <h2 class="shout">flex-direction</h2>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex axis-right">
+        <div>буря&nbsp;мглою</div>
+        <div>небо&nbsp;кроет</div>
+        <div>вихри&nbsp;снежные</div>
+        <div>крутя</div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Меняем направление по оси</h2>
+    <pre>			<code>.poem {</code>
+			<code>    display: flex;</code>
+			<code>    flex-direction: <mark>row</mark>; <span class="comment">/* по умолчанию */</span></code>
+			<code>    flex-direction: <mark>row-reverse</mark>;</code>
+			<code>}</code>
+		</pre>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex row-reverse axis-left">
+        <div>буря&nbsp;мглою</div>
+        <div>небо&nbsp;кроет</div>
+        <div>вихри&nbsp;снежные</div>
+        <div>крутя</div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Поворачиваем саму ось</h2>
+    <pre>			<code>.poem {</code>
+			<code>    display: flex;</code>
+			<code>    flex-direction: <mark>column</mark>;</code>
+			<code>}</code>
+		</pre>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex column axis-down">
+        <div>буря&nbsp;мглою</div>
+        <div>небо&nbsp;кроет</div>
+        <div>вихри&nbsp;снежные</div>
+        <div>крутя</div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Меняем направление по оси</h2>
+    <pre>			<code>.poem {</code>
+			<code>    display: flex;</code>
+			<code>    flex-direction: <mark>column-reverse</mark>;</code>
+			<code>}</code>
+		</pre>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex column-reverse axis-up">
+        <div>буря&nbsp;мглою</div>
+        <div>небо&nbsp;кроет</div>
+        <div>вихри&nbsp;снежные</div>
+        <div>крутя</div>
+    </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout">flex-wrap</h2>
+</section>
+
+
+<section class="slide clear">
+    <div class="poem flex">
+        <div>буря&nbsp;мглою</div>
+        <div>небо&nbsp;кроет</div>
+        <div>вихри&nbsp;снежные</div>
+        <div>крутя</div>
+        <div>то</div>
+        <div>как&nbsp;зверь</div>
+        <div>она</div>
+        <div>завоет</div>
+        <div>то&nbsp;заплачет</div>
+        <div>как&nbsp;дитя</div>
+        <div>то&nbsp;по&nbsp;кровле</div>
+        <div>обветшалой</div>
+        <div>вдруг&nbsp;соломой</div>
+        <div>зашумит</div>
+        <div>то&nbsp;как</div>
+        <div>путник&nbsp;запоздалый</div>
+        <div>к&nbsp;нам&nbsp;в&nbsp;окошко</div>
+        <div>застучит</div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Перенос</h2>
+    <pre>			<code>.poem {</code>
+			<code>    display: flex;</code>
+			<code>    flex-wrap: <mark>nowrap</mark>; <span class="comment">/* по умолчанию */</span></code>
+			<code>    flex-wrap: <mark>wrap</mark>;</code>
+			<code>}</code>
+		</pre>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex wrap">
+        <div>буря&nbsp;мглою</div>
+        <div>небо&nbsp;кроет</div>
+        <div>вихри&nbsp;снежные</div>
+        <div>крутя</div>
+        <div>то</div>
+        <div>как&nbsp;зверь</div>
+        <div>она</div>
+        <div>завоет</div>
+        <div>то&nbsp;заплачет</div>
+        <div>как&nbsp;дитя</div>
+        <div>то&nbsp;по&nbsp;кровле</div>
+        <div>обветшалой</div>
+        <div>вдруг&nbsp;соломой</div>
+        <div>зашумит</div>
+        <div>то&nbsp;как</div>
+        <div>путник&nbsp;запоздалый</div>
+        <div>к&nbsp;нам&nbsp;в&nbsp;окошко</div>
+        <div>застучит</div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Перенос наоборот</h2>
+    <pre>			<code>.poem {</code>
+			<code>    display: flex;</code>
+			<code>    flex-wrap: <mark>wrap-reverse</mark>;</code>
+			<code>}</code>
+		</pre>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex wrap-reverse">
+        <div>буря&nbsp;мглою</div>
+        <div>небо&nbsp;кроет</div>
+        <div>вихри&nbsp;снежные</div>
+        <div>крутя</div>
+        <div>то</div>
+        <div>как&nbsp;зверь</div>
+        <div>она</div>
+        <div>завоет</div>
+        <div>то&nbsp;заплачет</div>
+        <div>как&nbsp;дитя</div>
+        <div>то&nbsp;по&nbsp;кровле</div>
+        <div>обветшалой</div>
+        <div>вдруг&nbsp;соломой</div>
+        <div>зашумит</div>
+        <div>то&nbsp;как</div>
+        <div>путник&nbsp;запоздалый</div>
+        <div>к&nbsp;нам&nbsp;в&nbsp;окошко</div>
+        <div>застучит</div>
+    </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout">justify-content</h2>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex">
+        <div>буря мглою</div>
+        <div>небо кроет</div>
+        <div>вихри снежные</div>
+        <div>крутя</div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Вдоль направо</h2>
+    <pre>
+			<code>.poem {</code>
+			<code>    display: flex;</code>
+			<code>    justify-content: <mark>flex-start</mark>; <span class="comment">/* по умолчанию */</span></code>
+			<code>    justify-content: <mark>flex-end</mark>;</code>
+			<code>}</code>
+		</pre>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex justify-end">
+        <div>буря мглою</div>
+        <div>небо кроет</div>
+        <div>вихри снежные</div>
+        <div>крутя</div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Вдоль посередине</h2>
+    <pre>
+			<code>.poem {</code>
+			<code>    display: flex;</code>
+			<code>    <mark>justify-content: center;</mark></code>
+			<code>}</code>
+		</pre>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex justify-center">
+        <div>буря мглою</div>
+        <div>небо кроет</div>
+        <div>вихри снежные</div>
+        <div>крутя</div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Вдоль равномерно</h2>
+    <pre>
+			<code>.poem {</code>
+			<code>    display: flex;</code>
+			<code>    <mark>justify-content: space-between;</mark></code>
+			<code>}</code>
+		</pre>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex justify-between">
+        <div>буря мглою</div>
+        <div>небо кроет</div>
+        <div>вихри снежные</div>
+        <div>крутя</div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Вдоль красиво</h2>
+    <pre>
+			<code>.poem {</code>
+			<code>    display: flex;</code>
+			<code>    <mark>justify-content: space-around;</mark></code>
+			<code>}</code>
+		</pre>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex justify-around">
+        <div>буря мглою</div>
+        <div>небо кроет</div>
+        <div>вихри снежные</div>
+        <div>крутя</div>
+    </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout">align-items</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Даём высоту</h2>
+    <pre>			<code>.poem div {</code>
+			<code>    <mark>height: 250px;</mark></code>
+			<code>}</code>
+		</pre>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex justify-between align-items-height">
+        <div>буря мглою</div>
+        <div>небо кроет</div>
+        <div>вихри снежные</div>
+        <div>крутя</div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Поперёк внизу</h2>
+    <pre>
+			<code>.poem {</code>
+			<code>    display: flex;</code>
+			<code>    align-items: <mark>flex-start</mark>; <span class="comment">/* по умолчанию */</span></code>
+			<code>    align-items: <mark>flex-end</mark>;</code>
+			<code>}</code>
+		</pre>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex justify-between align-items-height align-items-end">
+        <div>буря мглою</div>
+        <div>небо кроет</div>
+        <div>вихри снежные</div>
+        <div>крутя</div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Поперёк посередине</h2>
+    <pre>
+			<code>.poem {</code>
+			<code>    display: flex;</code>
+			<code>    align-items: <mark>center</mark>;</code>
+			<code>}</code>
+		</pre>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex justify-between align-items-height align-items-center">
+        <div>буря мглою</div>
+        <div>небо кроет</div>
+        <div>вихри снежные</div>
+        <div>крутя</div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Поперёк индивидуально</h2>
+    <pre>
+			<code>.poem <mark>div</mark>:nth-child(<mark class="important">1</mark>) {</code>
+			<code>    align-self: <mark>flex-start</mark>;</code>
+			<code>}</code>
+            <code> </code>
+			<code>.poem <mark>div</mark>:nth-child(<mark class="important">4</mark>) {</code>
+			<code>    align-self: <mark>flex-end</mark>;</code>
+			<code>}</code>
+		</pre>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex justify-between align-items-height align-items-center align-items-start-end">
+        <div>буря мглою</div>
+        <div>небо кроет</div>
+        <div>вихри снежные</div>
+        <div>крутя</div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Центрирование</h2>
+    <pre>
+			<code>.poem {</code>
+			<code>    <mark>display: flex;</mark></code>
+			<code>}</code>
+            <code> </code>
+			<code>.poem div {</code>
+			<code>    <mark>margin: auto;</mark></code>
+			<code>}</code>
+		</pre>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex margin">
+        <div>буря мглою</div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout">align-content</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Порядок поперёк</h2>
+    <pre>
+			<code>.poem {</code>
+			<code>    display: flex;</code>
+			<code>    align-content: <mark>normal</mark>; <span class="comment">/* по умолчанию */</span></code>
+			<code>    align-content: <mark>center</mark>;</code>
+			<code>}</code>
+		</pre>
+    <p class="note">Только для многострочных блоков!</p>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex wrap grow align-content-center">
+        <div>буря мглою</div>
+        <div>небо кроет</div>
+        <div>вихри снежные</div>
+        <div>крутя</div>
+        <div>то</div>
+        <div>как зверь</div>
+        <div>она</div>
+        <div>завоет</div>
+        <div>то заплачет</div>
+        <div>как дитя</div>
+        <div>то по кровле</div>
+        <div>обветшалой</div>
+        <div>вдруг соломой</div>
+        <div>зашумит</div>
+        <div>то как</div>
+        <div>путник запоздалый</div>
+        <div>к нам в окошко</div>
+        <div>застучит</div>
+    </div>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex wrap grow align-content-between">
+        <div>буря мглою</div>
+        <div>небо кроет</div>
+        <div>вихри снежные</div>
+        <div>крутя</div>
+        <div>то</div>
+        <div>как зверь</div>
+        <div>она</div>
+        <div>завоет</div>
+        <div>то заплачет</div>
+        <div>как дитя</div>
+        <div>то по кровле</div>
+        <div>обветшалой</div>
+        <div>вдруг соломой</div>
+        <div>зашумит</div>
+        <div>то как</div>
+        <div>путник запоздалый</div>
+        <div>к нам в окошко</div>
+        <div>застучит</div>
+    </div>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex wrap grow align-content-start">
+        <div>буря мглою</div>
+        <div>небо кроет</div>
+        <div>вихри снежные</div>
+        <div>крутя</div>
+        <div>то</div>
+        <div>как зверь</div>
+        <div>она</div>
+        <div>завоет</div>
+        <div>то заплачет</div>
+        <div>как дитя</div>
+        <div>то по кровле</div>
+        <div>обветшалой</div>
+        <div>вдруг соломой</div>
+        <div>зашумит</div>
+        <div>то как</div>
+        <div>путник запоздалый</div>
+        <div>к нам в окошко</div>
+        <div>застучит</div>
+    </div>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex wrap grow align-content-end">
+        <div>буря мглою</div>
+        <div>небо кроет</div>
+        <div>вихри снежные</div>
+        <div>крутя</div>
+        <div>то</div>
+        <div>как зверь</div>
+        <div>она</div>
+        <div>завоет</div>
+        <div>то заплачет</div>
+        <div>как дитя</div>
+        <div>то по кровле</div>
+        <div>обветшалой</div>
+        <div>вдруг соломой</div>
+        <div>зашумит</div>
+        <div>то как</div>
+        <div>путник запоздалый</div>
+        <div>к нам в окошко</div>
+        <div>застучит</div>
+    </div>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex wrap grow width-play">
+        <div>буря мглою</div>
+        <div>небо кроет</div>
+        <div>вихри снежные</div>
+        <div>крутя</div>
+        <div>то</div>
+        <div>как зверь</div>
+        <div>она</div>
+        <div>завоет</div>
+        <div>то заплачет</div>
+        <div>как дитя</div>
+        <div>то по кровле</div>
+        <div>обветшалой</div>
+        <div>вдруг соломой</div>
+        <div>зашумит</div>
+        <div>то как</div>
+        <div>путник запоздалый</div>
+        <div>к нам в окошко</div>
+        <div>застучит</div>
+    </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout">order</h2>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex justify-between">
+        <div>буря мглою</div>
+        <div>небо кроет</div>
+        <div>вихри снежные</div>
+        <div>крутя</div>
+    </div>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex justify-between order">
+        <div>буря мглою</div>
+        <div>небо кроет</div>
+        <div>вихри снежные</div>
+        <div>крутя</div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Меняем порядок</h2>
+    <pre>
+			<code>.poem div:nth-child(<mark class="important">2</mark>) {</code>
+			<code>    <mark>order: 1;</mark></code>
+			<code>}</code>
+		</pre>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex justify-between order order-2nd-1">
+        <div>буря мглою</div>
+        <div>небо кроет</div>
+        <div>вихри снежные</div>
+        <div>крутя</div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Меняем порядок</h2>
+    <pre>
+			<code>.poem div {</code>
+			<code>    <mark>order: 4;</mark></code>
+			<code>}</code>
+		</pre>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex justify-between order order-all-4">
+        <div>буря мглою</div>
+        <div>небо кроет</div>
+        <div>вихри снежные</div>
+        <div>крутя</div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Меняем порядок</h2>
+    <pre>
+			<code>.poem div:nth-child(<mark class="important">1</mark>) { <mark>order: 2</mark> }</code>
+			<code>.poem div:nth-child(<mark class="important">2</mark>) { <mark>order: 1</mark> }</code>
+			<code>.poem div:nth-child(<mark class="important">3</mark>) { <mark>order: 4</mark> }</code>
+			<code>.poem div:nth-child(<mark class="important">4</mark>) { <mark>order: 3</mark> }</code>
+		</pre>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex justify-between order order-arranged">
+        <div>буря мглою</div>
+        <div>небо кроет</div>
+        <div>вихри снежные</div>
+        <div>крутя</div>
+    </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout">flex-grow</h2>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex">
+        <div>буря мглою</div>
+        <div>небо кроет</div>
+        <div>вихри снежные</div>
+        <div>крутя</div>
+    </div>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex">
+        <div>×</div>
+        <div>×</div>
+        <div>×</div>
+        <div>×</div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Растягивание</h2>
+    <pre>
+			<code>.poem div {</code>
+			<code>    <mark>flex-grow: 1;</mark></code>
+			<code>}</code>
+		</pre>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex grow width-play">
+        <div>×</div>
+        <div>×</div>
+        <div>×</div>
+        <div>×</div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Растягивание</h2>
+    <pre>
+			<code>.poem div {</code>
+			<code>    <mark>flex-grow: 1;</mark></code>
+			<code>}</code>
+			<code>.poem div:nth-child(<mark class="important">1</mark>) {</code>
+			<code>    <mark>flex-grow: 4;</mark></code>
+			<code>}</code>
+		</pre>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex grow grow-1st-4 width-play">
+        <div>×</div>
+        <div>×</div>
+        <div>×</div>
+        <div>×</div>
+    </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout">flex-shrink</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Сжатие</h2>
+    <pre>
+			<code>.poem div {</code>
+			<code>    <mark>width: 25%;</mark></code>
+			<code>}</code>
+			<code>.poem div:nth-child(1) {</code>
+			<code>    <mark>flex-shrink: 4;</mark></code>
+			<code>}</code>
+		</pre>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex shrink width-play">
+        <div>×</div>
+        <div>×</div>
+        <div>×</div>
+        <div>×</div>
+    </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout">flex-basis</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Запас</h2>
+    <pre>
+			<code>.poem div {</code>
+			<code>    <mark>flex-grow: 1;</mark></code>
+			<code>}</code>
+			<code>.poem div:nth-child(<mark class="important">1</mark>) {</code>
+			<code>    <mark>flex-basis: 250px;</mark></code>
+			<code>}</code>
+		</pre>
+</section>
+
+<section class="slide clear">
+    <div class="poem flex grow basis width-play">
+        <div>×</div>
+        <div>×</div>
+        <div>×</div>
+        <div>×</div>
+    </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout">Составные свойства</h2>
+</section>
+
+<section class="slide clear">
+    <img src="pictures/11/flex.png" alt="" class="cover w">
+</section>
+
+<section class="slide clear">
+    <img src="pictures/11/flex-flow.png" alt="" class="cover w">
+</section>
+
+<section class="slide clear">
+    <img src="pictures/11/place-content.png" alt="" class="cover w">
+</section>
+
+<!-- Footer -->
+
+<section class="slide" id="see-more">
+    <h2 class="shout">
+        <a href="index.html">Все презентации<br>на GitHub Pages</a>
+    </h2>
+</section>
+<footer class="badge">
+    <a href="https://github.com/LoveSolaristics/shower-presentation.git">
+        <svg width="81" height="79" viewBox="0 0 81 79" aria-hidden="true">
+            <path d="M40.5 0a40.5 40.5 0 0 0-12.8 78.93c2 .37 2.76-.88 2.76-2s0-3.51-.05-6.89c-11.27 2.45-13.64-5.43-13.64-5.43-1.84-4.68-4.5-5.92-4.5-5.92-3.68-2.51.28-2.46.28-2.46 4.06.29 6.2 4.17 6.2 4.17 3.61 6.19 9.48 4.4 11.79 3.37a8.65 8.65 0 0 1 2.57-5.41c-9-1-18.45-4.5-18.45-20a15.65 15.65 0 0 1 4.17-10.87 14.57 14.57 0 0 1 .4-10.72s3.4-1.09 11.14 4.15a38.39 38.39 0 0 1 20.28 0c7.73-5.24 11.13-4.15 11.13-4.15a14.55 14.55 0 0 1 .4 10.72 15.63 15.63 0 0 1 4.16 10.87c0 15.56-9.47 19-18.49 20 1.45 1.25 2.75 3.72 2.75 7.5v11.11c0 1.08.73 2.34 2.78 1.95A40.51 40.51 0 0 0 40.5 0z"></path>
+        </svg>
+        Репозиторий<br>на&nbsp;GitHub
+    </a>
+</footer>
+<div class="progress"></div>
+<script src="shower/shower.js"></script>
+</body>
+</html>
