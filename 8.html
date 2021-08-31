@@ -21,6 +21,476 @@
 
 <!-- Main -->
 
+<section class="slide narfu">
+    <img src="pictures/8/fonts.jpeg" alt="" class="cover h">
+</section>
+
+<section class="slide narfu">
+    <h2>Задание шрифта</h2>
+    <pre>
+        <code><span style="color: var(--green)">body</span> {</code>
+        <code>  <span style="color: var(--pink)">font-family</span>: "PT Sans", "Arial", sans-serif;</code>
+        <code class="comment">/* "PT Sans" – из нескольких слов */</code>
+        <code class="comment">/* "Arial" / Arial – из одного слова */</code>
+        <code class="comment">/* sans-serif – общий тип шрифта */</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>
+        Фолбэк на общий тип шрифта
+    </h2>
+    <pre>            <code>body {</code>
+            <code>    font-family: 'Rubik', <mark class="important">sans-serif;</mark></code>
+            <code>    font-family: 'Georgia', <mark class="important">serif;</mark></code>
+            <code>    font-family: 'Fira Code', <mark class="important">monospace;</mark></code>
+            <code>}</code>
+        </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Веб-безопасные шрифты</h2>
+    <p>– шрифты, которые обычно доступны во всех системах и поэтому могут использоваться без особого беспокойства.</p>
+    <p>Список реальных веб-безопасных шрифтов будет меняться по мере развития операционных систем!</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Веб-безопасные шрифты</h2>
+    <table>
+        <tr>
+            <th>Имя шрифта</th>
+            <th>Тип</th>
+            <th>Заметки</th>
+        </tr>
+        <tr>
+            <td>Arial</td>
+            <td>sans-serif</td>
+            <td>Альтернатива – <code>Helvetica</code></td>
+        </tr>
+        <tr>
+            <td>Courier New</td>
+            <td>monospace</td>
+            <td>Альтернатива – <code>Courier</code></td>
+        </tr>
+        <tr>
+            <td>Georgia</td>
+            <td>serif</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Times New Roman</td>
+            <td>serif</td>
+            <td>Альтернатива – <code>Times</code></td>
+        </tr>
+        <tr>
+            <td>Trebuchet MS</td>
+            <td>sans-serif</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Verdana</td>
+            <td>sans-serif</td>
+            <td>Осторожно на мобильных!</td>
+        </tr>
+    </table>
+</section>
+
+<section class="slide narfu">
+    <h2>Стандартные шрифты</h2>
+    <p>CSS определяет пять общих имен для шрифтов: <code>serif</code>, <code>sans-serif</code>, <code>monospace</code>,
+        <code>cursive</code> и <code>fantasy</code>. </p>
+    <p><code>cursive</code> и <code>fantasy</code> менее предсказуемы, и рекомендуется использовать их очень осторожно,
+        тестируя в процессе.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Стандартные шрифты</h2>
+    <table>
+        <tr>
+            <th>Шрифт</th>
+            <th>Заметка</th>
+        </tr>
+        <tr>
+            <td>serif</td>
+            <td>Шрифты с засечками</td>
+        </tr>
+        <tr>
+            <td>sans-serif</td>
+            <td>Шрифты без засечек</td>
+        </tr>
+        <tr>
+            <td>monospace</td>
+            <td>Cимволы имеют одинаковую ширину</td>
+        </tr>
+        <tr>
+            <td>cursive</td>
+            <td>Шрифты, имитирующие почерк человека</td>
+        </tr>
+        <tr>
+            <td>fantasy</td>
+            <td>Шрифты, предназначенные для украшения</td>
+        </tr>
+    </table>
+</section>
+
+<section class="slide narfu">
+    <h2>Стандартные шрифты</h2>
+    <table>
+        <tr>
+            <th>Шрифт</th>
+            <th>Пример</th>
+        </tr>
+        <tr>
+            <td>serif</td>
+            <td style="font-family: serif">My big red elephant</td>
+        </tr>
+        <tr>
+            <td>sans-serif</td>
+            <td style="font-family: sans-serif">My big red elephant</td>
+        </tr>
+        <tr>
+            <td>monospace</td>
+            <td style="font-family: monospace">My big red elephant</td>
+        </tr>
+        <tr>
+            <td>cursive</td>
+            <td style="font-family: cursive">My big red elephant</td>
+        </tr>
+        <tr>
+            <td>fantasy</td>
+            <td style="font-family: fantasy">My big red elephant</td>
+        </tr>
+    </table>
+</section>
+
+<section class="slide narfu">
+    <h2>Подключение файла шрифта</h2>
+    <p>Для подключения нестандартных шрифтов существует @-правило <code>@font-face</code>. С его помощью можно
+        подключить и использовать на странице любой шрифт из файла.</p>
+    <p>При загрузке сайта браузер будет брать шрифт из указанного файла и отображать текст именно этим шрифтом.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Подключение файла шрифта</h2>
+    <pre>
+        <code>@font-face {</code>
+        <code>  <mark>font-family</mark>: "Lexend Peta";</code>
+        <code>  <mark>src</mark>: url("/fonts/Lexend_Peta-webfont.woff2") format("woff2");</code>
+        <code>  font-weight: normal;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Разные типы файлов</h2>
+    <pre>
+        <code>  src: url("/fonts/Lexend_Peta-webfont.<mark>woff2</mark>") format(<mark>"woff2"</mark>);</code>
+        <code>  src: url("/fonts/Lexend_Peta-webfont.<mark>woff</mark>") format(<mark>"woff"</mark>);</code>
+        <code>  src: url("/fonts/Lexend_Peta-webfont.<mark>ttf</mark>") format(<mark>"ttf"</mark>);</code>
+    </pre>
+    <p>Несколько файлов можно подключить, перечислив конструкции c <code>url()</code> через запятую.</p>
+</section>
+
+<section class="slide white">
+    <ol class="large place" style="font-size: larger">
+        <li>WOFF2</li>
+        <li>WOFF</li>
+    </ol>
+    <div class="place spotlight next active" style="
+            width: 380px;
+            height: 380px;
+            margin-left: -25px;
+        "></div>
+</section>
+
+<section class="slide narfu">
+    <h2>Локальные шрифты</h2>
+    <pre>
+        <code>@font-face {</code>
+        <code>  font-family: "Lexend Peta";</code>
+        <code>  src: <mark>local</mark>("Lexend Peta Regular"), <mark>local</mark>("LexendPeta-Regular");</code>
+        <code>  font-weight: normal;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Шрифт в разных начертаниях</h2>
+    <pre>
+        <code>@font-face {</code>
+        <code>  font-family: "Lexend Peta <mark>Regular</mark>";</code>
+        <code>  ...</code>
+        <code>}</code>
+
+        <code>@font-face {</code>
+        <code>  font-family: "Lexend Peta <mark>Bold</mark>";</code>
+        <code>  ...</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Шрифт в разных начертаниях</h2>
+    <pre>
+        <code class="comment">/* Используем в разных местах разные начертания шрифтов */</code>
+        <code><span style="color: var(--green)">body</span> {</code>
+        <code>  <span style="color: var(--pink)">font-family</span>: "Lexend Peta <mark>Regular</mark>", sans-serif;</code>
+        <code>}</code>
+        <code></code>
+        <code><span style="color: var(--green)">.title</span> {</code>
+        <code>  <span style="color: var(--pink)">font-family</span>: "Lexend Peta <mark>Bold</mark>", sans-serif;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Шрифт в разных начертаниях</h2>
+    <pre>
+        <code>@font-face {</code>
+        <code>  font-family: "Lexend Peta";</code>
+        <code class="mark">  font-weight: normal;</code>
+        <code>}</code>
+
+        <code>@font-face {</code>
+        <code>  font-family: "Lexend Peta";</code>
+        <code class="mark">  font-weight: bold;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Шрифт в разных начертаниях</h2>
+    <pre>
+        <code><span style="color: var(--green)">body</span> {</code>
+        <code>  <span style="color: var(--pink)">font-family</span>: "Lexend Peta", sans-serif;</code>
+        <code class="mark">  <span style="color: var(--pink)">font-weight</span>: normal;</code>
+        <code>}</code>
+        <code></code>
+        <code><span style="color: var(--green)">.title</span> {</code>
+        <code class="mark">  <span style="color: var(--pink)">font-weight</span>: bold;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Несколько советов</h2>
+    <p>💡 <code>@font-face</code> нужно объявлять до того, как обращаться в CSS к этому шрифту. Принято подключать
+        шрифты в самом начале файла стилей (но после всех <code>@import</code>).</p>
+    <pre>
+        <code>@font-face { ... }</code>
+        <code>@import { ... }</code>
+        <code class="comment">/* Использование шрифта */</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Несколько советов</h2>
+    <p>💡 <code>@font-face</code> нельзя объявить внутри другого CSS-правила.</p>
+    <div class="columns two">
+        <div>
+            <p style="color: var(--blue)">Работает:</p>
+            <pre>
+                <code>@font-face { ... }</code>
+                <code> </code>
+                <code><span style="color: var(--green)">.title</span> {</code>
+                <code>  <span style="color: var(--pink)">font-family</span>: ...;</code>
+                <code>}</code>
+            </pre>
+        </div>
+        <div>
+            <p style="color: var(--red)">Не работает:</p>
+            <pre>
+                <code><span style="color: var(--green)">.title</span> {</code>
+                <code>  @font-face { ... }</code>
+                <code>  <span style="color: var(--pink)">font-family</span>: ...;</code>
+                <code>}</code>
+            </pre>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Несколько советов</h2>
+    <p>💡 Важно использовать в точности то название подключенного шрифта, которое задаётся внутри
+        <code>@font-face</code>. Иначе магия не сработает.</p>
+    <pre>
+        <code> @font-face{ font-family: "Beautiful-Font"; }</code>
+        <code> </code>
+        <code><span style="color: var(--green)">.title</span> {</code>
+        <code>  <span style="color: var(--pink)">font-family</span>: "Bea<mark>y</mark>tiful-Font";</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout">Подключение Google Fonts</h2>
+</section>
+
+<section class="slide white">
+    <img src="pictures/8/pick-font.png" alt="" class="cover w">
+</section>
+
+<section class="slide white">
+    <img src="pictures/8/select-family.png" alt="" class="cover h">
+</section>
+
+<section class="slide narfu">
+    <h2>Подключение Google Fonts в HTML</h2>
+    <pre>
+        <code>&lt;head&gt;</code>
+        <code>...</code>
+        <code>&lt;link <mark>href</mark>="https://fonts.googleapis.com/css2?</code>
+        <code>            family=Raleway:ital,wght@1,200&</code>
+        <code>            display=swap"</code>
+        <code>      <mark>rel</mark>="stylesheet"&gt;</code>
+        <code>...</code>
+        <code>&lt;/head&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Подключение Google Fonts в CSS</h2>
+    <pre>
+        <code>@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,200&display=swap');</code>
+        <code> </code>
+        <code>p {</code>
+        <code>  font-family: 'Raleway', sans-serif;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout">Управление размерами текста</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Свойство font-size</h2>
+    <pre>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">font-size</span>: 20px;</code>
+        <code>}</code>
+    </pre>
+    <pre>
+        <code><span style="color: var(--green)">h1</span> {</code>
+        <code>  <span style="color: var(--pink)">font-size</span>: 2em; <span class="comment">/* в 2 раза больше родительского */</span></code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Свойство line-height</h2>
+    <pre>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">font-size</span>: 10px;</code>
+        <code>  <span style="color: var(--pink)">line-height</span>: normal; <span class="comment">/* примерно 12px */</span></code>
+        <code>}</code>
+    </pre>
+    <p>Значение <code>normal</code> позволяет всем нестилизованным текстам выглядеть удобочитаемо. </p>
+</section>
+
+<section class="slide narfu">
+    <h2>Свойство line-height</h2>
+    <pre>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">font-size</span>: 16px;</code>
+        <code>  <span style="color: var(--pink)">line-height</span>: 26px; <span class="comment">/* абсолютное значение */</span></code>
+        <code>  <span style="color: var(--pink)">line-height</span>: 150%; <span class="comment">/* вычисленное значение 16px * 150% = 24px */</span></code>
+        <code>  <span style="color: var(--pink)">line-height</span>: 2; <span class="comment">/* вычисленное значение 16px * 2 = 32px */</span></code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Свойство font-weight</h2>
+    <pre>
+        <code><span style="color: var(--green)">h1</span> {</code>
+        <code>  <span style="color: var(--pink)">font-weight</span>: 400; <span class="comment">/* то же самое что и normal */</span></code>
+        <code>}</code>
+        <code></code>
+        <code><span style="color: var(--green)">p</span> {</code>
+        <code>  <span style="color: var(--pink)">font-weight</span>: bold; <span class="comment">/* то же самое что и 700 */</span></code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout"><span style="font-size: smaller">Позиционирование текста</span></h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Свойство text-align</h2>
+    <ul>
+        <li><code>left</code> — выравнивание по левому краю блока, это значение по умолчанию;</li>
+        <li><code>right</code> — по правому краю блока;</li>
+        <li><code>center</code> — по центру блока;</li>
+        <li><code>justify</code> — по ширине блока, при этом слова в строке будут размещаться так, чтобы занять равномерно всё пространство строки.
+        </li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <h2>Свойство text-align</h2>
+    <div class="columns two">
+        <div>
+            HTML:
+            <pre>
+                <code>&lt;p&gt;</code>
+                <code>  Я текст внутри абзаца</code>
+                <code>&lt;/p&gt;</code>
+            </pre>
+        </div>
+        <div>
+            CSS:
+            <pre>
+                <code><span style="color: var(--green)">p</span> {</code>
+                <code>  <span style="color: var(--pink)">text-align</span>: center;</code>
+                <code>}</code>
+            </pre>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Свойство text-align</h2>
+    <div class="browser-view">
+        <p style="text-align: center">Я текст внутри абзаца</p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Свойство vertical-align</h2>
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout">Управление стилем текста</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Свойство font-style</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Свойство text-transform</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Свойство text-decoration</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Контраст цвета текста и фона</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Управление пробелами</h2>
+</section>
+
+<!-- Slide -->
+<section class="slide narfu">
+
+</section>
+
 <!-- Footer -->
 
 <section class="slide" id="see-more">
