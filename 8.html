@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="node_modules/@shower/material/styles/styles.css">
     <link rel="stylesheet" href="styles/all_styles.css">
     <link rel="shortcut icon" type="image/png" href="pictures/general/narfu_icon.png">
+    <style>
+        .selector{
+            color: var(--green);
+        }
+
+        .property{
+            color: var(--pink);
+        }
+    </style>
 </head>
 <body class="shower list">
 <header class="caption">
@@ -15,7 +24,7 @@
     <p><a href="index.html">Web-технологии</a></p>
 </header>
 <section class="slide narfu_official" id="cover">
-    <h2>Оформление текста</h2>
+    <h2>Оформление<br>текста</h2>
     <p>Лекция №6</p>
 </section>
 
@@ -28,8 +37,8 @@
 <section class="slide narfu">
     <h2>Задание шрифта</h2>
     <pre>
-        <code><span style="color: var(--green)">body</span> {</code>
-        <code>  <span style="color: var(--pink)">font-family</span>: "PT Sans", "Arial", sans-serif;</code>
+        <code><span class="selector">body</span> {</code>
+        <code>  <span class="property">font-family</span>: "PT Sans", "Arial", sans-serif;</code>
         <code class="comment">/* "PT Sans" – из нескольких слов */</code>
         <code class="comment">/* "Arial" / Arial – из одного слова */</code>
         <code class="comment">/* sans-serif – общий тип шрифта */</code>
@@ -234,12 +243,12 @@
     <h2>Шрифт в разных начертаниях</h2>
     <pre>
         <code class="comment">/* Используем в разных местах разные начертания шрифтов */</code>
-        <code><span style="color: var(--green)">body</span> {</code>
-        <code>  <span style="color: var(--pink)">font-family</span>: "Lexend Peta <mark>Regular</mark>", sans-serif;</code>
+        <code><span class="selector">body</span> {</code>
+        <code>  <span class="property">font-family</span>: "Lexend Peta <mark>Regular</mark>", sans-serif;</code>
         <code>}</code>
         <code></code>
-        <code><span style="color: var(--green)">.title</span> {</code>
-        <code>  <span style="color: var(--pink)">font-family</span>: "Lexend Peta <mark>Bold</mark>", sans-serif;</code>
+        <code><span class="selector">.title</span> {</code>
+        <code>  <span class="property">font-family</span>: "Lexend Peta <mark>Bold</mark>", sans-serif;</code>
         <code>}</code>
     </pre>
 </section>
@@ -262,13 +271,13 @@
 <section class="slide narfu">
     <h2>Шрифт в разных начертаниях</h2>
     <pre>
-        <code><span style="color: var(--green)">body</span> {</code>
-        <code>  <span style="color: var(--pink)">font-family</span>: "Lexend Peta", sans-serif;</code>
-        <code class="mark">  <span style="color: var(--pink)">font-weight</span>: normal;</code>
+        <code><span class="selector">body</span> {</code>
+        <code>  <span class="property">font-family</span>: "Lexend Peta", sans-serif;</code>
+        <code class="mark">  <span class="property">font-weight</span>: normal;</code>
         <code>}</code>
         <code></code>
-        <code><span style="color: var(--green)">.title</span> {</code>
-        <code class="mark">  <span style="color: var(--pink)">font-weight</span>: bold;</code>
+        <code><span class="selector">.title</span> {</code>
+        <code class="mark">  <span class="property">font-weight</span>: bold;</code>
         <code>}</code>
     </pre>
 </section>
@@ -293,17 +302,17 @@
             <pre>
                 <code>@font-face { ... }</code>
                 <code> </code>
-                <code><span style="color: var(--green)">.title</span> {</code>
-                <code>  <span style="color: var(--pink)">font-family</span>: ...;</code>
+                <code><span class="selector">.title</span> {</code>
+                <code>  <span class="property">font-family</span>: ...;</code>
                 <code>}</code>
             </pre>
         </div>
         <div>
             <p style="color: var(--red)">Не работает:</p>
             <pre>
-                <code><span style="color: var(--green)">.title</span> {</code>
+                <code><span class="selector">.title</span> {</code>
                 <code>  @font-face { ... }</code>
-                <code>  <span style="color: var(--pink)">font-family</span>: ...;</code>
+                <code>  <span class="property">font-family</span>: ...;</code>
                 <code>}</code>
             </pre>
         </div>
@@ -317,8 +326,8 @@
     <pre>
         <code> @font-face{ font-family: "Beautiful-Font"; }</code>
         <code> </code>
-        <code><span style="color: var(--green)">.title</span> {</code>
-        <code>  <span style="color: var(--pink)">font-family</span>: "Bea<mark>y</mark>tiful-Font";</code>
+        <code><span class="selector">.title</span> {</code>
+        <code>  <span class="property">font-family</span>: "Bea<mark>y</mark>tiful-Font";</code>
         <code>}</code>
     </pre>
 </section>
@@ -367,13 +376,13 @@
 <section class="slide narfu">
     <h2>Свойство font-size</h2>
     <pre>
-        <code><span style="color: var(--green)">p</span> {</code>
-        <code>  <span style="color: var(--pink)">font-size</span>: 20px;</code>
+        <code><span class="selector">p</span> {</code>
+        <code>  <span class="property">font-size</span>: 20px;</code>
         <code>}</code>
     </pre>
     <pre>
-        <code><span style="color: var(--green)">h1</span> {</code>
-        <code>  <span style="color: var(--pink)">font-size</span>: 2em; <span class="comment">/* в 2 раза больше родительского */</span></code>
+        <code><span class="selector">h1</span> {</code>
+        <code>  <span class="property">font-size</span>: 2em; <span class="comment">/* в 2 раза больше родительского */</span></code>
         <code>}</code>
     </pre>
 </section>
@@ -381,9 +390,9 @@
 <section class="slide narfu">
     <h2>Свойство line-height</h2>
     <pre>
-        <code><span style="color: var(--green)">p</span> {</code>
-        <code>  <span style="color: var(--pink)">font-size</span>: 10px;</code>
-        <code>  <span style="color: var(--pink)">line-height</span>: normal; <span class="comment">/* примерно 12px */</span></code>
+        <code><span class="selector">p</span> {</code>
+        <code>  <span class="property">font-size</span>: 10px;</code>
+        <code>  <span class="property">line-height</span>: normal; <span class="comment">/* примерно 12px */</span></code>
         <code>}</code>
     </pre>
     <p>Значение <code>normal</code> позволяет всем нестилизованным текстам выглядеть удобочитаемо. </p>
@@ -392,11 +401,11 @@
 <section class="slide narfu">
     <h2>Свойство line-height</h2>
     <pre>
-        <code><span style="color: var(--green)">p</span> {</code>
-        <code>  <span style="color: var(--pink)">font-size</span>: 16px;</code>
-        <code>  <span style="color: var(--pink)">line-height</span>: 26px; <span class="comment">/* абсолютное значение */</span></code>
-        <code>  <span style="color: var(--pink)">line-height</span>: 150%; <span class="comment">/* вычисленное значение 16px * 150% = 24px */</span></code>
-        <code>  <span style="color: var(--pink)">line-height</span>: 2; <span class="comment">/* вычисленное значение 16px * 2 = 32px */</span></code>
+        <code><span class="selector">p</span> {</code>
+        <code>  <span class="property">font-size</span>: 16px;</code>
+        <code>  <span class="property">line-height</span>: 26px; <span class="comment">/* абсолютное значение */</span></code>
+        <code>  <span class="property">line-height</span>: 150%; <span class="comment">/* вычисленное значение 16px * 150% = 24px */</span></code>
+        <code>  <span class="property">line-height</span>: 2; <span class="comment">/* вычисленное значение 16px * 2 = 32px */</span></code>
         <code>}</code>
     </pre>
 </section>
@@ -404,12 +413,12 @@
 <section class="slide narfu">
     <h2>Свойство font-weight</h2>
     <pre>
-        <code><span style="color: var(--green)">h1</span> {</code>
-        <code>  <span style="color: var(--pink)">font-weight</span>: 400; <span class="comment">/* то же самое что и normal */</span></code>
+        <code><span class="selector">h1</span> {</code>
+        <code>  <span class="property">font-weight</span>: 400; <span class="comment">/* то же самое что и normal */</span></code>
         <code>}</code>
         <code></code>
-        <code><span style="color: var(--green)">p</span> {</code>
-        <code>  <span style="color: var(--pink)">font-weight</span>: bold; <span class="comment">/* то же самое что и 700 */</span></code>
+        <code><span class="selector">p</span> {</code>
+        <code>  <span class="property">font-weight</span>: bold; <span class="comment">/* то же самое что и 700 */</span></code>
         <code>}</code>
     </pre>
 </section>
@@ -443,8 +452,8 @@
         <div>
             CSS:
             <pre>
-                <code><span style="color: var(--green)">p</span> {</code>
-                <code>  <span style="color: var(--pink)">text-align</span>: center;</code>
+                <code><span class="selector">p</span> {</code>
+                <code>  <span class="property">text-align</span>: center;</code>
                 <code>}</code>
             </pre>
         </div>
@@ -460,6 +469,46 @@
 
 <section class="slide narfu">
     <h2>Свойство vertical-align</h2>
+    <ul>
+        <li><code>top</code> — выравнивание по верхнему краю строки;</li>
+        <li><code>middle</code> — по середине строки;</li>
+        <li><code>bottom</code> — по нижнему краю строки;</li>
+        <li><code>baseline</code> — по базовой линии строки (значение по умолчанию).</li>
+    </ul>
+    <p>В отличие от <code>text-align</code> свойство <code>vertical-align</code> задаётся самому элементу, а не содержащему его контейнеру.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Свойство vertical-align</h2>
+    <div class="columns two">
+        <div>
+            <p>HTML:</p>
+            <pre>
+                <code>&lt;p&gt;</code>
+                <code>  &lt;img src="picture.png"&gt;</code>
+                <code>  Я текст внутри абзаца</code>
+                <code>&lt;/p&gt;</code>
+            </pre>
+        </div>
+        <div>
+            <p>CSS:</p>
+            <pre>
+                <code><span class="selector">img</span> {</code>
+                <code>  <span class="property">vertical-align</span>: middle;</code>
+                <code>}</code>
+            </pre>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Свойство vertical-align</h2>
+    <div class="browser-view">
+        <p>
+            <img src="pictures/8/red_cat.jpeg" alt="рыжий кот" style="vertical-align: middle; width: 300px">
+            Я текст внутри абзаца
+        </p>
+    </div>
 </section>
 
 <section class="slide narfu">
@@ -468,27 +517,145 @@
 
 <section class="slide narfu">
     <h2>Свойство font-style</h2>
+    <div class="columns two">
+        <ul>
+            <li><code>normal</code> — обычное начертание;</li>
+            <li><code>italic</code> — курсивное начертание;</li>
+            <li><code>oblique</code> — наклонное начертание.</li>
+        </ul>
+        <div class="browser-view">
+            <ul style="font-family: Helvetica, serif;">
+                <li style="font-style: normal">Мама мыла раму</li>
+                <li style="font-style: italic">Мама мыла раму</li>
+                <li style="font-style: oblique">Мама мыла раму</li>
+            </ul>
+        </div>
+    </div>
 </section>
 
 <section class="slide narfu">
     <h2>Свойство text-transform</h2>
+    <div class="columns two">
+        <ul>
+            <li><code>lowercase</code> — все строчные;</li>
+            <li><code>uppercase</code> — все заглавные;</li>
+            <li><code>capitalize</code> — каждое слово начинается с большой буквы;</li>
+            <li><code>none</code> — отменяет изменение регистра.</li>
+        </ul>
+        <div class="browser-view">
+            <ul>
+                <li style="text-transform: lowercase">Мама мыла раму</li>
+                <li style="text-transform: uppercase">Мама мыла раму</li>
+                <li style="text-transform: capitalize">Мама мыла раму</li>
+                <li style="text-transform: none">Мама мыла раму</li>
+            </ul>
+        </div>
+    </div>
 </section>
 
 <section class="slide narfu">
     <h2>Свойство text-decoration</h2>
+    <div class="columns two">
+        <ul>
+            <li><code>underline</code> — подчёркивание;</li>
+            <li><code>line-through</code> — зачёркивание;</li>
+            <li><code>overline</code> — надчёркивание;</li>
+            <li><code>none</code> — убирает вышеперечисленные эффекты.</li>
+        </ul>
+        <div class="browser-view">
+            <ul>
+                <li style="text-decoration: underline">Мама мыла раму</li>
+                <li style="text-decoration: line-through">Мама мыла раму</li>
+                <li style="text-decoration: overline">Мама мыла раму</li>
+                <li style="text-decoration: none">Мама мыла раму</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Свойство text-decoration</h2>
+        <pre>
+            <code><span class="selector">p</span> {</code>
+            <code class="comment">/* подчёркнутый текст */</code>
+            <code>  <span class="property">text-decoration</span>: underline;</code>
+            <code>}</code>
+            <code><span class="selector">span</span> {</code>
+            <code class="comment">  /* подчёркнутый и зачёркнутый текст */</code>
+            <code>  <span class="property">text-decoration</span>: underline line-through;</code>
+            <code>}</code>
+        </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Свойство text-decoration</h2>
+    <ul>
+        <li><code>text-decoration-line</code> — вид линии;</li>
+        <li><code>text-decoration-style</code> — стиль линии;</li>
+        <li><code>text-decoration-color</code> — цвет линии;</li>
+    </ul>
+    <pre>
+        <code><span class="selector">p</span> {</code>
+        <code class="comment">  /* красное пунктирное подчеркивание */</code>
+        <code>  <span class="property">text-decoration</span>: underline dashed red;</code>
+        <code>}</code>
+    </pre>
 </section>
 
 <section class="slide narfu">
     <h2>Контраст цвета текста и фона</h2>
+    <pre style="font-size: smaller">
+        <code><span class="selector">p</span> {</code>
+        <code class="comment">  /* идеальный контраст: цвет текста белый, цвет фона — чёрный */</code>
+        <code>  <span class="property">background-color</span>: #000000;</code>
+        <code>  <span class="property">color</span>: #ffffff;</code>
+        <code>}</code>
+        <code><span class="selector">span</span> {</code>
+        <code class="comment">  /* плохой контраст: цвет текста и фона — серые */</code>
+        <code>  <span class="property">background-color</span>: #cccccc;</code>
+        <code>  <span class="property">color</span>: #dddddd;</code>
+        <code>}</code>
+    </pre>
 </section>
 
 <section class="slide narfu">
     <h2>Управление пробелами</h2>
+    <div style="white-space: pre">
+    <p>Оригинальный текст:</p>The quick brown fox jumps over the     lazy dog
+The quick brown fox jumps over the        lazy dog
+    </div>
 </section>
 
-<!-- Slide -->
 <section class="slide narfu">
+    <h2>Управление пробелами</h2>
+    <p><code>nowrap</code></p>
+    <div class="browser-view" style="white-space: nowrap; max-width: 50%">The quick brown fox jumps over the     lazy dog
+The quick brown fox jumps over the     lazy dog
+    </div>
+</section>
 
+<section class="slide narfu">
+    <h2>Управление пробелами</h2>
+    <p><code>pre</code></p>
+    <div class="browser-view" style="white-space: pre; max-width: 50%">The quick brown fox jumps over the     lazy dog
+The quick brown fox jumps over the     lazy dog
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Управление пробелами</h2>
+    <p><code>pre-wrap</code></p>
+    <div class="browser-view" style="white-space: pre-wrap; max-width: 50%">The quick brown fox jumps over the     lazy dog
+The quick brown fox jumps over the     lazy dog
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Управление пробелами</h2>
+    <p><code>normal</code></p>
+    <div class="browser-view" style="white-space: normal; max-width: 50%">The quick brown fox jumps over the     lazy dog
+        The quick brown fox jumps over the     lazy dog
+    </div>
 </section>
 
 <!-- Footer -->
