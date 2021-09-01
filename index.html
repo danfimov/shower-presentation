@@ -13,6 +13,20 @@
         .presentations-list .slide {
             font-size: smaller;
         }
+
+         .with-badge:after{
+             position: absolute;
+             top: calc(100% - 60px);
+             left: calc(100% - 180px);
+             padding-top: 15px;
+             width: 180px;
+             height: 40px;
+
+             background-color: var(--orange);
+             color: white;
+
+             content: 'в разработке';
+         }
     </style>
 </head>
 <body class="shower list presentations-list">
@@ -69,13 +83,13 @@
     </h2>
 </section>
 
-<section class="slide">
+<section class="slide with-badge">
     <h2 class="shout">
         <a href="9.html">Формы и элементы ввода</a>
     </h2>
 </section>
 
-<section class="slide">
+<section class="slide with-badge">
     <h2 class="shout">
         <a href="10.html" style="font-size: smaller;">Основы позиционирования элементов</a>
     </h2>
@@ -87,7 +101,7 @@
     </h2>
 </section>
 
-<section class="slide">
+<section class="slide with-badge">
     <h2 class="shout">
         <a href="12.html">Grid</a>
     </h2>
