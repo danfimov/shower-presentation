@@ -316,6 +316,15 @@
 </section>
 
 <section class="slide narfu">
+    <h2>Указание класса</h2>
+    <pre>
+        <code>&lt;img src="..." alt=".." <mark>class="feature-kitten"</mark>&gt;</code>
+        <code> </code>
+    </pre>
+    <img src="pictures/7/kitten.png" alt="" width="450">
+</section>
+
+<section class="slide narfu">
     <h2>Селекторы</h2>
     <pre>
         <code><span style="color: var(--green)">.feature-kitten</span> {</code>
@@ -468,6 +477,13 @@
         <li>Сравнивается специфичность селекторов у CSS-правил с конфликтующими свойствами.</li>
         <li>Побеждает то свойство, которое находится ниже в коде.</li>
     </ol>
+    <p>Подробнее можно почитать в <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Specificity">спецификации</a>.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Исключение - <code>!important</code></h2>
+    <p>Когда при объявлении стиля используется модификатор <code>!important</code>, это объявление получает наивысший приоритет среди всех прочих объявлений.</p>
+    <p>Хотя технически модификатор <code>!important</code> не имеет со специфичностью ничего общего, он непосредственно на неё влияет.</p>
 </section>
 
 <section class="slide narfu">
