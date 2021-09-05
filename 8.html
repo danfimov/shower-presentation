@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="styles/all_styles.css">
     <link rel="shortcut icon" type="image/png" href="pictures/general/narfu_icon.png">
     <style>
-        .selector{
+        .selector {
             color: var(--green);
         }
 
-        .property{
+        .property {
             color: var(--pink);
         }
     </style>
@@ -382,7 +382,8 @@
     </pre>
     <pre>
         <code><span class="selector">h1</span> {</code>
-        <code>  <span class="property">font-size</span>: 2em; <span class="comment">/* в 2 раза больше родительского */</span></code>
+        <code>  <span class="property">font-size</span>: 2em; <span
+                class="comment">/* в 2 раза больше родительского */</span></code>
         <code>}</code>
     </pre>
 </section>
@@ -392,7 +393,8 @@
     <pre>
         <code><span class="selector">p</span> {</code>
         <code>  <span class="property">font-size</span>: 10px;</code>
-        <code>  <span class="property">line-height</span>: normal; <span class="comment">/* примерно 12px */</span></code>
+        <code>  <span class="property">line-height</span>: normal; <span
+                class="comment">/* примерно 12px */</span></code>
         <code>}</code>
     </pre>
     <p>Значение <code>normal</code> позволяет всем нестилизованным текстам выглядеть удобочитаемо. </p>
@@ -414,11 +416,13 @@
     <h2>Свойство font-weight</h2>
     <pre>
         <code><span class="selector">h1</span> {</code>
-        <code>  <span class="property">font-weight</span>: 400; <span class="comment">/* то же самое что и normal */</span></code>
+        <code>  <span class="property">font-weight</span>: 400; <span
+                class="comment">/* то же самое что и normal */</span></code>
         <code>}</code>
         <code></code>
         <code><span class="selector">p</span> {</code>
-        <code>  <span class="property">font-weight</span>: bold; <span class="comment">/* то же самое что и 700 */</span></code>
+        <code>  <span class="property">font-weight</span>: bold; <span
+                class="comment">/* то же самое что и 700 */</span></code>
         <code>}</code>
     </pre>
 </section>
@@ -433,7 +437,8 @@
         <li><code>left</code> — выравнивание по левому краю блока, это значение по умолчанию;</li>
         <li><code>right</code> — по правому краю блока;</li>
         <li><code>center</code> — по центру блока;</li>
-        <li><code>justify</code> — по ширине блока, при этом слова в строке будут размещаться так, чтобы занять равномерно всё пространство строки.
+        <li><code>justify</code> — по ширине блока, при этом слова в строке будут размещаться так, чтобы занять
+            равномерно всё пространство строки.
         </li>
     </ul>
 </section>
@@ -475,7 +480,8 @@
         <li><code>bottom</code> — по нижнему краю строки;</li>
         <li><code>baseline</code> — по базовой линии строки (значение по умолчанию).</li>
     </ul>
-    <p>В отличие от <code>text-align</code> свойство <code>vertical-align</code> задаётся самому элементу, а не содержащему его контейнеру.</p>
+    <p>В отличие от <code>text-align</code> свойство <code>vertical-align</code> задаётся самому элементу,
+        а не содержащему его контейнеру.</p>
 </section>
 
 <section class="slide narfu">
@@ -509,6 +515,49 @@
             Я текст внутри абзаца
         </p>
     </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Свойство letter-spacing</h2>
+    <div class="columns two">
+        <pre>
+        <code class="comment">/* Значения - ключевые слова */</code>
+        <code>letter-spacing: normal;</code>
+        <code></code>
+        <code class="comment">/* Значения &lt;length&gt; */</code>
+        <code>letter-spacing: 0.3em;</code>
+        <code>letter-spacing: 3px;</code>
+        <code>letter-spacing: .3px;</code>
+        </pre>
+        <div class="browser-view">
+            <p style="letter-spacing: normal">1234567890</p>
+            <p style="letter-spacing: 0.3em">1234567890</p>
+            <p style="letter-spacing: 3px">1234567890</p>
+            <p style="letter-spacing: .3px">1234567890</p>
+        </div>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Свойство word-spacing</h2>
+    <div class="columns two">
+            <pre>
+        <code class="comment">/* Значение ключевым словом */</code>
+        <code>word-spacing: normal;</code>
+        <code class="comment">/* &lt;length&gt; значения */</code>
+        <code>word-spacing: 12px;</code>
+        <code>word-spacing: 0.3em;</code>
+        <code class="comment">/* &lt;percentage&gt; значения  */</code>
+        <code>word-spacing: 50%;</code>
+    </pre>
+        <div class="browser-view">
+            <p style="word-spacing: normal">Мама мыла раму</p>
+            <p style="word-spacing: 12px">Мама мыла раму</p>
+            <p style="word-spacing: .3em">Мама мыла раму</p>
+            <p style="word-spacing: 50%">Мама мыла раму</p>
+        </div>
+    </div>
+
 </section>
 
 <section class="slide narfu">
@@ -575,7 +624,7 @@
 
 <section class="slide narfu">
     <h2>Свойство text-decoration</h2>
-        <pre>
+    <pre>
             <code><span class="selector">p</span> {</code>
             <code class="comment">/* подчёркнутый текст */</code>
             <code>  <span class="property">text-decoration</span>: underline;</code>
@@ -621,40 +670,40 @@
 <section class="slide narfu">
     <h2>Управление пробелами</h2>
     <div style="white-space: pre">
-    <p>Оригинальный текст:</p>The quick brown fox jumps over the     lazy dog
-The quick brown fox jumps over the        lazy dog
+        <p>Оригинальный текст:</p>The quick brown fox jumps over the lazy dog
+        The quick brown fox jumps over the lazy dog
     </div>
 </section>
 
 <section class="slide narfu">
     <h2>Управление пробелами</h2>
     <p><code>nowrap</code></p>
-    <div class="browser-view" style="white-space: nowrap; max-width: 50%">The quick brown fox jumps over the     lazy dog
-The quick brown fox jumps over the     lazy dog
+    <div class="browser-view" style="white-space: nowrap; max-width: 50%">The quick brown fox jumps over the lazy dog
+        The quick brown fox jumps over the lazy dog
     </div>
 </section>
 
 <section class="slide narfu">
     <h2>Управление пробелами</h2>
     <p><code>pre</code></p>
-    <div class="browser-view" style="white-space: pre; max-width: 50%">The quick brown fox jumps over the     lazy dog
-The quick brown fox jumps over the     lazy dog
+    <div class="browser-view" style="white-space: pre; max-width: 50%">The quick brown fox jumps over the lazy dog
+        The quick brown fox jumps over the lazy dog
     </div>
 </section>
 
 <section class="slide narfu">
     <h2>Управление пробелами</h2>
     <p><code>pre-wrap</code></p>
-    <div class="browser-view" style="white-space: pre-wrap; max-width: 50%">The quick brown fox jumps over the     lazy dog
-The quick brown fox jumps over the     lazy dog
+    <div class="browser-view" style="white-space: pre-wrap; max-width: 50%">The quick brown fox jumps over the lazy dog
+        The quick brown fox jumps over the lazy dog
     </div>
 </section>
 
 <section class="slide narfu">
     <h2>Управление пробелами</h2>
     <p><code>normal</code></p>
-    <div class="browser-view" style="white-space: normal; max-width: 50%">The quick brown fox jumps over the     lazy dog
-        The quick brown fox jumps over the     lazy dog
+    <div class="browser-view" style="white-space: normal; max-width: 50%">The quick brown fox jumps over the lazy dog
+        The quick brown fox jumps over the lazy dog
     </div>
 </section>
 
