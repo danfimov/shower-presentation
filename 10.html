@@ -8,6 +8,49 @@
     <link rel="stylesheet" href="node_modules/@shower/material/styles/styles.css">
     <link rel="stylesheet" href="styles/all_styles.css">
     <link rel="shortcut icon" type="image/png" href="pictures/general/narfu_icon.png">
+    <style>
+        /*Подсветка синтаксиса*/
+
+        .selector {
+            color: var(--green);
+        }
+
+        .property {
+            color: var(--pink);
+        }
+
+        /*Float examples*/
+        .float-container{
+            border: 2px solid #007BFF;
+
+            font-size: 16px;
+            line-height: 25px;
+
+            max-width: 600px;
+            min-height: 50px;
+            padding: 5px;
+
+            margin: 0 auto;
+        }
+
+        .float-container img{
+            max-width: 250px;
+            margin: 5px;
+        }
+
+        .float-container--left img{
+            float: left;
+        }
+
+        .float-container--right img{
+            float: right;
+        }
+
+        .float-container--all img,
+        .float-container--all p{
+            float: left;
+        }
+    </style>
 </head>
 <body class="shower list">
 <header class="caption">
@@ -20,6 +63,507 @@
 </section>
 
 <!-- Main -->
+
+<section class="slide narfu">
+    <h2>Поток документа</h2>
+    <p><b>Поток</b> — одно из важнейших базовых понятий в вёрстке. Это принцип организации элементов на странице при отсутствии стилей.</p>
+    <p> Если мы просто напишем HTML из нескольких тегов и не напишем CSS, то отображение в браузере будет предсказуемо благодаря тому, что мы абсолютно точно знаем, как браузер располагает элементы в потоке.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Поток документа</h2>
+    <p>Даже если к странице не подключено никаких стилей, к каждому элементу всё равно будут применяться CSS-правила, «зашитые» в движке браузера.</p>
+    <p>На основании этих правил условно все элементы на странице можно разделить на две категории: блочные (<b>block</b>) и строчные (<b>inline</b>).</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Контекст форматирования</h2>
+    <p>Правила расположения строчных и блочных элементов в нормальном потоке называются <b>контекстом форматирования</b>.</p>
+    <p>Блочные элементы участвуют в формировании <b>блочного</b> контекста форматирования. Строчные элементы формируют <b>строчный</b> контекст форматирования.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Блочные элементы в потоке</h2>
+    <p style="max-width: 50%; border: 2px solid var(--blue); margin: 0;">Азимут решает метеорный дождь. Движение однократно.</p>
+    <p style="max-width: 50%; border: 2px solid var(--blue); margin: 0;">Зоркость наблюдателя гасит аргумент перигелия.</p>
+    <p style="max-width: 50%; border: 2px solid var(--blue)">Очевидно, что азимут меняет возмущающий фактор.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Строчные элементы в потоке</h2>
+    <p>Ширина и высота строчного элемента равна ширине и высоте содержимого. В отличие от блочного элемента, мы не можем управлять шириной и высотой строчного элемента через CSS.</p>
+    <p style="border: 2px solid var(--green);"><strong style="background: teal;">Начало координат</strong> расточительно <span style="border: 2px dashed var(--red);">притягивает комплексный критерий</span> <strong style="background: teal;">сходимости Коши</strong>.</p>
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout">Box model</h2>
+</section>
+
+<section class="slide clear">
+    <h2>Box model</h2>
+    <img src="pictures/10/box%20model.png" alt="" class="place center" style="margin-top: 50px;">
+</section>
+
+<section class="slide clear">
+    <h2>Box model в браузере</h2>
+    <img src="pictures/10/box%20model%20(chrome).png" alt="" class="place center"  style="margin-top: 50px;">
+</section>
+
+<section class="slide narfu">
+    <h2>Content area</h2>
+    <p><b>Внутренняя область</b> элемента (<b>content area</b>) содержит текст и другие элементы, расположенные внутри (контент или содержимое).</p>
+    <p>У неё часто бывает фон, цвет или изображение; её размеры называются ширина контента (<i>content width</i> или <i>content-box width</i>), и высота контента (<i>content height</i> или <i>content-box height</i>). </p>
+</section>
+
+<section class="slide narfu">
+    <h2>Padding area</h2>
+    <p>Свойство <code>padding</code> (с английского <i>набивочный материал</i>)— или внутренний отступ — позволяет оттолкнуть контент от границ родительского элемента.</p>
+    <p>Можно управлять отступами по отдельности при помощи свойств <code>padding-top</code>, <code>padding-left</code>, <code>padding-right</code>, <code>padding-bottom</code>.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Padding area</h2>
+    <pre>
+        <code>&lt;div class="parent"&gt;</code>
+        <code>  &lt;p class="content"&gt;Сублимация...&lt;/p&gt;</code>
+        <code>&lt;/div&gt;</code>
+    </pre>
+    <pre>
+        <code>.parent {</code>
+        <code>  border: 1px solid #666; <span class="comment">/* Границы родительского элемента */</span></code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Padding area</h2>
+    <div style="border: 3px solid var(--blue); padding: 0;">
+        <p style="margin: 0;">Предполагается, что поля в книгах нужны для защиты информации. Когда книги начали писать на пергаменте, возникла угроза - мыши. Поскольку пергамент изготавливался из натуральной кожи, грызуны вполне могли съесть всю книгу целиком. Но начинали они всегда с краев, а значит, был шанс успеть спасти информацию.</p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Padding area</h2>
+    <pre>
+        <code>.parent {</code>
+        <code>  border: 1px solid #666;</code>
+        <code class="comment">  /* Отступ по 10 пикселей со всех четырёх сторон. */</code>
+        <code>  padding: 10px;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Padding area</h2>
+    <div style="border: 3px solid var(--blue); padding: 30px;">
+        <p style="margin: 0;">Предполагается, что поля в книгах нужны для защиты информации. Когда книги начали писать на пергаменте, возникла угроза - мыши. Поскольку пергамент изготавливался из натуральной кожи, грызуны вполне могли съесть всю книгу целиком. Но начинали они всегда с краев, а значит, был шанс успеть спасти информацию.</p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Margin area</h2>
+    <p>Свойство <code>margin</code> задаёт размер внешнего отступа вокруг элемента.</p>
+    <p>Чтобы сделать отступ только с одной стороны, следует использовать <code>margin-top</code> (сверху), <code>margin-right</code> (справа), <code>margin-bottom</code> (снизу) или <code>margin-left</code> (слева).</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Margin area</h2>
+    <pre>
+        <code class="comment">/* Применяется ко всем четырём сторонам */</code>
+        <code>margin: 1em;</code>
+        <code>margin: -3px;</code>
+        <code> </code>
+        <code class="comment">/* сверху и снизу | слева и справа */</code>
+        <code>margin: 5% auto;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Margin area</h2>
+    <pre>
+        <code class="comment">/* сверху | слева и справа | снизу */</code>
+        <code>margin: 1em auto 2em;</code>
+        <code> </code>
+        <code class="comment">/* сверху | справа | снизу | слева */</code>
+        <code>margin: 2px 1em 0 auto;</code>
+    </pre>
+</section>
+
+
+<section class="slide narfu">
+    <h2>Margin area</h2>
+    <pre>
+        <code class="comment">/* Общие значения */</code>
+        <code>margin: inherit;</code>
+        <code>margin: initial;</code>
+        <code>margin: unset;</code>
+    </pre>
+</section>
+
+<section class="slide clear">
+    <video src="pictures/10/overflow%204.mov" autoplay loop class="cover w"></video>
+</section>
+
+<section class="slide clear">
+    <video src="pictures/10/overflow%205.mov" autoplay loop class="cover w"></video>
+</section>
+
+<section class="slide narfu">
+    <h2>Border</h2>
+    <p>Свойство <code>border</code> отвечает за отрисовку видимой границы блока. Часто видимую границу блока называют рамкой.</p>
+    <p>Само свойство <code>border</code> является <i>шорткатом</i>  и объединяет в себе значение для нескольких полных свойств:</p>
+    <pre>
+        <code>border: [border-width] [border-style] [border-color];</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Border</h2>
+    <pre>
+        <code>&lt;div class="element"&gt;</code>
+        <code>  &lt;p&gt;Повседневная практика показывает, ...&lt;/p&gt;</code>
+        <code>&lt;/div&gt;</code>
+    </pre>
+
+    <pre>
+        <code>.element {</code>
+        <code class="comment">	/* рамка толщиной 5 пикселей, пунктир, цвет #ED674*/ </code>
+        <code>  border: 5px dashed #ed6742;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Border</h2>
+    <div style="border: 3px dashed var(--red); padding: 30px;">
+        <p style="margin: 0;">Предполагается, что поля в книгах нужны для защиты информации. Когда книги начали писать на пергаменте, возникла угроза - мыши. Поскольку пергамент изготавливался из натуральной кожи, грызуны вполне могли съесть всю книгу целиком. Но начинали они всегда с краев, а значит, был шанс успеть спасти информацию.</p>
+    </div>
+</section>
+
+
+<selector class="slide">
+    <h2 class="shout"><span  style="font-size: smaller;">Позиционирование</span></h2>
+</selector>
+
+<section class="slide narfu">
+    <h2>Абсолютное</h2>
+    <div class="columns two">
+        <div>
+            <pre>
+            <code>element {</code>
+            <code>  position: absolute;</code>
+            <code>}</code>
+        </pre>
+            <p>Позиция элемента может устанавливаться относительно границ области просмотра.</p>
+        </div>
+        <img src="pictures/10/absolute-window.png" alt="">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Абсолютное</h2>
+    <div class="columns two">
+        <div>
+            <pre>
+            <code>element {</code>
+            <code>  position: absolute;</code>
+            <code>}</code>
+        </pre>
+            <p>Позицию элемента также можно установить, используя границы родительского элемента.</p>
+        </div>
+        <img src="pictures/10/absolute-parent.png" alt="">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <div class="columns three">
+        <img src="pictures/10/1234.png" alt="" style="margin-top: 25%;">
+        <img src="pictures/10/static-vs-absolute.jpeg" alt="" class="next">
+        <img src="pictures/10/123.png" alt="" style="margin-top: 25%;">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Относительное</h2>
+    <div class="columns two">
+        <div>
+                    <pre>
+            <code>element {</code>
+            <code>  position: relative;</code>
+            <code>}</code>
+        </pre>
+            <p>Вот четыре блока c относительным позиционированием.</p>
+        </div>
+        <img src="pictures/10/relative.png" alt="" width="300">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Относительное</h2>
+    <div class="columns two">
+        <div>
+            <pre>
+            <code>element {</code>
+            <code>  position: relative;</code>
+            <code>}</code>
+        </pre>
+            <p>Сдвинем блоки с четными цифрами немного влево, а блоки с нечетными – вправо.</p>
+        </div>
+        <img src="pictures/10/relative-sides.png" alt="" width="300">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Относительное</h2>
+    <div class="columns two">
+        <div>
+            <pre>
+            <code>element {</code>
+            <code>  position: relative;</code>
+            <code>}</code>
+        </pre>
+            <p>Давайте немного переместим третий блок.</p>
+        </div>
+        <img src="pictures/10/relative-top.png" alt="" width="300">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Фиксированное</h2>
+    <pre>
+        <code>&lt;header class="header"&gt;</code>
+        <code>  &lt;h2&gt;Kitty&lt;/h2&gt;</code>
+        <code>&lt;/header&gt;</code>
+        <code>&lt;div class="content"&gt;</code>
+        <code>  &lt;img src="image_dfdvcix.jpeg" alt=""&gt;</code>
+        <code>  &lt;img src="image_dsfsvcv.jpeg" alt=""&gt;</code>
+        <code>  &lt;img src="image_ioeriou.jpeg" alt=""&gt;</code>
+        <code>&lt;/div&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Фиксированное</h2>
+    <pre>
+        <code>.header {</code>
+        <code>  background-color: rgba(255, 255, 255, .8);</code>
+        <code>  text-align: center;</code>
+        <code>  text-transform: uppercase;</code>
+        <code class="mark">  position: fixed;</code>
+        <code>  width: 250px;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/10/fixed-kittens.gif" alt="" class="cover h">
+</section>
+
+<section class="slide narfu">
+    <h2>Липкие элементы</h2>
+    <pre>
+        <code>&lt;div class="parent"&gt;</code>
+        <code>   &lt;div class="sticky"&gt;1&lt;/div&gt;</code>
+        <code>   &lt;div class="sticky"&gt;2&lt;/div&gt;</code>
+        <code>   &lt;div class="sticky"&gt;3&lt;/div&gt;</code>
+        <code>   &lt;div class="sticky"&gt;4&lt;/div&gt;</code>
+        <code> &lt;/div&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Липкие элементы</h2>
+    <pre>
+        <code>.sticky {</code>
+        <code class="mark">   position: sticky;</code>
+        <code class="mark">   top: 10px;</code>
+        <code>   width: 50px;</code>
+        <code>   height: 50px;</code>
+        <code>   margin-bottom: 150px;</code>
+        <code>   background-color: rgb(255, 255, 255);</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide clear">
+    <h2>Липкие элементы</h2>
+    <div class="columns two">
+        <img src="pictures/10/sticky.gif" alt="" style="border: 1px solid var(--blue)">
+        <img src="pictures/10/sticky-without-top-property.gif" alt="" style="border: 1px solid var(--blue)">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/10/left-right-top-bottom.svg" alt="" class="cover w">
+</section>
+
+<section class="slide narfu">
+    <h2>top</h2>
+    <div class="columns two">
+        <pre>
+            <code>div {</code>
+            <code>  position: relative; </code>
+            <code>  top: 10px;</code>
+            <code>}</code>
+        </pre>
+        <img src="pictures/10/top.svg" alt="">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>bottom</h2>
+    <div class="columns two">
+        <pre>
+            <code>p {</code>
+            <code>  position: relative; </code>
+            <code>  bottom: 5px;</code>
+            <code>}</code>
+        </pre>
+        <img src="pictures/10/bottom.svg" alt="">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>left</h2>
+    <div class="columns two">
+        <pre>
+            <code>div {</code>
+            <code>  position: relative; </code>
+            <code>  left: -25px;</code>
+            <code>}</code>
+        </pre>
+        <img src="pictures/10/left.svg" alt="">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>right</h2>
+    <div class="columns two">
+        <pre>
+            <code>div {</code>
+            <code>  position: relative; </code>
+            <code>  right: -2%;</code>
+            <code>}</code>
+        </pre>
+        <img src="pictures/10/right.svg" alt="">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>absolute + top + bottom</h2>
+    <div class="columns two">
+            <pre class="slide__small-text">
+        <code>.parent {</code>
+        <code>    position: relative;</code>
+        <code>}</code>
+        <code> </code>
+        <code>.child {</code>
+        <code>    position: absolute;</code>
+        <code>    width: 50px;</code>
+        <code>    background-color: rgb(250, 135, 135);</code>
+        <code>    top: 0;</code>
+        <code>    bottom: 0;</code>
+        <code>}</code>
+    </pre>
+        <img src="pictures/10/entire-height.png" alt="" width="300">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>absolute + left + right</h2>
+    <div class="columns two">
+        <pre class="slide__small-text">
+            <code>.child {</code>
+            <code>    position: absolute;</code>
+            <code>    height: 50px;</code>
+            <code>    background-color: rgb(250, 135, 135);</code>
+            <code>    left: 0;</code>
+            <code>    right: 0;</code>
+            <code>}</code>
+        </pre>
+        <img src="pictures/10/entire-width.png" alt="" width="300">
+    </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout">Плавающие элементы</h2>
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/10/positioning.svg" class="cover w" alt="Свойства для создания макетов">
+</section>
+
+<section class="slide narfu">
+    <h2>Зачем использовать float?</h2>
+    <ul>
+        <li>Свойство <code>float</code> обычно используется, когда мы хотим, чтобы блок текста обтекал изображение.</li>
+        <li>Некоторые веб-разработчики даже используют его для создания макетов <span style="color: grey;">(но для этого есть более удобные инструменты)</span></li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <h2>Обычный поток</h2>
+    <pre>
+        <code>&lt;div class="main-container"&gt;</code>
+        <code>    &lt;img src="https://kinzhal.media/..." alt="Goose"&gt;</code>
+        <code>    &lt;p&gt;В мире много статей...&lt;/p&gt;</code>
+        <code>&lt;/div&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <div class="float-container">
+        <img src="pictures/10/goose.webp" alt="">
+        <p>В мире много статей о пользе прогулок, правильного питания, сна и личностного роста. Но мало статей о пользе гусей. Пора это исправить.</p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Float: left и right</h2>
+    <pre>
+        <code>img {</code>
+        <code>  float: left;</code>
+        <code> </code>
+        <code class="comment">  Или так:</code>
+        <code class="comment">  float: right;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <div class="float-container float-container--left">
+        <img src="pictures/10/goose.webp" alt="">
+        <p>В мире много статей о пользе прогулок, правильного питания, сна и личностного роста. Но мало статей о пользе гусей. Пора это исправить.</p>
+        <p>В отличие от уток, которые живут в любом парке, для поглажки гуся необходимо выехать за город. Если вас волнует создаваемый при этом углеродный след, можете воспользоваться велосипедами.</p>
+        <p>Наибольшее скопление пригодных к поглажке гусей будет в местах, не охваченных связью 4G. Лента Инстаграма и рабочая переписка не сможет достать вас там, где вы будете гладить или дразнить гусей.</p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <div class="float-container float-container--right">
+        <img src="pictures/10/goose.webp" alt="">
+        <p>В мире много статей о пользе прогулок, правильного питания, сна и личностного роста. Но мало статей о пользе гусей. Пора это исправить.</p>
+        <p>В отличие от уток, которые живут в любом парке, для поглажки гуся необходимо выехать за город. Если вас волнует создаваемый при этом углеродный след, можете воспользоваться велосипедами.</p>
+        <p>Наибольшее скопление пригодных к поглажке гусей будет в местах, не охваченных связью 4G. Лента Инстаграма и рабочая переписка не сможет достать вас там, где вы будете гладить или дразнить гусей.</p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Схлопывание родителя</h2>
+    <p>Придадим всем элементам внутри контейнера свойство <code>float</code>:</p>
+    <pre>
+        <code>img, p {</code>
+        <code>  float: left;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <div class="float-container float-container--all">
+        <img src="pictures/10/goose.webp" alt="">
+        <p>В мире много статей о пользе прогулок, правильного питания, сна и личностного роста. Но мало статей о пользе гусей. Пора это исправить.</p>
+    </div>
+</section>
 
 <!-- Footer -->
 
