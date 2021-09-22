@@ -201,11 +201,17 @@
 </section>
 
 <section class="slide clear">
-    <video src="pictures/10/overflow%204.mov" autoplay loop class="cover w"></video>
+    <figure>
+        <video src="pictures/10/overflow%204.mov" autoplay loop class="cover w"></video>
+        <figcaption class="copyright">Наложение margin соседних элементов</figcaption>
+    </figure>
 </section>
 
 <section class="slide clear">
-    <video src="pictures/10/overflow%205.mov" autoplay loop class="cover w"></video>
+    <figure>
+        <video src="pictures/10/overflow%204.mov" autoplay loop class="cover w"></video>
+        <figcaption class="copyright">Выпадение margin за границы родителя</figcaption>
+    </figure>
 </section>
 
 <section class="slide narfu">
@@ -277,9 +283,17 @@
 
 <section class="slide narfu">
     <div class="columns three">
-        <img src="pictures/10/1234.png" alt="" style="margin-top: 25%;">
-        <img src="pictures/10/static-vs-absolute.jpeg" alt="" class="next">
-        <img src="pictures/10/123.png" alt="" style="margin-top: 25%;">
+        <div class="columns three">
+            <div>
+                <p style="text-align: center">Все элементы в потоке</p>
+                <img src="pictures/10/1234.png" alt="" style="margin-top: 25%;">
+            </div>
+            <img src="pictures/10/static-vs-absolute.jpeg" alt="" class="next">
+            <div>
+                <p style="text-align: center">Второй элемент не в потоке</p>
+                <img src="pictures/10/123.png" alt="" style="margin-top: 25%;">
+            </div>
+        </div>
     </div>
 </section>
 
@@ -292,7 +306,7 @@
             <code>  position: relative;</code>
             <code>}</code>
         </pre>
-            <p>Вот четыре блока c относительным позиционированием.</p>
+            <p>Вот четыре блока с относительным позиционированием.</p>
         </div>
         <img src="pictures/10/relative.png" alt="" width="300">
     </div>
@@ -302,11 +316,6 @@
     <h2>Относительное</h2>
     <div class="columns two">
         <div>
-            <pre>
-            <code>element {</code>
-            <code>  position: relative;</code>
-            <code>}</code>
-        </pre>
             <p>Сдвинем блоки с четными цифрами немного влево, а блоки с нечетными – вправо.</p>
         </div>
         <img src="pictures/10/relative-sides.png" alt="" width="300">
@@ -318,8 +327,9 @@
     <div class="columns two">
         <div>
             <pre>
-            <code>element {</code>
+            <code>.third-element {</code>
             <code>  position: relative;</code>
+            <code>  bottom: 20px;</code>
             <code>}</code>
         </pre>
             <p>Давайте немного переместим третий блок.</p>
@@ -360,7 +370,7 @@
 </section>
 
 <section class="slide narfu">
-    <h2>Липкие элементы</h2>
+    <h2>"Липкие" элементы</h2>
     <pre>
         <code>&lt;div class="parent"&gt;</code>
         <code>   &lt;div class="sticky"&gt;1&lt;/div&gt;</code>
@@ -372,7 +382,7 @@
 </section>
 
 <section class="slide narfu">
-    <h2>Липкие элементы</h2>
+    <h2>"Липкие" элементы</h2>
     <pre>
         <code>.sticky {</code>
         <code class="mark">   position: sticky;</code>
@@ -386,7 +396,7 @@
 </section>
 
 <section class="slide clear">
-    <h2>Липкие элементы</h2>
+    <h2>"Липкие" элементы</h2>
     <div class="columns two">
         <img src="pictures/10/sticky.gif" alt="" style="border: 1px solid var(--blue)">
         <img src="pictures/10/sticky-without-top-property.gif" alt="" style="border: 1px solid var(--blue)">
@@ -486,7 +496,7 @@
 </section>
 
 <section class="slide">
-    <h2 class="shout">Плавающие элементы</h2>
+    <h2 class="shout">"Плавающие" элементы</h2>
 </section>
 
 <section class="slide narfu">
