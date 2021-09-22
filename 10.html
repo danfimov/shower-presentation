@@ -495,6 +495,89 @@
     </div>
 </section>
 
+<section class="slide narfu">
+    <h2>z-index</h2>
+    <pre>
+        <code class="comment">/* Значение по умолчанию */</code>
+        <code>z-index: auto;</code>
+        <code> </code>
+        <code class="comment">/* Числа */</code>
+        <code>z-index: 5;</code>
+        <code>z-index: 0;</code>
+        <code>z-index: -2;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>HTML-код примера</h2>
+    <pre>
+        <code>&lt;body&gt;</code>
+        <code>  &lt;div class="container"&gt;</code>
+        <code>    &lt;div class="box box1"&gt;1&lt;/div&gt;</code>
+        <code>    &lt;div class="box box2"&gt;2&lt;/div&gt;</code>
+        <code>    &lt;div class="box box3"&gt;3&lt;/div&gt;</code>
+        <code>  &lt;/div&gt;</code>
+        <code>&lt;/body&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>CSS-код примера</h2>
+    <pre>
+        <code>.box {</code>
+        <code>  position: absolute;</code>
+        <code>  height: 80px;</code>
+        <code>  width: 80px;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>z-index по умолчанию</h2>
+    <div class="columns two">
+        <p>Изначально порядок слоев соотносится с порядком расположения элементов в DOM.</p>
+        <img src="pictures/10/z-index0.png" alt="" width="300">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Меняем z-index</h2>
+    <pre>
+        <code>.box2 {</code>
+        <code>  background-color: rgb(60, 60, 129);</code>
+        <code>  margin: 20px;</code>
+        <code>  z-index: 1;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Меняем z-index</h2>
+    <div class="columns two">
+        <p>Так как <code>z-index</code> второго элемента больше, он находится выше в стопке слоев.</p>
+        <img src="pictures/10/z-index1.png" alt="" width="300">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Увеличиваем z-index</h2>
+    <pre>
+        <code>.box1 {</code>
+        <code>  background-color: rgb(186, 148, 93);</code>
+        <code class="comment">  /* можно использовать любое значение больше единицы */</code>
+        <code>  z-index: 2;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Увеличиваем z-index</h2>
+    <div class="columns two">
+        <p>Элементы выстроились по убыванию значения свойства <br><code>z-index</code>.</p>
+        <img src="pictures/10/z-index2.png" alt="" width="300">
+    </div>
+</section>
+
 <section class="slide">
     <h2 class="shout">"Плавающие" элементы</h2>
 </section>
