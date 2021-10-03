@@ -16,10 +16,463 @@
 </header>
 <section class="slide narfu_official" id="cover">
     <h2>Формы и элементы ввода</h2>
-    <p>Лекция №7</p>
+    <p>Лекция №7.2</p>
 </section>
 
 <!-- Main -->
+
+<section class="slide narfu">
+    <h2>Что такое веб-форма</h2>
+    <div class="columns two">
+        <p><b>Веб-формы</b> (или HTML-формы) являются одним из основных элементов взаимодействия между пользователем и
+            сайтом или приложением. </p>
+        <img src="pictures/9/google%20form.png" alt="" style="width: 300px; margin-left: 50px">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Виджеты</h2>
+    <p>HTML-формы состоят из одного или нескольких элементов управления форм (иногда их также называют <b>виджетами</b>)
+        и некоторых дополнительных элементов для структурирования формы.</p>
+    <p>Элементами управления могут быть однострочные или многострочные текстовые поля, выпадающие списки, кнопки,
+        чекбоксы, радиокнопки и другие.</p>
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/9/widgets.svg" alt="" class="cover w h">
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/9/validation.svg" alt="" class="cover w h">
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout"><span style="font-size: smaller">Проектирование формы</span></h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Набросок</h2>
+    <div class="columns two">
+        <p>Создание быстрого наброска поможет определить верный набор данных, которые вы хотите получить от
+            пользователя.</p>
+        <img src="pictures/9/proecting.png" alt="" style="width: 400px">
+    </div>
+</section>
+
+<section class="slide clear">
+    <img src="pictures/9/android-kit.png" alt="" class="cover w">
+</section>
+
+<section class="slide clear">
+    <img src="pictures/9/ios-kit.png" alt="" class="cover w">
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/9/form.svg" alt="" class="cover w">
+</section>
+
+<section class="slide narfu">
+    <h2>Верстка формы</h2>
+    <p>Создание форм начинается с элемента <code>&lt;form&gt;</code>:</p>
+    <pre>
+        <code>&lt;form action="/my-handling-form-page" method="post"&gt;</code>
+        <code class="comment">	&lt;!-- Здесь будут элементы формы --&gt;</code>
+        <code>&lt;/form&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Атрибуты <code>&lt;form&gt;</code></h2>
+    <ul>
+        <li>Атрибут <code>action</code> определяет адрес, куда должны быть посланы данные после отправки формы.</li>
+        <li>Атрибут <code>method</code> указывает, какой HTTP-метод будет использован при передаче данных (это может
+            быть <code>get</code> или <code>post</code>).
+        </li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <h2>Поля контактной формы</h2>
+    <p>Форма состоит из трёх текстовых полей, каждое их которых связано с HTML-элементом <code>&lt;label&gt;</code>:</p>
+    <ol>
+        <li>Поле для ввода имени — это тег <code>&lt;input&gt;</code>, где в поле <code>type</code> указано
+            <code>text</code>;
+        </li>
+        <li>Поле для ввода e-mail — тот же тег, но в <code>type</code> будет написано <code>email</code>;</li>
+        <li>Поле для ввода сообщения — тег <code>&lt;textarea&gt;</code>, многострочное текстовое поле.</li>
+    </ol>
+</section>
+
+<section class="slide narfu">
+    <pre>
+        <code>&lt;form action="/my-handling-form-page" method="post"&gt;</code>
+        <code class="mark next">    &lt;label for="name"&gt;Имя:&lt;/label&gt;</code>
+        <code>    &lt;input type="text" id="name"&gt;</code>
+        <code class="mark next">    &lt;label for="mail"&gt;E-mail:&lt;/label&gt;</code>
+        <code>    &lt;input type="email" id="mail"&gt;</code>
+        <code class="mark next">    &lt;label for="msg"&gt;Сообщение:&lt;/label&gt;</code>
+        <code>    &lt;textarea id="msg"&gt;&lt;/textarea&gt;</code>
+        <code>&lt;/form&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/9/text-vs-email.svg" alt="" class="cover w h">
+</section>
+
+<section class="slide narfu">
+    <h2>Разница текстовых полей</h2>
+    <p>Обратите внимание на разницу синтаксиса у HTML-элементов <code>&lt;input&gt;</code> и
+        <code>&lt;textarea&gt;</code>:</p>
+    <pre>
+        <code>&lt;input type="text" <mark>value="текст по умолчанию"</mark> /&gt;</code>
+        <code> </code>
+        <code>&lt;textarea&gt;</code>
+        <code>	<mark>текст по умолчанию</mark></code>
+        <code>&lt;/textarea&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Отправка данных на сервер</h2>
+    <pre>
+        <code>&lt;form&gt;</code>
+        <code>   ...</code>
+        <code>   &lt;button type="submit"&gt;Отправить&lt;/button&gt;</code>
+        <code>&lt;/form&gt;</code>
+    </pre>
+</section>
+
+<section class="slide">
+    <figure>
+        <img src="pictures/9/form-codepen.png" alt="" class="cover h">
+        <figcaption><a href="https://codepen.io/lovesolaristics/pen/ZEyqmNg?editors=1100" class="copyright"
+                       style="margin-bottom: 40px;">Живой пример на Codepen</a></figcaption>
+    </figure>
+</section>
+
+<section class="slide narfu">
+    <h2>Типы кнопок</h2>
+    <p>HTML-элемент <code>&lt;button&gt;</code>  принимает атрибут <code>type</code>, который может быть равен одному из
+        трёх значений: <code>submit</code>, <code>reset</code> или <code>button</code>:</p>
+    <ul>
+        <li><code>submit</code> - оправляет данные формы;</li>
+        <li><code>reset</code> - очищает все поля формы;</li>
+        <li><code>button</code> - не делает ничего;</li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <h2>Добавление имен полей</h2>
+    <pre>
+        <code>&lt;form action="/my-handling-form-page" method="post"&gt;</code>
+        <code>    &lt;label for="name"&gt;Имя:&lt;/label&gt;</code>
+        <code>    &lt;input type="text" id="name" <mark>name="user_name"</mark>&gt;</code>
+        <code>    &lt;label for="mail"&gt;E-mail:&lt;/label&gt;</code>
+        <code>    &lt;input type="email" id="mail" <mark>name="user_mail"</mark>&gt;</code>
+        <code>    &lt;label for="msg"&gt;Сообщение:&lt;/label&gt;</code>
+        <code>    &lt;textarea id="msg" <mark>name="user_message"</mark>&gt;&lt;/textarea&gt;</code>
+        <code>&lt;/form&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/9/submit.svg" alt="" class="cover w">
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout"><span style="font-size: smaller">Структурирование форм</span></h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Группировка полей</h2>
+    <pre>
+        <code>&lt;form&gt;</code>
+        <code>  &lt;fieldset&gt;</code>
+        <code>    &lt;legend&gt;Размер стакана фруктового сока&lt;/legend&gt;</code>
+        <code>      &lt;label for="size_1"&gt;Маленький&lt;/label&gt;</code>
+        <code>      &lt;input type="radio" name="size" id="size_1" value="small"&gt;</code>
+        <code>      ...</code>
+        <code>  &lt;/fieldset&gt;</code>
+        <code>&lt;/form&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Пример</h2>
+    <form>
+        <fieldset style="border: 2px solid #007BFF;">
+            <legend>Размер стакана фруктового сока</legend>
+            <p>
+                <input type="radio" name="size" id="size_1" value="small">
+                <label for="size_1">Маленький</label>
+            </p>
+            <p>
+                <input type="radio" name="size" id="size_2" value="medium">
+                <label for="size_2">Средний</label>
+            </p>
+            <p>
+                <input type="radio" name="size" id="size_3" value="large">
+                <label for="size_3">Большой</label>
+            </p>
+        </fieldset>
+        <p class="copyright" style="color: #007BFF;"><a href="https://www.nvaccess.org/download/">
+            Экранный диктор NV Access</a></p>
+    </form>
+</section>
+
+<section class="slide narfu">
+    <h2>Подписи к полям</h2>
+    <pre>
+        <code>&lt;label for="name"&gt;Имя:&lt;/label&gt;</code>
+        <code>&lt;input type="text" id="name" name="user_name"&gt;</code>
+    </pre>
+    <p>Или так:</p>
+    <pre>
+        <code>&lt;label for="name"&gt;</code>
+        <code>  Имя: &lt;input type="text" id="name" name="user_name"&gt;</code>
+        <code>&lt;/label&gt;</code>
+    </pre>
+</section>
+
+<section class="slide clear">
+    <figure>
+        <img src="pictures/9/payment-form.png" alt="" class="cover w">
+        <figcaption><a href="https://codepen.io/lovesolaristics/pen/wveREWy" class="copyright">Живой пример на CodePen
+        </a></figcaption>
+    </figure>
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout">Стандартные виджеты</h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Текстовые поля</h2>
+    <p>Однострочные текстовые поля создаются с использованием элемента <code>&lt;input&gt;</code> чей атрибут
+        <code>type</code> имеет значение <code>text</code>.</p>
+    <pre>
+        <code>&lt;input type="text" id="comment" name="comment"</code>
+        <code>       value="Это текстовое поле"&gt;&lt;/code&gt;</code>
+    </pre>
+</section>
+
+<section class="slide white">
+    <h2>Текстовые поля</h2>
+    <img src="pictures/9/text-field.png" alt="" class="place">
+</section>
+
+<section class="slide narfu">
+    <h2>Текстовые поля</h2>
+    <div class="columns two">
+        <ul>
+            <li><code>text</code> - уже знакомы;</li>
+            <li><code>email</code> - электронная почта;</li>
+            <li><code>password</code> - пароль;</li>
+            <li><code>search</code> - поле поиска;</li>
+            <li><code>tel</code> - телефонный номер;</li>
+            <li><code>url</code> - адрес в интернете.</li>
+        </ul>
+        <form>
+            <ul style="">
+                <li><input style="padding: 5px;" required type="text" value="Простой текст"></li>
+                <li><input style="padding: 5px;" required type="email" value="example@gmail.com"></li>
+                <li><input style="padding: 5px;" required type="password" value="1234567890"></li>
+                <li><input style="padding: 5px;" required type="search" value="Как сделать ракету?"></li>
+                <li><input style="padding: 5px;" required type="tel" value="8-800-555-35-35"></li>
+                <li><input style="padding: 5px;" required type="url" value="http://en.wikipedia.org/wiki/"></li>
+            </ul>
+            <button type="submit" style="background-color: #007BFF; border: 0; color: white; padding: 10px;">
+                Проверить
+            </button>
+        </form>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Многострочный текстовый виджет</h2>
+    <p>Отдельно остановимся на виджете, позволяющем ввести сразу несколько строк текста:</p>
+    <pre>
+        <code>&lt;textarea cols="30" rows="10"&gt;</code>
+        <code>	Это многострочный текст</code>
+        <code>&lt;/textarea&gt;</code>
+    </pre>
+</section>
+
+<section class="slide white">
+    <h2>Многострочный текстовый виджет</h2>
+    <img src="pictures/9/textarea.png" alt="" class="place">
+</section>
+
+<section class="slide narfu">
+    <h2>Drop-down виджеты</h2>
+    <p>Виджет, позволяющий выбрать один вариант из выпадающего списка:</p>
+    <pre>
+        <code>&lt;select id="simple" name="simple"&gt;</code>
+        <code>  &lt;option&gt;Банан&lt;/option&gt;</code>
+        <code>  &lt;option&gt;Вишня&lt;/option&gt;</code>
+        <code>  &lt;option <mark>selected</mark>&gt;Лимон&lt;/option&gt;</code>
+        <code>&lt;/select&gt;</code>
+    </pre>
+</section>
+
+<section class="slide clear">
+    <img src="pictures/9/selectbox.png" alt="" class="cover h">
+</section>
+
+<section class="slide narfu">
+    <h2>Drop-down виджеты</h2>
+    <p>Виджет с возможностью выбрать сразу несколько вариантов:</p>
+    <pre>
+        <code>&lt;select <mark>multiple</mark> id="multi" name="multi"&gt;</code>
+        <code>  &lt;option&gt;Банан&lt;/option&gt;</code>
+        <code>  &lt;option&gt;Вишня&lt;/option&gt;</code>
+        <code>  &lt;option&gt;Лимон&lt;/option&gt;</code>
+        <code>&lt;/select&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Объединение input/text и опций</h2>
+    <div class="columns two">
+        <p>Можно объединить текстовое поле с возможностью выбора опций. С подобным вы наверняка встречались в
+            поисковиках.</p>
+        <img src="pictures/9/text+select.png" alt="" width="400">
+    </div>
+</section>
+
+<section class="slide narfu">
+    <pre>
+        <code>&lt;label for="myFruit"&gt;Какой твой любимый фрукт?&lt;/label&gt;</code>
+        <code>&lt;input type="text" id="myFruit" list="mySuggestion"&gt;</code>
+        <code class="mark">&lt;datalist id="mySuggestion"&gt;</code>
+        <code>  &lt;option&gt;Яблоко&lt;/option&gt;</code>
+        <code>  &lt;option&gt;Банан&lt;/option&gt;</code>
+        <code>  &lt;option&gt;Лимон&lt;/option&gt;</code>
+        <code>  &lt;option&gt;Персик&lt;/option&gt;</code>
+        <code>  &lt;option&gt;Груша&lt;/option&gt;</code>
+        <code class="mark">&lt;/datalist&gt;</code>
+    </pre>
+</section>
+
+<section class="slide white">
+    <img src="pictures/9/checkbox.png" alt="" class="cover h">
+</section>
+
+<section class="slide narfu">
+    <p>Чекбокс:</p>
+    <pre>
+        <code>&lt;input <mark>type="checkbox"</mark> checked id="carrots" </code>
+        <code>       name="carrots" value="carrots"&gt;</code>
+    </pre>
+    <p>Радиокнопка:</p>
+    <pre>
+        <code>&lt;input <mark>type="radio"</mark> checked id="carrots" </code>
+        <code>       name="carrots" value="carrots"&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Объединение радиокнопок</h2>
+    <pre style="font-size: smaller">
+        <code>&lt;fieldset&gt;</code>
+        <code>  &lt;legend&gt;Что будем заказывать?&lt;/legend&gt;</code>
+        <code>      &lt;label for="soup"&gt;Суп&lt;/label&gt;</code>
+        <code>      &lt;input type="radio" id="soup" <mark>name="meal"</mark> value="soup"&gt;</code>
+        <code>      &lt;label for="curry"&gt;Крылышки из KFC&lt;/label&gt;</code>
+        <code>      &lt;input type="radio" id="curry" <mark>name="meal"</mark> value="curry"&gt;</code>
+        <code>      &lt;label for="pizza"&gt;Пицца&lt;/label&gt;</code>
+        <code>      &lt;input type="radio" id="pizza" <mark>name="meal"</mark> value="pizza"&gt;</code>
+        <code>&lt;/fieldset&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Продвинутые виджеты</h2>
+    <ul>
+        <li>текстовое поле с возможностью вводить только цифры;</li>
+        <li>виджеты, где можно выбрать значения в определенном диапазоне;</li>
+        <li>виджет для выбора даты;</li>
+        <li>виджет для выбора цвета;</li>
+        <li>виджет для загрузки файла;</li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <img src="pictures/9/dont-do-that.svg" alt="" class="cover w">
+</section>
+
+<section class="slide narfu">
+    <h2>&lt;input/number&gt;</h2>
+    <p>Синтаксис поля для ввода цифр:</p>
+    <pre>
+        <code>&lt;input type="<mark>number</mark>" name="age" id="age"</code>
+        <code>       min="1" max="10" step="2"&gt;</code>
+    </pre>
+    <div class="columns two">
+        <ul>
+            <li><code>min</code> - минимальное значение;</li>
+            <li><code>max</code> - максимальное значение;</li>
+            <li><code>step</code> - шаг изменения значения.</li>
+        </ul>
+        <img src="pictures/9/number.png" alt="" style='margin-left: 25%;'>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2>Ползунки</h2>
+    <pre>
+        <code>&lt;input type="<mark>range</mark>" name="beans" id="beans"</code>
+        <code>       min="0" max="500" step="10"&gt;</code>
+    </pre>
+    <p>Подобный виджет позволяет выбирать между вариантами при помощи мыши или стрелок на клавиатуре.</p>
+</section>
+
+<section class="slide white">
+    <img src="pictures/9/slider.png" alt="" class="place center" style="margin-top: -20px;">
+</section>
+
+<section class="slide narfu">
+    <h2>Дата и время</h2>
+    <pre>
+        <code>&lt;input type="datetime-local"&gt;  <span class="comment">&lt;!-- Выбрать дату --&gt;</span></code>
+        <code>&lt;input type="month"&gt;  <span class="comment">&lt;!-- Выбрать месяц --&gt;</span></code>
+        <code>&lt;input type="time"&gt;  <span class="comment">&lt;!-- Выбрать время --&gt;</span></code>
+        <code>&lt;input type="week"&gt;  <span class="comment">&lt;!-- Выбрать неделю --&gt;</span></code>
+    </pre>
+</section>
+
+<section class="slide white">
+    <img src="pictures/9/date.png" alt="" class="cover h">
+</section>
+
+<section class="slide narfu clear">
+    <h2>Выбор цвета</h2>
+    <pre>
+        <code>&lt;input type="<mark>color</mark>" name="color" id="color"&gt;</code>
+        <code></code>
+    </pre>
+    <img src="pictures/9/standart-colopicker.png" alt="" class="place center" style="margin-top: 100px; width: 400px">
+</section>
+
+<section class="slide clear">
+    <img src="pictures/9/adobe-color.png" alt="" class="cover h">
+</section>
+
+<section class="slide narfu">
+    <h2>Загрузка файла</h2>
+    <pre>
+        <code>&lt;input type="<mark>file</mark>" name="file" id="file"</code>
+        <code>       accept="image/*" multiple&gt;</code>
+    </pre>
+    <img src="pictures/9/file-picker.png" alt="" style="width: 100%; margin-top: 40px;">
+</section>
+
+<!-- Slide -->
+
+<section class="slide clear">
+    <img src="pictures/9/ui-ux.jpeg" alt="" class="cover w h">
+</section>
 
 <!-- Footer -->
 
