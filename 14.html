@@ -1,40 +1,1054 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <title>Адаптивность</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#007BFF">
-  <link rel="stylesheet" href="shower/themes/material/styles/styles.css">
-  <link rel="stylesheet" href="styles/all_styles.css">
-  <link rel="shortcut icon" type="image/png" href="pictures/general/narfu_icon.png">
+    <title>Псевдоклассы и псевдоэлементы</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#007BFF">
+    <link rel="stylesheet" href="shower/themes/material/styles/styles.css">
+    <link rel="stylesheet" href="styles/all_styles.css">
+    <link rel="shortcut icon" type="image/png" href="pictures/general/narfu_icon.png">
+    <style>
+        .hover-example-table tr:hover {
+            background: rgba(14, 115, 238, 0.3);
+        }
+
+        .default-example {
+            display: grid;
+        }
+
+        .default-example input:default + span {
+            font-weight: bold;
+        }
+
+        .disabled-example input:enabled {
+            background-color: var(--green);
+        }
+
+        .disabled-example input:disabled {
+            background-color: var(--red);
+            opacity: .7;
+        }
+
+        .in-range-example {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .in-range-example input {
+            width: 100px;
+            height: 50px;
+            padding: 10px 20px;
+            text-align: center;
+
+            font-size: 22px;
+            font-weight: bolder;
+
+            border: 2px solid var(--primary);
+            color: var(--white);
+        }
+
+        .in-range-example input:in-range {
+            background-color: var(--green);
+        }
+
+        .in-range-example input:out-of-range {
+            background-color: var(--red);
+        }
+
+        .required-example {
+            border: 2px solid var(--primary);
+            padding: 40px;
+        }
+
+        .required-example .form-row {
+            margin-bottom: 8px;
+        }
+
+        .required-example label {
+            display: block;
+        }
+
+        .required-example input:required {
+            outline: 2px solid blue;
+            outline-offset: 1px;
+        }
+
+        .valid-example {
+            width: 350px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .valid-example .form-row {
+            margin-bottom: 12px;
+        }
+
+        .valid-example label {
+            display: block;
+        }
+
+        .valid-example input:not([type=checkbox]) {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 5px 20px 5px 8px;
+            border-radius: 4px;
+            border: 2px solid black;
+        }
+
+        .valid-example input + span {
+            position: relative;
+        }
+
+        .valid-example input + span::before {
+            position: absolute;
+            right: 5px;
+            top: -5px;
+        }
+
+        .valid-example input:invalid {
+            border: 2px solid var(--red);
+        }
+
+        .valid-example input:invalid + span::before {
+            content: '✖';
+            color: var(--red);
+        }
+
+        .valid-example input:valid + span::before {
+            content: '✓';
+            color: var(--green);
+        }
+
+        .valid-example [type=checkbox]:invalid {
+            outline: 2px solid var(--red);
+            outline-offset: 2px;
+        }
+
+    </style>
 </head>
 <body class="shower list">
 <header class="caption">
-  <h1>Псевдоклассы и псевдоэлемент</h1>
-  <p><a href="index.html">Web-технологии</a></p>
+    <h1>Псевдоклассы и псевдоэлементы</h1>
+    <p><a href="index.html">Web-технологии</a></p>
 </header>
 <section class="slide narfu_official" id="cover">
-  <h2>Псевдоклассы и псевдоэлемент</h2>
-  <p>Лекция №7.3</p>
+    <h2>Псевдоклассы и псевдоэлементы</h2>
+    <p>Лекция №7.3</p>
 </section>
 
 <!-- Main -->
 
+<section class="slide narfu">
+    <h2>Пседокласс</h2>
+    <p><b>Псевдоклассы</b> — особый вид селектора, который уточняет тип или состояние. Это как заранее заданные классы.
+    </p>
+    <p>Обычно это какой-то качественный признак: реакция на наведение курсора, порядок следования и другие.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Пример подсветки строк таблицы</h2>
+    <div class="columns two">
+        <div><h3>Без наведения курсора:</h3>
+            <pre>
+      <code>tr {</code>
+      <code>  background: #fff;</code>
+      <code>}</code>
+    </pre>
+        </div>
+        <div>
+            <h3>При наведении курсора:</h3>
+            <pre>
+
+      <code>tr<mark>:hover</mark>{</code>
+      <code>  background: #0e73ee;</code>
+      <code>}</code>
+    </pre>
+        </div>
+    </div>
+</section>
+
+<section class="slide">
+    <h2>Пример подсветки строк таблицы</h2>
+    <table class="hover-example-table">
+        <caption>Чемпионат по поеданию хот-догов</caption>
+        <thead>
+        <tr>
+            <th></th>
+            <th>Матчи</th>
+            <th>Выигрыши</th>
+            <th>Ничьи</th>
+            <th>Проигрыши</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>Танос</th>
+            <td>5</td>
+            <td>2</td>
+            <td>4</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <th>Звёздный Лорд</th>
+            <td>4</td>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <th>Гамора</th>
+            <td>5</td>
+            <td>3</td>
+            <td>2</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th>Ронан Обинитель</th>
+            <td>3</td>
+            <td>2</td>
+            <td>0</td>
+            <td>1</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="slide narfu">
+    <h2>Синтаксис псевдокласса</h2>
+    <pre>
+    <code>[селектор]:псевдокласс {</code>
+    <code>  свойство: значение;</code>
+    <code>} </code>
+  </pre>
+    <p>Селектор может и отсутствовать. Тогда правило применится ко всем элементам, которые могут иметь признак этого
+        псевдокласса.</p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:active</code></h2>
+    Псевдокласс <code>:active</code> позволяет задать стили для элемента, с которым происходит взаимодействие прямо
+    сейчас. Можно кнопке задать стиль, который будет виден в тот краткий миг, когда над кнопкой зажата клавиша мыши.
+    <img src="pictures/14/active.gif" alt="" style="margin: 0 12%">
+</section>
+
+<section class="slide narfu">
+    <h2><code>:active</code></h2>
+    <div class="columns two">
+            <pre style="font-size: smaller">
+        <code>a:active {</code>
+        <code>} <span class="comment">/* Селектор по тегу + :active */</span></code>
+        <code>.link:active {</code>
+        <code>} <span class="comment">/* Селектор по классу + :active */</span></code>
+        <code>li .link:active {</code>
+        <code>} <span class="comment">/* Составной селектор + :active */</span></code>
+        <code>#id:active {</code>
+        <code>} <span class="comment">/* Селектор по тегу + :active */</span></code>
+    </pre>
+        <p>Если вы задаёте стили для разных состояний ссылок, то следует придерживаться определённого порядка в
+            объявлении cтилей: <code>:link</code> — <code>:visited</code> — <code>:hover</code> — <code>:active</code>.
+        </p>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:is()</code></h2>
+    <h4>Без <code>:is()</code></h4>
+    <pre>
+            <code>h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { <span class="comment">/* … */</span> }</code>
+            <code> </code>
+        </pre>
+    <h4>С использованием <code>:is()</code></h4>
+    <pre>
+        <code>:is(h1, h2, h3, h4, h5, h6) a { <span class="comment">/* … */</span> }</code>
+        <code> </code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:any-link</code> / <code>:link</code></h2>
+    <p>Псевдокласс <code>:link</code> используется для оформления ссылок, которые пользователь ещё никогда не открывал.
+    </p>
+    <pre>
+        <code>a:link {</code>
+        <code>  color: blue;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:visited</code></h2>
+    <p>Псевдокласс <code>:visited</code> добавляется ссылкам, по которым уже переходил пользователь.</p>
+    <img src="pictures/14/visited.png" alt="" style="margin-left: 15%; width: 560px">
+</section>
+
+<section class="slide narfu">
+    <h2><code>:visited</code></h2>
+    <pre>
+        <code>a {</code>
+        <code>  color: green;</code>
+        <code>}</code>
+        <code> </code>
+        <code>a:visited {</code>
+        <code>  color: purple;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:checked</code></h2>
+    <p>Браузер присваивает чекбоксу или радио-кнопке псевдокласс <code>:checked</code> когда они отмечены. Мы можем это
+        использовать для стилизации элемента на свой вкус.</p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:checked</code></h2>
+    <p>Будем менять обводку и цвет текста у чекбокса когда он отмечен:</p>
+    <pre>
+        <code>&lt;label&gt;</code>
+        <code>  &lt;input type="checkbox" /&gt;</code>
+        <code>  &lt;span class="input-text"&gt; Чекбокс (нажми!) &lt;/span&gt;</code>
+        <code>&lt;/label&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:checked</code></h2>
+    <pre style="font-size: smaller">
+        <code class="comment">/* белая обводка в дефолтном состоянии */</code>
+        <code>input[type="checkbox"] {</code>
+        <code>  outline: 2px solid #ffffff;</code>
+        <code>}</code>
+        <code></code>
+        <code class="comment">/* обводка становится синей, когда чекбокс кликнули */</code>
+        <code>input[type="checkbox"]:checked {</code>
+        <code>  outline: 2px solid #1a5ad7;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:checked</code></h2>
+    <img src="pictures/14/checked.png" alt="" style="width: 100%">
+</section>
+
+<section class="slide narfu">
+    <h2><code>:default</code></h2>
+    <p>Применим к элементам формы (<code>&lt;input type="radio"&gt;</code>, <code>&lt;input type="checkbox"&gt;</code>, <code>&lt;option&gt;</code> и <code>&lt;button&gt;</code>),
+        у которых можно задать начальное состояние.</p>
+    <p>Например, у <code>&lt;input type="checkbox"&gt;</code> селектор применится к тому чекбоксу, у которого в разметке
+        установлен атрибут <code>checked</code>, т. е. он по умолчанию выбран.</p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:default</code></h2>
+    <div class="columns two">
+        <pre>
+        <code>:default + span {</code>
+        <code>    font-weight: bold;</code>
+        <code>}</code>
+    </pre>
+        <form action="" class="default-example">
+            <label>
+                <input type="checkbox" checked>
+                <span>Стеклоподъёмники</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Кондиционер</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Подогрев сидений</span>
+            </label>
+        </form>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:dir()</code></h2>
+    <p>Позволяет найти элементы по направлению текста в нём (например, в арабском направление письма идёт справа
+        налево). К сожалению, пока свойство поддерживается
+        <a href="https://caniuse.com/css-dir-pseudo">только в Firefox</a>.</p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:disabled</code> / <code>:enabled</code></h2>
+    <p>Позволяют находить элементы формы по состоянию их атрибута <code>disabled</code>. Почти эквивалентны селекторам
+        по атрибуту (<code>[disabled]</code> и <code>:not([disabled])</code> соответственно), но более гибкие, т. к.
+        среагируют на унаследованное состояние <code>disabled</code>.</p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:disabled</code> / <code>:enabled</code></h2>
+    <form action="" class="disabled-example">
+        <fieldset>
+            <legend>
+                <code>&lt;input disabled&gt;</code>
+            </legend>
+            <input type="text" disabled>
+        </fieldset>
+        <fieldset disabled>
+            <legend>
+                <code>&ltfieldset disabled&gt;</code>
+            </legend>
+            <input type="text">
+        </fieldset>
+        <fieldset>
+            <legend>
+                <code>:enabled</code>
+            </legend>
+            <input type="text">
+        </fieldset>
+    </form>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:empty</code></h2>
+    <p>Псевдокласс <code>:empty</code> используется для выбора пустых элементов. Пустыми считаются элементы без
+        потомков, текста или псевдоэлементов внутри.</p>
+    <img src="pictures/14/empty-example.png" alt="" style="width: 100%">
+    <p class="copyright"><a href="https://codepen.io/ezhkov/pen/poNzKJr">Ссылка на живой пример</a></p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:***-child</code></h2>
+    <p>При помощи псевдоклассов можно удобно выбирать элементы по их порядковому номеру внутри родительского
+        элемента.</p>
+    <p>Раскрасим в разные цвета фон у пунктов списка. Обратите внимание, что у всех пунктов списка одинаковые классы, а
+        значит мы не сможем обратиться к отдельным пунктам при помощи селектора по классу.</p>
+</section>
+
+<section class="slide narfu">
+    <pre>
+        <code>&lt;ul class="list"&gt;</code>
+        <code>  &lt;li class="list-item"&gt;Темный синевато-зеленый&lt;/li&gt;</code>
+        <code>  &lt;li class="list-item"&gt;Блестящий зелёный&lt;/li&gt;</code>
+        <code>  &lt;li class="list-item"&gt;Блестящий зеленовато-желтый&lt;/li&gt;</code>
+        <code>  &lt;li class="list-item"&gt;Блестящий зеленовато-желтый&lt;/li&gt;</code>
+        <code>  &lt;li class="list-item"&gt;Блестящий зеленовато-желтый&lt;/li&gt;</code>
+        <code>  &lt;li class="list-item"&gt;Розовый щербет&lt;/li&gt;</code>
+        <code>  &lt;li class="list-item"&gt;Умеренный оранжевый&lt;/li&gt;</code>
+        <code>&lt;/ul&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <pre>
+        <code class="comment">/* У всех пунктов списка будет жёлтый фон */</code>
+        <code>.list-item {</code>
+        <code>  background-color: #FFD829;</code>
+        <code>}</code>
+        <code> </code>
+        <code class="comment">/* У первого пункта списка, первого ребёнка будет */</code>
+        <code class="comment">/* тёмно-зелёный цвет фона */</code>
+        <code>.list-item:<mark>first-child</mark> {</code>
+        <code>  background-color: #064236;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <pre>
+        <code class="comment">/* У последнего пункта списка, последнего ребёнка будет  */</code>
+        <code class="comment">/* оранжевый цвет фона */</code>
+        <code>.list-item:<mark>last-child</mark> {</code>
+        <code>  background-color: #ED6742;</code>
+        <code>}</code>
+        <code> </code>
+        <code class="comment">/* У второго пункта списка будет зелёный цвет фона */</code>
+        <code>.list-item:<mark>nth-child(2)</mark> {</code>
+        <code>  background-color: #49A16C;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2>Последний штрих</h2>
+    <pre>
+        <code class="comment">/* У предпоследнего пункта списка будет  */</code>
+        <code class="comment">/* розовый цвет фона */</code>
+        <code>.list-item:<mark>nth-last-child(2)</mark> {</code>
+        <code>  background-color: #F498AD;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide black">
+    <img src="pictures/14/child-example.png" alt="" class="cover h">
+</section>
+
+<section class="slide narfu">
+    <h2>Разберем подробнее</h2>
+    <ul>
+        <li><code>:only-child</code> — выбирает любой элемент, который является единственным ребёнком своего родителя.
+        </li>
+        <li><code>:first-child</code> — выбирает элемент, подходящий под левую часть селектора, являющийся первым
+            ребёнком в своём родителе.
+        </li>
+        <li><code>:last-child</code> — выбирает элемент, подходящий под левую часть селектора, являющийся последним
+            ребёнком в своём родителе.
+        </li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <h2><code>nth-child</code></h2>
+    <p>Псевдоклассы, несущие в себе сочетание букв <code>nth</code>, работают гораздо интереснее. Для их правильной
+        работы нужно указать в скобках паттерн, по которому будут выбираться дети своего родителя.</p>
+    <ul>
+        <li><code>:nth-child(odd)</code> — выбирает нечётные элементы внутри родителя, подходящие под левую часть
+            селектора.
+        </li>
+        <li><code>:nth-child(even)</code> — выбирает чётные элементы внутри родителя, подходящие под левую часть
+            селектора.
+        </li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <h2><code>nth-child</code></h2>
+    <p>Но всё становится гораздо интереснее, когда мы хотим выбрать, к примеру, каждый третий элемент внутри родителя.
+        Используем для этого формулу <code>:nth-child(3n)</code>. </p>
+    <p>Вместо <code>n</code> будет подставляться 0, затем 1, 2 и так далее. В результате умножения в скобки будет
+        подставляться 0, 3, 6, 9 и так до тех пор, пока не закончатся дети внутри родителя.</p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>nth-child</code></h2>
+    <p>Но пойдём дальше и попробуем выбрать каждый шестой элемент, начиная с десятого. </p>
+    <p>Тут нам к умножению на <code>n</code> нужно будет прибавить ещё 10, чтобы отсчёт начался не с 0, а с 10: <code>nth-child(6n+10)</code>.
+    </p>
+    <p>Псевдокласс <code>:nth-last-child</code> работает абсолютно аналогично, только счёт ведётся с конца.</p>
+</section>
+
+<section class="slide narfu">
+    <h2><a href="http://www.topdesignagencies.com/nth-test/">NTH-калькулятор</a></h2>
+    <img src="pictures/14/nth-calculator.png" alt="" class="cover" style="margin-top: 40px;">
+</section>
+
+<section class="slide narfu">
+    <h2><code>:fullscreen</code></h2>
+    <p>Признак того, что документ развернули на всё окно (с помощью JavaScript).</p>
+    <p>Cкроем панель управления у плеера, если он развёрнут на весь экран:</p>
+    <pre>
+        <code>.player:fullscreen .player__controls {</code>
+        <code>  display: none;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:focus</code> / <code>:focus-within</code></h2>
+    <p>При попадании элемента в фокус браузер подставляет элементу дополнительный автоматический класс, чтобы пометить
+        изменение состояния. </p>
+    <p>А <code>:focus-within</code> ещё обозначает элемент, внутри которого находится элемент в фокусе.</p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:focus</code> / <code>:focus-within</code></h2>
+    <p>Важно знать, что в стандартных стилях браузера уже прописаны дефолтные стили для фокуса интерактивных
+        элементов. Пример из Chrome:</p>
+    <pre>
+        <code>:focus {</code>
+        <code>  outline: -webkit-focus-ring-color auto 1px;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:focus</code> / <code>:focus-within</code></h2>
+    <p><b>Важно!</b> Не удаляйте стили для фокуса полностью. Если вам не нравятся дефолтные стили — измените их. При
+        полном удалении фокуса пользователь не будет понимать в какой части страницы он находится, если его сценарий
+        пользования сайтом отличается от привычного.</p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:has()</code></h2>
+    <p>Псевдокласс <code>:has()</code> позволяет выбрать элемент, уточнив основной селектор дополнительным, при этом не
+        увеличив его вес. В отличие от привычных селекторов, правило применится только к тому селектору, который был
+        описан до <code>:has()</code>.</p>
+    <p>Этот псевдокласс пока <a href="https://caniuse.com/css-has">не поддерживается</a> ни в одном браузере, даже за
+        флагом.</p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:hover</code></h2>
+    <div class="columns two">
+            <pre>
+        <code>.link {</code>
+        <code>  color: #000;</code>
+        <code>  text-decoration: none;</code>
+        <code>}</code>
+    </pre>
+        <pre>
+            <code class="comment">/* Изменения при наведении */</code>
+            <code>.link:hover {</code>
+            <code>  color: pink;</code>
+            <code>  text-decoration: underline;</code>
+            <code>}</code>
+        </pre>
+    </div>
+    <p>Стоит отметить, что на наведения курсора может реагировать абсолютно любой элемент, не обязательно ссылка или
+        кнопка.</p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:indeterminate</code></h2>
+    <p>Элементы, которые могут находиться в «промежуточном» состоянии:</p>
+    <ul>
+        <li><code>&lt;input type="checkbox"&gt;</code>, отображающий, что не все пункты вложенной группы были выделены;
+        </li>
+        <li>группа <code>&lt;input type="radio"&gt;</code> с одинаковым name, но у которой ни один элемент не установлен
+            в <code>checked</code>;
+        </li>
+        <li><code>&lt;progress&gt;</code> - виджет в виде шкалы с ползунком.</li>
+    </ul>
+</section>
+
+<section class="slide white">
+    <img src="pictures/14/indeterminate.png" alt="" style="width: 100%; margin-top: -50px;">
+    <img src="pictures/14/indeterminate-after.png" alt="" style="width: 100%">
+    <p class="copyright"><a href="https://codepen.io/Realetive/pen/JjROXzQ">Живой пример на Codepen</a></p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:in-range</code> / <code>:out-of-range</code></h2>
+    <p>Применяется для <code>&lt;input&gt;</code>, у которого определены атрибуты <code>min</code> и <code>max</code> и
+        введённое значение соответствует (<code>:in-range</code>) или нет (<code>:out-of-range</code>) этому диапазону.
+    </p>
+    <h3>Бериллий</h3>
+    <div class="in-range-example">
+        <label>
+            Порядковый номер
+            <input type="number" min="4" max="4" value="4">
+        </label>
+
+        <label>
+            Молярный объём
+            <input type="number" min="5" max="5" value="6">
+        </label>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:lang()</code></h2>
+    <p>Селектор по языку содержимого текста. В HTML есть атрибут <code>lang</code>, который указывает на язык
+        содержимого, этот псевдокласс позволяет обратиться к элементу по содержимому этого атрибута.</p>
+    <pre>
+        <code class="comment">/* в арабском нет переносов */</code>
+        <code>:lang(ar) {</code>
+        <code>  hyphens: none;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:not()</code></h2>
+    <p>Находит элемент, которые <b>не соответствует</b> селектору, который передан в качестве аргумента. Очень мощный
+        псевдокласс, позволяющий писать эффективные CSS-селекторы.</p>
+    <pre>
+        <code class="comment">/* красная рамка для &lt;img&gt; без alt */</code>
+        <code>img:not([alt]) {</code>
+        <code>  outline: 2px solid red;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:required</code> / <code>/ :optional</code></h2>
+    <p><code>:optional</code> находит любой <code>&lt;input&gt;</code>, у которого не установлен атрибут
+        <code>required</code> — то есть находит необязательные поля ввода. А <code>:required</code> — наоборот, те
+        <code>&lt;input&gt;</code>, у которых есть этот атрибут.</p>
+    <pre>
+        <code>input:required {</code>
+        <code>  outline: 2px solid blue;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:required</code> / <code>/ :optional</code></h2>
+    <div class="columns two">
+        <p>Обратите внимание, что использование этого псевдокласса эквивалентно селектору по
+            атрибуту <code>[required]</code>.</p>
+        <form class="required-example">
+            <div class="form-row">
+                <label for="first_name">Имя*</label>
+                <input type="text" id="first_name" required>
+            </div>
+            <div class="form-row">
+                <label for="last_name">Фамилия</label>
+                <input type="text" id="last_name">
+            </div>
+        </form>
+    </div>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:read-only</code> / <code>:read-write</code></h2>
+    <p>Находит элементы, недоступные (<code>:read-only</code>) или наоборот (<code>:read-write</code>) для
+        редактирования. Например, ориентируется на наличие атрибута <code>disabled</code> или <code>readonly</code>.</p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:root</code></h2>
+    <p>Соответствует корневому тегу-элементу документа. Для HTML это, соответственно, <code>&lt;html&gt;</code>, для SVG
+        — <code>&lt;svg&gt;</code>. Специфичность селектора <code>:root</code> выше, чем у селектора по тегу.</p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:target</code></h2>
+    <p>При переходе по ссылке, которая ведёт на URI-фрагмент (элемент внутри страницы), <code>id</code> фрагмента
+        совпадает со значением атрибута <code>id</code> этого элемента — это состояние можно «поймать» с помощью
+        псевдокласса <code>:target</code>.</p>
+    <p class="copyright"><a href="https://codepen.io/Realetive/pen/XWNWgBJ">Живой пример на Codepen</a></p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:invalid</code> / <code>:valid</code></h2>
+    <p>Псевдоклассы используются для стилизации полей формы:</p>
+    <ul>
+        <li><code>:invalid</code> для заполненных с ошибкой;</li>
+        <li><code>:valid</code> для заполненных верно.</li>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <h2><code>:invalid</code> / <code>:valid</code></h2>
+    <form class="valid-example">
+        <div class="form-row">
+            <label for="first-name">Имя:</label>
+            <input type="text" name="first-name" id="first-name" required>
+            <span></span>
+        </div>
+        <div class="form-row">
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" id="email" placeholder="email">
+            <span></span>
+        </div>
+        <div class="form-row">
+            <label>
+                <input type="checkbox" name="agree" id="agree" required>
+                Я согласен с политикой обработки персональных данных
+            </label>
+        </div>
+    </form>
+</section>
+
+<section class="slide narfu">
+    <h2>Общие советы</h2>
+    <ul>
+        <li>Псевдоклассы не обязательно описываются вместе с элементом — если он не указан, селектор будет обозначать
+            любой доступный элемент, который может иметь этот псевдокласс (при активации нужного состояния).
+        </li>
+        <li>Понимание изменения состояния элементов и манипулирование им через псевдоклассы помогает делать
+            производительные интерфейсы даже без JavaScript или, например, создавать собственный стиль для элементов
+            формы
+        </li>
+    </ul>
+    <p class="copyright"><a href="https://codepen.io/Realetive/pen/KKgXmgX">Живой пример кастомного чекбокса на
+        Codepen</a></p>
+</section>
+
+<section class="slide narfu">
+    <h2>Общие советы</h2>
+    <ul>
+        <li>Если задать псевдокласс элементу-родителю, то можно стилизовать дочерний элемент при изменении состояния у
+            родителя.
+        </li>
+        <p>Пример: если курсор находится внутри <code>&lt;nav&gt;</code>, увеличить размер шрифта у вложенных ссылок:
+        </p>
+        <pre>
+            <code>nav:hover a {</code>
+            <code>  font-size: 120%;</code>
+            <code>}</code>
+        </pre>
+    </ul>
+</section>
+
+<section class="slide narfu">
+    <h2 class="shout"><span style="font-size: smaller">Псевдоэлементы</span></h2>
+</section>
+
+<section class="slide narfu">
+    <h2>Псевдоэлементы</h2>
+    <p><b>Псевдоэлементы</b>  —  это элементы, которых не существует в HTML-разметке. </p>
+    <p>Они создаются и позиционируются исключительно при помощи CSS. Чаще всего используются для создания различных
+        декоративных элементов, которые не имеют особого значения с точки зрения контента.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Пример использования</h2>
+    <p>Самый частый сценарий использования псевдоэлемента — наложение полупрозрачной заливки поверх картинки
+        (оверлея).</p>
+    <p>Чаще всего это требуется на первом экране, но этим способом можно наложить оверлей на любое изображение на
+        сайте.</p>
+</section>
+
+<section class="slide narfu">
+    <h2>Пример использования</h2>
+    <pre style="font-size: smaller">
+        <code>&lt;header class="header"&gt;</code>
+        <code>  &lt;h1 class="header__title"&gt;Good evening, Clarice.&lt;/h1&gt;</code>
+        <code>&lt;/header&gt;</code>
+    </pre>
+    <div class="columns two">
+            <pre style="font-size: smaller">
+        <code>.header {</code>
+        <code>  background: #999999</code>
+        <code>    url("background.svg")</code>
+        <code>    no-repeat center / cover;</code>
+        <code>}</code>
+    </pre>
+        <pre style="font-size: smaller; padding-left: 40px;">
+        <code>.header__title {</code>
+        <code>  color: #ffffff;</code>
+        <code>  font-size: 82px;</code>
+        <code>  text-transform: uppercase;</code>
+        <code>  text-align: center;</code>
+        <code>}</code>
+    </pre>
+    </div>
+</section>
+
+<section class="slide black">
+    <img src="pictures/14/overlay.png" alt="" class="cover h">
+</section>
+
+<section class="slide narfu">
+    <h2>Пример использования</h2>
+    <p>Чтобы цвет картинки был не таким ярким и текст лучше читался наложим поверх всего <code>header</code>
+        полупрозрачную заливку чёрного цвета.</p>
+    <pre>
+        <code>.header {</code>
+        <code>  position: relative; <span class="comment">/* Добавляем позиционирование родителю */</span></code>
+        <code>  z-index: 0; <span class="comment">/* Указываем порядок наложения */</span></code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <pre style="font-size: smaller">
+        <code>.header:before {</code>
+        <code>  content: ""; <span
+                class="comment">/* Обязательное свойство для псевдоэлементов ::before/::after */</span></code>
+        <code>  display: block;</code>
+        <code>  position: absolute; <span class="comment">/* Позиционируем относительно родителя */</span></code>
+        <code>  top: 0;</code>
+        <code>  left: 0;</code>
+        <code>  /* Растягиваем на всю ширину и высоту */</code>
+        <code>  width: 100%;</code>
+        <code>  height: 100%;</code>
+        <code>  background-color: rgba(0 0 0 / 0.7); <span class="comment">/* Задаём полупрозрачный чёрный фон */</span></code>
+        <code>  z-index: -1; <span class="comment">/* Убираем под текст */</span></code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide black">
+    <img src="pictures/14/overlay-on.png" alt="" class="cover h">
+</section>
+
+<section class="slide narfu">
+    <h2><code>::before</code> / <code>::after</code></h2>
+    <p>Два самых часто встречающихся псевдоэлемента. Они очень похожи между собой. Единственная разница заключается в
+        том, что <code>::before</code> располагается по-умолчанию перед элементом, для которого задаётся. А <code>::after</code> в
+        свою очередь располагается после элемента, для которого создаётся.</p>
+    <p>Для обоих элементов обязательным является свойство <code>content</code>. С его помощью можно вставить
+        какое-нибудь слово до или после текста.</p>
+</section>
+
+<section class="slide narfu">
+    <h2><code>::before</code> / <code>::after</code></h2>
+    HTML:
+    <pre>
+        <code>&lt;span class="username"&gt;Гордон&lt;/span&gt;</code>
+        <code> </code>
+    </pre>
+    CSS:
+    <div class="columns two">
+            <pre style="font-size: smaller">
+        <code>.username::before {</code>
+        <code>  content: "Привет, ";</code>
+        <code>}</code>
+        </pre>
+        <pre style="font-size: smaller">
+        <code>.username::after {</code>
+        <code>  content: ", ты отлично выглядишь!";</code>
+        <code>}</code>
+    </pre>
+    </div>
+</section>
+
+<section class="slide black">
+    <h2><code>::before</code> / <code>::after</code></h2>
+    <img src="pictures/14/before-after.png" alt="" class="cover w" style="margin-top: 40px;">
+</section>
+
+<section class="slide narfu">
+    <h2><code>::before</code> / <code>::after</code></h2>
+    <p>Эта пара псевдоэлементов по-умолчанию являются строчными. Но это легко изменить при помощи стилей.</p>
+    <pre style="font-size: smaller">
+        <code>.username {</code>
+        <code>  display: inline-block; <span class="comment">/* Чтобы линия была по ширине текста */</span></code>
+        <code>}</code>
+        <code> </code>
+        <code>.username::before {</code>
+        <code>  content: "Привет, ";</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2><code>::before</code> / <code>::after</code></h2>
+    <p>Эта пара псевдоэлементов по-умолчанию являются строчными. Но это легко изменить при помощи стилей.</p>
+    <pre style="font-size: smaller">
+        <code>.username::after {</code>
+        <code>  content: "";</code>
+        <code>  display: block;  <span class="comment">/* Делаем псевдоэлемент блочным */</span></code>
+        <code>  width: 100%;</code>
+        <code>  height: 2px;</code>
+        <code>  background-color: #F498AD;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide black">
+    <h2><code>::before</code> / <code>::after</code></h2>
+    <img src="pictures/14/before-after-2.png" alt="" class="cover w" style="margin-top: 40px;">
+</section>
+
+<section class="slide narfu">
+    <h2><code>::first-letter</code></h2>
+    <p>При помощи этого псевдоэлемента можно выбрать первую букву в строке или абзаце текста. Это позволяет создать так
+        называемую <i>буквицу</i> — большую декоративную букву в начале текста.</p>
+    <pre>
+        <code>&lt;p class="text"&gt;</code>
+        <code>  В траве, около высоких муравейников...</code>
+        <code>&lt;/p&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2><code>::first-letter</code></h2>
+    <p>При помощи этого псевдоэлемента можно выбрать первую букву в строке или абзаце текста. Это позволяет создать так
+        называемую <i>буквицу</i> — большую декоративную букву в начале текста.</p>
+    <pre>
+        <code>.text::first-letter {</code>
+        <code>  font-size: 52px;<span class="comment">/* Увеличиваем размер первой буквы */</span></code>
+        <code>  color: #ed4242;/<span class="comment">* и красим её в красный цвет */</span></code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide black">
+    <h2><code>::first-letter</code></h2>
+    <img src="pictures/14/first-letter.png" alt="" class="cover w" style="margin-top: 68px;">
+</section>
+
+<section class="slide narfu">
+    <h2><code>::first-line</code></h2>
+    <p>Этот псевдоэлемент выбирает первую строку текста. Обрати внимание, что он сработает только для блочных элементов.
+        Со строчными этот трюк не пройдёт.</p>
+    <pre>
+        <code>&lt;p class="text"&gt;</code>
+        <code>  В далекой и бледной глубине неба...</code>
+        <code>&lt;/p&gt;</code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2><code>::first-line</code></h2>
+    <p>Этот псевдоэлемент выбирает первую строку текста. Обрати внимание, что он сработает только для блочных элементов.
+        Со строчными этот трюк не пройдёт.</p>
+    <pre>
+        <code>.text::first-line {</code>
+        <code class="comment">  /* Красим первую строку в красный */</code>
+        <code>  background-color: #ed4242;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide clear" style="background-color: var(--secondary)">
+    <h2><code>::first-line</code></h2>
+    <img src="pictures/14/red-string.png" alt="" class="cover w" style="margin-top: 90px;">
+</section>
+
+<section class="slide narfu">
+    <h2><code>::selection</code></h2>
+    <p>С помощью псевдоэлемента <code>::selection</code> можно управлять стилем текста, который пользователь выделяет
+        при помощи мыши.</p>
+    <img src="pictures/14/selection.png" alt="" style="width: 100%">
+</section>
+
+<section class="slide narfu">
+    <h2><code>::selection</code></h2>
+    <p>Целесообразнее всего задавать этот псевдоэлемент не какому-то отдельному блоку, а всей странице целиком.</p>
+    <pre>
+        <code>::selection {</code>
+        <code>  background-color: #ed4242;</code>
+        <code>}</code>
+    </pre>
+</section>
+
+<section class="slide black">
+    <h2><code>::selection</code></h2>
+    <img src="pictures/14/selection-2.png" alt="" style="margin-top: 45px; width: 90%; margin-left: 5%; margin-right: 5%;">
+</section>
+
+
+<section class="slide narfu">
+    <h2><code>::placeholder</code></h2>
+    <p>Этот псевдоэлемент позволяет стилизовать текст, выводимый в поле ввода текста (<code>input</code>) в виде подсказки.</p>
+    <p>Текст подсказки задаётся при помощи атрибута <code>placeholder</code> у тега <code>input</code>.</p>
+    <pre>
+        <code>&lt;input type="email" placeholder="test@example.com" /&gt;</code>
+        <code></code>
+    </pre>
+</section>
+
+<section class="slide narfu">
+    <h2><code>::placeholder</code></h2>
+    <p>По-умолчанию цвет текста подсказки серый. Но иногда по дизайну требуется другой цвет.</p>
+    <img src="pictures/14/placeholder.png" alt="" style="width: 100%">
+
+</section>
+
+<section class="slide narfu">
+    <h2><code>::placeholder</code></h2>
+    <pre>
+        <code>input::placeholder {</code>
+        <code>  color: #70a0ff;</code>
+        <code>}</code>
+    </pre>
+    <img src="pictures/14/placeholder-2.png" alt="" style="width: 100%; margin-top: 15px" class="next">
+</section>
+
+<section class="slide narfu">
+    <h2>Общие советы по использованию </h2>
+    <ul>
+        <li>Обязательно стоит проверять поддержку псевдоэлемента в нужных браузерах.</li>
+        <li> качестве значения свойства content можно задавать символы юникод. Например, можно вставить символ копирайта при помощи записи <code>content: &<span>#169</span>;</code></li>
+        <li class="next"><b>Псевдоэлементы — лучшее, что придумали в CSS. С ними жить и верстать гораздо проще. </b></li>
+    </ul>
+</section>
+
 <!-- Footer -->
 
 <section class="slide" id="see-more">
-  <h2 class="shout">
-    <a href="index.html">Все презентации<br>на GitHub Pages</a>
-  </h2>
+    <h2 class="shout">
+        <a href="index.html">Все презентации<br>на GitHub Pages</a>
+    </h2>
 </section>
 <footer class="badge">
-  <a href="https://github.com/LoveSolaristics/shower-presentation.git">
-    <svg width="81" height="79" viewBox="0 0 81 79" aria-hidden="true">
-      <path d="M40.5 0a40.5 40.5 0 0 0-12.8 78.93c2 .37 2.76-.88 2.76-2s0-3.51-.05-6.89c-11.27 2.45-13.64-5.43-13.64-5.43-1.84-4.68-4.5-5.92-4.5-5.92-3.68-2.51.28-2.46.28-2.46 4.06.29 6.2 4.17 6.2 4.17 3.61 6.19 9.48 4.4 11.79 3.37a8.65 8.65 0 0 1 2.57-5.41c-9-1-18.45-4.5-18.45-20a15.65 15.65 0 0 1 4.17-10.87 14.57 14.57 0 0 1 .4-10.72s3.4-1.09 11.14 4.15a38.39 38.39 0 0 1 20.28 0c7.73-5.24 11.13-4.15 11.13-4.15a14.55 14.55 0 0 1 .4 10.72 15.63 15.63 0 0 1 4.16 10.87c0 15.56-9.47 19-18.49 20 1.45 1.25 2.75 3.72 2.75 7.5v11.11c0 1.08.73 2.34 2.78 1.95A40.51 40.51 0 0 0 40.5 0z"></path>
-    </svg>
-    Репозиторий<br>на&nbsp;GitHub
-  </a>
+    <a href="https://github.com/LoveSolaristics/shower-presentation.git">
+        <svg width="81" height="79" viewBox="0 0 81 79" aria-hidden="true">
+            <path d="M40.5 0a40.5 40.5 0 0 0-12.8 78.93c2 .37 2.76-.88 2.76-2s0-3.51-.05-6.89c-11.27 2.45-13.64-5.43-13.64-5.43-1.84-4.68-4.5-5.92-4.5-5.92-3.68-2.51.28-2.46.28-2.46 4.06.29 6.2 4.17 6.2 4.17 3.61 6.19 9.48 4.4 11.79 3.37a8.65 8.65 0 0 1 2.57-5.41c-9-1-18.45-4.5-18.45-20a15.65 15.65 0 0 1 4.17-10.87 14.57 14.57 0 0 1 .4-10.72s3.4-1.09 11.14 4.15a38.39 38.39 0 0 1 20.28 0c7.73-5.24 11.13-4.15 11.13-4.15a14.55 14.55 0 0 1 .4 10.72 15.63 15.63 0 0 1 4.16 10.87c0 15.56-9.47 19-18.49 20 1.45 1.25 2.75 3.72 2.75 7.5v11.11c0 1.08.73 2.34 2.78 1.95A40.51 40.51 0 0 0 40.5 0z"></path>
+        </svg>
+        Репозиторий<br>на&nbsp;GitHub
+    </a>
 </footer>
 <div class="progress"></div>
 <script src="shower/shower.js"></script>
