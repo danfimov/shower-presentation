@@ -13,6 +13,14 @@
 - [Разметка текста](https://lovesolaristics.github.io/shower-presentation/4.html);
 - [Ссылки и медиа-элементы](https://lovesolaristics.github.io/shower-presentation/5.html);
 - [Таблицы и устаревшие теги](https://lovesolaristics.github.io/shower-presentation/6.html);
+- [Основы CSS](https://lovesolaristics.github.io/shower-presentation/7.html)
+- [Оформление текста](https://lovesolaristics.github.io/shower-presentation/8.html)
+- [Основы позиционирования элементов](https://lovesolaristics.github.io/shower-presentation/10.html)
+- [Формы и элементы ввода](https://lovesolaristics.github.io/shower-presentation/9.html)
+- [Псевдоклассы и псевдоэлементы](https://lovesolaristics.github.io/shower-presentation/14.html)
+- [Адаптивность](https://lovesolaristics.github.io/shower-presentation/13.html)
+- [Flexbox](https://lovesolaristics.github.io/shower-presentation/11.html)
+- [Grid](https://lovesolaristics.github.io/shower-presentation/12.html)
 
 ## Локальный запуск
 
