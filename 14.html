@@ -126,6 +126,9 @@
             outline-offset: 2px;
         }
 
+        .selection_text::selection {
+            background-color: var(--primary);
+        }
     </style>
 </head>
 <body class="shower list">
@@ -468,7 +471,7 @@
     </pre>
 </section>
 
-<section class="slide black">
+<section class="slide">
     <img src="pictures/14/child-example.png" alt="" class="cover h">
 </section>
 
@@ -797,7 +800,7 @@
     </div>
 </section>
 
-<section class="slide black">
+<section class="slide" style="background-color: #282A2E;">
     <img src="pictures/14/overlay.png" alt="" class="cover h">
 </section>
 
@@ -822,7 +825,7 @@
         <code>  position: absolute; <span class="comment">/* Позиционируем относительно родителя */</span></code>
         <code>  top: 0;</code>
         <code>  left: 0;</code>
-        <code>  /* Растягиваем на всю ширину и высоту */</code>
+        <code class="comment">  /* Растягиваем на всю ширину и высоту */</code>
         <code>  width: 100%;</code>
         <code>  height: 100%;</code>
         <code>  background-color: rgba(0 0 0 / 0.7); <span class="comment">/* Задаём полупрозрачный чёрный фон */</span></code>
@@ -831,7 +834,7 @@
     </pre>
 </section>
 
-<section class="slide black">
+<section class="slide" style="background-color: #0C0D0E;">
     <img src="pictures/14/overlay-on.png" alt="" class="cover h">
 </section>
 
@@ -866,7 +869,7 @@
     </div>
 </section>
 
-<section class="slide black">
+<section class="slide" style="background-color: #18191C;">
     <h2><code>::before</code> / <code>::after</code></h2>
     <img src="pictures/14/before-after.png" alt="" class="cover w" style="margin-top: 40px;">
 </section>
@@ -899,7 +902,7 @@
     </pre>
 </section>
 
-<section class="slide black">
+<section class="slide" style="background-color: #18191C;">
     <h2><code>::before</code> / <code>::after</code></h2>
     <img src="pictures/14/before-after-2.png" alt="" class="cover w" style="margin-top: 40px;">
 </section>
@@ -927,7 +930,7 @@
     </pre>
 </section>
 
-<section class="slide black">
+<section class="slide" style="background-color: #282A2E;">
     <h2><code>::first-letter</code></h2>
     <img src="pictures/14/first-letter.png" alt="" class="cover w" style="margin-top: 68px;">
 </section>
@@ -955,7 +958,7 @@
     </pre>
 </section>
 
-<section class="slide clear" style="background-color: var(--secondary)">
+<section class="slide clear" style="background-color: #E6E6E6;">
     <h2><code>::first-line</code></h2>
     <img src="pictures/14/red-string.png" alt="" class="cover w" style="margin-top: 90px;">
 </section>
@@ -964,7 +967,11 @@
     <h2><code>::selection</code></h2>
     <p>С помощью псевдоэлемента <code>::selection</code> можно управлять стилем текста, который пользователь выделяет
         при помощи мыши.</p>
-    <img src="pictures/14/selection.png" alt="" style="width: 100%">
+    <p>Интерактивный пример:</p>
+    <p class="selection_text">
+        Взгляните на этот текст. На первый взгляд ничего необычного. Но попробуйте его выделить! Выделение отличается от
+        стандартного.
+    </p>
 </section>
 
 <section class="slide narfu">
@@ -977,15 +984,11 @@
     </pre>
 </section>
 
-<section class="slide black">
-    <h2><code>::selection</code></h2>
-    <img src="pictures/14/selection-2.png" alt="" style="margin-top: 45px; width: 90%; margin-left: 5%; margin-right: 5%;">
-</section>
-
 
 <section class="slide narfu">
     <h2><code>::placeholder</code></h2>
-    <p>Этот псевдоэлемент позволяет стилизовать текст, выводимый в поле ввода текста (<code>input</code>) в виде подсказки.</p>
+    <p>Этот псевдоэлемент позволяет стилизовать текст, выводимый в поле ввода текста (<code>input</code>) в виде
+        подсказки.</p>
     <p>Текст подсказки задаётся при помощи атрибута <code>placeholder</code> у тега <code>input</code>.</p>
     <pre>
         <code>&lt;input type="email" placeholder="test@example.com" /&gt;</code>
@@ -1014,8 +1017,10 @@
     <h2>Общие советы по использованию </h2>
     <ul>
         <li>Обязательно стоит проверять поддержку псевдоэлемента в нужных браузерах.</li>
-        <li> качестве значения свойства content можно задавать символы юникод. Например, можно вставить символ копирайта при помощи записи <code>content: &<span>#169</span>;</code></li>
-        <li class="next"><b>Псевдоэлементы — лучшее, что придумали в CSS. С ними жить и верстать гораздо проще. </b></li>
+        <li> качестве значения свойства content можно задавать символы юникод. Например, можно вставить символ копирайта
+            при помощи записи <code>content: &<span>#169</span>;</code></li>
+        <li class="next"><b>Псевдоэлементы — лучшее, что придумали в CSS. С ними жить и верстать гораздо проще. </b>
+        </li>
     </ul>
 </section>
 
