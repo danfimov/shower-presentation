@@ -50,6 +50,15 @@
         .float-container--all p{
             float: left;
         }
+
+        /*.slide ul li:lang(ru)::before {*/
+        /*    font-size: 1.4em;*/
+        /*    content: "›";*/
+        /*    line-height: 1.15em;*/
+        /*    color: var(--primary);*/
+        /*    font-weight: bold;*/
+        /*    transform: translateX( calc(-100% - 0.5em) );*/
+        /*}*/
     </style>
 </head>
 <body class="shower list">
@@ -95,13 +104,13 @@
     <p style="border: 2px solid var(--green);"><strong style="background: teal;">Начало координат</strong> расточительно <span style="border: 2px dashed var(--red);">притягивает комплексный критерий</span> <strong style="background: teal;">сходимости Коши</strong>.</p>
 </section>
 
-<section class="slide narfu">
+<section class="slide">
     <h2 class="shout">Box model</h2>
 </section>
 
-<section class="slide clear">
+<section class="slide narfu clear">
     <h2>Box model</h2>
-    <img src="pictures/10/box%20model.png" alt="" class="place center" style="margin-top: 50px;">
+    <img src="pictures/10/box%20model.png" alt="" class="place center" style="margin-top: 50px; max-width: 80%">
 </section>
 
 <section class="slide clear">
@@ -124,7 +133,7 @@
 <section class="slide narfu">
     <h2>Padding area</h2>
     <pre>
-        <code>&lt;div class="parent"&gt;</code>
+        <code class="language-html">&lt;div class="parent"&gt;</code>
         <code>  &lt;p class="content"&gt;Сублимация...&lt;/p&gt;</code>
         <code>&lt;/div&gt;</code>
     </pre>
@@ -262,7 +271,7 @@
         </pre>
             <p>Позиция элемента может устанавливаться относительно границ области просмотра.</p>
         </div>
-        <img src="pictures/10/absolute-window.png" alt="">
+        <img src="pictures/10/absolute-window.png" alt="" style="max-width:120%">
     </div>
 </section>
 
@@ -277,7 +286,7 @@
         </pre>
             <p>Позицию элемента также можно установить, используя границы родительского элемента.</p>
         </div>
-        <img src="pictures/10/absolute-parent.png" alt="">
+        <img src="pictures/10/absolute-parent.png" alt="" style="max-width:120%">
     </div>
 </section>
 
